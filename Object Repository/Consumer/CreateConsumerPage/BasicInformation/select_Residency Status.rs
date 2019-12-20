@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>select_Residency Status</name>
+   <tag></tag>
+   <elementGuidId>bf7b6183-4cf2-4f7a-a378-14f5b0160788</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//select[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtResidencyStatus']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>select</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>name</name>
+      <type>Main</type>
+      <value>nGageBanking_Theme_wt2$block$wtHeadingContent$nGageBanking_Customer_Tasks_wt8$block$WebPatterns_wtBasicInformation_Panel$block$wtText$wtResidencyStatus</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>id</name>
+      <type>Main</type>
+      <value>nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtResidencyStatus</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>OSFillParent Mandatory SmartInput ReadOnly</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onkeydown</name>
+      <type>Main</type>
+      <value>return event.keyCode != 13;</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tabindex</name>
+      <type>Main</type>
+      <value>109</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onchange</name>
+      <type>Main</type>
+      <value>OsAjax(arguments[0] || window.event,'nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtResidencyStatus','nGageBanking_Theme_wt2$block$wtHeadingContent$nGageBanking_Customer_Tasks_wt8$block$WebPatterns_wtBasicInformation_Panel$block$wtText$wtResidencyStatus','Change','__OSVSTATE,','');</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>onkeyup</name>
+      <type>Main</type>
+      <value>this.onchange();</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>autocorrect</name>
+      <type>Main</type>
+      <value>off</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>spellcheck</name>
+      <type>Main</type>
+      <value>false</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>origvalue</name>
+      <type>Main</type>
+      <value>1</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>
+	Unknown
+	Resident
+	Non-Resident
+	Resident Alien
+	Non Resident Alien
+	Other
+	N/A
+
+</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtResidencyStatus&quot;)</value>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//select[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtResidencyStatus']</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtBasicInformationForm']/div/div[10]/div/select</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Residency Status'])[1]/following::select[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Country of Residency'])[1]/following::select[2]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ID Number'])[1]/preceding::select[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Country'])[1]/preceding::select[1]</value>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[10]/div/select</value>
+   </webElementXpaths>
+</WebElementEntity>
