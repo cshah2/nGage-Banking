@@ -1,3 +1,11 @@
 {
-  "brokenTestObjects" : [ ]
+  "brokenTestObjects": [
+    {
+      "approved": false,
+      "proposedXPath": "//div[2]/div/div/div[2]/div[2]/div/div/div[2]/div/div[2]/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/BasicInformation/btn_Next",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wt809\u0027]",
+      "pathToScreenshot": ""
+    }
+  ]
 }

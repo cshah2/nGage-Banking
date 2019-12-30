@@ -24,14 +24,14 @@ import internal.GlobalVariable
 public class RegexStringUtil {
 
 	private static String addEscapeChars(String text) {
-		
-		//[\^$.|?*+()
+
+		//. \ + * ? [ ^ ] $ ( ) { } = ! < > | : -
 		text = text.replaceAll('\\+', '\\\\+')
 		text = text.replaceAll('\\*', '\\\\*')
 		text = text.replaceAll('\\?', '\\\\?')
 		text = text.replaceAll('\\.', '\\\\.')
 		text = text.replaceAll('\\/', '\\\\/')
-		text = text.replaceAll('\\:', '\\\\:')
+		
 		return text
 	}
 

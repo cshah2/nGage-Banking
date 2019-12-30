@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Valid (Phone)</name>
+   <name>input_Valid Until (Phone)</name>
    <tag></tag>
    <elementGuidId>75218f47-a1e1-4fa0-8fa8-f35d7ebb024f</elementGuidId>
    <selectorCollection>

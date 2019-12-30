@@ -11,39 +11,26 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
-import constants.Operator
+import constants.Fields
 import constants.Urls
+import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
+import utils.MapUtil
 
-'Load browser'
-CustomKeywords.'actions.WebActions.openBrowser'()
+Map<Fields, String> custData = ConsumerData.CUST_A
+MapUtil.printMap(custData)
 
-'Maximize browsers window'
-WebUI.maximizeWindow()
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Clear browser cache'
-WebUI.deleteAllCookies()
+'Navigate to create customer page'
+WebUI.navigateToUrl(Urls.CREATE_CUSTOMER_PAGE)
 
-'Navigate to login page'
-WebUI.navigateToUrl(Urls.LOGIN_PAGE)
+'Create Customer'
+CustomKeywords.'pages.consumer.CreateConsumerPage.createConsumer'(custData)
 
-'Enter username'
-WebUI.setText(findTestObject('Object Repository/LoginPage/input_UserName'), GlobalVariable.UserName)
-
-'Enter password'
-WebUI.setText(findTestObject('Object Repository/LoginPage/input_Password'), GlobalVariable.Password)
-
-'Click on Login button'
-WebUI.click(findTestObject('Object Repository/LoginPage/btn_Login'))
-
-'Verify user is redirected to consumer search page'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
-
-'Verify usname is displayed on page header section'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
-
-'Close browser'
-WebUI.closeBrowser()

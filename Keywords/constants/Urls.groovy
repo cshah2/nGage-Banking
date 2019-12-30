@@ -21,8 +21,9 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
 public class Urls {
-	
+
 	final static String BASE_URL = GlobalVariable.URL
 	final static String LOGIN_PAGE = BASE_URL + '/nGageBanking/login.aspx'
 	final static String SEARCH_PAGE =  BASE_URL + '/nGageBanking_Customer/CustomerSearch.aspx'
+	final static String CREATE_CUSTOMER_PAGE =  BASE_URL + '/nGageBanking_Customer/CustomerMainFlow.CustomerCreate.aspx?isOrg=False'
 }

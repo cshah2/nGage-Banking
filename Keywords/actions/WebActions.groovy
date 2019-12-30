@@ -23,7 +23,7 @@ import internal.GlobalVariable
 import utils.WebUtil
 
 public class WebActions {
-	
+
 	/**
 	 * Action to compare actual text and expected test value using regular expression
 	 * @param actText
@@ -34,5 +34,10 @@ public class WebActions {
 	@Keyword
 	def verifyMatch(String actText, String expText, Operator o) {
 		WebUtil.verifyMatch(actText, expText, o)
+	}
+	
+	@Keyword
+	def openBrowser() {
+		WebUtil.openBrowser()
 	}
 }

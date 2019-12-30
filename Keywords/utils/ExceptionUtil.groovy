@@ -1,4 +1,4 @@
-package constants
+package utils
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -20,20 +20,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public enum Operator {
-
-	EQUALS,
-	EQUALS_IGNORE_CASE,
-	CONTAINS,
-	CONTAINS_IGNORE_CASE,
-	STARTS_WITH,
-	STARTS_WITH_IGNORE_CASE,
-	ENDS_WITH,
-	ENDS_WITH_IGNORE_CASE,
-	LESS_THAN,
-	LESS_THAN_OR_EQUALS,
-	GREATER_THAN,
-	GREATER_THAN_OR_EQUALS,
-	NOT_EQUALS,
-	NONE
+public class ExceptionUtil {
+	
+	public static boolean isCause(Class<? extends Throwable> expected, Throwable exc) {
+		return expected.isInstance(exc) || (
+			exc != null && isCause(expected, exc.getCause())
+		);
+	 }
 }

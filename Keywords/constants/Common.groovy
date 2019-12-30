@@ -20,20 +20,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public enum Operator {
-
-	EQUALS,
-	EQUALS_IGNORE_CASE,
-	CONTAINS,
-	CONTAINS_IGNORE_CASE,
-	STARTS_WITH,
-	STARTS_WITH_IGNORE_CASE,
-	ENDS_WITH,
-	ENDS_WITH_IGNORE_CASE,
-	LESS_THAN,
-	LESS_THAN_OR_EQUALS,
-	GREATER_THAN,
-	GREATER_THAN_OR_EQUALS,
-	NOT_EQUALS,
-	NONE
+public class Common {
+	
+	public static String dateFormat = 'MM/dd/yyyy'
+	public static String dateTimeFormat = 'MM/dd/yyyy HH:mm:ss'
+	public static String timezone = 'America/New_York'
+	public static String timezoneUTC = 'UTC'
 }

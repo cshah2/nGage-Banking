@@ -1,10 +1,14 @@
-package constants
+package utils
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import java.time.ZoneId
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -20,20 +24,25 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public enum Operator {
+public class DateUtil {
 
-	EQUALS,
-	EQUALS_IGNORE_CASE,
-	CONTAINS,
-	CONTAINS_IGNORE_CASE,
-	STARTS_WITH,
-	STARTS_WITH_IGNORE_CASE,
-	ENDS_WITH,
-	ENDS_WITH_IGNORE_CASE,
-	LESS_THAN,
-	LESS_THAN_OR_EQUALS,
-	GREATER_THAN,
-	GREATER_THAN_OR_EQUALS,
-	NOT_EQUALS,
-	NONE
+	public static String convert(String date, String currFormat, String expFormat) {
+
+		def currFormatDate = new Date().parse(currFormat,date)
+		return currFormatDate.format(expFormat)
+	}
+
+	public static String getCurrentDateTime(String format, String timezone) {
+
+		String dateString = ZonedDateTime.now(ZoneId.of(timezone))format(DateTimeFormatter.ofPattern(format))
+		println "Date is :"+dateString
+		return dateString
+	}
+
+	public static String getCurrentDateTimeMinusDays(int days, String format, String timezone) {
+
+		String dateString = ZonedDateTime.now(ZoneId.of(timezone)).minusDays(days).format(DateTimeFormatter.ofPattern(format))
+		println "Date is :"+dateString
+		return dateString
+	}
 }
