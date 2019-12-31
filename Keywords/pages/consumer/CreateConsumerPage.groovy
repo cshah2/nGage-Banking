@@ -80,7 +80,6 @@ public class CreateConsumerPage {
 
 	private static void enterLocationInformation(Map<Fields, String> custData) {
 
-		//TestObject e_Street = findTestObject('Dashboard Page/Customer and Account Search Page/Create Customer Page/Location Information/input_Street')
 		TestObject e_AddressLine1 = findTestObject('Object Repository/Consumer/CreateConsumerPage/Location Information/input_Address Line 1')
 		TestObject e_AddressLine2 = findTestObject('Object Repository/Consumer/CreateConsumerPage/Location Information/input_Address Line 2')
 		TestObject e_ShowMore = findTestObject('Object Repository/Consumer/CreateConsumerPage/Location Information/link_SHOW MORE')
@@ -258,5 +257,7 @@ public class CreateConsumerPage {
 		else {
 			WebUtil.click(e_Dialog_No)
 		}
+
+		WebUI.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
 	}
 }

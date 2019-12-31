@@ -30,6 +30,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import constants.Fields
 import constants.Operator
+import constants.Urls
 import internal.GlobalVariable
 
 public class WebUtil {
@@ -49,14 +50,13 @@ public class WebUtil {
 
 	static def void openBrowser() {
 
-		WebUI.openBrowser('')
-		WebUI.maximizeWindow()
-//		try {
-//			DriverFactory.getWebDriver()
-//		}
-//		catch(Exception e) {
-//			WebUI.openBrowser(null)
-//		}
+		try {
+			DriverFactory.getWebDriver()
+		}
+		catch(Throwable t) {
+			WebUI.openBrowser('')
+			WebUI.maximizeWindow()
+		}
 	}
 
 	static def setText(TestObject to, Map<Fields, String> map, Fields field, boolean isJavaScript = false) {
@@ -78,6 +78,12 @@ public class WebUtil {
 		if(MapUtil.isValidData(map, field)) {
 			String text = map.get(field)
 			WebUI.selectOptionByLabel(to, text, false)
+		}
+	}
+
+	static def check(TestObject to, Map<Fields, String> map, Fields field) {
+		if(MapUtil.isValidData(map, field)) {
+			WebUI.check(to)
 		}
 	}
 

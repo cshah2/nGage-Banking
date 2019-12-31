@@ -25,7 +25,7 @@ import utils.DateUtil
 import utils.RandomUtil
 
 public class ConsumerData {
-	
+
 	public static final Map<Fields, String> CUST_A;
 	static {
 		CUST_A = new HashMap<Fields, String>()
@@ -41,7 +41,7 @@ public class ConsumerData {
 		CUST_A.put(Fields.CUST_DOB, DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat))
 		CUST_A.put(Fields.CUST_DOB_MASKED, '**/**/'+CUST_A.get(Fields.CUST_DOB).substring(6))
 		CUST_A.put(Fields.CUST_TAX_ID, '9'+RandomUtil.getRandomNumeric(8))
-		CUST_A.put(Fields.CUST_TAX_ID_MASKED, '*****'+CUST_A.get(Fields.CUST_TAX_ID).substring(5))
+		CUST_A.put(Fields.CUST_TAX_ID_MASKED, '******'+CUST_A.get(Fields.CUST_TAX_ID).substring(5))
 		CUST_A.put(Fields.CUST_TAX_ID_TYPE, 'EIN')
 		CUST_A.put(Fields.CUST_COUNTRY_OF_RESIDENCE, 'United States of America')
 		CUST_A.put(Fields.CUST_RESIDENCY_STATUS, 'Resident')

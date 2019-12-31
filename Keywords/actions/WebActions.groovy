@@ -35,7 +35,7 @@ public class WebActions {
 	def verifyMatch(String actText, String expText, Operator o) {
 		WebUtil.verifyMatch(actText, expText, o)
 	}
-	
+
 	@Keyword
 	def openBrowser() {
 		WebUtil.openBrowser()

@@ -17,6 +17,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import constants.Fields
+import constants.Operator
 import constants.Urls
 import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
@@ -34,3 +35,11 @@ WebUI.navigateToUrl(Urls.CREATE_CUSTOMER_PAGE)
 'Create Customer'
 CustomKeywords.'pages.consumer.CreateConsumerPage.createConsumer'(custData)
 
+'Store Current page url into a variable'
+String pageUrl = WebUI.getUrl()
+
+'Verify user is on Customer dashboard page'
+CustomKeywords.'actions.WebActions.verifyMatch'(pageUrl, 'CustomerMainFlow.CustomerDetail.aspx', Operator.CONTAINS_IGNORE_CASE)
+
+'Verify Consumer data on header section'
+CustomKeywords.'pages.consumer.ConsumerDashboardPage.verifyConsumerDataOnHeaderSection'(custData)

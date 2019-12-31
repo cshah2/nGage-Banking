@@ -6,6 +6,62 @@
       "testObjectId": "Object Repository/Consumer/CreateConsumerPage/BasicInformation/btn_Next",
       "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wt809\u0027]",
       "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027CONSUMER NAME\u0027])[1]/following::div[2]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_WebPatterns_wt16_block_wtDescription_wtData\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name_neighbor_0.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027CONSUMER NAME\u0027])[1]/following::div[2]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_WebPatterns_wt16_block_wtDescription_wtData\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name_neighbor_1.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Phone Number\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Phone Number",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_wtColumn2\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Phone Number_neighbor_2.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Tax ID\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Tax ID",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_wtColumn3\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Tax ID_neighbor_3.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Date of Birth\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Date of Birth",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_wtColumn4\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Date of Birth_neighbor_4.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Email\u0027])[1]/following::a[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Email",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_wtColumn5_wt30\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Email_neighbor_5.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Address\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Address",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_wtColumn6\u0027]/div/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Address_neighbor_6.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[2]/div[2]/div/div/div[2]/div/div/div/div/input",
+      "testObjectId": "Object Repository/Organization/CreateOrganizationPage/ContactInformation/input_Phone Number",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_wtPhoneData\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Organization/CreateOrganizationPage/ContactInformation/input_Phone Number_position.png"
     }
   ]
 }

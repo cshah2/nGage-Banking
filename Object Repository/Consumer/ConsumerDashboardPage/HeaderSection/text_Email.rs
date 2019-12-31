@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='nGageBanking_Theme_wt153_block_wtTitle_nGageBanking_Common_wt56_block_nGage_Patterns_wt2_block_wtColumn5_wt30']</value>
+         <value>//label[normalize-space(text())='Email']/../a</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
