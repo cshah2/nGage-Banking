@@ -83,6 +83,7 @@ public class WebUtil {
 
 	static def check(TestObject to, Map<Fields, String> map, Fields field) {
 		if(MapUtil.isValidData(map, field)) {
+			scrollToElement(to, GlobalVariable.Timeout)
 			WebUI.check(to)
 		}
 	}
@@ -92,7 +93,7 @@ public class WebUtil {
 			WebElement e = WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout)
 			List<WebElement> list = new ArrayList<WebElement>()
 			list.add(e)
-			WebUI.executeJavaScript('arguments[0].scrollIntoViewIfNeeded()', list)
+			WebUI.executeJavaScript('arguments[0].scrollIntoView(true); window.scrollBy(0,-100);', list)
 		}
 		catch(Exception e1) {
 			WebUI.takeScreenshot()
@@ -128,5 +129,10 @@ public class WebUtil {
 				KeywordUtil.markFailedAndStop("Unable to move to element and click on it."+e.toString())
 			}
 		}
+	}
+	
+	static def waitForElementVisible(TestObject to, int timeout) {
+		WebUI.waitForElementVisible(to, timeout)
+		WebUI.verifyElementVisible(to)
 	}
 }

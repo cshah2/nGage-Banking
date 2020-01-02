@@ -40,7 +40,7 @@ public class CreateConsumerPage {
 		TestObject e_ResidencyStatus = findTestObject('Object Repository/Consumer/CreateConsumerPage/BasicInformation/select_Residency Status')
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_Prefix, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_Prefix, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_Prefix, custData, Fields.CUST_PREFIX)
 		WebUtil.setText(e_FirstName, custData, Fields.CUST_FIRST_NAME)
@@ -66,7 +66,7 @@ public class CreateConsumerPage {
 		TestObject e_AgeBracket = findTestObject('Object Repository/Consumer/CreateConsumerPage/Consumer Details/select_Age Bracket')
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_FamiliarName, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_FamiliarName, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_FamiliarName, custData, Fields.CUST_FAMILIAR_NAME)
 		WebUtil.setText(e_MaidenName, custData, Fields.CUST_MAIDEN_NAME)
@@ -97,16 +97,18 @@ public class CreateConsumerPage {
 		TestObject e_ValidUntil = findTestObject('Object Repository/Consumer/CreateConsumerPage/Location Information/input_Valid Until (Address)')
 
 		//Wait for Location information fields to be visible
-		WebUI.waitForElementVisible(e_AddressLine1, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_AddressLine1, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_AddressLine1, custData, Fields.ADDR_LINE1)
 		WebUtil.setText(e_AddressLine2, custData, Fields.ADDR_LINE2)
 
-		WebUI.click(e_ShowMore)
-		WebUI.waitForElementVisible(e_AddressLine3, GlobalVariable.Timeout)
+		if(MapUtil.isValidData(custData, Fields.ADDR_LINE3) || MapUtil.isValidData(custData, Fields.ADDR_LINE4)) {
+			WebUI.click(e_ShowMore)
+			WebUtil.waitForElementVisible(e_AddressLine3, GlobalVariable.Timeout)
+			WebUtil.setText(e_AddressLine3, custData, Fields.ADDR_LINE3)
+			WebUtil.setText(e_AddressLine4, custData, Fields.ADDR_LINE4)
+		}
 
-		WebUtil.setText(e_AddressLine3, custData, Fields.ADDR_LINE3)
-		WebUtil.setText(e_AddressLine4, custData, Fields.ADDR_LINE4)
 		WebUtil.setText(e_City, custData, Fields.ADDR_CITY)
 		WebUtil.selectOptionByLabel(e_Country, custData, Fields.ADDR_COUNTY)
 		WebUtil.selectOptionByLabel(e_StateOrRegion, custData, Fields.ADDR_STATE)
@@ -116,7 +118,7 @@ public class CreateConsumerPage {
 		WebUtil.setText(e_VerifiedDate, custData, Fields.ADDR_VERIFIED_DATE, true)
 		if(MapUtil.isValidData(custData, Fields.ADDR_VALID_FROM) || MapUtil.isValidData(custData, Fields.ADDR_VALID_UNTIL)) {
 			WebUtil.click(e_AddressValidLink)
-			WebUI.waitForElementVisible(e_ValidFrom, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_ValidFrom, GlobalVariable.Timeout)
 		}
 		WebUtil.setText(e_ValidFrom, custData, Fields.ADDR_VALID_FROM, true)
 		WebUtil.setText(e_ValidUntil, custData, Fields.ADDR_VALID_UNTIL, true)
@@ -139,14 +141,14 @@ public class CreateConsumerPage {
 		TestObject e_EmailValidLink = findTestObject('Object Repository/Consumer/CreateConsumerPage/ContactInformation/link_Set Email Valid tofrom dates')
 
 		//Wait for Contact information fields to be visible
-		WebUI.waitForElementVisible(e_PhoneNumber, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_PhoneNumber, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_PhoneNumber, custData, Fields.CONTACT_PHONE_NUMBER)
 		WebUtil.selectOptionByLabel(e_PhoneType, custData, Fields.CONTACT_PHONE_TYPE)
 		WebUtil.setText(e_PhoneVerifiedDate, custData, Fields.CONTACT_PHONE_VERIFIED_DATE, true)
 		if(MapUtil.isValidData(custData, Fields.CONTACT_PHONE_VALID_FROM) || MapUtil.isValidData(custData, Fields.CONTACT_PHONE_VALID_UNTIL)) {
 			WebUtil.click(e_PhoneValidLink)
-			WebUI.waitForElementVisible(e_PhoneValidFrom, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_PhoneValidFrom, GlobalVariable.Timeout)
 			WebUtil.setText(e_PhoneValidFrom, custData, Fields.CONTACT_PHONE_VALID_FROM, true)
 			WebUtil.setText(e_PhoneValidUntil, custData, Fields.CONTACT_PHONE_VALID_UNTIL, true)
 		}
@@ -156,7 +158,7 @@ public class CreateConsumerPage {
 		WebUtil.setText(e_EmailVerifiedDate, custData, Fields.CONTACT_EMAIL_VERIFIED_DATE, true)
 		if(MapUtil.isValidData(custData, Fields.CONTACT_EMAIL_VALID_FROM) || MapUtil.isValidData(custData, Fields.CONTACT_EMAIL_VALID_UNTIL)) {
 			WebUtil.click(e_EmailValidLink)
-			WebUI.waitForElementVisible(e_EmailValidFrom, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_EmailValidFrom, GlobalVariable.Timeout)
 			WebUtil.setText(e_EmailValidFrom, custData, Fields.CONTACT_EMAIL_VALID_FROM, true)
 			WebUtil.setText(e_EmailValidUntil, custData, Fields.CONTACT_EMAIL_VALID_UNTIL, true)
 
@@ -171,11 +173,11 @@ public class CreateConsumerPage {
 		TestObject e_AssociateSrPoliticalFigure = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Associated Sr Political Figure')
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_SeniorPoliticalFigure, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_SeniorPoliticalFigure, GlobalVariable.Timeout)
 
 		if(MapUtil.isValidData(custData, Fields.CUST_CHK_SENIOR_POLITICAL_FIGURE)) {
 			WebUI.check(e_SeniorPoliticalFigure)
-			WebUI.waitForElementVisible(e_Country, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_Country, GlobalVariable.Timeout)
 		}
 		WebUtil.selectOptionByLabel(e_Country, custData, Fields.CUST_SENIOR_POLITICAL_FIGURE_COUNTRY)
 		WebUtil.selectOptionByLabel(e_AssociateSrPoliticalFigure, custData, Fields.CUST_ASSOCIATE_SR_POLITICAL_FIGURE)
@@ -192,7 +194,7 @@ public class CreateConsumerPage {
 		TestObject e_WebAddress = findTestObject('Object Repository/Consumer/CreateConsumerPage/EductionAndOccupationDetails/input_Web Address')
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_EmploymentStatus, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_EmploymentStatus, GlobalVariable.Timeout)
 
 		WebUtil.selectOptionByLabel(e_EmploymentStatus, custData, Fields.CUST_EMPLOYMENT_STATUS)
 		WebUtil.selectOptionByLabel(e_Occupation, custData, Fields.CUST_OCCUPATION)
@@ -209,7 +211,7 @@ public class CreateConsumerPage {
 		TestObject e_ConsumerGroup = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerInformation/select_CustomerGroup')
 
 		//Wait for Customer ID and Group field to load
-		WebUI.waitForElementVisible(e_ConsumerId, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_ConsumerId, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_ConsumerId, custData, Fields.CUST_ID)
 		WebUtil.selectOptionByLabel(e_ConsumerGroup, custData, Fields.CUST_GROUP)
@@ -247,7 +249,7 @@ public class CreateConsumerPage {
 		WebUtil.click(e_Create)
 
 		//handle popup dialog
-		WebUI.waitForElementVisible(e_Dialog_No, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_Dialog_No, GlobalVariable.Timeout)
 
 		WebUtil.verifyMatch(WebUI.getText(e_Dialog_Msg), 'Customer has been created', Operator.CONTAINS)
 
@@ -258,6 +260,6 @@ public class CreateConsumerPage {
 			WebUtil.click(e_Dialog_No)
 		}
 
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
 	}
 }

@@ -3,6 +3,6 @@
    <description></description>
    <name>A2 - Create Organization</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify Organization data on header section</comment>
    <testCaseGuid>1c48d2cb-43f3-478a-a4e3-db3d7fe9aede</testCaseGuid>
 </TestCaseEntity>

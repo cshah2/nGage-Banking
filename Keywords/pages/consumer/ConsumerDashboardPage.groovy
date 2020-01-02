@@ -24,17 +24,17 @@ import internal.GlobalVariable
 import utils.WebUtil
 
 public class ConsumerDashboardPage {
-	
+
 	@Keyword
 	def verifyConsumerDataOnHeaderSection(Map<Fields, String> custData) {
-		
+
 		String actConsumerName = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'))
 		String actPhoneNumber = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Phone Number'))
 		String actTaxId = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Tax ID'))
 		String actDOB = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Date of Birth'))
 		String actEmail = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Email'))
 		String actAddress = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Address'))
-		
+
 		WebUtil.verifyMatch(actConsumerName, custData.get(Fields.CUST_NAME_VIEW), Operator.EQUALS)
 		WebUtil.verifyMatch(actPhoneNumber, custData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS)
 		WebUtil.verifyMatch(actTaxId, custData.get(Fields.CUST_TAX_ID_MASKED), Operator.EQUALS)

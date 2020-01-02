@@ -43,3 +43,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(pageUrl, 'CustomerMainFlow.Custo
 
 'Verify Consumer data on header section'
 CustomKeywords.'pages.consumer.ConsumerDashboardPage.verifyConsumerDataOnHeaderSection'(custData)
+
+'Set flags for future tests'
+custData.put(Fields.URL, WebUI.getUrl())
+custData.put(Fields.IS_CREATED, 'true')

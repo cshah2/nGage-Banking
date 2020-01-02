@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_Add</name>
+   <name>text_Organization Name</name>
    <tag></tag>
-   <elementGuidId>d2f035c3-fe38-4061-b718-0f8931ddb960</elementGuidId>
+   <elementGuidId>33a1c21b-4878-4f44-84c0-bb1b7cc669b9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@class='centerListAdd']//span[normalize-space(text())='Add']</value>
+         <value>//div[contains(@id,'_wtDescription_wtData')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -17,90 +17,83 @@
       <matchCondition>equals</matchCondition>
       <name>tag</name>
       <type>Main</type>
-      <value>span</value>
+      <value>div</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDueDiligence_block_wtText_ctl06</value>
+      <value>nGageBanking_Theme_wt154_block_wtTitle_nGageBanking_Common_wt57_block_nGage_Patterns_wt46_block_WebPatterns_wt16_block_wtDescription_wtData</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>data-style-key</name>
+      <name>class</name>
       <type>Main</type>
-      <value>sR4ywLeSsUOSLOTz6NeI9Q</value>
+      <value>CustomerProfile_data</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>text</name>
       <type>Main</type>
-      <value>Add</value>
+      <value>City'bank</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDueDiligence_block_wtText_ctl06&quot;)</value>
+      <value>id(&quot;nGageBanking_Theme_wt154_block_wtTitle_nGageBanking_Common_wt57_block_nGage_Patterns_wt46_block_WebPatterns_wt16_block_wtDescription_wtData&quot;)</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//span[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDueDiligence_block_wtText_ctl06']</value>
+      <value>//div[@id='nGageBanking_Theme_wt154_block_wtTitle_nGageBanking_Common_wt57_block_nGage_Patterns_wt46_block_WebPatterns_wt16_block_wtDescription_wtData']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
       <type>Main</type>
-      <value>//div[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDueDiligence_block_wtText_ctl05']/span[2]</value>
+      <value>//div[@id='nGageBanking_Theme_wt154_block_wtTitle_nGageBanking_Common_wt57_block_nGage_Patterns_wt46_block_WebPatterns_wt16_block_wtDescription']/div</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Countries of Operation'])[1]/following::span[4]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='ORGANIZATION NAME'])[1]/following::div[2]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Business Structure'])[1]/following::span[6]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Settings'])[1]/following::div[17]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='List of countries of operation'])[1]/preceding::span[1]</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='DBA NAME'])[1]/preceding::div[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:neighbor</name>
       <type>Main</type>
-      <value>(.//*[normalize-space(text()) and normalize-space(.)='Add each country that applies from list above'])[1]/preceding::span[2]</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <type>Main</type>
-      <value>//*/text()[normalize-space(.)='Add']/parent::*</value>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='-'])[2]/preceding::div[1]</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//a/div/span[2]</value>
+      <value>//div/div/div/div/div[2]/div[2]/div</value>
    </webElementXpaths>
 </WebElementEntity>

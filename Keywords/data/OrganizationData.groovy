@@ -25,7 +25,7 @@ import utils.DateUtil
 import utils.RandomUtil
 
 public class OrganizationData {
-	
+
 	public static final Map<Fields, String> ORG_A;
 	static {
 		ORG_A = new HashMap<Fields, String>()
@@ -44,7 +44,7 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_TAX_ID_TYPE, 'SSN')
 
 		//Organization Details
-		String tradeName = parsedJson.get("results").get(0).get("name").get("title") + parsedJson.get("results").get(0).get("name").get("first") +" PLC"
+		String tradeName = parsedJson.get("results").get(0).get("name").get("title") +" "+ parsedJson.get("results").get(0).get("name").get("first") +" PLC"
 		ORG_A.put(Fields.ORG_DESCRIPTION, 'Organization 01 - Description')
 		ORG_A.put(Fields.ORG_DUN_BRADSTEET_NO, RandomUtil.getRandomNumeric(9))
 		ORG_A.put(Fields.ORG_CHK_PUBLICLY_HELD, 'true')
@@ -59,7 +59,10 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_WEBSITE_URL, 'https://www.savanainc.com')
 
 		//Location Information
-		ORG_A.put(Fields.ADDR_STREET, DateUtil.getCurrentDateTime('dd MMMM', Common.timezone)+' Street')
+		ORG_A.put(Fields.ADDR_LINE1, DateUtil.getCurrentDateTime('dd MMMM', Common.timezone)+' Street')
+		ORG_A.put(Fields.ADDR_LINE2, 'Broadway')
+		ORG_A.put(Fields.ADDR_LINE3, 'Corona Ave')
+		ORG_A.put(Fields.ADDR_LINE4, 'New Philadelphia')
 		ORG_A.put(Fields.ADDR_CITY, 'Philadelphia')
 		ORG_A.put(Fields.ADDR_COUNTY, 'United States of America')
 		ORG_A.put(Fields.ADDR_STATE, 'Pennsylvania')
@@ -69,7 +72,7 @@ public class OrganizationData {
 		ORG_A.put(Fields.ADDR_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(1, Common.dateFormat, Common.timezoneUTC))
 		ORG_A.put(Fields.ADDR_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(10, Common.dateFormat, Common.timezoneUTC))
 		ORG_A.put(Fields.ADDR_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-10, Common.dateFormat, Common.timezoneUTC))
-		ORG_A.put(Fields.ADDR_VIEW, ORG_A.get(Fields.ADDR_STREET)+', '+ORG_A.get(Fields.ADDR_CITY)+', PA '+ORG_A.get(Fields.ADDR_ZIPCODE))
+		ORG_A.put(Fields.ADDR_VIEW, ORG_A.get(Fields.ADDR_LINE1)+', '+ORG_A.get(Fields.ADDR_LINE2)+', '+ORG_A.get(Fields.ADDR_CITY)+', PA '+ORG_A.get(Fields.ADDR_ZIPCODE))
 
 		//Contact Information
 		ORG_A.put(Fields.CONTACT_PHONE_NUMBER, '+1'+RandomUtil.getRandomNumeric(10))
@@ -86,20 +89,20 @@ public class OrganizationData {
 
 		//Organization Due diligence
 		ORG_A.put(Fields.ORG_BUSINESS_STRUCTURE, 'LLC')
-		ORG_A.put(Fields.ORG_COUNTRY_OPERATIONS, 'United States of America')
+		ORG_A.put(Fields.ORG_COUNTRY_OPERATIONS1, 'United States of America')
 		ORG_A.put(Fields.ORG_COUNTRY_HEADQUARTERS, 'India')
-		ORG_A.put(Fields.ORG_INDUSTRY, 'Agriculature')
+		ORG_A.put(Fields.ORG_INDUSTRY, 'Agriculture, Forestry, Fishing and Hunting')
 		ORG_A.put(Fields.ORG_YEARS_OWNED, '3 Years')
 		ORG_A.put(Fields.ORG_EST_ANNUAL_REVENUE, 'Under 1 Million')
 		ORG_A.put(Fields.ORG_NUMBER_LOCATIONS, '1 to 10 Locations')
 		ORG_A.put(Fields.ORG_NUMBER_WIRE_TRANSACTIONS, '1 to 100 Wires')
-		ORG_A.put(Fields.ORG_AMOUNT_WIRE_TRANSACTIONS, 'Up to $100')
+		ORG_A.put(Fields.ORG_AMOUNT_WIRE_TRANSACTIONS, 'Up to $100,000.00')
 		ORG_A.put(Fields.ORG_NUMBER_ACH_ORIGINATION, '1 to 100 ACH Originations')
-		ORG_A.put(Fields.ORG_AMOUNT_ACH_ORIGINATION, 'Up to $100')
+		ORG_A.put(Fields.ORG_AMOUNT_ACH_ORIGINATION, '$100,000.01 to $1,000,000.00')
 		ORG_A.put(Fields.ORG_NUMBER_MOBILE_DEPOSITS, '101 to 1000 Mobile Deposits')
-		ORG_A.put(Fields.ORG_AMOUNT_MOBILE_DEPOSITS, 'Up to $100')
+		ORG_A.put(Fields.ORG_AMOUNT_MOBILE_DEPOSITS, 'More than $1,000,000.00')
 		ORG_A.put(Fields.ORG_NUMBER_REMOTE_DEPOSITS, 'More than 10000 Remote Deposits')
-		ORG_A.put(Fields.ORG_AMOUNT_REMOTE_DEPOSITS, 'Up to $100')
+		ORG_A.put(Fields.ORG_AMOUNT_REMOTE_DEPOSITS, 'Other')
 		ORG_A.put(Fields.ORG_INTERMEDIATORY_SERVICES, 'Accounting')
 		ORG_A.put(Fields.ORG_PERCENT_REVENUE_CASH, '26 to 50 Percent')
 		ORG_A.put(Fields.ORG_CHK_NON_CASH_SERVICE, 'true')

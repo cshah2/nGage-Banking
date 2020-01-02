@@ -39,5 +39,9 @@ String pageUrl = WebUI.getUrl()
 'Verify user is on Customer dashboard page'
 CustomKeywords.'actions.WebActions.verifyMatch'(pageUrl, 'CustomerMainFlow.CustomerDetail.aspx', Operator.CONTAINS_IGNORE_CASE)
 
-//'Verify Consumer data on header section'
-//CustomKeywords.'pages.consumer.ConsumerDashboardPage.verifyConsumerDataOnHeaderSection'(custData)
+'Verify Organization data on header section'
+CustomKeywords.'pages.organization.OrganizationDashboardPage.verifyOrganizationDataOnHeaderSection'(orgData)
+
+'Set flags for future tests'
+orgData.put(Fields.URL, WebUI.getUrl())
+orgData.put(Fields.IS_CREATED, 'true')

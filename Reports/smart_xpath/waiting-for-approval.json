@@ -62,6 +62,20 @@
       "testObjectId": "Object Repository/Organization/CreateOrganizationPage/ContactInformation/input_Phone Number",
       "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_wtPhoneData\u0027]",
       "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Organization/CreateOrganizationPage/ContactInformation/input_Phone Number_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Countries of Operation\u0027])[1]/following::span[4]",
+      "testObjectId": "Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/link_Add",
+      "brokenXPath": "//span[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDueDiligence_block_wtText_ctl06\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/link_Add_neighbor_0.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wtsubmit_CN\u0027]/input[2]",
+      "testObjectId": "Object Repository/Organization/CreateOrganizationPage/OrganizationInformation/btn_Create",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wt110\u0027]",
+      "pathToScreenshot": ""
     }
   ]
 }

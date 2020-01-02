@@ -17,7 +17,7 @@
 	</natures>
 	<filteredResources>
 		<filter>
-			<id>1577716128860</id>
+			<id>1577717078068</id>
 			<name></name>
 			<type>10</type>
 			<matcher>
@@ -26,7 +26,25 @@
 			</matcher>
 		</filter>
 		<filter>
-			<id>1577716128860</id>
+			<id>1577717078083</id>
+			<name></name>
+			<type>6</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>(.*\.svn-base$)|(.*\.png$)|(.*\.log$)|(.*\.xlsx$)|(.*\.xls$)|(.*\.csv$)|(.*\.txt$)</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1577950512412</id>
+			<name></name>
+			<type>10</type>
+			<matcher>
+				<id>org.eclipse.core.resources.regexFilterMatcher</id>
+				<arguments>.*\.svn$</arguments>
+			</matcher>
+		</filter>
+		<filter>
+			<id>1577950512599</id>
 			<name></name>
 			<type>6</type>
 			<matcher>

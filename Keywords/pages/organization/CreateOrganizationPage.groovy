@@ -35,7 +35,7 @@ public class CreateOrganizationPage {
 		TestObject e_TaxIDType = findTestObject('Object Repository/Organization/CreateOrganizationPage/BasicInformation/select_Tax ID Type')
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_OrgName, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_OrgName, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_OrgName, orgData, Fields.ORG_NAME)
 		WebUtil.setText(e_DbaName, orgData, Fields.ORG_DBA_NAME)
@@ -61,13 +61,13 @@ public class CreateOrganizationPage {
 
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_Description, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_Description, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_Description, orgData, Fields.ORG_DESCRIPTION)
 		WebUtil.setText(e_DunAndBradSteetNo, orgData, Fields.ORG_DUN_BRADSTEET_NO)
 		if(MapUtil.isValidData(orgData, Fields.ORG_CHK_PUBLICLY_HELD)) {
 			WebUI.check(e_PubliclyHeld)
-			WebUI.waitForElementVisible(e_TradeName, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_TradeName, GlobalVariable.Timeout)
 			WebUtil.setText(e_TradeName, orgData, Fields.ORG_TRADE_NAME)
 		}
 		WebUtil.check(e_InternationalCompany, orgData, Fields.ORG_CHK_INTERNATIONAL_COMPANY)
@@ -75,7 +75,7 @@ public class CreateOrganizationPage {
 		WebUtil.check(e_SmallBusiness, orgData, Fields.ORG_CHK_SMALL_BUSINESS)
 		if(MapUtil.isValidData(orgData, Fields.ORG_CHK_TAX_EXEMPT)) {
 			WebUI.check(e_TaxExempt)
-			WebUI.waitForElementVisible(e_TaxExemptType, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_TaxExemptType, GlobalVariable.Timeout)
 			WebUtil.selectOptionByLabel(e_TaxExemptType, orgData, Fields.ORG_TAX_EXEMPT_TYPE)
 		}
 		WebUtil.selectOptionByLabel(e_RegistrationCountry, orgData, Fields.ORG_REGISTRATION_COUNTRY)
@@ -102,16 +102,18 @@ public class CreateOrganizationPage {
 		TestObject e_ValidUntil = findTestObject('Object Repository/Organization/CreateOrganizationPage/LocationInformation/input_Valid Until')
 
 		//Wait for Location information fields to be visible
-		WebUI.waitForElementVisible(e_AddressLine1, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_AddressLine1, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_AddressLine1, orgData, Fields.ADDR_LINE1)
 		WebUtil.setText(e_AddressLine2, orgData, Fields.ADDR_LINE2)
 
-		WebUI.click(e_ShowMore)
-		WebUI.waitForElementVisible(e_AddressLine3, GlobalVariable.Timeout)
+		if(MapUtil.isValidData(orgData, Fields.ADDR_LINE3) || MapUtil.isValidData(orgData, Fields.ADDR_LINE4)) {
+			WebUI.click(e_ShowMore)
+			WebUtil.waitForElementVisible(e_AddressLine3, GlobalVariable.Timeout)
+			WebUtil.setText(e_AddressLine3, orgData, Fields.ADDR_LINE3)
+			WebUtil.setText(e_AddressLine4, orgData, Fields.ADDR_LINE4)
+		}
 
-		WebUtil.setText(e_AddressLine3, orgData, Fields.ADDR_LINE3)
-		WebUtil.setText(e_AddressLine4, orgData, Fields.ADDR_LINE4)
 		WebUtil.setText(e_City, orgData, Fields.ADDR_CITY)
 		WebUtil.selectOptionByLabel(e_Country, orgData, Fields.ADDR_COUNTY)
 		WebUtil.selectOptionByLabel(e_StateOrRegion, orgData, Fields.ADDR_STATE)
@@ -121,7 +123,7 @@ public class CreateOrganizationPage {
 		WebUtil.setText(e_VerifiedDate, orgData, Fields.ADDR_VERIFIED_DATE, true)
 		if(MapUtil.isValidData(orgData, Fields.ADDR_VALID_FROM) || MapUtil.isValidData(orgData, Fields.ADDR_VALID_UNTIL)) {
 			WebUtil.click(e_AddressValidLink)
-			WebUI.waitForElementVisible(e_ValidFrom, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_ValidFrom, GlobalVariable.Timeout)
 		}
 		WebUtil.setText(e_ValidFrom, orgData, Fields.ADDR_VALID_FROM, true)
 		WebUtil.setText(e_ValidUntil, orgData, Fields.ADDR_VALID_UNTIL, true)
@@ -144,14 +146,14 @@ public class CreateOrganizationPage {
 		TestObject e_EmailValidLink = findTestObject('Object Repository/Organization/CreateOrganizationPage/ContactInformation/link_Set Email Valid tofrom dates')
 
 		//Wait for Contact information fields to be visible
-		WebUI.waitForElementVisible(e_PhoneNumber, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_PhoneNumber, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_PhoneNumber, orgData, Fields.CONTACT_PHONE_NUMBER)
 		WebUtil.selectOptionByLabel(e_PhoneType, orgData, Fields.CONTACT_PHONE_TYPE)
 		WebUtil.setText(e_PhoneVerifiedDate, orgData, Fields.CONTACT_PHONE_VERIFIED_DATE, true)
 		if(MapUtil.isValidData(orgData, Fields.CONTACT_PHONE_VALID_FROM) || MapUtil.isValidData(orgData, Fields.CONTACT_PHONE_VALID_UNTIL)) {
 			WebUtil.click(e_PhoneValidLink)
-			WebUI.waitForElementVisible(e_PhoneValidFrom, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_PhoneValidFrom, GlobalVariable.Timeout)
 			WebUtil.setText(e_PhoneValidFrom, orgData, Fields.CONTACT_PHONE_VALID_FROM, true)
 			WebUtil.setText(e_PhoneValidUntil, orgData, Fields.CONTACT_PHONE_VALID_UNTIL, true)
 		}
@@ -161,7 +163,7 @@ public class CreateOrganizationPage {
 		WebUtil.setText(e_EmailVerifiedDate, orgData, Fields.CONTACT_EMAIL_VERIFIED_DATE, true)
 		if(MapUtil.isValidData(orgData, Fields.CONTACT_EMAIL_VALID_FROM) || MapUtil.isValidData(orgData, Fields.CONTACT_EMAIL_VALID_UNTIL)) {
 			WebUtil.click(e_EmailValidLink)
-			WebUI.waitForElementVisible(e_EmailValidFrom, GlobalVariable.Timeout)
+			WebUtil.waitForElementVisible(e_EmailValidFrom, GlobalVariable.Timeout)
 			WebUtil.setText(e_EmailValidFrom, orgData, Fields.CONTACT_EMAIL_VALID_FROM, true)
 			WebUtil.setText(e_EmailValidUntil, orgData, Fields.CONTACT_EMAIL_VALID_UNTIL, true)
 
@@ -173,6 +175,7 @@ public class CreateOrganizationPage {
 
 		TestObject e_BusinessStructure = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/select_Business Structure')
 		TestObject e_CountryOperations = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/select_Countries of Operation')
+		TestObject e_Add = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/link_Add')
 		TestObject e_CountryHeadquarters = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/select_Country of Headquarters')
 		TestObject e_Industry = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/select_Industry')
 		TestObject e_YearsOwned = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/select_Years Owned')
@@ -198,10 +201,18 @@ public class CreateOrganizationPage {
 		TestObject e_VirtualCurrencyUsed = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/check_Virtual Currency Used')
 
 		//Wait for page elements to load
-		WebUI.waitForElementVisible(e_BusinessStructure, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_BusinessStructure, GlobalVariable.Timeout)
 
 		WebUtil.selectOptionByLabel(e_BusinessStructure, orgData, Fields.ORG_BUSINESS_STRUCTURE)
-		WebUtil.selectOptionByLabel(e_CountryOperations, orgData, Fields.ORG_COUNTRY_OPERATIONS)
+		if(MapUtil.isValidData(orgData, Fields.ORG_COUNTRY_OPERATIONS1)) {
+			WebUtil.selectOptionByLabel(e_CountryOperations, orgData, Fields.ORG_COUNTRY_OPERATIONS1)
+			WebUI.click(e_Add)
+		}
+		if(MapUtil.isValidData(orgData, Fields.ORG_COUNTRY_OPERATIONS2)) {
+			WebUtil.selectOptionByLabel(e_CountryOperations, orgData, Fields.ORG_COUNTRY_OPERATIONS2)
+			WebUI.click(e_Add)
+		}
+
 		WebUtil.selectOptionByLabel(e_CountryHeadquarters, orgData, Fields.ORG_COUNTRY_HEADQUARTERS)
 		WebUtil.selectOptionByLabel(e_Industry, orgData, Fields.ORG_INDUSTRY)
 		WebUtil.selectOptionByLabel(e_YearsOwned, orgData, Fields.ORG_YEARS_OWNED)
@@ -233,7 +244,7 @@ public class CreateOrganizationPage {
 		TestObject e_OrganizationGroup = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationInformation/select_CustomerGroup')
 
 		//Wait for Customer ID and Group field to load
-		WebUI.waitForElementVisible(e_OrganizationId, GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(e_OrganizationId, GlobalVariable.Timeout)
 
 		WebUtil.setText(e_OrganizationId, custData, Fields.ORG_ID)
 		WebUtil.selectOptionByLabel(e_OrganizationGroup, custData, Fields.ORG_GROUP)
@@ -268,8 +279,8 @@ public class CreateOrganizationPage {
 		WebUtil.click(e_Create)
 
 		//handle popup dialog
-		WebUI.waitForElementVisible(e_Dialog_Msg, GlobalVariable.Timeout)
-		WebUtil.verifyMatch(e_Dialog_Msg, 'Customer has been created', Operator.CONTAINS)
+		WebUtil.waitForElementVisible(e_Dialog_Msg, GlobalVariable.Timeout)
+		WebUtil.verifyMatch(WebUI.getText(e_Dialog_Msg), 'Customer has been created', Operator.CONTAINS)
 
 		if(MapUtil.isValidData(orgData, Fields.ORG_CHK_ACCOUNT)) {
 			WebUI.click(e_Dialog_Yes)
@@ -278,6 +289,6 @@ public class CreateOrganizationPage {
 			WebUI.click(e_Dialog_No)
 		}
 		
-		WebUI.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
+		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
 	}
 }
