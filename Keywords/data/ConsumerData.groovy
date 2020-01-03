@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import com.github.javafaker.Faker
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -29,16 +30,33 @@ public class ConsumerData {
 	public static final Map<Fields, String> CUST_A;
 	static {
 		CUST_A = new HashMap<Fields, String>()
-		Map parsedJson = RandomUtil.generateRandomCustomerData()
+		//Map parsedJson = RandomUtil.generateRandomCustomerData()
+		
+		Faker faker = new Faker(Locale.US)
+		String prefix = faker.name().prefix()
+		String firstName = faker.name().firstName()
+		String lastName = faker.name().lastName()
+		String email = firstName+'.'+lastName+'@example.com'
+		String addressLine1 = faker.address().buildingNumber() + faker.address().streetName()
+		String addressLine2 = faker.address().streetAddress()
+		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormat)
+		String city = faker.address().cityName()
+		println faker.address().toString()
 
 		//Basic Information
-		CUST_A.put(Fields.CUST_PREFIX, parsedJson.get("results").get(0).get("name").get("title"))
-		CUST_A.put(Fields.CUST_FIRST_NAME, parsedJson.get("results").get(0).get("name").get("first"))
+		//CUST_A.put(Fields.CUST_PREFIX, parsedJson.get("results").get(0).get("name").get("title"))
+		//CUST_A.put(Fields.CUST_FIRST_NAME, parsedJson.get("results").get(0).get("name").get("first"))
+		//CUST_A.put(Fields.CUST_MIDDLE_NAME, RandomUtil.getRandomAlphabets(4))
+		//CUST_A.put(Fields.CUST_LAST_NAME, parsedJson.get("results").get(0).get("name").get("last"))
+		CUST_A.put(Fields.CUST_PREFIX, prefix)
+		CUST_A.put(Fields.CUST_FIRST_NAME, firstName)
 		CUST_A.put(Fields.CUST_MIDDLE_NAME, RandomUtil.getRandomAlphabets(4))
-		CUST_A.put(Fields.CUST_LAST_NAME, parsedJson.get("results").get(0).get("name").get("last"))
+		CUST_A.put(Fields.CUST_LAST_NAME, lastName)
+
 		CUST_A.put(Fields.CUST_NAME_VIEW, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
 		CUST_A.put(Fields.CUST_SUFFIX, 'Jr.')
-		CUST_A.put(Fields.CUST_DOB, DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat))
+		//CUST_A.put(Fields.CUST_DOB, DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat))
+		CUST_A.put(Fields.CUST_DOB, dob)
 		CUST_A.put(Fields.CUST_DOB_MASKED, '**/**/'+CUST_A.get(Fields.CUST_DOB).substring(6))
 		CUST_A.put(Fields.CUST_TAX_ID, '9'+RandomUtil.getRandomNumeric(8))
 		CUST_A.put(Fields.CUST_TAX_ID_MASKED, '******'+CUST_A.get(Fields.CUST_TAX_ID).substring(5))
@@ -57,8 +75,8 @@ public class ConsumerData {
 		CUST_A.put(Fields.CUST_AGE_BRACKET, '21 - 30')
 
 		//Location Information
-		CUST_A.put(Fields.ADDR_LINE1, DateUtil.getCurrentDateTime('dd MMMM', Common.timezone)+' Street')
-		CUST_A.put(Fields.ADDR_LINE2, 'Broadway')
+		CUST_A.put(Fields.ADDR_LINE1, addressLine1)
+		CUST_A.put(Fields.ADDR_LINE2, addressLine2)
 		CUST_A.put(Fields.ADDR_LINE3, 'Corona Ave')
 		CUST_A.put(Fields.ADDR_LINE4, 'New Philadelphia')
 		CUST_A.put(Fields.ADDR_CITY, 'Philadelphia')
@@ -78,7 +96,7 @@ public class ConsumerData {
 		CUST_A.put(Fields.CONTACT_PHONE_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(0, Common.dateFormat, Common.timezoneUTC))
 		CUST_A.put(Fields.CONTACT_PHONE_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(8, Common.dateFormat, Common.timezoneUTC))
 		CUST_A.put(Fields.CONTACT_PHONE_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-8, Common.dateFormat, Common.timezoneUTC))
-		CUST_A.put(Fields.CONTACT_EMAIL, parsedJson.get("results").get(0).get("email"))
+		CUST_A.put(Fields.CONTACT_EMAIL, email)
 		CUST_A.put(Fields.CONTACT_EMAIL_TYPE, 'Personal')
 		CUST_A.put(Fields.CONTACT_EMAIL_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormat, Common.timezoneUTC))
 		CUST_A.put(Fields.CONTACT_EMAIL_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(9, Common.dateFormat, Common.timezoneUTC))
@@ -102,9 +120,37 @@ public class ConsumerData {
 		//Customer Information
 		CUST_A.put(Fields.CUST_ID, 'ID'+RandomUtil.getRandomNumeric(7))
 		CUST_A.put(Fields.CUST_GROUP, 'Banking Customer')
+	}
 
-		//Script data
-		CUST_A.put(Fields.IS_CREATED, '')
-		CUST_A.put(Fields.URL, '')
+	//Personal Savings account for a consumer "Cust_A"
+	public static final Map<Fields, String> ACC_A;
+	static {
+
+		//Basic Information
+		ACC_A = new HashMap<Fields, String>()
+		ACC_A.put(Fields.ACC_TITLE, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
+		ACC_A.put(Fields.ACC_OWNERSHIP, 'Primary')
+		ACC_A.put(Fields.ACC_DESCRIPTION, 'Savings Account')
+		ACC_A.put(Fields.ACC_GROUP, 'Banking')
+		ACC_A.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezoneUTC)+RandomUtil.getRandomNumeric(4))
+		ACC_A.put(Fields.ACC_BROKERED, 'false')
+		ACC_A.put(Fields.ACC_TIMEZONE, 'UTC')
+		ACC_A.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
+
+		//Product Information
+		ACC_A.put(Fields.ACC_PRODUCT_TYPE, 'Personal Savings')
+		ACC_A.put(Fields.ACC_POSITION_NAME, 'Personal Savings')
+		ACC_A.put(Fields.ACC_CURRENCY_CODE, 'US Dollar')
+		ACC_A.put(Fields.ACC_CURRENCY_CODE_VIEW, 'USD')
+		ACC_A.put(Fields.ACC_VERTICAL, 'Vertical 01')
+		ACC_A.put(Fields.ACC_DEPT_ID, 'Department 350')
+		ACC_A.put(Fields.ACC_DEPT_ID_VIEW, '350')
+		ACC_A.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
+
+		//T&C Document Information
+		ACC_A.put(Fields.TC_DOC_TYPE1, 'Terms and conditions')
+		ACC_A.put(Fields.TC_DOC_SIGNED_BY1, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
+		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
 }

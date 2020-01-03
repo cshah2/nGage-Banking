@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import java.text.SimpleDateFormat
 import java.time.ZoneId
 import java.time.ZonedDateTime
 import java.time.format.DateTimeFormatter
@@ -30,6 +31,11 @@ public class DateUtil {
 
 		def currFormatDate = new Date().parse(currFormat,date)
 		return currFormatDate.format(expFormat)
+	}
+	
+	public static String convert(Date d, String expFormat) {
+		SimpleDateFormat s = new SimpleDateFormat(expFormat)
+		return s.format(d)
 	}
 
 	public static String getCurrentDateTime(String format, String timezone) {

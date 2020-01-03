@@ -93,7 +93,7 @@ public class WebUtil {
 			WebElement e = WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout)
 			List<WebElement> list = new ArrayList<WebElement>()
 			list.add(e)
-			WebUI.executeJavaScript('arguments[0].scrollIntoView(true); window.scrollBy(0,-100);', list)
+			WebUI.executeJavaScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);", list)
 		}
 		catch(Exception e1) {
 			WebUI.takeScreenshot()
@@ -130,9 +130,33 @@ public class WebUtil {
 			}
 		}
 	}
-	
+
 	static def waitForElementVisible(TestObject to, int timeout) {
 		WebUI.waitForElementVisible(to, timeout)
 		WebUI.verifyElementVisible(to)
 	}
+	
+	static def shouldFailTest(Map<Fields, String> data) {
+		if(!(data.containsKey(Fields.IS_CREATED) && data.get(Fields.IS_CREATED).equalsIgnoreCase("true"))) {
+			KeywordUtil.markFailedAndStop('Pre-requisite test data is not created, Thus marking this test as failed')
+		}
+	}
+	
+	static def isEnabled(TestObject to) {
+		return WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout).isEnabled()
+	}
+	
+	static def isReadonly(TestObject to) {
+		
+		Boolean result = false;
+		try {
+			String value = WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout).getAttribute("readOnly")
+			if (value != null){
+				result = true;
+			}
+		} catch (Exception e) {}
+	
+		return result;
+	}
+
 }

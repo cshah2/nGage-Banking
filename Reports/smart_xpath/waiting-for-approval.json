@@ -76,6 +76,13 @@
       "testObjectId": "Object Repository/Organization/CreateOrganizationPage/OrganizationInformation/btn_Create",
       "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wt110\u0027]",
       "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[2]/div/input",
+      "testObjectId": "Object Repository/Account/CreateAccountPage/BasicInformation/input_Account Title",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtAccountTitle\u0027]",
+      "pathToScreenshot": ""
     }
   ]
 }

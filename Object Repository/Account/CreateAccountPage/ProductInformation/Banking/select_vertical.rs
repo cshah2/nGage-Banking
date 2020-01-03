@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_vertical</name>
+   <name>select_Vertical</name>
    <tag></tag>
    <elementGuidId>3cf9c4e9-b401-432a-b6ce-2af81a0ecc10</elementGuidId>
    <selectorCollection>
