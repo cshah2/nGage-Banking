@@ -31,7 +31,7 @@ public class ConsumerData {
 	static {
 		CUST_A = new HashMap<Fields, String>()
 		//Map parsedJson = RandomUtil.generateRandomCustomerData()
-		
+
 		Faker faker = new Faker(Locale.US)
 		String prefix = faker.name().prefix()
 		String firstName = faker.name().firstName()

@@ -6,6 +6,8 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import com.github.javafaker.Company
+import com.github.javafaker.Faker
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -29,12 +31,22 @@ public class OrganizationData {
 	public static final Map<Fields, String> ORG_A;
 	static {
 		ORG_A = new HashMap<Fields, String>()
-		Map parsedJson = RandomUtil.generateRandomCustomerData()
+		//Map parsedJson = RandomUtil.generateRandomCustomerData()
+		
+		Faker faker = new Faker(Locale.US)
+		Company c = faker.company()
+		String orgName = c.name()
+		String dbaName = "DBA"
+		String tradeName = orgName+" LLP"
+		String websiteUrl = c.url()
+		String establishedDate = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormat)
+		String email = faker.name().username()+"@exmaple.com"
 
 		//Basic Information
-		String orgName = "The "+parsedJson.get("results").get(0).get("name").get("first") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" Inc"
-		String dbaName = parsedJson.get("results").get(0).get("name").get("title") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" and Sons "+RandomUtil.getRandomAlphabets(4)
-		String establishedDate = DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat)
+//		String orgName = "The "+parsedJson.get("results").get(0).get("name").get("first") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" Inc"
+//		String dbaName = parsedJson.get("results").get(0).get("name").get("title") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" and Sons "+RandomUtil.getRandomAlphabets(4)
+//		String establishedDate = DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat)
+//		String tradeName = parsedJson.get("results").get(0).get("name").get("title") +" "+ parsedJson.get("results").get(0).get("name").get("first") +" PLC"
 
 		ORG_A.put(Fields.ORG_NAME, orgName)
 		ORG_A.put(Fields.ORG_DBA_NAME, dbaName)
@@ -44,7 +56,6 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_TAX_ID_TYPE, 'SSN')
 
 		//Organization Details
-		String tradeName = parsedJson.get("results").get(0).get("name").get("title") +" "+ parsedJson.get("results").get(0).get("name").get("first") +" PLC"
 		ORG_A.put(Fields.ORG_DESCRIPTION, 'Organization 01 - Description')
 		ORG_A.put(Fields.ORG_DUN_BRADSTEET_NO, RandomUtil.getRandomNumeric(9))
 		ORG_A.put(Fields.ORG_CHK_PUBLICLY_HELD, 'true')
@@ -56,7 +67,7 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_TAX_EXEMPT_TYPE, 'Title Holding Corporation for Exempt Organization')
 		ORG_A.put(Fields.ORG_REGISTRATION_COUNTRY, 'United States of America')
 		ORG_A.put(Fields.ORG_REGISTRATION_REGION, 'Pennsylvania')
-		ORG_A.put(Fields.ORG_WEBSITE_URL, 'https://www.savanainc.com')
+		ORG_A.put(Fields.ORG_WEBSITE_URL, websiteUrl)
 
 		//Location Information
 		ORG_A.put(Fields.ADDR_LINE1, DateUtil.getCurrentDateTime('dd MMMM', Common.timezone)+' Street')
@@ -80,7 +91,7 @@ public class OrganizationData {
 		ORG_A.put(Fields.CONTACT_PHONE_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(0, Common.dateFormat, Common.timezoneUTC))
 		ORG_A.put(Fields.CONTACT_PHONE_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(8, Common.dateFormat, Common.timezoneUTC))
 		ORG_A.put(Fields.CONTACT_PHONE_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-8, Common.dateFormat, Common.timezoneUTC))
-		ORG_A.put(Fields.CONTACT_EMAIL, parsedJson.get("results").get(0).get("email"))
+		ORG_A.put(Fields.CONTACT_EMAIL, email)
 		ORG_A.put(Fields.CONTACT_EMAIL_TYPE, 'Personal')
 		ORG_A.put(Fields.CONTACT_EMAIL_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormat, Common.timezoneUTC))
 		ORG_A.put(Fields.CONTACT_EMAIL_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(9, Common.dateFormat, Common.timezoneUTC))
@@ -117,9 +128,37 @@ public class OrganizationData {
 		//Customer Information
 		ORG_A.put(Fields.ORG_ID, 'ID'+RandomUtil.getRandomNumeric(7))
 		ORG_A.put(Fields.ORG_GROUP, 'Banking Customer')
+	}
+	
+	//Personal Savings account for a consumer "ORG_A"
+	public static final Map<Fields, String> ACC_A;
+	static {
 
-		//Script data
-		ORG_A.put(Fields.IS_CREATED, 'false')
-		ORG_A.put(Fields.URL, '')
+		//Basic Information
+		ACC_A = new HashMap<Fields, String>()
+		ACC_A.put(Fields.ACC_TITLE, ORG_A.get(Fields.ORG_NAME))
+		ACC_A.put(Fields.ACC_OWNERSHIP, 'Primary')
+		ACC_A.put(Fields.ACC_DESCRIPTION, 'Savings Account')
+		ACC_A.put(Fields.ACC_GROUP, 'Banking')
+		ACC_A.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezoneUTC)+RandomUtil.getRandomNumeric(4))
+		ACC_A.put(Fields.ACC_BROKERED, 'false')
+		ACC_A.put(Fields.ACC_TIMEZONE, 'UTC')
+		ACC_A.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
+
+		//Product Information
+		ACC_A.put(Fields.ACC_PRODUCT_TYPE, 'Personal Savings')
+		ACC_A.put(Fields.ACC_POSITION_NAME, 'Personal Savings')
+		ACC_A.put(Fields.ACC_CURRENCY_CODE, 'US Dollar')
+		ACC_A.put(Fields.ACC_CURRENCY_CODE_VIEW, 'USD')
+		ACC_A.put(Fields.ACC_VERTICAL, 'Vertical 01')
+		ACC_A.put(Fields.ACC_DEPT_ID, 'Department 350')
+		ACC_A.put(Fields.ACC_DEPT_ID_VIEW, '350')
+		ACC_A.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
+
+		//T&C Document Information
+		ACC_A.put(Fields.TC_DOC_TYPE1, 'Terms and conditions')
+		ACC_A.put(Fields.TC_DOC_SIGNED_BY1, 'Chintan Shah')
+		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
 }

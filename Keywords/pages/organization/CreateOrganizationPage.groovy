@@ -200,6 +200,8 @@ public class CreateOrganizationPage {
 		TestObject e_TransferCustomers = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/check_Transfers for Customers')
 		TestObject e_VirtualCurrencyUsed = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationDueDiligence/check_Virtual Currency Used')
 
+		TestObject e_Next = findTestObject('Object Repository/Organization/CreateOrganizationPage/btn_Next')
+
 		//Wait for page elements to load
 		WebUtil.waitForElementVisible(e_BusinessStructure, GlobalVariable.Timeout)
 
@@ -228,14 +230,16 @@ public class CreateOrganizationPage {
 		WebUtil.selectOptionByLabel(e_AmountRemoteDeposit, orgData, Fields.ORG_AMOUNT_REMOTE_DEPOSITS)
 		WebUtil.selectOptionByLabel(e_IntermediatoryService, orgData, Fields.ORG_INTERMEDIATORY_SERVICES)
 		WebUtil.selectOptionByLabel(e_PercentRevenueCash, orgData, Fields.ORG_PERCENT_REVENUE_CASH)
-		WebUtil.check(e_NonCashSevice, orgData, Fields.ORG_CHK_NON_CASH_SERVICE)
-		WebUtil.check(e_Charity, orgData, Fields.ORG_CHK_CHARITY)
-		WebUtil.check(e_AtmOperator, orgData, Fields.ORG_CHK_ATM_OPERATOR)
-		WebUtil.check(e_MarijuanaBusiness, orgData, Fields.ORG_CHK_MARIJUANA_BUSINESS)
-		WebUtil.check(e_InternetGambling, orgData, Fields.ORG_CHK_INTERNET_GAMBLING)
-		WebUtil.check(e_ThirdPartyBenefit, orgData, Fields.ORG_CHK_THIRD_PARTY_BENEFIT)
-		WebUtil.check(e_TransferCustomers, orgData, Fields.ORG_CHK_TRANSFER_CUSTOMERS)
-		WebUtil.check(e_VirtualCurrencyUsed, orgData, Fields.ORG_CHK_VIRTUAL_CURRENCY)
+
+		//WebUtil.scrollBy(0, 200)
+		WebUtil.check(e_NonCashSevice, orgData, Fields.ORG_CHK_NON_CASH_SERVICE, "top")
+		WebUtil.check(e_Charity, orgData, Fields.ORG_CHK_CHARITY, "top")
+		WebUtil.check(e_AtmOperator, orgData, Fields.ORG_CHK_ATM_OPERATOR, "top")
+		WebUtil.check(e_MarijuanaBusiness, orgData, Fields.ORG_CHK_MARIJUANA_BUSINESS, "top")
+		WebUtil.check(e_InternetGambling, orgData, Fields.ORG_CHK_INTERNET_GAMBLING, "top")
+		WebUtil.check(e_ThirdPartyBenefit, orgData, Fields.ORG_CHK_THIRD_PARTY_BENEFIT, "top")
+		WebUtil.check(e_TransferCustomers, orgData, Fields.ORG_CHK_TRANSFER_CUSTOMERS, "top")
+		WebUtil.check(e_VirtualCurrencyUsed, orgData, Fields.ORG_CHK_VIRTUAL_CURRENCY, "top")
 	}
 
 	private static void enterCustomerInformation(Map<Fields, String> custData) {
@@ -253,7 +257,7 @@ public class CreateOrganizationPage {
 	@Keyword
 	static def createOrganization(Map<Fields, String> orgData) {
 
-		TestObject e_next = findTestObject('Object Repository/Organization/CreateOrganizationPage/btn_Next')
+		TestObject e_Next = findTestObject('Object Repository/Organization/CreateOrganizationPage/btn_Next')
 		TestObject e_Create = findTestObject('Object Repository/Organization/CreateOrganizationPage/OrganizationInformation/btn_Create')
 
 		TestObject e_Dialog_Msg = findTestObject('Object Repository/Organization/CreateOrganizationPage/PopupDialog/text_SuccessMessage')
@@ -261,19 +265,19 @@ public class CreateOrganizationPage {
 		TestObject e_Dialog_No = findTestObject('Object Repository/Organization/CreateOrganizationPage/PopupDialog/link_No')
 
 		enterBasicInformation(orgData)
-		WebUtil.click(e_next)
+		WebUtil.click(e_Next)
 
 		enterOrganizationDetails(orgData)
-		WebUtil.click(e_next)
+		WebUtil.click(e_Next)
 
 		enterLocationInformation(orgData)
-		WebUtil.click(e_next)
+		WebUtil.click(e_Next)
 
 		enterContactInfomration(orgData)
-		WebUtil.click(e_next)
+		WebUtil.click(e_Next)
 
 		enterOrganizationDueDiligence(orgData)
-		WebUtil.click(e_next)
+		WebUtil.click(e_Next)
 
 		enterCustomerInformation(orgData)
 		WebUtil.click(e_Create)
@@ -288,7 +292,7 @@ public class CreateOrganizationPage {
 		else {
 			WebUI.click(e_Dialog_No)
 		}
-		
+
 		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
 	}
 }

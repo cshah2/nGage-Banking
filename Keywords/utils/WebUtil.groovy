@@ -81,24 +81,35 @@ public class WebUtil {
 		}
 	}
 
-	static def check(TestObject to, Map<Fields, String> map, Fields field) {
+	static def check(TestObject to, Map<Fields, String> map, Fields field, String isScrollType = "nearest") {
 		if(MapUtil.isValidData(map, field)) {
-			scrollToElement(to, GlobalVariable.Timeout)
+			scrollToElement(to, GlobalVariable.Timeout, isScrollType)
 			WebUI.check(to)
 		}
 	}
 
-	static def scrollToElement(TestObject to, int timeout) {
+	static def scrollToElement(TestObject to, int timeout, String isScrollType = "nearest") {
+
+		//arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);     -> Working for customer pages
 		try {
 			WebElement e = WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout)
 			List<WebElement> list = new ArrayList<WebElement>()
 			list.add(e)
-			WebUI.executeJavaScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);", list)
+			if(isScrollType.equalsIgnoreCase("nearest"))
+				WebUI.executeJavaScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);", list)
+			else if(isScrollType.equalsIgnoreCase("top"))
+				WebUI.executeJavaScript("arguments[0].scrollIntoView(true); window.scrollBy(0,-100);", list)
+			else if(isScrollType.equalsIgnoreCase("top"))
+				WebUI.executeJavaScript("arguments[0].scrollIntoView(false); window.scrollBy(0,100);", list)
 		}
 		catch(Exception e1) {
 			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop('Unable to scroll to element'+e1.toString())
 		}
+	}
+
+	static def scrollBy(int x, int y) {
+		WebUI.executeJavaScript("window.scrollBy("+x+","+y+");", null)
 	}
 
 	static def click(TestObject to) {
@@ -135,19 +146,19 @@ public class WebUtil {
 		WebUI.waitForElementVisible(to, timeout)
 		WebUI.verifyElementVisible(to)
 	}
-	
+
 	static def shouldFailTest(Map<Fields, String> data) {
 		if(!(data.containsKey(Fields.IS_CREATED) && data.get(Fields.IS_CREATED).equalsIgnoreCase("true"))) {
 			KeywordUtil.markFailedAndStop('Pre-requisite test data is not created, Thus marking this test as failed')
 		}
 	}
-	
+
 	static def isEnabled(TestObject to) {
 		return WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout).isEnabled()
 	}
-	
+
 	static def isReadonly(TestObject to) {
-		
+
 		Boolean result = false;
 		try {
 			String value = WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout).getAttribute("readOnly")
@@ -155,7 +166,7 @@ public class WebUtil {
 				result = true;
 			}
 		} catch (Exception e) {}
-	
+
 		return result;
 	}
 

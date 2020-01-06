@@ -13,5 +13,25 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
 
+import constants.Fields
+import data.OrganizationData
+import internal.GlobalVariable as GlobalVariable
+import utils.WebUtil
+
+Map<Fields, String> orgData = OrganizationData.ORG_A
+Map<Fields, String> accData = OrganizationData.ACC_A
+
+WebUtil.shouldFailTest(orgData)
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate to customer dashboard page'
+WebUI.navigateToUrl(orgData.get(Fields.URL))
+
+'Click on Add account button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/OverviewTab/AccountsBlock/icon_AddAccount'))
+
+'Create account'
+CustomKeywords.'pages.account.CreateAccountPage.createBankingAccount'(accData)
