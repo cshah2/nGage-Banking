@@ -18,25 +18,15 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
-import actions.WebTable
-import constants.Fields
-import constants.Operator
 import internal.GlobalVariable
 import utils.WebUtil
 
-public class ConsumerAccountsTab {
-
-
+public class ConsumerContactDetailsTab {
+	
 	@Keyword
-	def clickAccountsTab() {
-		WebUtil.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts'))
-		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_BankingAccounts'), GlobalVariable.Timeout)
+	def clickContactDetailsTab() {
+		WebUtil.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Contact Details'))
+		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/ContactDetailsTab/AddressBlock/table_Address'), GlobalVariable.Timeout)
 	}
 
-	@Keyword
-	def verifyBankingAccountInformation(Map<Fields, String> accData, int rowNo) {
-
-		TestObject table = findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts')
-		WebTable.verifyCellValueMatches(findTestObject, rowNo, 1, accData.get(Fields.ACC_NUMBER), Operator.EQUALS)
-	}
 }

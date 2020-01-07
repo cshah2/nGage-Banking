@@ -153,4 +153,26 @@ public class ConsumerData {
 		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
+	
+	public static final Map<Fields, String> ADDR_A;
+	static {
+		ADDR_A = new HashMap<Fields, String>()
+		ADDR_A.put(Fields.ADDR_LINE1, DateUtil.getCurrentDateTime('dd MMMM', Common.timezone)+' Street')
+		ADDR_A.put(Fields.ADDR_LINE2, 'Wagon Lane')
+		ADDR_A.put(Fields.ADDR_LINE3, 'Pheasant Road')
+		ADDR_A.put(Fields.ADDR_LINE4, 'Pineknoll Drive')
+		ADDR_A.put(Fields.ADDR_CITY, 'Romeoville')
+		ADDR_A.put(Fields.ADDR_COUNTY, 'United States of America')
+		ADDR_A.put(Fields.ADDR_STATE, 'Illinois')
+		ADDR_A.put(Fields.ADDR_ZIPCODE, '2'+RandomUtil.getRandomNumeric(4))
+		ADDR_A.put(Fields.ADDR_TYPE, 'Work/Office')
+		ADDR_A.put(Fields.ADDR_YEARS_AT_ADDRESS, '3 Years')
+		ADDR_A.put(Fields.ADDR_LABEL, 'OFFICE')
+		ADDR_A.put(Fields.ADDR_PREMISE, 'Broadway Park Building')
+		ADDR_A.put(Fields.ADDR_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormat, Common.timezoneUTC))
+		ADDR_A.put(Fields.ADDR_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(15, Common.dateFormat, Common.timezoneUTC))
+		ADDR_A.put(Fields.ADDR_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-15, Common.dateFormat, Common.timezoneUTC))
+		ADDR_A.put(Fields.ADDR_VIEW, ADDR_A.get(Fields.ADDR_LINE1)+', '+ADDR_A.get(Fields.ADDR_LINE2)+', '+ADDR_A.get(Fields.ADDR_CITY)+', PA '+ADDR_A.get(Fields.ADDR_ZIPCODE))
+		ADDR_A.put(Fields.IS_CREATED, 'false')
+	}
 }

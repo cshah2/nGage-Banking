@@ -17,9 +17,9 @@
       <testCaseId>Test Cases/Smoke Tests/A1 - Create Customer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>529585d3-8f59-4cbb-820d-a983e58f750b</guid>
+      <guid>705fd0d0-efba-4957-8593-341a7d73fe37</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A3 - Create Banking Account for Customer</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/B0 - Add Consumer Address</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

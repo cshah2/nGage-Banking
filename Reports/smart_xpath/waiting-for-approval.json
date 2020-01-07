@@ -216,6 +216,20 @@
       "testObjectId": "Object Repository/Account/CreateAccountPage/BasicInformation/select_Ownership",
       "brokenXPath": "//select[@id\u003d\u0027nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtOwnershipDropdown\u0027]",
       "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Account/CreateAccountPage/BasicInformation/select_Ownership_neighbor_13.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Would you like to add an account for this customer?\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No_neighbor_2.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Would you like to add an account for this customer?\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
+      "pathToScreenshot": ""
     }
   ]
 }

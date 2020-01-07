@@ -93,5 +93,12 @@ public class WebTable {
 		int actText = table.getCellText(to, rowNo, colNo)
 		WebUtil.verifyMatch(actText, expText, operator)
 	}
+	
+	@Keyword
+	static def getRowsCount(TestObject to, TableType type = TableType.DEFAULT) {
+		TableUtil table = new TableUtil(type)
+		int actRowsCount = table.getRowsCount(to)
+		return actRowsCount
+	}
 
 }
