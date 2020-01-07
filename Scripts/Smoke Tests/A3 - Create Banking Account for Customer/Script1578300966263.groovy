@@ -35,3 +35,9 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Cons
 
 'Create account'
 CustomKeywords.'pages.account.CreateAccountPage.createBankingAccount'(accData)
+
+'Select Accounts tab'
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.clickAccountsTab'()
+
+'Verify Banking account infomrtion'
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyBankingAccountInformation'(accData, 1)

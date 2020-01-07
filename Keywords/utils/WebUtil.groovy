@@ -47,6 +47,38 @@ public class WebUtil {
 			throw e
 		}
 	}
+	
+	static def verifyNumbericMatch(Object actValue, Object expValue, Operator o) {
+		switch(o) {
+			case Operator.EQUALS:
+			WebUI.verifyEqual(actValue, expValue)
+			break;
+			
+			case Operator.GREATER_THAN:
+			WebUI.verifyGreaterThan(actValue, expValue)
+			break;
+			
+			case Operator.GREATER_THAN_OR_EQUALS:
+			WebUI.verifyGreaterThanOrEqual(actValue, expValue)
+			break;
+			
+			case Operator.LESS_THAN:
+			WebUI.verifyLessThan(actValue, expValue)
+			break;
+			
+			case Operator.LESS_THAN_OR_EQUALS:
+			WebUI.verifyLessThanOrEqual(actValue, expValue)
+			break;
+			
+			case Operator.NOT_EQUALS:
+			WebUI.verifyNotEqual(actValue, expValue)
+			break;
+			
+			default:
+			KeywordUtil.markFailedAndStop('Invalid operator provided')
+			break;
+		}
+	}
 
 	static def void openBrowser() {
 
@@ -69,7 +101,7 @@ public class WebUtil {
 				WebUI.executeJavaScript('arguments[0].value = "'+text+'"', list)
 			}
 			else {
-				WebUI.setText(to, text)
+				WebUI.setText(to, text, FailureHandling.STOP_ON_FAILURE)
 			}
 		}
 	}

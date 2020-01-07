@@ -83,6 +83,139 @@
       "testObjectId": "Object Repository/Account/CreateAccountPage/BasicInformation/input_Account Title",
       "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtAccountTitle\u0027]",
       "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[11]/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/Location Information/input_Verified Date (Address)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtAddress_Panel_block_wtText_WebPatterns_wt711_block_wtInput_wtVerifiedDateInput\u0027]",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Verified Date\u0027])[1]/following::span[4]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/Location Information/link_Set Address Valid tofrom dates",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtAddress_Panel_block_wtText_wt69\u0027]/span",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[13]/div/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/Location Information/input_Valid From (Address)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtAddress_Panel_block_wtText_WebPatterns_wt79_block_wtInput_wtValidFromDateInput\u0027]",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[13]/div[2]/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/Location Information/input_Valid Until (Address)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtAddress_Panel_block_wtText_WebPatterns_wt428_block_wtInput_wtValidUntilDateInput\u0027]",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[3]/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Verified Date (Phone)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_WebPatterns_wt68_block_wtInput_wtVerifiedDateInput3\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Verified Date (Phone)_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Verified Date (Phone)\u0027])[1]/following::span[4]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ContactInformation/link_Set Phone Valid tofrom date",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_wt233\u0027]/span",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[5]/div/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Valid From (Phone)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_WebPatterns_wt843_block_wtInput_wtValidFromDateInput2\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Valid From (Phone)_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[5]/div[2]/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Valid Until (Phone)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_WebPatterns_wt271_block_wtInput_wtValidUntilDateInput2\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Valid Until (Phone)_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[8]/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Verified Date (Email)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_WebPatterns_wt343_block_wtInput_wtVerifiedDateInput2\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Verified Date (Email)_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[10]/div/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ContactInformation/input_Valid From (Email)",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtContact_Panel_block_wtText_WebPatterns_wt717_block_wtInput_wtemailValidFromDateInput\u0027]",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[4]/div/div[2]/div/div/div/div/input",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ConsumerInformation/input_Customer ID",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wtCustomerIdInput\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/ConsumerInformation/input_Customer ID_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Party/Customer Group\u0027])[1]/following::select[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ConsumerInformation/select_CustomerGroup",
+      "brokenXPath": "//select[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wtcustomerGroupInput\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/ConsumerInformation/select_CustomerGroup_neighbor_3.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[5]/input[2]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/ConsumerInformation/btn_Create",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wt110\u0027]",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Would you like to add an account for this customer?\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No_neighbor_6.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Would you like to add an account for this customer?\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No_neighbor_7.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Would you like to add an account for this customer?\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No_neighbor_8.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Would you like to add an account for this customer?\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No_neighbor_9.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[2]/div/input",
+      "testObjectId": "Object Repository/Account/CreateAccountPage/BasicInformation/input_Account Title",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtAccountTitle\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Account/CreateAccountPage/BasicInformation/input_Account Title_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027*\u0027])[3]/following::select[1]",
+      "testObjectId": "Object Repository/Account/CreateAccountPage/BasicInformation/select_Ownership",
+      "brokenXPath": "//select[@id\u003d\u0027nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtOwnershipDropdown\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Account/CreateAccountPage/BasicInformation/select_Ownership_neighbor_13.png"
     }
   ]
 }

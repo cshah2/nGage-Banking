@@ -1,4 +1,4 @@
-package actions
+package constants
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -18,24 +18,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
-import constants.Operator
 import internal.GlobalVariable
-import utils.WebUtil
 
-public class WebActions {
+public enum TableType {
 
-	@Keyword
-	def verifyMatch(String actText, String expText, Operator o) {
-		WebUtil.verifyMatch(actText, expText, o)
-	}
-
-	@Keyword
-	def openBrowser() {
-		WebUtil.openBrowser()
-	}
-
-	@Keyword
-	def click(TestObject to) {
-		WebUtil.click(to)
-	}
+	DEFAULT,	//To be used for all table tags in CE/EE Portal
+	DOCUMENT,	//To be used for Documents listing table in Customer and Account details page
+	JQUERY		//To be used for all table tags in WMI Pages of CE/EE Portal
 }

@@ -11,15 +11,15 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>89916d96-15e2-4ae1-ba74-337643b46483</testSuiteGuid>
    <testCaseLink>
-      <guid>9181920b-18f5-43a5-88bd-f9c54b69fbda</guid>
+      <guid>bd449fd7-cb4d-419e-b83f-d88c56410e6c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A2 - Create Organization</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/A1 - Create Customer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>29cc4879-6da5-4675-a0f1-8f5660883a80</guid>
+      <guid>529585d3-8f59-4cbb-820d-a983e58f750b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A4 - Create Organization Account</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/A3 - Create Banking Account for Customer</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

@@ -1,4 +1,4 @@
-package actions
+package pages.consumer.tabs
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -18,24 +18,25 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebTable
+import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
 import utils.WebUtil
 
-public class WebActions {
-
+public class ConsumerAccountsTab {
+	
+	
 	@Keyword
-	def verifyMatch(String actText, String expText, Operator o) {
-		WebUtil.verifyMatch(actText, expText, o)
+	def clickAccountsTab() {
+		WebUtil.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts'))
+		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_BankingAccounts'), GlobalVariable.Timeout)
 	}
-
+	
 	@Keyword
-	def openBrowser() {
-		WebUtil.openBrowser()
-	}
-
-	@Keyword
-	def click(TestObject to) {
-		WebUtil.click(to)
+	def verifyBankingAccountInformation(Map<Fields, String> accData, int rowNo) {
+		
+		TestObject table = findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts')
+		WebTable.verifyCellValueMatches(findTestObject, rowNo, 1, accData.get(Fields.ACC_NUMBER), Operator.EQUALS)
 	}
 }
