@@ -67,4 +67,9 @@ public class ConsumerTasks {
 
 		WebUtil.click(e_Submit)
 	}
+	
+	@Keyword
+	static def addNotes() {
+		
+	}
 }

@@ -21,9 +21,11 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
 public class Common {
-	
+
 	public static String dateFormat = 'MM/dd/yyyy'
 	public static String dateTimeFormat = 'MM/dd/yyyy HH:mm:ss'
 	public static String timezone = 'America/New_York'
 	public static String timezoneUTC = 'UTC'
+	public static String dateTimeFormatISO = "yyyy-MM-dd'T'HH:mm'Z'"
+	public static String dateFormatISO = "yyyy-MM-dd"
 }

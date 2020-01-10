@@ -15,15 +15,12 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import constants.Fields
-import constants.Operator
 import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
 Map<Fields, String> custData = ConsumerData.CUST_A
-Map<Fields, String> addressData = ConsumerData.ADDR_A
-
-TestObject addressTable = findTestObject('Object Repository/Consumer/ConsumerDashboardPage/ContactDetailsTab/AddressBlock/table_Address')
+Map<Fields, String> accData = ConsumerData.ACC_A
 
 WebUtil.shouldFailTest(custData)
 
@@ -32,21 +29,3 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate to customer dashboard page'
 WebUI.navigateToUrl(custData.get(Fields.URL))
-
-'Click on Contact Details tab'
-CustomKeywords.'pages.consumer.tabs.ConsumerContactDetailsTab.clickContactDetailsTab'()
-
-'Get rows count for existing address'
-int actRowsCount = CustomKeywords.'actions.WebTable.getRowsCount'(addressTable)
-
-'Click on Add Address icon'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/ContactDetailsTab/AddressBlock/icon_AddAddress'))
-
-'Fill up address form'
-CustomKeywords.'pages.consumer.ConsumerTasks.addAddress'(addressData)
-
-'Wait for Address to get added to the table'
-CustomKeywords.'actions.WebTable.waitUntilRowsCountMatches'(addressTable, actRowsCount+1 , Operator.EQUALS, GlobalVariable.Timeout)
-
-'Verify rows count is increased'
-CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(addressTable, actRowsCount+1 , Operator.EQUALS)

@@ -2,6 +2,7 @@ package utils
 
 import org.apache.commons.lang3.RandomStringUtils
 
+import com.github.javafaker.Faker
 import com.kms.katalon.core.testobject.RequestObject
 import com.kms.katalon.core.testobject.ResponseObject
 import com.kms.katalon.core.util.KeywordUtil
@@ -10,8 +11,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import groovy.json.JsonSlurper
 
 public class RandomUtil {
-	
-	
+
 	public static Map generateRandomCustomerData() {
 
 		RequestObject request
@@ -39,7 +39,7 @@ public class RandomUtil {
 		JsonSlurper slupper = new JsonSlurper()
 		return slupper.parseText(res.getResponseBodyContent())
 	}
-
+	
 	public static String getRandomAlphabets(int length) {
 		return RandomStringUtils.randomAlphabetic(length)
 	}

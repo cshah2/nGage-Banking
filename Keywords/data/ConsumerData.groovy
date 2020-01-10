@@ -41,13 +41,8 @@ public class ConsumerData {
 		String addressLine2 = faker.address().streetAddress()
 		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormat)
 		String city = faker.address().cityName()
-		println faker.address().toString()
 
 		//Basic Information
-		//CUST_A.put(Fields.CUST_PREFIX, parsedJson.get("results").get(0).get("name").get("title"))
-		//CUST_A.put(Fields.CUST_FIRST_NAME, parsedJson.get("results").get(0).get("name").get("first"))
-		//CUST_A.put(Fields.CUST_MIDDLE_NAME, RandomUtil.getRandomAlphabets(4))
-		//CUST_A.put(Fields.CUST_LAST_NAME, parsedJson.get("results").get(0).get("name").get("last"))
 		CUST_A.put(Fields.CUST_PREFIX, prefix)
 		CUST_A.put(Fields.CUST_FIRST_NAME, firstName)
 		CUST_A.put(Fields.CUST_MIDDLE_NAME, RandomUtil.getRandomAlphabets(4))
@@ -55,7 +50,6 @@ public class ConsumerData {
 
 		CUST_A.put(Fields.CUST_NAME_VIEW, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
 		CUST_A.put(Fields.CUST_SUFFIX, 'Jr.')
-		//CUST_A.put(Fields.CUST_DOB, DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat))
 		CUST_A.put(Fields.CUST_DOB, dob)
 		CUST_A.put(Fields.CUST_DOB_MASKED, '**/**/'+CUST_A.get(Fields.CUST_DOB).substring(6))
 		CUST_A.put(Fields.CUST_TAX_ID, '9'+RandomUtil.getRandomNumeric(8))
@@ -153,7 +147,7 @@ public class ConsumerData {
 		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
-	
+
 	public static final Map<Fields, String> ADDR_A;
 	static {
 		ADDR_A = new HashMap<Fields, String>()
@@ -175,4 +169,136 @@ public class ConsumerData {
 		ADDR_A.put(Fields.ADDR_VIEW, ADDR_A.get(Fields.ADDR_LINE1)+', '+ADDR_A.get(Fields.ADDR_LINE2)+', '+ADDR_A.get(Fields.ADDR_CITY)+', PA '+ADDR_A.get(Fields.ADDR_ZIPCODE))
 		ADDR_A.put(Fields.IS_CREATED, 'false')
 	}
+
+
+
+
+
+
+
+
+
+
+
+	//API Data
+	public static final Map<Fields, String> CUST_B;
+	static {
+		CUST_B = new HashMap<Fields, String>()
+		//Map parsedJson = RandomUtil.generateRandomCustomerData()
+
+		Faker faker = new Faker(Locale.US)
+		String prefix = faker.name().prefix()
+		String firstName = faker.name().firstName()
+		String lastName = faker.name().lastName()
+		String email = firstName+'.'+lastName+'@example.com'
+		String addressLine1 = faker.address().buildingNumber() + faker.address().streetName()
+		String addressLine2 = faker.address().streetAddress()
+		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormatISO)
+		String city = faker.address().cityName()
+
+		//Basic Information
+		CUST_B.put(Fields.CUST_PREFIX, prefix)
+		CUST_B.put(Fields.CUST_FIRST_NAME, firstName)
+		CUST_B.put(Fields.CUST_MIDDLE_NAME, RandomUtil.getRandomAlphabets(4))
+		CUST_B.put(Fields.CUST_LAST_NAME, lastName)
+
+		CUST_B.put(Fields.CUST_NAME_VIEW, CUST_B.get(Fields.CUST_FIRST_NAME)+' '+CUST_B.get(Fields.CUST_LAST_NAME))
+		CUST_B.put(Fields.CUST_SUFFIX, 'Jr.')
+		CUST_B.put(Fields.CUST_DOB, dob)
+		CUST_B.put(Fields.CUST_DOB_MASKED, '**/**/'+CUST_B.get(Fields.CUST_DOB).substring(6))
+		CUST_B.put(Fields.CUST_TAX_ID, '9'+RandomUtil.getRandomNumeric(8))
+		CUST_B.put(Fields.CUST_TAX_ID_MASKED, '******'+CUST_B.get(Fields.CUST_TAX_ID).substring(5))
+		CUST_B.put(Fields.CUST_TAX_ID_TYPE, 'EIN')
+		CUST_B.put(Fields.CUST_COUNTRY_OF_RESIDENCE, 'United States of America')
+		CUST_B.put(Fields.CUST_RESIDENCY_STATUS, 'Resident')
+
+		//Customer Details
+		CUST_B.put(Fields.CUST_FAMILIAR_NAME, 'CHINOO')
+		CUST_B.put(Fields.CUST_MAIDEN_NAME, 'SHAH')
+		CUST_B.put(Fields.CUST_MARITAL_STATUS, 'Single')
+		CUST_B.put(Fields.CUST_TOTAL_HOUSEHOLD_MEMBERS, '8')
+		CUST_B.put(Fields.CUST_MOTHERS_MAIDEN_NAME, 'JOSHI')
+		CUST_B.put(Fields.CUST_PREFERRED_LANGUAGE, 'English - United States')
+		CUST_B.put(Fields.CUST_ALTERNATE_LANGUAGE, 'Hindi - India')
+		CUST_B.put(Fields.CUST_AGE_BRACKET, '21 - 30')
+
+		//Location Information
+		CUST_B.put(Fields.ADDR_LINE1, addressLine1)
+		CUST_B.put(Fields.ADDR_LINE2, addressLine2)
+		CUST_B.put(Fields.ADDR_LINE3, 'Corona Ave')
+		CUST_B.put(Fields.ADDR_LINE4, 'New Philadelphia')
+		CUST_B.put(Fields.ADDR_CITY, 'Philadelphia')
+		CUST_B.put(Fields.ADDR_COUNTY, 'United States of America')
+		CUST_B.put(Fields.ADDR_STATE, 'Pennsylvania')
+		CUST_B.put(Fields.ADDR_ZIPCODE, '1'+RandomUtil.getRandomNumeric(4))
+		CUST_B.put(Fields.ADDR_TYPE, 'Residence')
+		CUST_B.put(Fields.ADDR_LABEL, 'HOME')
+		CUST_B.put(Fields.ADDR_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(1, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.ADDR_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(10, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.ADDR_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-10, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.ADDR_VIEW, CUST_B.get(Fields.ADDR_LINE1)+', '+CUST_B.get(Fields.ADDR_LINE2)+', '+CUST_B.get(Fields.ADDR_CITY)+', PA '+CUST_B.get(Fields.ADDR_ZIPCODE))
+
+		//Contact Information
+		CUST_B.put(Fields.CONTACT_PHONE_NUMBER, '+1'+RandomUtil.getRandomNumeric(10))
+		CUST_B.put(Fields.CONTACT_PHONE_TYPE, 'Mobile')
+		CUST_B.put(Fields.CONTACT_PHONE_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(0, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_PHONE_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(8, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_PHONE_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-8, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_EMAIL, email)
+		CUST_B.put(Fields.CONTACT_EMAIL_TYPE, 'Personal')
+		CUST_B.put(Fields.CONTACT_EMAIL_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_EMAIL_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_EMAIL_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_PREFERRED_CONTACT_METHOD, 'Email')
+
+		//Customer Due diligence
+		CUST_B.put(Fields.CUST_CHK_SENIOR_POLITICAL_FIGURE, 'true')
+		CUST_B.put(Fields.CUST_SENIOR_POLITICAL_FIGURE_COUNTRY, 'India')
+		CUST_B.put(Fields.CUST_ASSOCIATE_SR_POLITICAL_FIGURE, 'Family Member')
+
+		//Education and Occupation details
+		CUST_B.put(Fields.CUST_EMPLOYMENT_STATUS, 'Part-time')
+		CUST_B.put(Fields.CUST_OCCUPATION, 'Computer and Mathmatical')
+		CUST_B.put(Fields.CUST_MONTHLY_GROSS_INCOME, '30000')
+		CUST_B.put(Fields.CUST_MILITARY_STATUS, 'Inactive')
+		CUST_B.put(Fields.CUST_EDUCATION, 'High school or GED')
+		CUST_B.put(Fields.CUST_STUDENT_TYPE, 'Full Time on campus')
+		CUST_B.put(Fields.CUST_WEB_ADDRESS, 'http://www.savanainc.com')
+
+		//Customer Information
+		CUST_B.put(Fields.CUST_ID, 'ID'+RandomUtil.getRandomNumeric(7))
+		CUST_B.put(Fields.CUST_GROUP, 'Banking Customer')
+	}
+
+	
+	//Personal Savings account for a consumer "Cust_A"
+	public static final Map<Fields, String> ACC_B1;
+	static {
+
+		//Basic Information
+		ACC_B1 = new HashMap<Fields, String>()
+		ACC_B1.put(Fields.ACC_TITLE, CUST_B.get(Fields.CUST_FIRST_NAME)+' '+CUST_B.get(Fields.CUST_LAST_NAME))
+		ACC_B1.put(Fields.ACC_OWNERSHIP, 'Single')
+		ACC_B1.put(Fields.ACC_DESCRIPTION, 'Savings Account')
+		ACC_B1.put(Fields.ACC_GROUP, 'Banking')
+		ACC_B1.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezone)+RandomUtil.getRandomNumeric(4))
+		ACC_B1.put(Fields.ACC_BROKERED, 'false')
+		ACC_B1.put(Fields.ACC_TIMEZONE, 'America/New_York')
+		ACC_B1.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
+
+		//Product Information
+		ACC_B1.put(Fields.ACC_PRODUCT_TYPE, 'Personal Savings')
+		ACC_B1.put(Fields.ACC_PRODUCT_CODE, 'P2001')
+		ACC_B1.put(Fields.ACC_POSITION_NAME, 'Personal Savings')
+		ACC_B1.put(Fields.ACC_CURRENCY_CODE, 'US Dollar')
+		ACC_B1.put(Fields.ACC_CURRENCY_CODE_VIEW, 'USD')
+		ACC_B1.put(Fields.ACC_VERTICAL, 'Vertical 01')
+		ACC_B1.put(Fields.ACC_DEPT_ID, 'Department 350')
+		ACC_B1.put(Fields.ACC_DEPT_ID_VIEW, '350')
+		ACC_B1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
+	}
+
 }
+
+
+

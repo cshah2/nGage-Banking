@@ -29,4 +29,24 @@
       <initValue>'Chintan Shah'</initValue>
       <name>UserProfileName</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://savana-int.develop.finxact.io'</initValue>
+      <name>FinxactURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'{&quot;Identity&quot;:{&quot;userRoles&quot;:[&quot;developer&quot;],&quot;userId&quot;:&quot;cshah@savee.sit&quot;}}'</initValue>
+      <name>FnxHeder</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'daea260b2272d7b8d32a71941043ae288ac84ddb5d7c65e1188d55331b1c7035fb83df6f3c'</initValue>
+      <name>FnxClientId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'b4965f009f94296d6e88c5f1'</initValue>
+      <name>FnxSecretKey</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

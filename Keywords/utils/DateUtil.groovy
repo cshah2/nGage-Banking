@@ -32,7 +32,7 @@ public class DateUtil {
 		def currFormatDate = new Date().parse(currFormat,date)
 		return currFormatDate.format(expFormat)
 	}
-	
+
 	public static String convert(Date d, String expFormat) {
 		SimpleDateFormat s = new SimpleDateFormat(expFormat)
 		return s.format(d)

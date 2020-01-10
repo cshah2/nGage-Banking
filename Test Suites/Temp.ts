@@ -11,15 +11,15 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>89916d96-15e2-4ae1-ba74-337643b46483</testSuiteGuid>
    <testCaseLink>
-      <guid>bd449fd7-cb4d-419e-b83f-d88c56410e6c</guid>
+      <guid>7ddc76e6-01ea-456d-8cbe-ba57317643c7</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A1 - Create Customer</testCaseId>
+      <testCaseId>Test Cases/Base API Calls/A0 - Create Consumer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>705fd0d0-efba-4957-8593-341a7d73fe37</guid>
+      <guid>42ca8d0e-eda8-4d96-a206-4144bd1e4e4c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/B0 - Add Consumer Address</testCaseId>
+      <testCaseId>Test Cases/Base API Calls/A1 - Create Personal Savings Account</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
