@@ -99,18 +99,18 @@ public class WebTable {
 		int actRowsCount = table.getRowsCount(to)
 		return actRowsCount
 	}
-	
+
 	@Keyword
 	static def verifyAllValuesInColumnMatches(TestObject to, int colNo, String expText, Operator o, TableType type = TableType.DEFAULT) {
-		
+
 		TableUtil table = new TableUtil(type)
 		List<String> values = table.getAllTextFromColumn(table, colNo);
-		
+
 		if(values.size() == 0) {
 			WebUI.takeScreenshot()
 			KeywordUtil.markFailedAndStop("No values found for comparison.")
 		}
-		
+
 		values.each {actText -> WebActions.verifyMatch(actText, expText, o)}
 		//values.stream().forEach{actText -> WebActions.verifyMatch(actText, expText, o)}
 	}

@@ -41,3 +41,5 @@ CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.clickAccountsTab'()
 
 'Verify Banking account infomrtion'
 CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyBankingAccountInformation'(accData, 1)
+
+accData.put(Fields.IS_CREATED, "true");

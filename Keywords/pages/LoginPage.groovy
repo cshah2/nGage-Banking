@@ -24,20 +24,20 @@ import constants.Urls
 import internal.GlobalVariable
 
 public class LoginPage {
-	
+
 	@Keyword
 	def loginIntoPortal(String username = GlobalVariable.UserName, String password = GlobalVariable.Password) {
-		
+
 		TestObject usernameField 	= findTestObject('Object Repository/LoginPage/input_UserName')
 		TestObject passwordField	= findTestObject('Object Repository/LoginPage/input_Password')
 		TestObject loginButton 		= findTestObject('Object Repository/LoginPage/btn_Login')
 		TestObject loginPageHeader 	= findTestObject('Object Repository/LoginPage/text_PageHeading')
-		
+
 		int loginAttempt = 1
 		boolean isLoginSuccess = false
 
 		while (loginAttempt <= 3) {
-			
+
 			WebActions.openBrowser()
 			WebUI.deleteAllCookies()
 			WebUI.navigateToUrl(Urls.LOGIN_PAGE)

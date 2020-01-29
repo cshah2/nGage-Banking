@@ -270,7 +270,7 @@ public class ConsumerData {
 		CUST_B.put(Fields.CUST_GROUP, 'Banking Customer')
 	}
 
-	
+
 	//Personal Savings account for a consumer "Cust_A"
 	public static final Map<Fields, String> ACC_B1;
 	static {

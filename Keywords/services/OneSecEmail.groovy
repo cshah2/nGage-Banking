@@ -24,21 +24,21 @@ import groovy.json.JsonSlurper
 import internal.GlobalVariable
 
 public class OneSecEmail {
-	
+
 	def messages
 	def message
-	
+
 	def getMessages(String username) {
 		RequestObject request = findTestObject('Object Repository/API/1SecMail/getMessages',
-			[
-				('username'):username,
-			])
+				[
+					('username'):username,
+				])
 		ResponseObject response = WS.sendRequest(request)
 		WS.verifyResponseStatusCode(response, 200)
 		JsonSlurper jsonSlurper = new JsonSlurper()
 		messages = jsonSlurper.parseText(response.getResponseBodyContent())
 	}
-	
+
 	def getMessageCount() {
 
 		return messages.size();
@@ -53,30 +53,30 @@ public class OneSecEmail {
 
 		return messages[0].id;
 	}
-	
-	
+
+
 	def readMessage(String username, int messageId) {
 		RequestObject request = findTestObject('Object Repository/API/1SecMail/readMessage',
-			[
-				('username'):username,
-				('messageId'):messageId,
-			])
+				[
+					('username'):username,
+					('messageId'):messageId,
+				])
 		ResponseObject response = WS.sendRequest(request)
 		WS.verifyResponseStatusCode(response, 200)
 		JsonSlurper jsonSlurper = new JsonSlurper()
 		message = jsonSlurper.parseText(response.getResponseBodyContent())
 	}
-	
+
 	def getMessageBody(){
 		return message.textBody.toString()
 	}
-	
+
 	def getValueFromMessageBody(String searchText, int textLength) {
-		
+
 		String body = getMessageBody()
 		int startIndex = body.lastIndexOf(searchText)+searchText.length()
 		int endIndex = startIndex+textLength
-		String code = body[startIndex..endIndex] 
+		String code = body[startIndex..endIndex]
 		println "Verification code = "+code
 		return code
 	}

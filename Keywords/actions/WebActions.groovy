@@ -127,6 +127,7 @@ public class WebActions {
 
 	}
 
+	@Keyword
 	static def setText(TestObject to, Map<Fields, String> map, Fields field, boolean isJavaScript = false) {
 		if(MapUtil.isValidData(map, field)) {
 			String text = map.get(field)
@@ -142,6 +143,7 @@ public class WebActions {
 		}
 	}
 
+	@Keyword
 	static def selectOptionByLabel(TestObject to, Map<Fields, String> map, Fields field) {
 		if(MapUtil.isValidData(map, field)) {
 			String text = map.get(field)
@@ -149,10 +151,19 @@ public class WebActions {
 		}
 	}
 
+	@Keyword
 	static def check(TestObject to, Map<Fields, String> map, Fields field, String isScrollType = "nearest") {
 		if(MapUtil.isValidData(map, field)) {
 			scrollToElement(to, GlobalVariable.Timeout, isScrollType)
 			WebUI.check(to)
+		}
+	}
+	
+	@Keyword
+	static def uncheck(TestObject to, Map<Fields, String> map, Fields field, String isScrollType = "nearest") {
+		if(MapUtil.isValidData(map, field)) {
+			scrollToElement(to, GlobalVariable.Timeout, isScrollType)
+			WebUI.uncheck(to)
 		}
 	}
 
@@ -167,7 +178,7 @@ public class WebActions {
 				WebUI.executeJavaScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);", list)
 			else if(isScrollType.equalsIgnoreCase("top"))
 				WebUI.executeJavaScript("arguments[0].scrollIntoView(true); window.scrollBy(0,-100);", list)
-			else if(isScrollType.equalsIgnoreCase("top"))
+			else if(isScrollType.equalsIgnoreCase("bottom"))
 				WebUI.executeJavaScript("arguments[0].scrollIntoView(false); window.scrollBy(0,100);", list)
 		}
 		catch(Exception e1) {
