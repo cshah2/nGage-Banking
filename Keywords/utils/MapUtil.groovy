@@ -32,7 +32,7 @@ public class MapUtil {
 		else
 			return false
 	}
-	
+
 	static def printMap(Map<Fields, String> data) {
 		data.each {entry -> println "$entry.key".padRight(40)+" = $entry.value"}
 		data.each {entry -> KeywordUtil.logInfo("$entry.key".padRight(40)+" = $entry.value")}

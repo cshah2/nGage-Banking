@@ -39,7 +39,7 @@ public class RandomUtil {
 		JsonSlurper slupper = new JsonSlurper()
 		return slupper.parseText(res.getResponseBodyContent())
 	}
-	
+
 	public static String getRandomAlphabets(int length) {
 		return RandomStringUtils.randomAlphabetic(length)
 	}

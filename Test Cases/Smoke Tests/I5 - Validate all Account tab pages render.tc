@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>I5 - Validate all Account tab pages render</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e24bb5d3-3190-4bb5-b200-d595dda85a95</testCaseGuid>
+</TestCaseEntity>

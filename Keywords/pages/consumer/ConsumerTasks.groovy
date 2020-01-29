@@ -18,9 +18,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import constants.Fields
 import internal.GlobalVariable
-import utils.WebUtil
 
 public class ConsumerTasks {
 
@@ -45,27 +45,27 @@ public class ConsumerTasks {
 		TestObject e_ValidUntilDate = findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/Customer Address/input_ValidUntilDate')
 		TestObject e_Submit = findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/Customer Address/btn_Submit')
 
-		WebUtil.waitForElementVisible(e_AddressLine1, GlobalVariable.Timeout)
+		WebActions.waitForElementVisible(e_AddressLine1, GlobalVariable.Timeout)
 
-		WebUtil.setText(e_AddressLine1, addressData, Fields.ADDR_LINE1)
-		WebUtil.setText(e_AddressLine2, addressData, Fields.ADDR_LINE2)
-		WebUtil.setText(e_AddressLine3, addressData, Fields.ADDR_LINE3)
-		WebUtil.setText(e_AddressLine4, addressData, Fields.ADDR_LINE4)
-		WebUtil.setText(e_City, addressData, Fields.ADDR_CITY)
-		WebUtil.selectOptionByLabel(e_State, addressData, Fields.ADDR_STATE)
-		WebUtil.setText(e_ZipCode, addressData, Fields.ADDR_ZIPCODE)
-		WebUtil.selectOptionByLabel(e_Country, addressData, Fields.ADDR_COUNTY)
-		WebUtil.selectOptionByLabel(e_AddressType, addressData, Fields.ADDR_TYPE)
-		WebUtil.selectOptionByLabel(e_YearsAtAddress, addressData, Fields.ADDR_YEARS_AT_ADDRESS)
-		WebUtil.setText(e_AddressLabel, addressData, Fields.ADDR_LABEL)
-		WebUtil.setText(e_Premise, addressData, Fields.ADDR_PREMISE)
-		WebUtil.setText(e_VerifiedDate, addressData, Fields.ADDR_VERIFIED_DATE, true)
-		WebUtil.click(e_LinkSetValidDates)
-		WebUtil.waitForElementVisible(e_ValidFromDate, GlobalVariable.Timeout)
-		WebUtil.setText(e_ValidFromDate, addressData, Fields.ADDR_VALID_FROM, true)
-		WebUtil.setText(e_ValidUntilDate, addressData, Fields.ADDR_VALID_UNTIL, true)
+		WebActions.setText(e_AddressLine1, addressData, Fields.ADDR_LINE1)
+		WebActions.setText(e_AddressLine2, addressData, Fields.ADDR_LINE2)
+		WebActions.setText(e_AddressLine3, addressData, Fields.ADDR_LINE3)
+		WebActions.setText(e_AddressLine4, addressData, Fields.ADDR_LINE4)
+		WebActions.setText(e_City, addressData, Fields.ADDR_CITY)
+		WebActions.selectOptionByLabel(e_State, addressData, Fields.ADDR_STATE)
+		WebActions.setText(e_ZipCode, addressData, Fields.ADDR_ZIPCODE)
+		WebActions.selectOptionByLabel(e_Country, addressData, Fields.ADDR_COUNTY)
+		WebActions.selectOptionByLabel(e_AddressType, addressData, Fields.ADDR_TYPE)
+		WebActions.selectOptionByLabel(e_YearsAtAddress, addressData, Fields.ADDR_YEARS_AT_ADDRESS)
+		WebActions.setText(e_AddressLabel, addressData, Fields.ADDR_LABEL)
+		WebActions.setText(e_Premise, addressData, Fields.ADDR_PREMISE)
+		WebActions.setText(e_VerifiedDate, addressData, Fields.ADDR_VERIFIED_DATE, true)
+		WebActions.click(e_LinkSetValidDates)
+		WebActions.waitForElementVisible(e_ValidFromDate, GlobalVariable.Timeout)
+		WebActions.setText(e_ValidFromDate, addressData, Fields.ADDR_VALID_FROM, true)
+		WebActions.setText(e_ValidUntilDate, addressData, Fields.ADDR_VALID_UNTIL, true)
 
-		WebUtil.click(e_Submit)
+		WebActions.click(e_Submit)
 	}
 	
 	@Keyword

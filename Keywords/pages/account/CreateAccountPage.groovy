@@ -19,10 +19,10 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import constants.Fields
 import internal.GlobalVariable
 import utils.MapUtil
-import utils.WebUtil
 
 public class CreateAccountPage {
 
@@ -59,52 +59,52 @@ public class CreateAccountPage {
 
 		TestObject e_Submit = findTestObject('Object Repository/Account/CreateAccountPage/btn_Submit')
 
-		WebUtil.waitForElementVisible(e_AccountTitle, GlobalVariable.Timeout)
-		WebUtil.setText(e_AccountTitle, accData, Fields.ACC_TITLE)
-		WebUtil.selectOptionByLabel(e_Ownership, accData, Fields.ACC_OWNERSHIP)
-		WebUtil.setText(e_AccountDescription, accData, Fields.ACC_DESCRIPTION)
-		WebUtil.selectOptionByLabel(e_AccountGroup, accData, Fields.ACC_GROUP)
-		WebUtil.waitForElementVisible(e_ProductType, GlobalVariable.Timeout)
+		WebActions.waitForElementVisible(e_AccountTitle, GlobalVariable.Timeout)
+		WebActions.setText(e_AccountTitle, accData, Fields.ACC_TITLE)
+		WebActions.selectOptionByLabel(e_Ownership, accData, Fields.ACC_OWNERSHIP)
+		WebActions.setText(e_AccountDescription, accData, Fields.ACC_DESCRIPTION)
+		WebActions.selectOptionByLabel(e_AccountGroup, accData, Fields.ACC_GROUP)
+		WebActions.waitForElementVisible(e_ProductType, GlobalVariable.Timeout)
 		
-		WebUtil.check(e_Brokered, accData, Fields.ACC_BROKERED)
-		WebUtil.selectOptionByLabel(e_TimeZone, accData, Fields.ACC_TIMEZONE)
-		WebUtil.selectOptionByLabel(e_StatementFrequency, accData, Fields.ACC_STATEMENT_FREQUENCY)
-		WebUtil.check(e_PaperStatement, accData, Fields.ACC_PAPER_STATEMENT)
+		WebActions.check(e_Brokered, accData, Fields.ACC_BROKERED)
+		WebActions.selectOptionByLabel(e_TimeZone, accData, Fields.ACC_TIMEZONE)
+		WebActions.selectOptionByLabel(e_StatementFrequency, accData, Fields.ACC_STATEMENT_FREQUENCY)
+		WebActions.check(e_PaperStatement, accData, Fields.ACC_PAPER_STATEMENT)
 
-		WebUtil.selectOptionByLabel(e_ProductType, accData, Fields.ACC_PRODUCT_TYPE)
-		WebUtil.setText(e_PositionName, accData, Fields.ACC_POSITION_NAME)
-		WebUtil.selectOptionByLabel(e_Currency, accData, Fields.ACC_CURRENCY_CODE)
-		WebUtil.setText(e_CreditLimit, accData, Fields.ACC_CREDIT_LIMIT)
-		WebUtil.selectOptionByLabel(e_DepartmentId, accData, Fields.ACC_DEPT_ID)
-		WebUtil.selectOptionByLabel(e_Vertical, accData, Fields.ACC_VERTICAL)
+		WebActions.selectOptionByLabel(e_ProductType, accData, Fields.ACC_PRODUCT_TYPE)
+		WebActions.setText(e_PositionName, accData, Fields.ACC_POSITION_NAME)
+		WebActions.selectOptionByLabel(e_Currency, accData, Fields.ACC_CURRENCY_CODE)
+		WebActions.setText(e_CreditLimit, accData, Fields.ACC_CREDIT_LIMIT)
+		WebActions.selectOptionByLabel(e_DepartmentId, accData, Fields.ACC_DEPT_ID)
+		WebActions.selectOptionByLabel(e_Vertical, accData, Fields.ACC_VERTICAL)
 		
-		if(WebUtil.isReadonly(e_AccountNumber)) {
+		if(WebActions.isReadonly(e_AccountNumber)) {
 			String generatedAccNumber =  WebUI.getAttribute(e_AccountNumber, 'Value')
 			accData.put(Fields.ACC_NUMBER, generatedAccNumber)
 			println generatedAccNumber
 		}
 		else {
-			WebUtil.setText(e_AccountNumber, accData, Fields.ACC_NUMBER)
+			WebActions.setText(e_AccountNumber, accData, Fields.ACC_NUMBER)
 		}
 		
-		WebUtil.selectOptionByLabel(e_TC_DocumentType1, accData, Fields.TC_DOC_TYPE1)
-		WebUtil.setText(e_TC_DocumentSignedBy1, accData, Fields.TC_DOC_SIGNED_BY1)
-		WebUtil.setText(e_TC_DocumentSignedDate1, accData, Fields.TC_DOC_SIGNED_DATE1, true)
-		WebUtil.setText(e_TC_DocumentVersion1, accData, Fields.TC_DOC_VERSION1)
+		WebActions.selectOptionByLabel(e_TC_DocumentType1, accData, Fields.TC_DOC_TYPE1)
+		WebActions.setText(e_TC_DocumentSignedBy1, accData, Fields.TC_DOC_SIGNED_BY1)
+		WebActions.setText(e_TC_DocumentSignedDate1, accData, Fields.TC_DOC_SIGNED_DATE1, true)
+		WebActions.setText(e_TC_DocumentVersion1, accData, Fields.TC_DOC_VERSION1)
 
 		if(MapUtil.isValidData(accData, Fields.TC_DOC_TYPE2)) {
 
-			WebUtil.click(e_AddAdditionalDocument)
-			WebUtil.waitForElementVisible(e_TC_DocumentType2, GlobalVariable.Timeout)
+			WebActions.click(e_AddAdditionalDocument)
+			WebActions.waitForElementVisible(e_TC_DocumentType2, GlobalVariable.Timeout)
 
-			WebUtil.selectOptionByLabel(e_TC_DocumentType2, accData, Fields.TC_DOC_TYPE2)
-			WebUtil.setText(e_TC_DocumentSignedBy2, accData, Fields.TC_DOC_SIGNED_BY2)
-			WebUtil.setText(e_TC_DocumentSignedDate2, accData, Fields.TC_DOC_SIGNED_DATE2, true)
-			WebUtil.setText(e_TC_DocumentVersion2, accData, Fields.TC_DOC_VERSION2)
+			WebActions.selectOptionByLabel(e_TC_DocumentType2, accData, Fields.TC_DOC_TYPE2)
+			WebActions.setText(e_TC_DocumentSignedBy2, accData, Fields.TC_DOC_SIGNED_BY2)
+			WebActions.setText(e_TC_DocumentSignedDate2, accData, Fields.TC_DOC_SIGNED_DATE2, true)
+			WebActions.setText(e_TC_DocumentVersion2, accData, Fields.TC_DOC_VERSION2)
 		}
 
-		WebUtil.click(e_Submit)
+		WebActions.click(e_Submit)
 
-		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
+		WebActions.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'), GlobalVariable.Timeout)
 	}
 }

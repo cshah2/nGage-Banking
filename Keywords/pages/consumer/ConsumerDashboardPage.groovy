@@ -18,10 +18,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
-import utils.WebUtil
 
 public class ConsumerDashboardPage {
 
@@ -35,11 +35,11 @@ public class ConsumerDashboardPage {
 		String actEmail = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Email'))
 		String actAddress = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Address'))
 
-		WebUtil.verifyMatch(actConsumerName, custData.get(Fields.CUST_NAME_VIEW), Operator.EQUALS)
-		WebUtil.verifyMatch(actPhoneNumber, custData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS)
-		WebUtil.verifyMatch(actTaxId, custData.get(Fields.CUST_TAX_ID_MASKED), Operator.EQUALS)
-		WebUtil.verifyMatch(actDOB, custData.get(Fields.CUST_DOB_MASKED), Operator.EQUALS)
-		WebUtil.verifyMatch(actEmail, custData.get(Fields.CONTACT_EMAIL), Operator.EQUALS)
-		WebUtil.verifyMatch(actAddress, custData.get(Fields.ADDR_VIEW), Operator.EQUALS)
+		WebActions.verifyMatch(actConsumerName, custData.get(Fields.CUST_NAME_VIEW), Operator.EQUALS)
+		WebActions.verifyMatch(actPhoneNumber, custData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS)
+		WebActions.verifyMatch(actTaxId, custData.get(Fields.CUST_TAX_ID_MASKED), Operator.EQUALS)
+		WebActions.verifyMatch(actDOB, custData.get(Fields.CUST_DOB_MASKED), Operator.EQUALS)
+		WebActions.verifyMatch(actEmail, custData.get(Fields.CONTACT_EMAIL), Operator.EQUALS)
+		WebActions.verifyMatch(actAddress, custData.get(Fields.ADDR_VIEW), Operator.EQUALS)
 	}
 }

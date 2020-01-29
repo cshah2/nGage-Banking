@@ -25,7 +25,6 @@ import constants.Operator
 import constants.TableType
 import internal.GlobalVariable
 import utils.TableUtil
-import utils.WebUtil
 
 public class WebTable {
 
@@ -33,7 +32,7 @@ public class WebTable {
 	static def verifyRowsCountMatches(TestObject to, int expRowsCount, Operator operator, TableType type = TableType.DEFAULT) {
 		TableUtil table = new TableUtil(type)
 		int actRowsCount = table.getRowsCount(to)
-		WebUtil.verifyNumbericMatch(actRowsCount, expRowsCount, operator)
+		WebActions.verifyNumbericMatch(actRowsCount, expRowsCount, operator)
 	}
 
 	@Keyword
@@ -67,7 +66,7 @@ public class WebTable {
 			println "Actual rows count = "+actRowsCount+" and Expected rows count = "+expRowsCount
 
 			try {
-				WebUtil.verifyNumbericMatch(actRowsCount, expRowsCount, operator)
+				WebActions.verifyNumbericMatch(actRowsCount, expRowsCount, operator)
 				isRefreshed = true
 			}
 			catch(Exception e1) {
@@ -91,14 +90,29 @@ public class WebTable {
 	static def verifyCellValueMatches(TestObject to, int rowNo, int colNo, String expText, Operator operator, TableType type = TableType.DEFAULT) {
 		TableUtil table = new TableUtil(type)
 		int actText = table.getCellText(to, rowNo, colNo)
-		WebUtil.verifyMatch(actText, expText, operator)
+		WebActions.verifyMatch(actText, expText, operator)
 	}
-	
+
 	@Keyword
 	static def getRowsCount(TestObject to, TableType type = TableType.DEFAULT) {
 		TableUtil table = new TableUtil(type)
 		int actRowsCount = table.getRowsCount(to)
 		return actRowsCount
+	}
+	
+	@Keyword
+	static def verifyAllValuesInColumnMatches(TestObject to, int colNo, String expText, Operator o, TableType type = TableType.DEFAULT) {
+		
+		TableUtil table = new TableUtil(type)
+		List<String> values = table.getAllTextFromColumn(table, colNo);
+		
+		if(values.size() == 0) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop("No values found for comparison.")
+		}
+		
+		values.each {actText -> WebActions.verifyMatch(actText, expText, o)}
+		//values.stream().forEach{actText -> WebActions.verifyMatch(actText, expText, o)}
 	}
 
 }

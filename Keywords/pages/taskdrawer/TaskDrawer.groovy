@@ -18,20 +18,20 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import internal.GlobalVariable
-import utils.WebUtil
 
 public class TaskDrawer {
 
 	@Keyword
 	static def openTaskDrawer() {
-		WebUtil.click(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/btn_Tasks'))
-		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/block_DrawerOpen'), GlobalVariable.Timeout)
+		WebActions.click(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/btn_Tasks'))
+		WebActions.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/block_DrawerOpen'), GlobalVariable.Timeout)
 	}
 
 	@Keyword
 	static def selectTaskInDrawer(String taskName) {
 		TestObject task = findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/taskList',[('taskName'):taskName])
-		WebUtil.click(task)
+		WebActions.click(task)
 	}
 }

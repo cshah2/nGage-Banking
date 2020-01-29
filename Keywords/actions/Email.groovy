@@ -24,7 +24,6 @@ import constants.Operator
 import groovy.json.JsonSlurper
 import internal.GlobalVariable
 import services.OneSecEmail
-import utils.WebUtil
 
 public class Email {
 
@@ -35,7 +34,7 @@ public class Email {
 		OneSecEmail mailbox = new OneSecEmail()
 		mailbox.getMessages(username)
 		String actSubject = mailbox.getSubject(messageNo)
-		WebUtil.verifyMatch(actSubject, expSubject, operator)
+		WebActions.verifyMatch(actSubject, expSubject, operator)
 	}
 
 	@Keyword

@@ -18,10 +18,10 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
-import utils.WebUtil
 
 public class OrganizationDashboardPage {
 	
@@ -34,10 +34,10 @@ public class OrganizationDashboardPage {
 		String actEstablishedDate = WebUI.getText(findTestObject('Object Repository/Organization/OrganizationDashboardPage/HeaderSection/text_Established Date'))
 		String actAddress = WebUI.getText(findTestObject('Object Repository/Organization/OrganizationDashboardPage/HeaderSection/text_Address'))
 
-		WebUtil.verifyMatch(actOrganizationName, orgData.get(Fields.ORG_NAME), Operator.EQUALS)
-		WebUtil.verifyMatch(actDbaName, orgData.get(Fields.ORG_DBA_NAME), Operator.EQUALS)
-		WebUtil.verifyMatch(actTaxId, orgData.get(Fields.ORG_TAX_ID_MASKED), Operator.EQUALS)
-		WebUtil.verifyMatch(actEstablishedDate, orgData.get(Fields.ORG_ESTABLISHED_DATE), Operator.EQUALS)
-		WebUtil.verifyMatch(actAddress, orgData.get(Fields.ADDR_VIEW), Operator.EQUALS)
+		WebActions.verifyMatch(actOrganizationName, orgData.get(Fields.ORG_NAME), Operator.EQUALS)
+		WebActions.verifyMatch(actDbaName, orgData.get(Fields.ORG_DBA_NAME), Operator.EQUALS)
+		WebActions.verifyMatch(actTaxId, orgData.get(Fields.ORG_TAX_ID_MASKED), Operator.EQUALS)
+		WebActions.verifyMatch(actEstablishedDate, orgData.get(Fields.ORG_ESTABLISHED_DATE), Operator.EQUALS)
+		WebActions.verifyMatch(actAddress, orgData.get(Fields.ADDR_VIEW), Operator.EQUALS)
 	}
 }

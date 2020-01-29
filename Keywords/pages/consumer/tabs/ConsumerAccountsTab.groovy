@@ -18,19 +18,19 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import actions.WebTable
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
-import utils.WebUtil
 
 public class ConsumerAccountsTab {
 
 
 	@Keyword
 	def clickAccountsTab() {
-		WebUtil.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts'))
-		WebUtil.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_BankingAccounts'), GlobalVariable.Timeout)
+		WebActions.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts'))
+		WebActions.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_BankingAccounts'), GlobalVariable.Timeout)
 	}
 
 	@Keyword

@@ -19,9 +19,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import constants.Urls
 import internal.GlobalVariable
-import utils.WebUtil
 
 public class LoginPage {
 	
@@ -37,7 +37,8 @@ public class LoginPage {
 		boolean isLoginSuccess = false
 
 		while (loginAttempt <= 3) {
-			WebUtil.openBrowser()
+			
+			WebActions.openBrowser()
 			WebUI.deleteAllCookies()
 			WebUI.navigateToUrl(Urls.LOGIN_PAGE)
 			String currentUrl = WebUI.getUrl()
