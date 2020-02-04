@@ -32,7 +32,7 @@ public class OrganizationData {
 	static {
 		ORG_A = new HashMap<Fields, String>()
 		//Map parsedJson = RandomUtil.generateRandomCustomerData()
-		
+
 		Faker faker = new Faker(Locale.US)
 		Company c = faker.company()
 		String orgName = c.name()
@@ -43,10 +43,10 @@ public class OrganizationData {
 		String email = faker.name().username()+"@exmaple.com"
 
 		//Basic Information
-//		String orgName = "The "+parsedJson.get("results").get(0).get("name").get("first") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" Inc"
-//		String dbaName = parsedJson.get("results").get(0).get("name").get("title") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" and Sons "+RandomUtil.getRandomAlphabets(4)
-//		String establishedDate = DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat)
-//		String tradeName = parsedJson.get("results").get(0).get("name").get("title") +" "+ parsedJson.get("results").get(0).get("name").get("first") +" PLC"
+		//		String orgName = "The "+parsedJson.get("results").get(0).get("name").get("first") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" Inc"
+		//		String dbaName = parsedJson.get("results").get(0).get("name").get("title") +' '+ parsedJson.get("results").get(0).get("name").get("last") +" and Sons "+RandomUtil.getRandomAlphabets(4)
+		//		String establishedDate = DateUtil.convert(parsedJson.get("results").get(0).get("dob").get("date").subSequence(0, 10), 'yyyy-MM-dd', Common.dateFormat)
+		//		String tradeName = parsedJson.get("results").get(0).get("name").get("title") +" "+ parsedJson.get("results").get(0).get("name").get("first") +" PLC"
 
 		ORG_A.put(Fields.ORG_NAME, orgName)
 		ORG_A.put(Fields.ORG_DBA_NAME, dbaName)
@@ -129,7 +129,7 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_ID, 'ID'+RandomUtil.getRandomNumeric(7))
 		ORG_A.put(Fields.ORG_GROUP, 'Banking Customer')
 	}
-	
+
 	//Personal Savings account for a consumer "ORG_A"
 	public static final Map<Fields, String> ACC_A;
 	static {

@@ -10,12 +10,14 @@ import java.util.Map
 
 import org.openqa.selenium.ElementClickInterceptedException
 import org.openqa.selenium.ElementNotInteractableException
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.exception.StepFailedException
+import com.kms.katalon.core.logging.KeywordLogger
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling
 import com.kms.katalon.core.testcase.TestCase
@@ -37,6 +39,8 @@ import utils.RegexStringUtil
 import utils.WebUtil
 
 public class WebActions {
+
+	static KeywordLogger log = new KeywordLogger()
 
 	@Keyword
 	static def verifyMatch(String actText, String expText, Operator o) {
@@ -158,7 +162,7 @@ public class WebActions {
 			WebUI.check(to)
 		}
 	}
-	
+
 	@Keyword
 	static def uncheck(TestObject to, Map<Fields, String> map, Fields field, String isScrollType = "nearest") {
 		if(MapUtil.isValidData(map, field)) {
@@ -213,6 +217,74 @@ public class WebActions {
 
 		return result;
 	}
+
+	@Keyword
+	public static  void typeText(TestObject uiObject,String text){
+		if(uiObject == null ){
+			KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
+		}
+		if(text != null){
+			try{
+				WebUtil.setText(uiObject,text)
+			}
+			catch(Exception e){
+				WebUI.takeScreenshot()
+				e.printStackTrace()
+			}
+		}
+	}
+
+	@Keyword
+	public static verifyMouseOverText(TestObject objectForMouseOver,TestObject toolTip,String expected,Operator o){
+		WebUI.mouseOver(objectForMouseOver)
+		WebUI.waitForElementPresent(toolTip, GlobalVariable.Timeout)
+		//WebUI.delay(2)
+		String actualText = WebUI.getText(toolTip)
+		WebActions.verifyMatch(actualText, expected, Operator.EQUALS_IGNORE_CASE)
+		println "Title is : "+ actualText
+	}
+
+
+	@Keyword
+	public static void clickObject(TestObject uiObject){
+		if(uiObject != null){
+			try{
+				WebUI.click(uiObject)
+			}
+			catch(Exception e){
+				WebUI.takeScreenshot()
+				e.printStackTrace()
+			}
+		}
+	}
+
+	@Keyword
+	def static logout(){
+		TestObject userInfo = findTestObject('Logout/userInfo')
+		clickObject(userInfo)
+		TestObject logoutOption = findTestObject('Logout/logoutOption')
+		clickObject(logoutOption)
+		WebUI.delay(3)
+	}
+
+	@Keyword
+	public boolean verifyElementPresent(TestObject uiObject,int timeout){
+		if(uiObject == null ){
+			KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
+		}
+		if(WebUI.verifyElementPresent(uiObject, 3,FailureHandling.CONTINUE_ON_FAILURE) == true){
+			log.logInfo("Element  present  successfully in " + uiObject )
+			return true
+		}else{
+			KeywordUtil.markFailed("Element not present  successfully in " + uiObject)
+			log.logError("Element not present  successfully in " + uiObject )
+			return false
+		}
+		return true;
+	}
+
+
+
 
 
 }

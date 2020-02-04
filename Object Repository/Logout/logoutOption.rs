@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_EmailType</name>
+   <name>logoutOption</name>
    <tag></tag>
-   <elementGuidId>2b35ce46-0fd0-4895-b298-f94870f37637</elementGuidId>
+   <elementGuidId>0fe76569-add7-41ce-84c4-4f68865898c2</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
-      </entry>
-      <entry>
-         <key>CSS</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
+         <value>//a[text()='Logout']</value>
       </entry>
       <entry>
          <key>BASIC</key>

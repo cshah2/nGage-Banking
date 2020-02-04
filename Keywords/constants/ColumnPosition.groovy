@@ -20,9 +20,10 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
 
-public class ColumnPos {
+public class ColumnPosition {
 	
-	static final int CUST_SEARCH_LAST_NAME = 1
-	static final int CUST_SEARCH_FIRST_NAME = 2
-
+	public static final int CONSTUMER_LASTNAME_INDEX = 1
+	public static final int CONSTUMER_FIRSTNAME_INDEX = 2
+	public static final int CONSTUMER_EMAILID_INDEX = 5
+	public static final int CONSTUMER_PHONENUMBER_INDEX = 9
 }

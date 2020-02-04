@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_EmailType</name>
+   <name>icon_TaxIDEye</name>
    <tag></tag>
-   <elementGuidId>2b35ce46-0fd0-4895-b298-f94870f37637</elementGuidId>
+   <elementGuidId>a36a830b-ebd4-4966-aa77-90fa3a73a374</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
-      </entry>
-      <entry>
-         <key>CSS</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
+         <value>//td[text()='Tax ID']/following-sibling::td/descendant::span[@class='fa fa-fw fa-eye']</value>
       </entry>
       <entry>
          <key>BASIC</key>

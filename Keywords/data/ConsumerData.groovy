@@ -116,6 +116,25 @@ public class ConsumerData {
 		CUST_A.put(Fields.CUST_GROUP, 'Banking Customer')
 	}
 
+	public static final Map<Fields, String> CUSTOMERDATA_MAP;
+	static{
+		CUSTOMERDATA_MAP = new HashMap<Fields, String>()
+		CUSTOMERDATA_MAP.put(Fields.CUST_NAME_VIEW, "Ravi Bala")
+		CUSTOMERDATA_MAP.put(Fields.CUST_FIRST_NAME, "Ravi")
+		CUSTOMERDATA_MAP.put(Fields.CUST_LAST_NAME, "Bala")
+		CUSTOMERDATA_MAP.put(Fields.CUST_MAILID, "ravii.balasundaram@aurionpro.com")
+		CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL, "ravi.balasundaram@aurionpro.com")
+		CUSTOMERDATA_MAP.put(Fields.CUST_MAILIDTYPE, "Personal")
+		CUSTOMERDATA_MAP.put(Fields.CUST_DOB, "09/05/1994")
+		CUSTOMERDATA_MAP.put(Fields.CUST_DOB_MASKED, "**/**/1994")
+		CUSTOMERDATA_MAP.put(Fields.CONTACT_PHONE_NUMBER, "+91 8754219865")
+		CUSTOMERDATA_MAP.put(Fields.CUST_ID, "1")
+		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID, "719892")
+		CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "Danis Street Room no 222, Los Angels, AL 989898")
+		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
+		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
+	}
+
 	//Personal Savings account for a consumer "Cust_A"
 	public static final Map<Fields, String> ACC_A;
 	static {

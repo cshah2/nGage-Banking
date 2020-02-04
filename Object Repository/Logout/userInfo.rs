@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_EmailType</name>
+   <name>userInfo</name>
    <tag></tag>
-   <elementGuidId>2b35ce46-0fd0-4895-b298-f94870f37637</elementGuidId>
+   <elementGuidId>0737efa0-ff98-4f44-a991-e727e0cf2636</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
-      </entry>
-      <entry>
-         <key>CSS</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
+         <value>//div[@class='UserInfo_avatar']</value>
       </entry>
       <entry>
          <key>BASIC</key>

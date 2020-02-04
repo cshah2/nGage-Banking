@@ -18,14 +18,49 @@ import constants.Fields
 import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
+import constants.Urls as Urls
+import constants.Fields as Fields
+import constants.Operator as Operator
+import data.ConsumerData as ConsumerData
 
-Map<Fields, String> custData = ConsumerData.CUST_A
-Map<Fields, String> accData = ConsumerData.ACC_A
 
-WebUtil.shouldFailTest(custData)
+Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Navigate to customer dashboard page'
-WebUI.navigateToUrl(custData.get(Fields.URL))
+'Verify user is redirected to consumer search page'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
+
+'Verify usname is displayed on page header section'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')),
+	GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
+
+
+'Search a Customer in SearchConstumer Page with Customer ID'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), customerData.get(
+		Fields.CUST_ID))
+
+'Click On Serach'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Click on Task Drawer'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/task_Drawer'))
+
+'Select Add Notes'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/task_AddNotes'))
+
+'Type Notes'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/input_Notes'), customerData.get(
+	Fields.CUST_NOTES))
+
+'Click On Submit'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/btn_Submit'))
+
+'Verfiy the element popup is displayed as case created for address update'
+WebUI.verifyElementPresent(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/emailUpdateAlert'),GlobalVariable.Timeout, FailureHandling.STOP_ON_FAILURE)
+
+
+'Logout of nGage Bank'
+CustomKeywords.'actions.WebActions.logout'()
+

@@ -36,6 +36,8 @@ public enum Fields {
 	CUST_TAX_ID_TYPE,
 	CUST_COUNTRY_OF_RESIDENCE,
 	CUST_RESIDENCY_STATUS,
+	CUST_MAILID,
+	CUST_MAILIDTYPE,
 	//Customer - Customer Details
 	CUST_FAMILIAR_NAME,
 	CUST_MAIDEN_NAME,
@@ -95,7 +97,9 @@ public enum Fields {
 	CUST_GROUP,
 	CUST_CHK_ACCOUNT,
 	CUST_PARTY_ID,
-
+	//Customer Notes
+	CUST_NOTES,
+	
 	//Organization - Basic Information
 	ORG_NAME,
 	ORG_DBA_NAME,

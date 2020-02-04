@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_EmailType</name>
+   <name>task_AddNotes</name>
    <tag></tag>
-   <elementGuidId>2b35ce46-0fd0-4895-b298-f94870f37637</elementGuidId>
+   <elementGuidId>27e1f449-d369-4b7c-b017-709b62054d05</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
-      </entry>
-      <entry>
-         <key>CSS</key>
-         <value>//select[contains(@name,'EmailTypeInput')]</value>
+         <value>//span[text()='Add Customer Note']</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

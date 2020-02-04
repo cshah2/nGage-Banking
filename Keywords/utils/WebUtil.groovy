@@ -36,10 +36,24 @@ import constants.Urls
 import internal.GlobalVariable
 
 public class WebUtil {
-	
+
 	static def shouldFailTest(Map<Fields, String> data) {
 		if(!(data.containsKey(Fields.IS_CREATED) && data.get(Fields.IS_CREATED).equalsIgnoreCase("true"))) {
 			KeywordUtil.markFailedAndStop('Pre-requisite test data is not created, Thus marking this test as failed')
+		}
+	}
+
+
+	static def setText(TestObject uiObject,String text){
+		try{
+			if(uiObject == null){
+				KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
+			}
+			if(uiObject != null && text != null){
+				WebUI.sendKeys(uiObject, text)
+			}
+		}catch(Exception e){
+			e.printStackTrace()
 		}
 	}
 }

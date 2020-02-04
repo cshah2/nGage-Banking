@@ -3,6 +3,7 @@
    <description></description>
    <name>G7 - Add Consumer Notes</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Load browser
+Search a Customer</comment>
    <testCaseGuid>5b0547f2-842c-459f-9013-61ca1853bc18</testCaseGuid>
 </TestCaseEntity>

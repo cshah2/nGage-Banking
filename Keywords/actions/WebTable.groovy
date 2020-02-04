@@ -104,7 +104,7 @@ public class WebTable {
 	static def verifyAllValuesInColumnMatches(TestObject to, int colNo, String expText, Operator o, TableType type = TableType.DEFAULT) {
 
 		TableUtil table = new TableUtil(type)
-		List<String> values = table.getAllTextFromColumn(table, colNo);
+		List<String> values = table.getAllTextFromColumn(to, colNo);
 
 		if(values.size() == 0) {
 			WebUI.takeScreenshot()

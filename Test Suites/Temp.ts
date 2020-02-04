@@ -17,9 +17,9 @@
       <testCaseId>Test Cases/Base API Calls/A0 - Create Consumer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>42ca8d0e-eda8-4d96-a206-4144bd1e4e4c</guid>
+      <guid>1fbab5a7-c2b7-457d-b9c0-87b53e05b133</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Base API Calls/A1 - Create Personal Savings Account</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/A5 - Search Customer (exist)</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

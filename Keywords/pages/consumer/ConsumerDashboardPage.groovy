@@ -27,7 +27,6 @@ public class ConsumerDashboardPage {
 
 	@Keyword
 	def verifyConsumerDataOnHeaderSection(Map<Fields, String> custData) {
-
 		String actConsumerName = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name'))
 		String actPhoneNumber = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Phone Number'))
 		String actTaxId = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Tax ID'))
