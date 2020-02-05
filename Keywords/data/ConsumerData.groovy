@@ -41,7 +41,7 @@ public class ConsumerData {
 		String addressLine2 = faker.address().streetAddress()
 		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormat)
 		String city = faker.address().cityName()
-		
+
 
 		//Basic Information
 		CUST_A.put(Fields.CUST_PREFIX, prefix)
@@ -134,6 +134,26 @@ public class ConsumerData {
 		CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "Danis Street Room no 222, Los Angels, AL 989898")
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
 		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
+	}
+	
+	public static final Map<Fields, String> NA_CUSTOMERDATA_MAP;
+	static{
+		NA_CUSTOMERDATA_MAP = new HashMap<Fields, String>()
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_NAME_VIEW, "Ravi Bala")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_FIRST_NAME, "Abc")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_LAST_NAME, "xyz")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_MAILID, "abc@haio.com")
+		NA_CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL, "ravi.balasundaram@aurionpro.com")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_MAILIDTYPE, "Personal")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_DOB, "01/01/1091")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_GROUP, "Banking Customer")
+
+		NA_CUSTOMERDATA_MAP.put(Fields.CONTACT_PHONE_NUMBER, "+91 0000000000")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_ID, "100")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID, "00000")
+		NA_CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "Danis Street Room no 222, Los Angels, AL 989898")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
 	}
 
 	//Personal Savings account for a consumer "Cust_A"

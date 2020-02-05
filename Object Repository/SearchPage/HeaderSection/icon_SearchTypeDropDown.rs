@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_WebPatterns_wt192_block_wtIcon']/span</value>
+         <value>//div[text()='Search Consumers']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

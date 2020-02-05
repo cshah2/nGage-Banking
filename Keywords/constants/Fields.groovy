@@ -99,7 +99,7 @@ public enum Fields {
 	CUST_PARTY_ID,
 	//Customer Notes
 	CUST_NOTES,
-	
+
 	//Organization - Basic Information
 	ORG_NAME,
 	ORG_DBA_NAME,
@@ -107,6 +107,8 @@ public enum Fields {
 	ORG_TAX_ID,
 	ORG_TAX_ID_MASKED,
 	ORG_TAX_ID_TYPE,
+	ORG_PHONENUMBER,
+	ORG_EMAILID,
 
 	//Organization - Organization details
 	ORG_DESCRIPTION,
@@ -121,6 +123,7 @@ public enum Fields {
 	ORG_REGISTRATION_COUNTRY,
 	ORG_REGISTRATION_REGION,
 	ORG_WEBSITE_URL,
+
 
 	//Organization - Organization Due Diligence
 	ORG_BUSINESS_STRUCTURE,

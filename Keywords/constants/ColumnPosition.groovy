@@ -26,4 +26,13 @@ public class ColumnPosition {
 	public static final int CONSTUMER_FIRSTNAME_INDEX = 2
 	public static final int CONSTUMER_EMAILID_INDEX = 5
 	public static final int CONSTUMER_PHONENUMBER_INDEX = 9
+	
+	
+	//ORGANIZATION 
+	public static final int ORGANIZATION_NAME = 1
+	public static final int ORGANIZATION_PHONENO  = 6
+	public static final int ORGANIZATION_DUN_BADSTREETNO  = 5
+	public static final int ORGANIZATION_CUSTID  = 2
+	
+	
 }

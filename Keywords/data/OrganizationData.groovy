@@ -130,6 +130,35 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_GROUP, 'Banking Customer')
 	}
 
+	public static final Map<Fields,String> ORGANIZATIONMAP;
+	static{
+		ORGANIZATIONMAP = new HashMap<Fields, String>()
+		ORGANIZATIONMAP.put(Fields.ORG_NAME, "Beginners")
+		ORGANIZATIONMAP.put(Fields.ORG_DBA_NAME, "Umesh Thorat")
+		ORGANIZATIONMAP.put(Fields.ORG_TAX_ID, "1")
+		ORGANIZATIONMAP.put(Fields.ORG_PHONENUMBER,"+919865325421")
+		ORGANIZATIONMAP.put(Fields.ORG_EMAILID,"ravi.balasundaram@aurionpro.com")
+		ORGANIZATIONMAP.put(Fields.ORG_DUN_BRADSTEET_NO,"87651214")
+		ORGANIZATIONMAP.put(Fields.ORG_ID,"897462564")
+		ORGANIZATIONMAP.put(Fields.ORG_GROUP, "Banking Customer")
+		ORGANIZATIONMAP.put(Fields.ADDR_VIEW, " 50 Valley Stream Parkway, Malvern, PA 19355")
+		ORGANIZATIONMAP.put(Fields.ORG_TAX_ID_MASKED, "******5123")
+		ORGANIZATIONMAP.put(Fields.ORG_ESTABLISHED_DATE, "02/03/2020")
+	}
+	
+	public static final Map<Fields,String> NA_ORGANIZATIONMAP;
+	static{
+		NA_ORGANIZATIONMAP = new HashMap<Fields, String>()
+		NA_ORGANIZATIONMAP.put(Fields.ORG_NAME, "NONEXISTS")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_DBA_NAME, "NonExists")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_TAX_ID, "0000")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_PHONENUMBER,"+910000000000")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_EMAILID,"ravi.balasundaram@nonexist.com")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_DUN_BRADSTEET_NO,"99999999")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_GROUP, "Banking Customer")
+		NA_ORGANIZATIONMAP.put(Fields.ORG_ID,"00000")
+	}
+
 	//Personal Savings account for a consumer "ORG_A"
 	public static final Map<Fields, String> ACC_A;
 	static {

@@ -14,4 +14,212 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import constants.ColumnPosition as ColumnPosition
+import constants.Fields as Fields
+import constants.Operator as Operator
+import constants.Urls as Urls
+import data.OrganizationData as OrganizationData
+import utils.MapUtil as MapUtil
 
+Map<Fields, String> orgData = OrganizationData.ORGANIZATIONMAP
+
+TestObject tableSearchResults = findTestObject('SearchPage/SearchOrganization/SearchOrganizationResults/table_OrgResults')
+
+MapUtil.printMap(orgData)
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Verify user is redirected to consumer search page'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
+
+'Verify usname is displayed on page header section'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), 
+    GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+/*-----------Search Orrganization with Organization Name--------------*/
+'Search a Customer in SearchConstumer Page with lastName'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_OrganizationName'), orgData.get(
+        Fields.ORG_NAME))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Wait for search result grid to be displayed'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
+
+'Verify organization name in the results grid'
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.ORGANIZATION_NAME, orgData.get(
+        Fields.ORG_NAME), Operator.EQUALS_IGNORE_CASE)
+
+/*-----------Search Orrganization with Organization PhoneNumber--------------*/
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+'Search a Customer in SearchConstumer Page with Phonenumber'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
+        Fields.ORG_PHONENUMBER))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Wait for search result grid to be displayed'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
+
+'Verify organization name in the results grid'
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.ORGANIZATION_PHONENO, 
+    orgData.get(Fields.ORG_PHONENUMBER), Operator.EQUALS_IGNORE_CASE)
+
+//------------------Search with Tax ID------------------
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+'Search a Customer in SearchConstumer Page with DBA Name'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_TaxID'), orgData.get(Fields.ORG_TAX_ID))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Click on the Organization  Row'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchOrganization/SearchOrganizationResults/table_SearchOrgResult_FirstRow'))
+
+'Goto Profile Tab of a Customer'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Profile'))
+
+'verify TaxID of the consumer'
+CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/icon_TaxIDEye'), 
+    findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/text_ToolTip'), orgData.get(Fields.ORG_TAX_ID), Operator.EQUALS)
+
+/*-----------Search Orrganization with Organization EmailID--------------*/
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+'Search a Customer in SearchConstumer Page with Emailid'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.ORG_EMAILID))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Wait for search result grid to be displayed'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
+
+'Click on the Organization  Row'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchOrganization/SearchOrganizationResults/table_SearchOrgResult_FirstRow'))
+
+'Goto Profile Tab of a Customer'
+
+//CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Profile'))
+'Check the emailid in overview page'
+String atualMailid = WebUI.getAttribute(findTestObject('Organization/OrganizationDashboardPage/info_OverviewPageEmailid'), 
+    'href')
+
+'Verify Emailid'
+CustomKeywords.'actions.WebActions.verifyMatch'(atualMailid, orgData.get(Fields.ORG_EMAILID), Operator.CONTAINS_IGNORE_CASE)
+
+/*-----------Search Orrganization with Organization DBA Name--------------*/
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+'Search a Customer in SearchConstumer Page with DBA Name'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_DBAName'), orgData.get(
+        Fields.ORG_DBA_NAME))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Click on the Organization  Row'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchOrganization/SearchOrganizationResults/table_SearchOrgResult_FirstRow'))
+
+'Goto Profile Tab of a Customer'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Profile'))
+
+'Scroll to DBA Details'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Organization/OrganizationDashboardPage/OrganizationProfile/div_OrgDetailsSection'))
+
+'Check the DBA Name in overview page'
+String actualDBAName = WebUI.getText(findTestObject('Organization/OrganizationDashboardPage/OrganizationProfile/readLabel_DBAName'), 
+    FailureHandling.STOP_ON_FAILURE)
+
+'Verify DBA Name'
+CustomKeywords.'actions.WebActions.verifyMatch'(actualDBAName, orgData.get(Fields.ORG_DBA_NAME), Operator.CONTAINS_IGNORE_CASE)
+
+/*-----------Search Orrganization with Organization Dun Bradstreet ID Name--------------*/
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+'Search a Customer in SearchConstumer Page with Dun and Badstreet Name'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_DunBradstreetID'), orgData.get(
+        Fields.ORG_DUN_BRADSTEET_NO))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Wait for search result grid to be displayed'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
+
+'Verify organization name in the results grid'
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.ORGANIZATION_DUN_BADSTREETNO, 
+    orgData.get(Fields.ORG_DUN_BRADSTEET_NO), Operator.EQUALS_IGNORE_CASE)
+
+/*-----------Search Orrganization with Organization CustomerID--------------*/
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Search Dropdown options'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+
+'Click Consumer Group'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/select_CustomerGroup'))
+
+'Select Consumer Group'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/options_ConsumerGroups', [('group') : orgData.get(
+                Fields.ORG_GROUP)]))
+
+'Search a Customer in SearchConstumer Page with Dun and Badstreet Name'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_CustomerID'), orgData.get(
+        Fields.ORG_ID))
+
+'Click on Search button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
+
+'Verify Customer DashBoard details in Header Section'
+CustomKeywords.'pages.organization.OrganizationDashboardPage.verifyOrganizationDataOnHeaderSection'(orgData)

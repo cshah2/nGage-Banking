@@ -245,46 +245,16 @@ public class WebActions {
 	}
 
 
-	@Keyword
-	public static void clickObject(TestObject uiObject){
-		if(uiObject != null){
-			try{
-				WebUI.click(uiObject)
-			}
-			catch(Exception e){
-				WebUI.takeScreenshot()
-				e.printStackTrace()
-			}
-		}
-	}
+	
 
 	@Keyword
 	def static logout(){
 		TestObject userInfo = findTestObject('Logout/userInfo')
-		clickObject(userInfo)
+		click(userInfo)
 		TestObject logoutOption = findTestObject('Logout/logoutOption')
-		clickObject(logoutOption)
+		click(logoutOption)
 		WebUI.delay(3)
 	}
-
-	@Keyword
-	public boolean verifyElementPresent(TestObject uiObject,int timeout){
-		if(uiObject == null ){
-			KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
-		}
-		if(WebUI.verifyElementPresent(uiObject, 3,FailureHandling.CONTINUE_ON_FAILURE) == true){
-			log.logInfo("Element  present  successfully in " + uiObject )
-			return true
-		}else{
-			KeywordUtil.markFailed("Element not present  successfully in " + uiObject)
-			log.logError("Element not present  successfully in " + uiObject )
-			return false
-		}
-		return true;
-	}
-
-
-
 
 
 }

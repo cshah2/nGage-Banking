@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_WebPatterns_wt192_block_wtMenuLink2_wt297']</value>
+         <value>//a[text()='Organization']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
