@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='WebPatterns_wt22_block_wtPassword_wtPasswordInput']</value>
+         <value>//input[contains(@id,'_wtPasswordInput')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -89,25 +89,4 @@
       <type>Main</type>
       <value>id(&quot;WebPatterns_wt22_block_wtPassword_wtPasswordInput&quot;)</value>
    </webElementProperties>
-   <webElementXpaths>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:attributes</name>
-      <type>Main</type>
-      <value>//input[@id='WebPatterns_wt22_block_wtPassword_wtPasswordInput']</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:idRelative</name>
-      <type>Main</type>
-      <value>//div[@id='WebPatterns_wt22_block_wtPassword']/input</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:position</name>
-      <type>Main</type>
-      <value>//div[2]/div[2]/input</value>
-   </webElementXpaths>
 </WebElementEntity>

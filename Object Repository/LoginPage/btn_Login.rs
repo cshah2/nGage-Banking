@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='WebPatterns_wt22_block_wtAction_wtLoginButton']</value>
+         <value>//input[contains(@id,'_wtLoginButton')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -82,25 +82,4 @@
       <type>Main</type>
       <value>id(&quot;WebPatterns_wt22_block_wtAction_wtLoginButton&quot;)</value>
    </webElementProperties>
-   <webElementXpaths>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:attributes</name>
-      <type>Main</type>
-      <value>//input[@id='WebPatterns_wt22_block_wtAction_wtLoginButton']</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:idRelative</name>
-      <type>Main</type>
-      <value>//div[@id='WebPatterns_wt22_block_wtAction']/input</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:position</name>
-      <type>Main</type>
-      <value>//div[3]/input</value>
-   </webElementXpaths>
 </WebElementEntity>

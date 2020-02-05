@@ -27,4 +27,5 @@ public class Urls {
 	final static String SEARCH_PAGE =  BASE_URL + '/nGageBanking_Customer/CustomerSearch.aspx'
 	final static String CREATE_CUSTOMER_PAGE =  BASE_URL + '/nGageBanking_Customer/CustomerCreate.aspx?isOrg=False'
 	final static String CREATE_ORGANIZATION_PAGE =  BASE_URL + '/nGageBanking_Customer/CustomerCreate.aspx?isOrg=True'
+	final static String USER_PROFILE_PAGE =  BASE_URL + '/nGageBanking/MyInfo.aspx'
 }

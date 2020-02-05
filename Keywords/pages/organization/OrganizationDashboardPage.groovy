@@ -24,7 +24,7 @@ import constants.Operator
 import internal.GlobalVariable
 
 public class OrganizationDashboardPage {
-	
+
 	@Keyword
 	def verifyOrganizationDataOnHeaderSection(Map<Fields, String> orgData) {
 

@@ -37,6 +37,8 @@ public class OneSecEmail {
 		WS.verifyResponseStatusCode(response, 200)
 		JsonSlurper jsonSlurper = new JsonSlurper()
 		messages = jsonSlurper.parseText(response.getResponseBodyContent())
+		
+		println "Response = "+response.getResponseBodyContent()
 	}
 
 	def getMessageCount() {
@@ -51,7 +53,7 @@ public class OneSecEmail {
 
 	def getMessageId(int messageNoFromTop) {
 
-		return messages[0].id;
+		return messages[messageNoFromTop-1].id;
 	}
 
 

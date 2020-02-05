@@ -13,5 +13,21 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+
+import constants.Operator
 import internal.GlobalVariable as GlobalVariable
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Click on Information icon'
+WebUI.click(findTestObject('Object Repository/BasePage/HeaderSection/icon_SystemInformation'))
+
+'Wait for floating block to be visible'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/BasePage/HeaderSection/SystemInformation/block_TooltipBody'), GlobalVariable.Timeout)
+
+'Verify connectedTo value is correctly populated'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/SystemInformation/text_ConnectedTo')), GlobalVariable.ConnectedTo, Operator.CONTAINS)
+
+//TODO: We dont have any mechanism to verify version number as they keep on changin.
 

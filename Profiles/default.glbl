@@ -49,4 +49,9 @@
       <initValue>'b4965f009f94296d6e88c5f1'</initValue>
       <name>FnxSecretKey</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'SavEE_SIT'</initValue>
+      <name>ConnectedTo</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>icon_MoreInfo</name>
+   <name>icon_SystemInformation</name>
    <tag></tag>
    <elementGuidId>e04cd727-c5f3-4bbc-bd51-5cf08811b800</elementGuidId>
    <selectorCollection>

@@ -41,6 +41,7 @@ public class ConsumerData {
 		String addressLine2 = faker.address().streetAddress()
 		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormat)
 		String city = faker.address().cityName()
+		
 
 		//Basic Information
 		CUST_A.put(Fields.CUST_PREFIX, prefix)

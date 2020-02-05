@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='WebPatterns_wt22_block_wtUsername_wtUserNameInput']</value>
+         <value>//input[contains(@id,'wtUserNameInput')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -89,25 +89,4 @@
       <type>Main</type>
       <value>id(&quot;WebPatterns_wt22_block_wtUsername_wtUserNameInput&quot;)</value>
    </webElementProperties>
-   <webElementXpaths>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:attributes</name>
-      <type>Main</type>
-      <value>//input[@id='WebPatterns_wt22_block_wtUsername_wtUserNameInput']</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:idRelative</name>
-      <type>Main</type>
-      <value>//span[@id='WebPatterns_wt22_block_wtUsername_wtUserNameInputAjaxRfrsh']/input</value>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:position</name>
-      <type>Main</type>
-      <value>//span/input</value>
-   </webElementXpaths>
 </WebElementEntity>

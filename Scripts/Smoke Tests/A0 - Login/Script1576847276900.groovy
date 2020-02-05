@@ -44,6 +44,3 @@ CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE
 
 'Verify usname is displayed on page header section'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
-
-'Close browser'
-WebUI.closeBrowser()
