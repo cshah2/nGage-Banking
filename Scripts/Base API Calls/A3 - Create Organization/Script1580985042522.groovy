@@ -17,17 +17,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import constants.Fields
-import data.ConsumerData
+import data.OrganizationData
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-Map<Fields, String> custData =  ConsumerData.CUST_B
+Map<Fields, String> custData =  OrganizationData.ORG_B
 
-RequestObject request = findTestObject('API/createConsumer',
+RequestObject request = findTestObject('API/createOrganization',
 		[
-			('customerId'):custData.get(Fields.CUST_ID), 
-			('taxId'):custData.get(Fields.CUST_TAX_ID), 
+			('customerId'):custData.get(Fields.ORG_ID),
+			('taxId'):custData.get(Fields.ORG_TAX_ID),
 			('addressLine1'):custData.get(Fields.ADDR_LINE1),
 			('addressLine2'):custData.get(Fields.ADDR_LINE2),
 			('addressLine3'):custData.get(Fields.ADDR_LINE3),
@@ -41,20 +41,16 @@ RequestObject request = findTestObject('API/createConsumer',
 			('emailValidFrom'):custData.get(Fields.CONTACT_EMAIL_VALID_FROM),
 			('emailValidUntil'):custData.get(Fields.CONTACT_EMAIL_VALID_UNTIL),
 			('emailVerifiedDate'):custData.get(Fields.CONTACT_EMAIL_VERIFIED_DATE),
-			('familiarName'):custData.get(Fields.CUST_FAMILIAR_NAME),
-			('lastName'):custData.get(Fields.CUST_LAST_NAME),
-			('firstName'):custData.get(Fields.CUST_FIRST_NAME),
-			('middleName'):custData.get(Fields.CUST_MIDDLE_NAME),
-			('maidenName'):custData.get(Fields.CUST_MAIDEN_NAME),
-			('motherMaidenName'):custData.get(Fields.CUST_MOTHERS_MAIDEN_NAME),
-			('prefix'):custData.get(Fields.CUST_PREFIX),
-			('suffix'):custData.get(Fields.CUST_SUFFIX),
-			('website'):custData.get(Fields.CUST_WEB_ADDRESS),
+			('website'):custData.get(Fields.ORG_WEBSITE_URL),
 			('phone'):custData.get(Fields.CONTACT_PHONE_NUMBER),
 			('phoneValidFrom'):custData.get(Fields.CONTACT_PHONE_VALID_FROM),
 			('phoneValidUntil'):custData.get(Fields.CONTACT_PHONE_VALID_UNTIL),
 			('phoneVerifiedDate'):custData.get(Fields.CONTACT_PHONE_VERIFIED_DATE),
-			('dob'):custData.get(Fields.CUST_DOB),
+			('tradeName'):custData.get(Fields.ORG_TRADE_NAME),
+			('orgName'):custData.get(Fields.ORG_NAME),
+			('dbaName'):custData.get(Fields.ORG_DBA_NAME),
+			('description'):custData.get(Fields.ORG_DESCRIPTION),
+			('dbnumber'):custData.get(Fields.ORG_DUN_BRADSTEET_NO)
 		]
 	)
 
@@ -64,10 +60,10 @@ println "... Response JSON = "+response.getResponseBodyContent()
 WS.verifyResponseStatusCode(response, 200)
 
 JsonSlurper slurper = new JsonSlurper()
-String partyId = slurper.parseText(response.getResponseBodyContent()).party_person._Id
-String customerId = custData.get(Fields.CUST_ID)
-String url = WebUtil.generateCustomerUrl(partyId, "2", customerId, "false")
+String partyId = slurper.parseText(response.getResponseBodyContent()).party_org._Id
+String customerId = custData.get(Fields.ORG_ID)
+String url = WebUtil.generateCustomerUrl(partyId, "2", customerId, "true")
 
 custData.put(Fields.IS_CREATED, 'true')
-custData.put(Fields.CUST_PARTY_ID, partyId)
+custData.put(Fields.ORG_PARTY_ID, partyId)
 custData.put(Fields.URL, url)

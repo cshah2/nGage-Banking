@@ -135,7 +135,7 @@ public class ConsumerData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
 		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
 	}
-	
+
 	public static final Map<Fields, String> NA_CUSTOMERDATA_MAP;
 	static{
 		NA_CUSTOMERDATA_MAP = new HashMap<Fields, String>()
@@ -337,6 +337,77 @@ public class ConsumerData {
 		ACC_B1.put(Fields.ACC_DEPT_ID_VIEW, '350')
 		ACC_B1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
 	}
+	
+	//Personal Savings account for a consumer "Cust_A"
+	public static final Map<Fields, String> ACC_B2_POS1;
+	static {
+
+		//Basic Information
+		ACC_B2_POS1 = new HashMap<Fields, String>()
+		ACC_B2_POS1.put(Fields.ACC_TITLE, CUST_B.get(Fields.CUST_FIRST_NAME)+' '+CUST_B.get(Fields.CUST_LAST_NAME))
+		ACC_B2_POS1.put(Fields.ACC_OWNERSHIP, 'Single')
+		ACC_B2_POS1.put(Fields.ACC_DESCRIPTION, 'Savings Account')
+		ACC_B2_POS1.put(Fields.ACC_GROUP, 'Multi-Position')
+		ACC_B2_POS1.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezone)+RandomUtil.getRandomNumeric(4))
+		ACC_B2_POS1.put(Fields.ACC_BROKERED, 'false')
+		ACC_B2_POS1.put(Fields.ACC_TIMEZONE, 'America/New_York')
+		ACC_B2_POS1.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
+
+		//Product Information
+		ACC_B2_POS1.put(Fields.ACC_PRODUCT_TYPE, 'Business Savings')
+		ACC_B2_POS1.put(Fields.ACC_PRODUCT_CODE, 'B2001')
+		ACC_B2_POS1.put(Fields.ACC_POSITION_NAME, 'Business Savings')
+		ACC_B2_POS1.put(Fields.ACC_CURRENCY_CODE, 'US Dollar')
+		ACC_B2_POS1.put(Fields.ACC_CURRENCY_CODE_VIEW, 'USD')
+		ACC_B2_POS1.put(Fields.ACC_VERTICAL, 'Vertical 01')
+		ACC_B2_POS1.put(Fields.ACC_DEPT_ID, 'Department 350')
+		ACC_B2_POS1.put(Fields.ACC_DEPT_ID_VIEW, '350')
+
+		ACC_B2_POS1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
+	}
+
+	public static final Map<Fields, String> ACC_B2_POS2;
+	static {
+
+		//Basic Information
+		ACC_B2_POS2 = new HashMap<Fields, String>()
+		ACC_B2_POS2.put(Fields.ACC_PRODUCT_TYPE, '18 Month Compounding-Business')
+		ACC_B2_POS2.put(Fields.ACC_PRODUCT_CODE, 'B3018')
+		ACC_B2_POS2.put(Fields.ACC_POSITION_NAME, '18 Month Compounding-Business')
+	}
+
+	public static final Map<Fields, String> ACC_B2_POS3;
+	static {
+
+		//Basic Information
+		ACC_B2_POS3 = new HashMap<Fields, String>()
+		ACC_B2_POS3.put(Fields.ACC_PRODUCT_TYPE, 'Interest Checking')
+		ACC_B2_POS3.put(Fields.ACC_PRODUCT_CODE, 'C2001')
+		ACC_B2_POS3.put(Fields.ACC_POSITION_NAME, 'Interest Checking')
+	}
+
+	public static final Map<Fields, String> ACC_B2_POS4;
+	static {
+
+		//Basic Information
+		ACC_B2_POS4 = new HashMap<Fields, String>()
+		ACC_B2_POS4.put(Fields.ACC_PRODUCT_TYPE, 'Revolving Personal Loan')
+		ACC_B2_POS4.put(Fields.ACC_PRODUCT_CODE, 'LOC')
+		ACC_B2_POS4.put(Fields.ACC_POSITION_NAME, 'Revolving Personal Loan')
+		ACC_B2_POS4.put(Fields.ACC_CREDIT_LIMIT, '200000')
+	}
+
+	public static final Map<Fields, String> ACC_B2_POS5;
+	static {
+
+		//Basic Information
+		ACC_B2_POS5 = new HashMap<Fields, String>()
+		ACC_B2_POS5.put(Fields.ACC_PRODUCT_TYPE, 'Installment Personal Loan')
+		ACC_B2_POS5.put(Fields.ACC_PRODUCT_CODE, 'LN')
+		ACC_B2_POS5.put(Fields.ACC_POSITION_NAME, 'Installment Personal Loan')
+		ACC_B2_POS5.put(Fields.ACC_CREDIT_LIMIT, '100000')
+	}
+
 
 }
 

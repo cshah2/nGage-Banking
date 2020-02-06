@@ -13,8 +13,9 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-
-import constants.Fields
-import data.OrganizationData
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A0 - Create Consumer"), null)
+WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A1 - Create Personal Savings Account"), null)
+WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A2 - Create Multi-Position account"), null)
+WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A3 - Create Organization"), null)

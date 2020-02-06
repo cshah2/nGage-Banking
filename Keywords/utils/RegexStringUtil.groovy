@@ -31,7 +31,7 @@ public class RegexStringUtil {
 		text = text.replaceAll('\\?', '\\\\?')
 		text = text.replaceAll('\\.', '\\\\.')
 		text = text.replaceAll('\\/', '\\\\/')
-		
+
 		return text
 	}
 

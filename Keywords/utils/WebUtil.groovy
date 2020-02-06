@@ -56,4 +56,33 @@ public class WebUtil {
 			e.printStackTrace()
 		}
 	}
+
+	static def generateCustomerUrl(String partyId, String customerGroup, String customerId, String isOrg) {
+		
+		StringBuilder url = new StringBuilder()
+		url.append(GlobalVariable.URL)
+		url.append("/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?")
+		url.append("partyId="+partyId)
+		url.append("&customerGroup="+customerGroup)
+		url.append("&customerId="+customerId)
+		url.append("&isOrg="+isOrg)
+
+		return url.toString()
+	}
+
+	static def generateAccountUrl(String partyId, String acctGroup, String accNumber, String positionId, String customerGroup, String customerId, String isOrg) {
+
+		StringBuilder url = new StringBuilder()
+		url.append(GlobalVariable.URL)
+		url.append("/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?")
+		url.append("partyId="+partyId)
+		url.append("&acctGroup="+acctGroup)
+		url.append("&acctNumber="+accNumber)
+		url.append("&selectedPositionId="+positionId)
+		url.append("&customerGroup="+customerGroup)
+		url.append("&customerId="+customerId)
+		url.append("&isOrg="+isOrg)
+
+		return url.toString()
+	}
 }

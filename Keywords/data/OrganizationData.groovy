@@ -190,4 +190,61 @@ public class OrganizationData {
 		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
+	
+	public static final Map<Fields, String> ORG_B;
+	static {
+		ORG_B = new HashMap<Fields, String>()
+
+		Faker faker = new Faker(Locale.US)
+		Company c = faker.company()
+		String orgName = c.name()
+		String dbaName = "DBA"
+		String tradeName = orgName+" LLP"
+		String websiteUrl = c.url()
+		String email = faker.name().username()+"@exmaple.com"
+
+		ORG_B.put(Fields.ORG_NAME, orgName)
+		ORG_B.put(Fields.ORG_DBA_NAME, dbaName)
+		ORG_B.put(Fields.ORG_TAX_ID, '9'+RandomUtil.getRandomNumeric(8))
+		ORG_B.put(Fields.ORG_TAX_ID_MASKED, '******'+ORG_B.get(Fields.ORG_TAX_ID).substring(5))
+
+		//Organization Details
+		ORG_B.put(Fields.ORG_DESCRIPTION, 'Organization 01 - Description')
+		ORG_B.put(Fields.ORG_DUN_BRADSTEET_NO, RandomUtil.getRandomNumeric(9))
+		ORG_B.put(Fields.ORG_TRADE_NAME, tradeName)
+		ORG_B.put(Fields.ORG_WEBSITE_URL, websiteUrl)
+
+		//Location Information
+		ORG_B.put(Fields.ADDR_LINE1, DateUtil.getCurrentDateTime('dd MMMM', Common.timezone)+' Street')
+		ORG_B.put(Fields.ADDR_LINE2, 'Broadway')
+		ORG_B.put(Fields.ADDR_LINE3, 'Corona Ave')
+		ORG_B.put(Fields.ADDR_LINE4, 'New Philadelphia')
+		ORG_B.put(Fields.ADDR_CITY, 'Philadelphia')
+		ORG_B.put(Fields.ADDR_COUNTY, 'United States of America')
+		ORG_B.put(Fields.ADDR_STATE, 'Pennsylvania')
+		ORG_B.put(Fields.ADDR_ZIPCODE, '1'+RandomUtil.getRandomNumeric(4))
+		ORG_B.put(Fields.ADDR_TYPE, 'Residence')
+		ORG_B.put(Fields.ADDR_LABEL, 'HOME')
+		ORG_B.put(Fields.ADDR_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(1, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.ADDR_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(10, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.ADDR_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-10, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.ADDR_VIEW, ORG_B.get(Fields.ADDR_LINE1)+', '+ORG_B.get(Fields.ADDR_LINE2)+', '+ORG_B.get(Fields.ADDR_CITY)+', PA '+ORG_B.get(Fields.ADDR_ZIPCODE))
+
+		//Contact Information
+		ORG_B.put(Fields.CONTACT_PHONE_NUMBER, '+1'+RandomUtil.getRandomNumeric(10))
+		ORG_B.put(Fields.CONTACT_PHONE_TYPE, 'Mobile')
+		ORG_B.put(Fields.CONTACT_PHONE_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(0, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.CONTACT_PHONE_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(8, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.CONTACT_PHONE_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-8, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.CONTACT_EMAIL, email)
+		ORG_B.put(Fields.CONTACT_EMAIL_TYPE, 'Personal')
+		ORG_B.put(Fields.CONTACT_EMAIL_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.CONTACT_EMAIL_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.CONTACT_EMAIL_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		ORG_B.put(Fields.CONTACT_PREFERRED_CONTACT_METHOD, 'Email')
+
+		//Customer Information
+		ORG_B.put(Fields.ORG_ID, 'ID'+RandomUtil.getRandomNumeric(7))
+		ORG_B.put(Fields.ORG_GROUP, 'Banking Customer')
+	}
 }

@@ -44,4 +44,16 @@ ResponseObject response = WS.sendRequest(request)
 println "... Response JSON = "+response.getResponseBodyContent()
 WS.verifyResponseStatusCode(response, 200)
 
+
+
+JsonSlurper slurper = new JsonSlurper()
+String positionId = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[0].posn_dep._Id
+String customerId = custData.get(Fields.CUST_ID)
+String partyId = custData.get(Fields.CUST_PARTY_ID)
+String accNumber = accData.get(Fields.ACC_NUMBER)
+
+String url = WebUtil.generateMultiPositionAccountUrl(partyId, "1", accNumber, positionId, "2", customerId, "false")
+println "url = "+url
+
 accData.put(Fields.IS_CREATED, 'true')
+accData.put(Fields.URL, url)

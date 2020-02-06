@@ -157,6 +157,7 @@ public enum Fields {
 	ORG_ID,
 	ORG_GROUP,
 	ORG_CHK_ACCOUNT,
+	ORG_PARTY_ID,
 
 
 	//Account Info
