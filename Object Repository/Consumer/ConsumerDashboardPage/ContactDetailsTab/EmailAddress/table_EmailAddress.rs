@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_SetValidToAndFromDates</name>
+   <name>table_EmailAddress</name>
    <tag></tag>
-   <elementGuidId>c90f6308-37e4-461a-a0c7-99fc57937024</elementGuidId>
+   <elementGuidId>cd550e9e-4116-48a8-b1fb-b80d9db8f493</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] div[id*='_wtValidDTMLink']</value>
+         <key>XPATH</key>
+         <value>//table[contains(@id,'CustomerEmailTable')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

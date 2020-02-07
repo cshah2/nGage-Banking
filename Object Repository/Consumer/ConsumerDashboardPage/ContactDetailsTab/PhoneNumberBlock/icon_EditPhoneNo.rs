@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_SetValidToAndFromDates</name>
+   <name>icon_EditPhoneNo</name>
    <tag></tag>
-   <elementGuidId>c90f6308-37e4-461a-a0c7-99fc57937024</elementGuidId>
+   <elementGuidId>05578aec-d29f-47e6-9842-c8b2506b17ee</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] div[id*='_wtValidDTMLink']</value>
+         <key>XPATH</key>
+         <value>//table[contains(@id,'_wtCustomerPhoneTable')]/descendant::a[contains(@id,'CustomerPhoneTable')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

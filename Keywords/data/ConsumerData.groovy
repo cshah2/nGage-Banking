@@ -128,12 +128,16 @@ public class ConsumerData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_MAILIDTYPE, "Personal")
 		CUSTOMERDATA_MAP.put(Fields.CUST_DOB, "09/05/1994")
 		CUSTOMERDATA_MAP.put(Fields.CUST_DOB_MASKED, "**/**/1994")
-		CUSTOMERDATA_MAP.put(Fields.CONTACT_PHONE_NUMBER, "+91 8754219865")
+		CUSTOMERDATA_MAP.put(Fields.CONTACT_PHONE_NUMBER, "+91 8976166795")
+
+		CUSTOMERDATA_MAP.put(Fields.CONTACT_PHONE_TYPE, "Mobile")
 		CUSTOMERDATA_MAP.put(Fields.CUST_ID, "1")
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID, "719892")
-		CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "Danis Street Room no 222, Los Angels, AL 989898")
+		CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "8833 Stenton Ave, Washington Boro, PA 17582")
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
 		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
+		CUSTOMERDATA_MAP.put(Fields.CUST_GROUP, "Banking Customer")
+		CUSTOMERDATA_MAP.put(Fields.URL, 'https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4Ti4SvGC9rLiAF---VDF-Bg-&customerId=3&customerGroup=2')
 	}
 
 	public static final Map<Fields, String> NA_CUSTOMERDATA_MAP;
@@ -155,6 +159,7 @@ public class ConsumerData {
 		NA_CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
 		NA_CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
 	}
+
 
 	//Personal Savings account for a consumer "Cust_A"
 	public static final Map<Fields, String> ACC_A;
@@ -208,6 +213,29 @@ public class ConsumerData {
 		ADDR_A.put(Fields.ADDR_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-15, Common.dateFormat, Common.timezoneUTC))
 		ADDR_A.put(Fields.ADDR_VIEW, ADDR_A.get(Fields.ADDR_LINE1)+', '+ADDR_A.get(Fields.ADDR_LINE2)+', '+ADDR_A.get(Fields.ADDR_CITY)+', PA '+ADDR_A.get(Fields.ADDR_ZIPCODE))
 		ADDR_A.put(Fields.IS_CREATED, 'false')
+	}
+	
+	public static final Map<Fields, String> ADDRESS_A;
+	static {
+		ADDRESS_A = new HashMap<Fields, String>()
+		ADDRESS_A.put(Fields.ADDR_LINE1,'882 Letort Rd')
+		ADDRESS_A.put(Fields.ADDR_LINE2, '')
+		ADDRESS_A.put(Fields.ADDR_LINE3, '')
+		ADDRESS_A.put(Fields.ADDR_LINE4, '')
+		ADDRESS_A.put(Fields.ADDR_CITY, 'Washington Boro')
+		ADDRESS_A.put(Fields.ADDR_COUNTY, 'United States of America')
+		ADDRESS_A.put(Fields.ADDR_STATE, 'Pennsylvania')
+		//ADDRESS_A.put(Fields.ADDR_ZIPCODE, '2'+RandomUtil.getRandomNumeric(4))
+		ADDRESS_A.put(Fields.ADDR_ZIPCODE, '17582')
+		ADDRESS_A.put(Fields.ADDR_TYPE, 'Work/Office')
+		ADDRESS_A.put(Fields.ADDR_YEARS_AT_ADDRESS, '3 Years')
+		ADDRESS_A.put(Fields.ADDR_LABEL, 'OFFICE')
+		ADDRESS_A.put(Fields.ADDR_PREMISE, 'Broadway Park Building')
+		ADDRESS_A.put(Fields.ADDR_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormat, Common.timezoneUTC))
+		ADDRESS_A.put(Fields.ADDR_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(15, Common.dateFormat, Common.timezoneUTC))
+		ADDRESS_A.put(Fields.ADDR_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-15, Common.dateFormat, Common.timezoneUTC))
+		ADDRESS_A.put(Fields.ADDR_VIEW, ADDR_A.get(Fields.ADDR_LINE1)+', '+ADDR_A.get(Fields.ADDR_LINE2)+', '+ADDR_A.get(Fields.ADDR_CITY)+', PA '+ADDR_A.get(Fields.ADDR_ZIPCODE))
+		ADDRESS_A.put(Fields.IS_CREATED, 'false')
 	}
 
 

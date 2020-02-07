@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_SetValidToAndFromDates</name>
+   <name>tab_ContactDetails</name>
    <tag></tag>
-   <elementGuidId>c90f6308-37e4-461a-a0c7-99fc57937024</elementGuidId>
+   <elementGuidId>06076318-39a3-40b9-92e4-94dc23af1ffc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] div[id*='_wtValidDTMLink']</value>
+         <key>XPATH</key>
+         <value>//span[text()='Contact Details']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

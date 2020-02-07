@@ -6,11 +6,11 @@
    <elementGuidId>1fc9297a-107d-429f-9bf5-d3006d514f3c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] span[id*='_wtValidDateValue']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
+         <key>CSS</key>
+         <value>div[taskblockname=&quot;Address&quot;] span[id*='_wtValidDateValue']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

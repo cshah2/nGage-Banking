@@ -85,4 +85,8 @@ public class WebUtil {
 
 		return url.toString()
 	}
+	
+	static def setZoomLevel() {
+		WebUI.executeJavaScript("document.body.style.zoom='90%'", null)
+	}
 }

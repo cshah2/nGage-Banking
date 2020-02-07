@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_SetValidToAndFromDates</name>
+   <name>message_PhoneUpdate</name>
    <tag></tag>
-   <elementGuidId>c90f6308-37e4-461a-a0c7-99fc57937024</elementGuidId>
+   <elementGuidId>dbd6348a-e54a-4d55-881d-443dcc67da2b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] div[id*='_wtValidDTMLink']</value>
+         <key>XPATH</key>
+         <value>span[text()='Phone updated successfully']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

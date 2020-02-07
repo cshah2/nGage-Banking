@@ -21,18 +21,36 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable
 
 public class ColumnPosition {
-	
-	public static final int CONSTUMER_LASTNAME_INDEX = 1
-	public static final int CONSTUMER_FIRSTNAME_INDEX = 2
-	public static final int CONSTUMER_EMAILID_INDEX = 5
-	public static final int CONSTUMER_PHONENUMBER_INDEX = 9
-	
-	
-	//ORGANIZATION 
+
+	public static final int CONSTUMER_LASTNAME = 1
+	public static final int CONSTUMER_FIRSTNAME = 2
+	public static final int CONSTUMER_EMAILID = 5
+	public static final int CONSTUMER_PHONENUMBER = 9
+
+
+	//ORGANIZATION
 	public static final int ORGANIZATION_NAME = 1
 	public static final int ORGANIZATION_PHONENO  = 6
 	public static final int ORGANIZATION_DUN_BADSTREETNO  = 5
 	public static final int ORGANIZATION_CUSTID  = 2
+
+
+	//Cases Table
+	public static final int OPEN_CASE_LATEST_ROW = 1
+	public static final int CASE_TYPE = 3
+
+
+	//Address table
+	public static final int ADDRESS_LINE1 = 4
+	public static final int ADDRESS_CITY  =6
+	public static final int ADDRESS_STATE  =7
+	public static final int ADDRESS_ZIP  = 8
+	public static final int ADDRESS_COUNTRY  = 9
+
+	//Phone Table
+	public static final int PHONE_NUMBER = 3
 	
+	//Email Table
+	public static int EMAIL_ADDRESS = 3
 	
 }

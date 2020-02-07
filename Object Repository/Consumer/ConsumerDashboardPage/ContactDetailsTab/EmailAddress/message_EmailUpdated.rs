@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_SetValidToAndFromDates</name>
+   <name>message_EmailUpdated</name>
    <tag></tag>
-   <elementGuidId>c90f6308-37e4-461a-a0c7-99fc57937024</elementGuidId>
+   <elementGuidId>28ae884e-24bc-4792-a82a-36e7ba27d4c9</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] div[id*='_wtValidDTMLink']</value>
+         <key>XPATH</key>
+         <value>//span[contains(text(),'Email updated successfully')]</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

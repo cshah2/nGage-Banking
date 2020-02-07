@@ -3,14 +3,14 @@
    <description></description>
    <name>link_SetValidToAndFromDates</name>
    <tag></tag>
-   <elementGuidId>c90f6308-37e4-461a-a0c7-99fc57937024</elementGuidId>
+   <elementGuidId>c75bff9e-3d4d-49f7-bfd9-79a33eef98a7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] div[id*='_wtValidDTMLink']</value>
+         <value>div[taskblockname=&quot;Email&quot;] div[id*='_wtValidDTMLink']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>CSS</selectorMethod>

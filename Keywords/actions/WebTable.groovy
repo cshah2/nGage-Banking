@@ -89,7 +89,7 @@ public class WebTable {
 	@Keyword
 	static def verifyCellValueMatches(TestObject to, int rowNo, int colNo, String expText, Operator operator, TableType type = TableType.DEFAULT) {
 		TableUtil table = new TableUtil(type)
-		int actText = table.getCellText(to, rowNo, colNo)
+		String actText = table.getCellText(to, rowNo, colNo)
 		WebActions.verifyMatch(actText, expText, operator)
 	}
 

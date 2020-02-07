@@ -23,39 +23,28 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+public static final int CLOSED_CASES_LATEST_ROW = 1
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
-Map<Fields, String> customerAddress = ConsumerData.ADDR_A
+TestObject emailTable = findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/table_EmailAddress')
 
-'Load browser'
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Verify user is redirected to consumer search page'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
+'Navigate To customer dashboard'
+WebUI.navigateToUrl(customerData.get(Fields.URL))
 
-'Verify usname is displayed on page header section'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')),
-	GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
+'Click on Contact Details Tab'
+WebUI.click(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/tab_ContactDetails'))
 
-'Search a Customer'
+'Click on Edit Email address Icon'
+CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/icon_EditEmail'))
 
-'Search a Customer in SearchConstumer Page with Customer ID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), customerData.get(
-		Fields.CUST_ID))
+'Clear email address'
+WebUI.clearText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/input_Email'))
 
-'Click on Search Button'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
-
-'Click on Tasks'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/task_Drawer'))
-
-'Select Add Email Address'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/add_EmailTask'))
-
-'Type EmailID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/input_Email'), customerData.get(
-	Fields.CUST_MAILID))
+'Type the emailaddress to update'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/input_Email'),customerData.get(Fields.CONTACT_EMAIL))
 
 'Click On Select EmailType'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/select_EmailType'))
@@ -63,11 +52,43 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Select EmailType'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/option_EmailType',[('emailType'): customerData.get(Fields.CUST_MAILIDTYPE)]))
 
-'Click on ValidFromDate'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/input_ValidFromDate'))
+
+'Click on Valid From Date'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/link_SetValidToAndFromDates'))
+
+
+'Set Valid From Text'
+CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), customerData, Fields.ADDR_VALID_FROM, true)
+
+'Set Valid Till Text'
+CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), customerData, Fields.ADDR_VALID_UNTIL, true)
+
+'Scroll to Submit'
+WebUI.scrollToElement(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/btn_Submit'), GlobalVariable.Timeout)
 
 'Click On Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/btn_Submit'))
 
-'Logout of nGage Bank'
-CustomKeywords.'actions.WebActions.logout'()
+
+'Verify Updated Alert Message'
+WebUI.verifyElementNotVisible(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/message_EmailUpdated'))
+
+'Verify the EmailAddress updated in Emailaddress Table'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(emailTable,CLOSED_CASES_LATEST_ROW, ColumnPosition.EMAIL_ADDRESS, customerData.get(Fields.CONTACT_EMAIL), Operator.EQUALS)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_Address</name>
+   <name>icon_EditEmail</name>
    <tag></tag>
-   <elementGuidId>20c3bfff-b035-40f5-9bf6-79d3cf4b6834</elementGuidId>
+   <elementGuidId>b1791204-98a1-40e9-bbc3-52330d7a78c3</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@id,&quot;_wtcustAddresses&quot;)]/table[contains(@id,'AddressTable')]</value>
+         <value>//table[contains(@id,'CustomerEmailTable')]/tbody/tr[last()]/td[last()]/descendant::a[contains(@id,'editEmail')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

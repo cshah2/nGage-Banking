@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[contains(@id,'_wtAddAddress')]/div/*[name()='svg']</value>
+         <value>//th[text()='Tax Address']/following::span[@class='fa fa-fw fa-ellipsis-v']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

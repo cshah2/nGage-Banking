@@ -171,6 +171,7 @@ public class WebActions {
 		}
 	}
 
+	@Keyword
 	static def scrollToElement(TestObject to, int timeout, String isScrollType = "nearest") {
 
 		//arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);     -> Working for customer pages
@@ -245,7 +246,7 @@ public class WebActions {
 	}
 
 
-	
+
 
 	@Keyword
 	def static logout(){
@@ -255,6 +256,18 @@ public class WebActions {
 		click(logoutOption)
 		WebUI.delay(3)
 	}
+	
+	@Keyword
+	static def clickEvent(TestObject el) {
+		
+		WebElement e = WebUiCommonHelper.findWebElement(el, GlobalVariable.Timeout)
+		List<WebElement> argList = new ArrayList<WebElement>()
+		argList.add(e)
+		WebUI.executeJavaScript("var evt = document.createEvent('MouseEvents');" + "evt.initMouseEvent('click',true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0,null);" + "arguments[0].dispatchEvent(evt);", argList)
+		WebUI.waitForJQueryLoad(GlobalVariable.Timeout)
+		WebUI.switchToDefaultContent()
+	}
+
 
 
 }
