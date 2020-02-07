@@ -49,8 +49,19 @@ public class ColumnPosition {
 
 	//Phone Table
 	public static final int PHONE_NUMBER = 3
-	
+
 	//Email Table
 	public static int EMAIL_ADDRESS = 3
-	
+
+	//Notes table
+	public static final int NOTES = 1
+	public static final int NOTES_CREATED_BY = 2
+
+	//Holds Table
+	public static int HOLD_TYPE = 2
+	public static int HOLD_DURATION = 5
+	public static int HOLD_AMOUNT = 6
+
+
+
 }

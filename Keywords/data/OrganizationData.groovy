@@ -144,6 +144,7 @@ public class OrganizationData {
 		ORGANIZATIONMAP.put(Fields.ADDR_VIEW, " 50 Valley Stream Parkway, Malvern, PA 19355")
 		ORGANIZATIONMAP.put(Fields.ORG_TAX_ID_MASKED, "******5123")
 		ORGANIZATIONMAP.put(Fields.ORG_ESTABLISHED_DATE, "02/03/2020")
+		ORGANIZATIONMAP.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4TdNhO2f267Osk---V1F-BR-&customerId=2&customerGroup=2&isOrg=True")
 	}
 	
 	public static final Map<Fields,String> NA_ORGANIZATIONMAP;

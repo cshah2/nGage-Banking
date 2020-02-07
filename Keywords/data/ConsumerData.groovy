@@ -135,9 +135,10 @@ public class ConsumerData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID, "719892")
 		CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "8833 Stenton Ave, Washington Boro, PA 17582")
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
-		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation")
+		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation by Ravi")
 		CUSTOMERDATA_MAP.put(Fields.CUST_GROUP, "Banking Customer")
-		CUSTOMERDATA_MAP.put(Fields.URL, 'https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4Ti4SvGC9rLiAF---VDF-Bg-&customerId=3&customerGroup=2')
+		CUSTOMERDATA_MAP.put(Fields.URL, 'https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4TdHL8h5dIa9f----V5F-Bg-&customergroup=2&customerId=4&isOrg=False')
+		CUSTOMERDATA_MAP.put(Fields.ACC_NUMBER, "200120202134")
 	}
 
 	public static final Map<Fields, String> NA_CUSTOMERDATA_MAP;
@@ -193,6 +194,24 @@ public class ConsumerData {
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
 
+	public static final Map<Fields, String> ACCOUNT_HOLD;
+
+	static{
+		ACCOUNT_HOLD = new HashMap<Fields, String>()
+		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "160120202304")
+		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "PreAuth")
+		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+
+
+		ACCOUNT_HOLD.put(Fields.HOLD_DURATION, "Twelve Months")
+
+		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT, "14.00")
+
+		ACCOUNT_HOLD.put(Fields.HOLD_REASON, "First hold for the Customer Clearance")
+
+
+	}
+
 	public static final Map<Fields, String> ADDR_A;
 	static {
 		ADDR_A = new HashMap<Fields, String>()
@@ -214,7 +233,7 @@ public class ConsumerData {
 		ADDR_A.put(Fields.ADDR_VIEW, ADDR_A.get(Fields.ADDR_LINE1)+', '+ADDR_A.get(Fields.ADDR_LINE2)+', '+ADDR_A.get(Fields.ADDR_CITY)+', PA '+ADDR_A.get(Fields.ADDR_ZIPCODE))
 		ADDR_A.put(Fields.IS_CREATED, 'false')
 	}
-	
+
 	public static final Map<Fields, String> ADDRESS_A;
 	static {
 		ADDRESS_A = new HashMap<Fields, String>()
@@ -365,7 +384,7 @@ public class ConsumerData {
 		ACC_B1.put(Fields.ACC_DEPT_ID_VIEW, '350')
 		ACC_B1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
 	}
-	
+
 	//Personal Savings account for a consumer "Cust_A"
 	public static final Map<Fields, String> ACC_B2_POS1;
 	static {
