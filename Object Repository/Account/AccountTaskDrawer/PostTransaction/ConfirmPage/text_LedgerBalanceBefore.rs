@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>taskList</name>
+   <name>text_LedgerBalanceBefore</name>
    <tag></tag>
-   <elementGuidId>8779c093-e1dd-4750-9995-9eb848c429a7</elementGuidId>
+   <elementGuidId>48160a8c-215a-4541-9967-1b0ea1236dff</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[contains(@id,'_wtTaskListRecord')]/div//*[text()='${taskName}']</value>
+         <value>//div[@taskblockname='PostTransaction']//span[contains(@id,'_wtLedgerBalBeforeExpr')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

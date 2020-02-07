@@ -13,5 +13,37 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
 
+import constants.Fields
+import data.ConsumerData
+import data.OrganizationData
+import internal.GlobalVariable as GlobalVariable
+import utils.MapUtil
+import utils.WebUtil
+
+//Map<Fields, String> custData = ConsumerData.CUST_B
+//Map<Fields, String> accData = ConsumerData.ACC_B1
+//Map<Fields, String> orgData = OrganizationData.ORG_B
+//
+//WebUtil.shouldFailTest(custData)
+//WebUtil.shouldFailTest(orgData)
+//WebUtil.shouldFailTest(accData)
+//
+//'Login into portal'
+//CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+//
+//'Navigate to account dashboard page'
+//WebUI.navigateToUrl(accData.get(Fields.URL))
+//
+//'Click on details tab'
+//WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSection/tab_Details'))
+//
+//'Wait for details tab to load'
+//CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountDashboardPage/DetailsTab/block_AccountDetails'), GlobalVariable.Timeout)
+//
+//'Click on Add Related party link'
+//CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Account/AccountDashboardPage/DetailsTab/icon_AddRelatedParty'))
+//
+//'Wait for task drawer to load'
+//
+//TODO: Waiting for dev team to add xpaths correctly

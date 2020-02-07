@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>taskList</name>
+   <name>text_AvailableBalanceAfter</name>
    <tag></tag>
-   <elementGuidId>8779c093-e1dd-4750-9995-9eb848c429a7</elementGuidId>
+   <elementGuidId>393556b6-0ee1-44d3-a841-b88d07596ec7</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[contains(@id,'_wtTaskListRecord')]/div//*[text()='${taskName}']</value>
+         <value>//div[@taskblockname='PostTransaction']//span[contains(@id,'_wtAvailableBalAfterExpr')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

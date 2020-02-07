@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>taskList</name>
+   <name>select_TransactionCode</name>
    <tag></tag>
-   <elementGuidId>8779c093-e1dd-4750-9995-9eb848c429a7</elementGuidId>
+   <elementGuidId>232e89c6-a14c-4023-bcd7-ae843d237662</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//div[@taskblockname='PostTransaction']//select[contains(@id,'_wtTransactionCode')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//span[contains(@id,'_wtTaskListRecord')]/div//*[text()='${taskName}']</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

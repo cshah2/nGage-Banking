@@ -68,6 +68,7 @@ public class WebTable {
 			try {
 				WebActions.verifyNumbericMatch(actRowsCount, expRowsCount, operator)
 				isRefreshed = true
+				break;
 			}
 			catch(Exception e1) {
 				WebUI.delay(2)

@@ -1,4 +1,4 @@
-package pages.taskdrawer
+package pages.account.tabs
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
@@ -21,22 +21,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import actions.WebActions
 import internal.GlobalVariable
 
-public class TaskDrawer {
-
-	@Keyword
-	static def openTaskDrawer() {
-		WebActions.click(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/btn_Tasks'))
-		WebActions.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/block_DrawerOpen'), GlobalVariable.Timeout)
-	}
-
-	@Keyword
-	static def selectTaskInDrawer(String taskName) {
-		TestObject task = findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/taskList',[('taskName'):taskName])
-		WebActions.click(task)
-	}
+public class AccountTransactionTab {
 	
 	@Keyword
-	static def waitForTaskDrawerToClose() {
-		WebUI.waitForElementNotPresent(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/block_DrawerOpen'), GlobalVariable.Timeout)
+	static def clickTransactionTab() {
+		WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSection/tab_Transaction'))
+		WebActions.waitForElementVisible(findTestObject('Object Repository/Account/AccountDashboardPage/TransactionTab/table_Transactions'), GlobalVariable.Timeout)
 	}
+	
 }

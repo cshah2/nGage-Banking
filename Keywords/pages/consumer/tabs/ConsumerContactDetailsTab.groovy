@@ -22,11 +22,10 @@ import actions.WebActions
 import internal.GlobalVariable
 
 public class ConsumerContactDetailsTab {
-	
+
 	@Keyword
 	def clickContactDetailsTab() {
 		WebActions.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Contact Details'))
 		WebActions.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/ContactDetailsTab/AddressBlock/table_Address'), GlobalVariable.Timeout)
 	}
-
 }

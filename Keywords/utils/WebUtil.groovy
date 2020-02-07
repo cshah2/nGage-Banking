@@ -58,7 +58,7 @@ public class WebUtil {
 	}
 
 	static def generateCustomerUrl(String partyId, String customerGroup, String customerId, String isOrg) {
-		
+
 		StringBuilder url = new StringBuilder()
 		url.append(GlobalVariable.URL)
 		url.append("/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?")
@@ -85,7 +85,7 @@ public class WebUtil {
 
 		return url.toString()
 	}
-	
+
 	static def setZoomLevel() {
 		WebUI.executeJavaScript("document.body.style.zoom='90%'", null)
 	}

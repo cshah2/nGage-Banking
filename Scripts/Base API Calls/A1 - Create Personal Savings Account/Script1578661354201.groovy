@@ -52,7 +52,7 @@ String customerId = custData.get(Fields.CUST_ID)
 String partyId = custData.get(Fields.CUST_PARTY_ID)
 String accNumber = accData.get(Fields.ACC_NUMBER)
 
-String url = WebUtil.generateMultiPositionAccountUrl(partyId, "1", accNumber, positionId, "2", customerId, "false")
+String url = WebUtil.generateAccountUrl(partyId, "1", accNumber, positionId, "2", customerId, "false")
 println "url = "+url
 
 accData.put(Fields.IS_CREATED, 'true')
