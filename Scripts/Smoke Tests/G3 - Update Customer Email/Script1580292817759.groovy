@@ -23,7 +23,7 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil
 
-public static final int CLOSED_CASES_LATEST_ROW = 1
+ int CLOSED_CASES_LATEST_ROW = 1
 Map<Fields, String> customerData = ConsumerData.CUST_B
 
 TestObject emailTable = findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/table_EmailAddress')

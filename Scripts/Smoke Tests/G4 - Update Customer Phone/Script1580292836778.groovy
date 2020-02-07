@@ -23,9 +23,9 @@ import constants.Operator as Operator
 import data.ConsumerData as ConsumerData
 
 Map<Fields, String> customerData = ConsumerData.CUST_B
+int CLOSED_CASES_LATEST_ROW = 1
 
-
-TestObject casesTable = findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/PhoneNumberBlock/table_PhoneNumber')
+TestObject phoneTable = findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/PhoneNumberBlock/table_PhoneNumber')
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -64,7 +64,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashb
 WebUI.delay(20)
 
 'Verify the Phone number is updated in PhoneNumber Table'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(casesTable,ColumnPosition.OPEN_CASE_LATEST_ROW, ColumnPosition.PHONE_NUMBER, customerData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS)
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(phoneTable,CLOSED_CASES_LATEST_ROW, ColumnPosition.PHONE_NUMBER, customerData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS)
 
 
 

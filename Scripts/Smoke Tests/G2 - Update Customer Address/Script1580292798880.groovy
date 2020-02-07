@@ -24,7 +24,7 @@ import constants.Operator as Operator
 import data.ConsumerData as ConsumerData
 
 String addressUpdateCase = 'Address Update'
-public static final int CLOSED_CASE_LATEST_ROW = 1
+ int CLOSED_CASE_LATEST_ROW = 1
 Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 
 Map<Fields, String> customerAddress = ConsumerData.ADDRESS_A
