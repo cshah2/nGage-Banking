@@ -34,7 +34,7 @@ public class TaskDrawer {
 		TestObject task = findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/taskList',[('taskName'):taskName])
 		WebActions.click(task)
 	}
-	
+
 	@Keyword
 	static def waitForTaskDrawerToClose() {
 		WebUI.waitForElementNotPresent(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/block_DrawerOpen'), GlobalVariable.Timeout)

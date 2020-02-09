@@ -384,6 +384,15 @@ public class ConsumerData {
 		ACC_B1.put(Fields.ACC_DEPT_ID_VIEW, '350')
 		ACC_B1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
 	}
+	
+	public static final Map<Fields, String> ACC_B1_TXNA;
+	static {
+		ACC_B1_TXNA = new HashMap<Fields, String>()
+		ACC_B1_TXNA.put(Fields.TXN_CODE, 'Savings Deposit Cash')
+		ACC_B1_TXNA.put(Fields.TXN_AMOUNT, '50000')
+		ACC_B1_TXNA.put(Fields.TXN_TYPE, 'Credit')
+		ACC_B1_TXNA.put(Fields.TXN_COMMENT, 'Credit transaction for savings account')
+	}
 
 	//Personal Savings account for a consumer "Cust_A"
 	public static final Map<Fields, String> ACC_B2_POS1;
@@ -454,8 +463,6 @@ public class ConsumerData {
 		ACC_B2_POS5.put(Fields.ACC_POSITION_NAME, 'Installment Personal Loan')
 		ACC_B2_POS5.put(Fields.ACC_CREDIT_LIMIT, '100000')
 	}
-
-
 }
 
 

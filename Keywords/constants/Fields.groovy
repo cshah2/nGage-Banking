@@ -214,7 +214,6 @@ public enum Fields {
 	//This is Transaction type field
 	TXN_CODE,
 	TXN_AMOUNT,
-	TXN_AMOUNT_VIEW,
 	TXN_COMMENT,
 	TXN_ID,
 	TXN_TYPE,

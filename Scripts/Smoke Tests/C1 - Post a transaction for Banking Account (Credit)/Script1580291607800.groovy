@@ -21,21 +21,22 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-//WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
-//WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
 
 Map<Fields, String> custData = ConsumerData.CUST_B
 Map<Fields, String> accData = ConsumerData.ACC_B1
+Map<Fields, String> txnData = ConsumerData.ACC_B1_TXNA
 
 WebUtil.shouldFailTest(custData)
 WebUtil.shouldFailTest(accData)
 
 TestObject txnTable = findTestObject('Object Repository/Account/AccountDashboardPage/TransactionTab/table_Transactions')
 String taskName = "Post a Transaction"
-String transactionCode = 'Savings Deposit Cash'
-String amount = '50000'
-String amountView = '50,000.00'
-String description = 'Credit transaction for savings account'
+String transactionCode = txnData.get(Fields.TXN_CODE)
+String amount = txnData.get(Fields.TXN_AMOUNT)
+String amountView = String.format("%,.2f", Double.parseDouble(txnData.get(Fields.TXN_AMOUNT)))
+String description = txnData.get(Fields.TXN_COMMENT)
 String ledgerBalanceBefore
 String ledgerBalanceAfter
 String availableBalanceBefore 
@@ -88,18 +89,22 @@ CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Ob
 
 'Get Current ledgerBalance'
 ledgerBalanceBefore = WebUI.getText(findTestObject('Object Repository/Account/AccountTaskDrawer/PostTransaction/ConfirmPage/text_LedgerBalanceBefore'))
+txnData.put(Fields.ACC_LEDGER_BALANCE_BEFORE, ledgerBalanceBefore)
 
 'Calculate ledger balance after'
-ledgerBalanceAfter = String.valueOf(String.format("%,.2f",Double.parseDouble(ledgerBalanceBefore.replaceAll(',', '')) + Double.parseDouble(amountView.replaceAll(',', ''))))
+ledgerBalanceAfter = String.format("%,.2f",Double.parseDouble(ledgerBalanceBefore.replaceAll(',', '')) + Double.parseDouble(amountView.replaceAll(',', '')))
+txnData.put(Fields.ACC_LEDGER_BALANCE, ledgerBalanceAfter)
 
 'Verify ledger balance after'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountTaskDrawer/PostTransaction/ConfirmPage/text_LedgerBalanceAfter')), ledgerBalanceAfter, Operator.EQUALS)
 
 'Get Current AvailableBalance'
 availableBalanceBefore = WebUI.getText(findTestObject('Object Repository/Account/AccountTaskDrawer/PostTransaction/ConfirmPage/text_AvailableBalanceBefore'))
+txnData.put(Fields.ACC_AVAILABLE_BALANCE_BEFORE, availableBalanceBefore)
 
 'Calculate available balance after'
 availableBalanceAfter = String.valueOf(String.format("%,.2f", Double.parseDouble(availableBalanceBefore.replaceAll(',', '')) + Double.parseDouble(amountView.replaceAll(',', ''))))
+txnData.put(Fields.ACC_AVAILABLE_BALANCE, availableBalanceAfter)
 
 'Verify available balance after'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountTaskDrawer/PostTransaction/ConfirmPage/text_AvailableBalanceAfter')), availableBalanceAfter, Operator.EQUALS)
@@ -115,17 +120,6 @@ CustomKeywords.'actions.WebTable.waitUntilRowsCountMatches'(txnTable, recordCoun
 
 int rowNo =  1
 
-'Verify data in transaction table - transaction type'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(txnTable, rowNo, ColumnPosition.TXN_CODE, transactionCode, Operator.EQUALS)
+CustomKeywords.'pages.account.tabs.AccountTransactionTab.verifyTransactionDataInTable'(rowNo, txnData)
 
-'Verify data in transaction table - debit amount'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(txnTable, rowNo, ColumnPosition.TXN_DEBIT_AMOUNT, '', Operator.EQUALS)
-
-'Verify data in transaction table - credit amount'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(txnTable, rowNo, ColumnPosition.TXN_CREDIT_AMOUNT, amountView, Operator.EQUALS)
-
-'Verify data in transaction table - ending balance'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(txnTable, rowNo, ColumnPosition.TXN_BALANCE, availableBalanceAfter, Operator.EQUALS)
-
-'Verify data in transaction table - description'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(txnTable, rowNo, ColumnPosition.TXN_DESCRIPTION, description, Operator.EQUALS)
+//'Click on Overview tab'
