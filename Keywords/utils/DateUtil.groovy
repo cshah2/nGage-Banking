@@ -51,4 +51,11 @@ public class DateUtil {
 		println "Date is :"+dateString
 		return dateString
 	}
+	
+	public static String getCurrentDateTimePlusDays(int days, String format, String timezone) {
+		
+				String dateString = ZonedDateTime.now(ZoneId.of(timezone)).plusDays(days).format(DateTimeFormatter.ofPattern(format))
+				println "Date is :"+dateString
+				return dateString
+			}
 }

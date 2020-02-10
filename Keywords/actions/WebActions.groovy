@@ -10,6 +10,7 @@ import java.util.Map
 
 import org.openqa.selenium.ElementClickInterceptedException
 import org.openqa.selenium.ElementNotInteractableException
+import org.openqa.selenium.Keys
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
@@ -140,6 +141,7 @@ public class WebActions {
 				List<WebElement> list = new ArrayList<WebElement>()
 				list.add(e)
 				WebUI.executeJavaScript('arguments[0].value = "'+text+'"', list)
+				WebUI.sendKeys(to, Keys.chord(Keys.TAB))
 			}
 			else {
 				WebUI.setText(to, text, FailureHandling.STOP_ON_FAILURE)
@@ -256,10 +258,10 @@ public class WebActions {
 		click(logoutOption)
 		WebUI.delay(3)
 	}
-	
+
 	@Keyword
 	static def clickEvent(TestObject el) {
-		
+
 		WebElement e = WebUiCommonHelper.findWebElement(el, GlobalVariable.Timeout)
 		List<WebElement> argList = new ArrayList<WebElement>()
 		argList.add(e)

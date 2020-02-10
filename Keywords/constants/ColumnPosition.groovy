@@ -61,12 +61,6 @@ public class ColumnPosition {
 	public static int HOLD_TYPE = 2
 	public static int HOLD_DURATION = 5
 	public static int HOLD_AMOUNT = 6
-
-	//Transaction Table
-	public static int TXN_CODE = 5
-	public static int TXN_DEBIT_AMOUNT = 6
-	public static int TXN_CREDIT_AMOUNT = 7
-	public static int TXN_BALANCE = 8
-	public static int TXN_DESCRIPTION = 9
+	public static int HOLD_START_DATE = 3
 
 }

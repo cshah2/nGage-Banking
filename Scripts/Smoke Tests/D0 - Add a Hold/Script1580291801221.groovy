@@ -14,4 +14,89 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import utils.MapUtil as MapUtil
+import constants.Urls as Urls
+import constants.ColumnPosition as ColumnPosition
+import constants.Fields as Fields
+import constants.Operator as Operator
+import data.ConsumerData as ConsumerData
+
+int LATEST_ROW = 1
+
+int WAIT_FOR_FIVE_SECONDS = 5
+int SUBSTRING_DATE_START = 0
+int SUBSTRING_DATE_END = 10
+Map<Fields, String> customerData = ConsumerData.CUST_B
+Map<Fields, String> custHoldData = ConsumerData.ACC_B1
+TestObject holdsTable = findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/table_Holds')
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate To customer dashboard'
+WebUI.navigateToUrl(custHoldData.get(Fields.URL))
+
+'Click on Task Drawer'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/task_Drawer'))
+
+'Click on Add Hold Tasks'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/task_AddHold'))
+
+'Click on the Hold Type Drop Down'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_HoldType'))
+
+'Select  Account Hold Type'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/option_HoldType',[('holdType'):custHoldData.get(Fields.HOLD_TYPE)]))
+
+'Set value on start date'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_StartDate'))
+
+
+'Set Start date'
+CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_StartDate'),
+	custHoldData, Fields.HOLD_START_DATE, true)
+
+
+
+'Click on the Hold Type Drop Down'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_Duration'))
+
+'Select  Account Hold Type'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/option_Duration',[('duration'):custHoldData.get(Fields.HOLD_DURATION)]))
+
+'Type Hold Amount'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'), custHoldData.get(Fields.HOLD_AMOUNT))
+
+'Type the hold reason'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_Reason'), custHoldData.get(Fields.HOLD_REASON))
+
+
+'Click on Submit Button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/btn_Submit'))
+
+'Verify Hold Created Alert Message'
+WebUI.verifyElementVisible(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/message_HoldCreated'))
+
+WebUI.delay(WAIT_FOR_FIVE_SECONDS)
+
+'Verify the consumer holds table (Hold Type)'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(holdsTable, LATEST_ROW, ColumnPosition.HOLD_TYPE,
+	custHoldData.get(Fields.HOLD_TYPE), Operator.EQUALS_IGNORE_CASE)
+
+'Verify the consumer holds table (Hold Duration)'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(holdsTable, LATEST_ROW, ColumnPosition.HOLD_DURATION,
+	custHoldData.get(Fields.HOLD_DURATION), Operator.EQUALS_IGNORE_CASE)
+
+'Verify the consumer holds table (Hold amount)'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(holdsTable, LATEST_ROW, ColumnPosition.HOLD_AMOUNT,
+	custHoldData.get(Fields.HOLD_AMOUNT), Operator.CONTAINS_IGNORE_CASE)
+
+
+'Verify the consumer holds table (Start Date)'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(holdsTable, LATEST_ROW, ColumnPosition.HOLD_START_DATE,
+	custHoldData.get(Fields.HOLD_START_DATE).substring(SUBSTRING_DATE_START, SUBSTRING_DATE_END), Operator.EQUALS)
+
+
+
+
 

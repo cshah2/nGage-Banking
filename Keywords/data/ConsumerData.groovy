@@ -200,14 +200,13 @@ public class ConsumerData {
 		ACCOUNT_HOLD = new HashMap<Fields, String>()
 		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "160120202304")
 		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "PreAuth")
-		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
-
-
+		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
+		ACCOUNT_HOLD.put(Fields.HOLD_END_DATE, DateUtil.getCurrentDateTimeMinusDays(-2,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_HOLD.put(Fields.HOLD_DURATION, "Twelve Months")
-
-		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT, "14.00")
-
+		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT, "15.00")
 		ACCOUNT_HOLD.put(Fields.HOLD_REASON, "First hold for the Customer Clearance")
+		ACCOUNT_HOLD.put(Fields.HOLD_NOTE, "First hold cancelled  the Customer Clearance")
+		ACCOUNT_HOLD.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4TdHL8h5dIa9f----V5F-Bg-&acctGroup=1&acctNumber=170220203288&selectedPositionId=4TdIecFtY9MwHk---V1F-Co-&customerGroup=2&customerId=4&isOrg=False")
 
 
 	}
@@ -384,15 +383,6 @@ public class ConsumerData {
 		ACC_B1.put(Fields.ACC_DEPT_ID_VIEW, '350')
 		ACC_B1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
 	}
-	
-	public static final Map<Fields, String> ACC_B1_TXNA;
-	static {
-		ACC_B1_TXNA = new HashMap<Fields, String>()
-		ACC_B1_TXNA.put(Fields.TXN_CODE, 'Savings Deposit Cash')
-		ACC_B1_TXNA.put(Fields.TXN_AMOUNT, '50000')
-		ACC_B1_TXNA.put(Fields.TXN_TYPE, 'Credit')
-		ACC_B1_TXNA.put(Fields.TXN_COMMENT, 'Credit transaction for savings account')
-	}
 
 	//Personal Savings account for a consumer "Cust_A"
 	public static final Map<Fields, String> ACC_B2_POS1;
@@ -463,6 +453,8 @@ public class ConsumerData {
 		ACC_B2_POS5.put(Fields.ACC_POSITION_NAME, 'Installment Personal Loan')
 		ACC_B2_POS5.put(Fields.ACC_CREDIT_LIMIT, '100000')
 	}
+
+
 }
 
 
