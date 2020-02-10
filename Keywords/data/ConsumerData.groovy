@@ -199,14 +199,15 @@ public class ConsumerData {
 	static{
 		ACCOUNT_HOLD = new HashMap<Fields, String>()
 		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "160120202304")
-		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "PreAuth")
-		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
+		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "Reserve")
+		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+		//ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_HOLD.put(Fields.HOLD_END_DATE, DateUtil.getCurrentDateTimeMinusDays(-2,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_HOLD.put(Fields.HOLD_DURATION, "Twelve Months")
 		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT, "15.00")
 		ACCOUNT_HOLD.put(Fields.HOLD_REASON, "First hold for the Customer Clearance")
 		ACCOUNT_HOLD.put(Fields.HOLD_NOTE, "First hold cancelled  the Customer Clearance")
-		ACCOUNT_HOLD.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4TdHL8h5dIa9f----V5F-Bg-&acctGroup=1&acctNumber=170220203288&selectedPositionId=4TdIecFtY9MwHk---V1F-Co-&customerGroup=2&customerId=4&isOrg=False")
+		ACCOUNT_HOLD.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4TeSCPmgC7M__V---V9F-Bg-&acctGroup=1&acctNumber=000000002550&selectedPositionId=4TeSG8FHC2N2Q----V9F-Co-&customerGroup=2&customerId=7&isOrg=False")
 
 
 	}

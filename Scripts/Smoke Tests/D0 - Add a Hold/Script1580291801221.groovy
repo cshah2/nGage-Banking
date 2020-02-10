@@ -97,6 +97,9 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(holdsTable, LATEST_ROW,
 	custHoldData.get(Fields.HOLD_START_DATE).substring(SUBSTRING_DATE_START, SUBSTRING_DATE_END), Operator.EQUALS)
 
 
+'Click on Submit Button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountDashboardPage/OverviewTab/icon_ExpandHold'))
 
-
+'Verify the Hold amount in Account Overview Page'
+CustomKeywords.'pages.account.tabs.AccountOverviewTab.verifyHoldsUnderAccountOverview'(custHoldData.get(Fields.HOLD_TYPE), custHoldData)
 
