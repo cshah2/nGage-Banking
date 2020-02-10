@@ -255,6 +255,15 @@ public enum Fields {
 	ORDER_TRANSFER_AMOUNT_VIEW,
 	ORDER_STATUS,
 
+	GL_NUMBER,
+	GL_CATEGORY,
+	GL_NAME,
+	GL_CLASS,
+	GL_SEQ,
+	
+	
 	IS_CREATED,
 	URL
+	
+	
 }

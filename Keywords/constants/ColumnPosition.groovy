@@ -62,5 +62,23 @@ public class ColumnPosition {
 	public static int HOLD_DURATION = 5
 	public static int HOLD_AMOUNT = 6
 	public static int HOLD_START_DATE = 3
+	
+	//Transaction Table
+	public static int TXN_CODE = 5
+	public static int TXN_DEBIT_AMOUNT = 6
+	public static int TXN_CREDIT_AMOUNT = 7
+	public static int TXN_BALANCE = 8
+	public static int TXN_DESCRIPTION = 9
+	
+	//T-Account table
+	public static int TACC_SEQ = 1
+	public static int TACC_TXN_TYPE = 2
+	public static int TACC_CLASS = 3
+	public static int TACC_AMOUNT = 4
+	public static int TACC_ACC_NUMBER = 5
+	public static int TACC_GL_NUMBER = 6
+	public static int TACC_GL_CATEGORY = 7
+	public static int TACC_GL_NAME = 8
+
 
 }

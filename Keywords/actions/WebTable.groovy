@@ -116,4 +116,11 @@ public class WebTable {
 		//values.stream().forEach{actText -> WebActions.verifyMatch(actText, expText, o)}
 	}
 
+	@Keyword
+	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+
+		TableUtil table = new TableUtil(type)
+		table.clickCell(to, rowNo, colNo)
+	}
+
 }

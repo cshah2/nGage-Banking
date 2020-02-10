@@ -21,9 +21,6 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
-
 Map<Fields, String> custData = ConsumerData.CUST_B
 Map<Fields, String> accData = ConsumerData.ACC_B1
 Map<Fields, String> txnData = ConsumerData.ACC_B1_TXNA
@@ -120,6 +117,19 @@ CustomKeywords.'actions.WebTable.waitUntilRowsCountMatches'(txnTable, recordCoun
 
 int rowNo =  1
 
+'Verify Data in transaction table'
 CustomKeywords.'pages.account.tabs.AccountTransactionTab.verifyTransactionDataInTable'(rowNo, txnData)
 
-//'Click on Overview tab'
+txnData.put(Fields.IS_CREATED, "true")
+
+'Click on Overview tab'
+WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSection/tab_Overview'))
+
+'Wait for page to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_LedgerBalance'), GlobalVariable.Timeout)
+
+'Verify Ledger balance value'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_LedgerBalance')), ledgerBalanceAfter, Operator.EQUALS)
+
+'Verify Available balance value'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance')), availableBalanceAfter, Operator.EQUALS)
