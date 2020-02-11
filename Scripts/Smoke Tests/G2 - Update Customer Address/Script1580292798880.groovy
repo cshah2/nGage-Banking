@@ -128,6 +128,12 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashb
 'Click on Cases Tab '
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/CasesSection/tab_ClosedCases'))
 
+
+'Verify Case type in Closed cases Table'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(casesTable, CLOSED_CASE_LATEST_ROW, ColumnPosition.CASE_TYPE,
+	addressUpdateCase, Operator.EQUALS_IGNORE_CASE)
+
+
 WebUI.delay(10)
 
 'Click on Contact Details Tab'

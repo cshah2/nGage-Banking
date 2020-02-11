@@ -28,7 +28,7 @@ public class AccountOverviewTab {
 
 	@Keyword
 	public static void verifyHoldsUnderAccountOverview(Map<Fields,String> holdsMap){
-		
+
 		String holdType = holdsMap.get(Fields.HOLD_TYPE)
 		String holdAmount
 		if(holdType.equalsIgnoreCase("Admin")){
@@ -54,5 +54,9 @@ public class AccountOverviewTab {
 		else {
 			KeywordUtil.markFailedAndStop('Incorrect hold type value provided in input'+holdType)
 		}
+
+		//need to add balance verification in UI
+
+
 	}
 }

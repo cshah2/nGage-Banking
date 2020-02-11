@@ -40,6 +40,11 @@ public class ColumnPosition {
 	public static final int CASE_TYPE = 3
 
 
+	//Account  Open cases
+	public static final int ACCOUNT_NUMBER = 4
+	public static final int ORDER_CREATED_DATE = 5
+
+
 	//Address table
 	public static final int ADDRESS_LINE1 = 4
 	public static final int ADDRESS_CITY  =6
@@ -62,5 +67,15 @@ public class ColumnPosition {
 	public static int HOLD_DURATION = 5
 	public static int HOLD_AMOUNT = 6
 	public static int HOLD_START_DATE = 3
+
+
+	//Scheduled Transactions Table
+	public static int ORDER_TYPE = 2
+	public static final int FROM_ACCOUNT = 5
+	public static final ORDER_DATE = 4
+	public static final int TO_ACCOUNT = 6
+	public static final int ORDER_AMOUNT = 8
+	public static final int ORDER_CREATED_DATE_IN_TRANSACTIONS = 3
+	public static final int ORDER_STATUS = 10
 
 }

@@ -14,4 +14,39 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import constants.Urls as Urls
+import constants.ColumnPosition as ColumnPosition
+import constants.Fields as Fields
+import constants.Operator as Operator
+import data.ConsumerData as ConsumerData
 
+int LATEST_ROW = 1
+
+int WAIT_FOR_FIVE_SECONDS = 5
+Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> custHoldData = ConsumerData.ACCOUNT_HOLD
+TestObject holdsTable = findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/table_Holds')
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate To customer dashboard'
+WebUI.navigateToUrl(custHoldData.get(Fields.URL))
+
+
+'Click on Accounts Tab'
+WebUI.click(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Holds'))
+//steps to goto accounts tab and click a account
+'Click on Edit Icon'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/icon_editAddedHold'))
+
+'Click on Cancel Hold Option'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'))
+
+
+'Type the hold Notes'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea_Notes'), custHoldData.get(Fields.HOLD_NOTE))
+
+
+'Click on Submit Button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/btn_Submit'))
