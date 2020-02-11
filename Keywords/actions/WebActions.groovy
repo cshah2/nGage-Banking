@@ -193,6 +193,27 @@ public class WebActions {
 			KeywordUtil.markFailedAndStop('Unable to scroll to element'+e1.toString())
 		}
 	}
+	
+	@Keyword
+	static def scrollToElement(WebElement e, int timeout, String isScrollType = "nearest") {
+
+		//arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);     -> Working for customer pages
+		try {
+			List<WebElement> list = new ArrayList<WebElement>()
+			list.add(e)
+			if(isScrollType.equalsIgnoreCase("nearest"))
+				WebUI.executeJavaScript("arguments[0].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' }); window.scrollBy(0,-100);", list)
+			else if(isScrollType.equalsIgnoreCase("top"))
+				WebUI.executeJavaScript("arguments[0].scrollIntoView(true); window.scrollBy(0,-100);", list)
+			else if(isScrollType.equalsIgnoreCase("bottom"))
+				WebUI.executeJavaScript("arguments[0].scrollIntoView(false); window.scrollBy(0,100);", list)
+		}
+		catch(Exception e1) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to scroll to element'+e1.toString())
+		}
+	}
+
 
 	static def scrollBy(int x, int y) {
 		WebUI.executeJavaScript("window.scrollBy("+x+","+y+");", null)

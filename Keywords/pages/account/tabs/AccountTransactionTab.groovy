@@ -72,7 +72,7 @@ public class AccountTransactionTab {
 
 		TestObject table = findTestObject('Object Repository/Account/AccountDashboardPage/TransactionTab/DetailSection/T-Account/table_TAccountData')
 		
-		WebActions.scrollToElement(table, GlobalVariable.Timeout)
+		WebActions.scrollToElement(table, GlobalVariable.Timeout, "bottom")
 		
 		if(MapUtil.isValidData(txnData, Fields.GL_SEQ)) {
 			WebTable.verifyCellValueMatches(table, rowNo, ColumnPosition.TACC_SEQ, txnData.get(Fields.GL_SEQ), Operator.EQUALS)

@@ -10,6 +10,7 @@ import java.util.concurrent.TimeUnit
 
 import org.checkerframework.checker.regex.RegexUtil
 import org.openqa.selenium.By
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.interactions.Actions
 
@@ -29,6 +30,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import actions.WebActions
+import constants.Icon
 import constants.Operator
 import constants.TableType
 import internal.GlobalVariable
@@ -109,7 +111,7 @@ public class TableUtil {
 		}
 		return locator
 	}
-	
+
 	private By wholeColumn(int colNo) {
 
 		By locator
@@ -127,15 +129,15 @@ public class TableUtil {
 		return locator
 	}
 
-	private By clickElement() {
+	private By cellIcon(Icon icon) {
 
 		By locator
-		switch(type) {
-			case TableType.DEFAULT:
-				locator = By.xpath(".//a")
+		switch(icon) {
+			case Icon.DOUBLE_ARROW:
+				locator = By.xpath(".//span[contains(@class,fa-angle-double-down)]")
 				break
-			case TableType.DOCUMENT:
-				locator = By.xpath(".//*[name()='svg']")
+			case Icon.ELLIPSIS:
+				locator = By.xpath(".//span[contains(@class,fa-ellipsis-v)]")
 				break
 			Default:
 				locator = By.xpath(".//a")
@@ -143,12 +145,6 @@ public class TableUtil {
 		}
 		return locator
 	}
-
-	private By moreIcon() {
-		return By.xpath(".//span[contains(@class,fa-ellipsis-v)]")
-	}
-
-
 
 	private WebElement getTable(TestObject to) {
 		return WebUiCommonHelper.findWebElement(to, GlobalVariable.Timeout)
@@ -197,14 +193,14 @@ public class TableUtil {
 
 		return cellsText
 	}
-	
-	public void clickCell(TestObject to, int rowNo, int colNo) {
+
+	public void clickCell(TestObject to, int rowNo, int colNo, Icon icon) {
 
 		WebElement table = getTable(to)
 		WebElement el;
 		try {
-			el = table.findElement(singleRow(rowNo)).findElement(singleCell(colNo)).findElement(clickElement())
-			//WebActions.click(el)
+			el = table.findElement(singleRow(rowNo)).findElement(singleCell(colNo)).findElement(cellIcon(icon))
+			WebActions.scrollToElement(el, GlobalVariable.Timeout)
 			el.click()
 		}
 		catch(Exception e) {
@@ -212,8 +208,7 @@ public class TableUtil {
 			KeywordUtil.markFailedAndStop('Unable to click on link inside table '+e.toString())
 		}
 	}
-
-
+	
 	//Keywords
 
 	//	@Keyword

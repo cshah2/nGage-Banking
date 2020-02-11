@@ -472,6 +472,16 @@ public class ConsumerData {
 		ACC_B1_TXNB.put(Fields.TXN_TYPE, 'Debit')
 		ACC_B1_TXNB.put(Fields.TXN_COMMENT, 'Debit transaction for savings account')
 	}
+	
+	public static final Map<Fields, String> ACC_B1_TXNC;
+	static {
+		ACC_B1_TXNC = new HashMap<Fields, String>()
+		ACC_B1_TXNC.put(Fields.TXN_CODE, 'Savings Miscellaneous Credit')
+		ACC_B1_TXNC.put(Fields.TXN_AMOUNT, '3000')
+		ACC_B1_TXNC.put(Fields.TXN_TYPE, 'Credit')
+		ACC_B1_TXNC.put(Fields.TXN_COMMENT, 'Credit transaction for savings account to be reversed')
+	}
+
 
 	public static final Map<Fields, String> ACC_B2_POS1_TXNA;
 	static {

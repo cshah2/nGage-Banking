@@ -21,6 +21,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import constants.Icon
 import constants.Operator
 import constants.TableType
 import internal.GlobalVariable
@@ -117,10 +118,23 @@ public class WebTable {
 	}
 
 	@Keyword
-	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
-
+	static def clickIconInTable(TestObject to,  int rowNo, int colNo, Icon icon, TableType type = TableType.DEFAULT) {
+		
 		TableUtil table = new TableUtil(type)
-		table.clickCell(to, rowNo, colNo)
+		table.clickCell(to, rowNo, colNo, icon)
 	}
-
+	
+//	@Keyword
+//	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+//
+//		TableUtil table = new TableUtil(type)
+//		table.clickCell(to, rowNo, colNo, Icon.DOUBLE_ARROW)
+//	}
+//	
+//	@Keyword
+//	static def clickEllipsisIcon(TestObject to, int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+//
+//		TableUtil table = new TableUtil(type)
+//		table.clickCell(to, rowNo, colNo, Icon.ELLIPSIS)
+//	}
 }

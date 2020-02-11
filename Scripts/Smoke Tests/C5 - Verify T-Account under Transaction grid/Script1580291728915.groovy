@@ -15,6 +15,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import constants.Fields
+import constants.Icon
 import constants.Operator
 import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
@@ -57,7 +58,8 @@ WebUI.navigateToUrl(accData.get(Fields.URL))
 CustomKeywords.'pages.account.tabs.AccountTransactionTab.clickTransactionTab'()
 
 'Expand Transaction Details section'
-CustomKeywords.'actions.WebTable.clickDetailsIcon'(txnTable, 1, 1)
+CustomKeywords.'actions.WebTable.clickIconInTable'(txnTable, 1, 1, Icon.DOUBLE_ARROW)
+//CustomKeywords.'actions.WebTable.clickDetailsIcon'(txnTable, 1, 1)
 
 'Wait for T-Account accordion to be visible'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountDashboardPage/TransactionTab/DetailSection/accordion_TAccount'), GlobalVariable.Timeout)
