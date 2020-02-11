@@ -28,6 +28,7 @@ import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import actions.WebActions
 import constants.Operator
 import constants.TableType
 import internal.GlobalVariable
@@ -108,7 +109,7 @@ public class TableUtil {
 		}
 		return locator
 	}
-
+	
 	private By wholeColumn(int colNo) {
 
 		By locator
@@ -196,6 +197,22 @@ public class TableUtil {
 
 		return cellsText
 	}
+	
+	public void clickCell(TestObject to, int rowNo, int colNo) {
+
+		WebElement table = getTable(to)
+		WebElement el;
+		try {
+			el = table.findElement(singleRow(rowNo)).findElement(singleCell(colNo)).findElement(clickElement())
+			//WebActions.click(el)
+			el.click()
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to click on link inside table '+e.toString())
+		}
+	}
+
 
 	//Keywords
 

@@ -454,7 +454,42 @@ public class ConsumerData {
 		ACC_B2_POS5.put(Fields.ACC_POSITION_NAME, 'Installment Personal Loan')
 		ACC_B2_POS5.put(Fields.ACC_CREDIT_LIMIT, '100000')
 	}
+	
+	public static final Map<Fields, String> ACC_B1_TXNA;
+	static {
+		ACC_B1_TXNA = new HashMap<Fields, String>()
+		ACC_B1_TXNA.put(Fields.TXN_CODE, 'Savings Miscellaneous Credit')
+		ACC_B1_TXNA.put(Fields.TXN_AMOUNT, '50000')
+		ACC_B1_TXNA.put(Fields.TXN_TYPE, 'Credit')
+		ACC_B1_TXNA.put(Fields.TXN_COMMENT, 'Credit transaction for savings account')
+	}
 
+	public static final Map<Fields, String> ACC_B1_TXNB;
+	static {
+		ACC_B1_TXNB = new HashMap<Fields, String>()
+		ACC_B1_TXNB.put(Fields.TXN_CODE, 'Savings Miscellaneous Debit')
+		ACC_B1_TXNB.put(Fields.TXN_AMOUNT, '10000')
+		ACC_B1_TXNB.put(Fields.TXN_TYPE, 'Debit')
+		ACC_B1_TXNB.put(Fields.TXN_COMMENT, 'Debit transaction for savings account')
+	}
+
+	public static final Map<Fields, String> ACC_B2_POS1_TXNA;
+	static {
+		ACC_B2_POS1_TXNA = new HashMap<Fields, String>()
+		ACC_B2_POS1_TXNA.put(Fields.TXN_CODE, 'Savings Miscellaneous Credit')
+		ACC_B2_POS1_TXNA.put(Fields.TXN_AMOUNT, '35000.50')
+		ACC_B2_POS1_TXNA.put(Fields.TXN_TYPE, 'Credit')
+		ACC_B2_POS1_TXNA.put(Fields.TXN_COMMENT, 'Credit transaction for savings account')
+	}
+
+	public static final Map<Fields, String> ACC_B2_POS1_TXNB;
+	static {
+		ACC_B2_POS1_TXNB = new HashMap<Fields, String>()
+		ACC_B2_POS1_TXNB.put(Fields.TXN_CODE, 'Savings Miscellaneous Debit')
+		ACC_B2_POS1_TXNB.put(Fields.TXN_AMOUNT, '2000.10')
+		ACC_B2_POS1_TXNB.put(Fields.TXN_TYPE, 'Debit')
+		ACC_B2_POS1_TXNB.put(Fields.TXN_COMMENT, 'Debit transaction for savings account')
+	}
 
 }
 
