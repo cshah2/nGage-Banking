@@ -28,7 +28,7 @@ int SUBSTRING_DATE_END = 10
 String CASE_TYPE = "Funds Transfer Internal"
 String ORDER_STATUS = "Entered"
 Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_ORDER
+Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
 
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
 TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
@@ -38,6 +38,10 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
 WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+
+
+'Get Current transaction records count'
+int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(scheduledTransactionsTable)
 
 'Click on Account Task Drawer'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_Drawer'))
@@ -112,6 +116,8 @@ WebUI.delay(WAIT_FOR_FIVE_SECONDS)
 
 'Scroll to Schedule Transactions Table'
 WebUI.scrollToElement(scheduledTransactionsTable, GlobalVariable.Timeout)
+
+
 
 'Verify Transactions(Scheduled) Table with the updated Order Book Transfer(Order Type)'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(scheduledTransactionsTable, LATEST_ROW, ColumnPosition.ORDER_TYPE,
