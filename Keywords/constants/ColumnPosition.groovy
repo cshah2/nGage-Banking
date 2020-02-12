@@ -38,6 +38,7 @@ public class ColumnPosition {
 	//Cases Table
 	public static final int OPEN_CASE_LATEST_ROW = 1
 	public static final int CASE_TYPE = 3
+	public static final int CASE_NUMBER  = 2
 
 
 	//Account  Open cases

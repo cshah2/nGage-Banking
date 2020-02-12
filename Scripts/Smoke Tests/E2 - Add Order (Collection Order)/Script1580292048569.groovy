@@ -108,10 +108,22 @@ CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTask
 'Click on Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Submit'))
 
+'verify order details for confirmation'
+CustomKeywords.'pages.account.tabs.AccountOrderConfirmation.verifyOrderConfirmationDetails'(custOrderData)
+
+
+
 'Click on Confirm Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Confirm'))
 
 
+
+
+String alertMessage = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/alert_MoneyMovement'))
+println "The message  :" + alertMessage
+String [] splittedMessage = alertMessage.split(" ")
+String caseNumber = splittedMessage[3]
+println  "The cae number : " + caseNumber
 
 
 'Verify Money Movement Case Alert Displayed'
@@ -162,6 +174,10 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(scheduledTransactionsTa
 
 'Click on Cases Tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountDashboardPage/TabSection/tab_Cases'))
+
+'Verify Case number in Open cases Tab'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_NUMBER,
+	caseNumber, Operator.EQUALS_IGNORE_CASE)
 
 
 'Verify Case Type in Open cases Tab'

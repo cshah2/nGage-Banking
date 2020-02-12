@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='nGageBanking_Theme_wt2_block_wtMenu_nGageBanking_Common_wt13_block_wtMenusList_ctl06_RichWidgets_wt7_block_wtMenuItem_wt5']</value>
+         <value>//a[@title='Workflow']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
