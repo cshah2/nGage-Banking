@@ -61,7 +61,7 @@ public class AccountTransactionTab {
 		}
 
 		'Verify data in transaction table - ending balance'
-		WebTable.verifyCellValueMatches(txnTable, rowNo, ColumnPosition.TXN_BALANCE, txnData.get(Fields.ACC_AVAILABLE_BALANCE), Operator.EQUALS)
+		WebTable.verifyCellValueMatches(txnTable, rowNo, ColumnPosition.TXN_BALANCE, txnData.get(Fields.ACC_LEDGER_BALANCE), Operator.EQUALS)
 
 		'Verify data in transaction table - description'
 		WebTable.verifyCellValueMatches(txnTable, rowNo, ColumnPosition.TXN_DESCRIPTION, txnData.get(Fields.TXN_COMMENT), Operator.EQUALS)

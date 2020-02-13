@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_RelationshipType</name>
+   <name>input_ToAccount</name>
    <tag></tag>
-   <elementGuidId>d5678fe9-be90-42b4-ab46-3b7507ce8c80</elementGuidId>
+   <elementGuidId>5b6417d2-73c8-41db-b95c-a64973522b61</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@id,'_wtRelationshipType')]/select</value>
+         <value>//input[contains(@id,'_wtToAccountNumber')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

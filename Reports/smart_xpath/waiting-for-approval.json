@@ -230,6 +230,13 @@
       "testObjectId": "Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No",
       "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtChangeModeConfirmationModal_block_wtActions_wt195\u0027]/span",
       "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Show Password\u0027])[1]/preceding::span[5]",
+      "testObjectId": "Object Repository/LoginPage/text_PageHeading",
+      "brokenXPath": "//span[@id\u003d\u0027WebPatterns_wt22_block_wtLogo_wtLogoTextString\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/LoginPage/text_PageHeading_neighbor_0.png"
     }
   ]
 }

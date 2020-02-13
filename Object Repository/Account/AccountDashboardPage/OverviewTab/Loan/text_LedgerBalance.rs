@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_RelationshipType</name>
+   <name>text_LedgerBalance</name>
    <tag></tag>
-   <elementGuidId>d5678fe9-be90-42b4-ab46-3b7507ce8c80</elementGuidId>
+   <elementGuidId>fdc9dec6-a8c6-42d4-8dd3-7ea92fcc6654</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@id,'_wtRelationshipType')]/select</value>
+         <value>//div[contains(@id,'_wtholdTotal3')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

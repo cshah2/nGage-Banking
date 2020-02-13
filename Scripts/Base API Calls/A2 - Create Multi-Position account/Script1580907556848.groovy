@@ -77,6 +77,10 @@ String urlPosition5 = WebUtil.generateAccountUrl(partyId, "3", accNumber, positi
 
 accDataPos1.put(Fields.IS_CREATED, 'true')
 accDataPos2.put(Fields.IS_CREATED, 'true')
+accDataPos3.put(Fields.IS_CREATED, 'true')
+accDataPos4.put(Fields.IS_CREATED, 'true')
+accDataPos5.put(Fields.IS_CREATED, 'true')
+
 accDataPos1.put(Fields.URL, urlPosition1)
 accDataPos2.put(Fields.URL, urlPosition2)
 accDataPos3.put(Fields.URL, urlPosition3)

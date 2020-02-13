@@ -454,7 +454,7 @@ public class ConsumerData {
 		ACC_B2_POS5.put(Fields.ACC_POSITION_NAME, 'Installment Personal Loan')
 		ACC_B2_POS5.put(Fields.ACC_CREDIT_LIMIT, '100000')
 	}
-	
+
 	public static final Map<Fields, String> ACC_B1_TXNA;
 	static {
 		ACC_B1_TXNA = new HashMap<Fields, String>()
@@ -472,7 +472,7 @@ public class ConsumerData {
 		ACC_B1_TXNB.put(Fields.TXN_TYPE, 'Debit')
 		ACC_B1_TXNB.put(Fields.TXN_COMMENT, 'Debit transaction for savings account')
 	}
-	
+
 	public static final Map<Fields, String> ACC_B1_TXNC;
 	static {
 		ACC_B1_TXNC = new HashMap<Fields, String>()
@@ -500,6 +500,16 @@ public class ConsumerData {
 		ACC_B2_POS1_TXNB.put(Fields.TXN_TYPE, 'Debit')
 		ACC_B2_POS1_TXNB.put(Fields.TXN_COMMENT, 'Debit transaction for savings account')
 	}
+	
+	public static final Map<Fields, String> ACC_B2_POS5_TXNA;
+	static {
+		ACC_B2_POS5_TXNA = new HashMap<Fields, String>()
+		ACC_B2_POS5_TXNA.put(Fields.TXN_CODE, 'Loan Disbursement')
+		ACC_B2_POS5_TXNA.put(Fields.TXN_AMOUNT, '30000')
+		ACC_B2_POS5_TXNA.put(Fields.TXN_TYPE, 'Debit')
+		ACC_B2_POS5_TXNA.put(Fields.TXN_COMMENT, 'Disburse Loan amount to Business savings')
+	}
+
 
 }
 
