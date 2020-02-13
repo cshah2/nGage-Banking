@@ -5,6 +5,8 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 import org.openqa.selenium.Keys
+import org.openqa.selenium.Point
+import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -14,6 +16,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
@@ -22,7 +25,11 @@ import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData
+import data.ConsumerData as ConsumerData
+
+
+
 
 int LATEST_ROW = 1
 
@@ -36,11 +43,41 @@ String ADD_ORDER_TASK = 'Add Order'
 
 String CASE_TYPE = 'Funds Transfer Internal'
 
+
 String ORDER_STATUS = 'Entered'
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
+Map<Fields, String> custOrderData = ConsumerData.ACC_B1
+
+Map<Fields, String> toAccOrderData= ConsumerData.ACC_B1_TXNA
+String amountView = String.format("%,.2f", Double.parseDouble(custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT)))
+String dest_LedgerBalanceAmountBefore
+String dest_LedgerBalanceAmountAfter
+String dest_AvailableBalanceBefore
+String dest_AvailableBalanceAfter
+String source_ledgerBalanceBefore
+String source_ledgerBalanceAfter
+String source_availableBalanceBefore
+String source_availableBalanceAfter
+
+
+
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate To Account dashboard'
+WebUI.navigateToUrl(toAccOrderData.get(Fields.URL))
+
+
+'Store Ledger balance of Destination account'
+dest_LedgerBalanceBefore = WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_LedgerBalance'))
+
+'Store Available balance of Destination account'
+dest_AvailableBalanceBefore = WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance'))
+
+println  "Ledger bal :"+ dest_LedgerBalanceBefore + "and Available :" + dest_AvailableBalanceBefore
 
 
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
@@ -51,6 +88,19 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
 WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+
+
+
+'Store Ledger balance of Destination account'
+source_ledgerBalanceBefore = WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_LedgerBalance'))
+
+'Store Available balance of Destination account'
+source_availableBalanceBefore = WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance'))
+
+println  "Ledger bal :"+ source_ledgerBalanceBefore + "and Available :" + source_availableBalanceBefore
+
+
+
 
 'Get Current transaction records count'
 int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(scheduledTransactionsTable)
@@ -188,9 +238,10 @@ CustomKeywords.'actions.WebActions.verifyMatch'(caseNum, caseNumber, Operator.EQ
 
 String accNum  = WebUI.getText(findTestObject('BasePage/WorkFlow/text_AccNumber'))
 
-/*'Verify From counter party account number '
-CustomKeywords.'actions.WebActions.verifyMatch'(accNum, custOrderData.get(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER), Operator.EQUALS_IGNORE_CASE)
-*/
+String orderAmount  = WebUI.getText(findTestObject('BasePage/WorkFlow/text_Amount'))
+'Verify Order amount '
+CustomKeywords.'actions.WebActions.verifyMatch'(orderAmount, custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT), Operator.EQUALS_IGNORE_CASE)
+
 
 
 'Click on case number row'
@@ -280,9 +331,9 @@ CustomKeywords.'actions.WebActions.verifyMatch'(caseNum2, caseNumber, Operator.E
 
 String accNum2  = WebUI.getText(findTestObject('BasePage/WorkFlow/text_AccNumber'))
 
-/*'Verify From counter party account number '
+'Verify From counter party account number '
 CustomKeywords.'actions.WebActions.verifyMatch'(accNum2, custOrderData.get(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER), Operator.EQUALS_IGNORE_CASE)
-*/
+
 
 'Click on case number row'
 CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/Workflow/caseNumber', [('caseNumber') : caseNumber]))
@@ -328,6 +379,27 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('LoginPage/btn_Login'))
 'Navigaet to Account Overview'
 WebUI.navigateToUrl(custOrderData.get(Fields.URL))
 
+
+
+
+'Calculate ledger balance after'
+source_ledgerBalanceAfter = String.format("%,.2f",Double.parseDouble(source_ledgerBalanceBefore.replaceAll(',', '')) -  Double.parseDouble(amountView.replaceAll(',', '')))
+
+println  "Source Ledger balance after = " + source_ledgerBalanceAfter
+
+'Verify ledger balance after'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_LedgerBalance')), source_ledgerBalanceAfter, Operator.EQUALS)
+
+'Calculate available balance after'
+source_availableBalanceAfter = String.valueOf(String.format("%,.2f", Double.parseDouble(source_availableBalanceBefore.replaceAll(',', '')) - Double.parseDouble(amountView.replaceAll(',', ''))))
+
+println  "Source availab balance after = " + source_availableBalanceAfter
+
+'Verify available balance after'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance')), source_availableBalanceAfter, Operator.EQUALS)
+
+
+
 'Click on Orders tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountDashboardPage/TabSection/tab_Orders'))
 
@@ -343,11 +415,53 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(scheduledTransactionsTa
 
 
 
+'Logout of the portal'
+CustomKeywords.'actions.WebActions.logout'()
+
+//verify counterparty account balance
+
+'Login to Portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate to Destination Acccount Overview'
+WebUI.navigateToUrl(toAccOrderData.get(Fields.URL))
 
 
 
 
+'Calculate Ledger balance of Destination account after transction'
+dest_ledgerBalanceAfter = String.valueOf(String.format("%,.2f", Double.parseDouble(dest_LedgerBalanceBefore.replaceAll(',', '')) + Double.parseDouble(amountView.replaceAll(',', ''))))
+
+'Calculate Available balance of Destination account after transction'
+dest_availableBalanceAfter = String.valueOf(String.format("%,.2f", Double.parseDouble(dest_AvailableBalanceBefore.replaceAll(',', '')) + Double.parseDouble(amountView.replaceAll(',', ''))))
+
+'Verify Ledger balance after transaction in destination account'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_LedgerBalance')), dest_ledgerBalanceAfter, Operator.EQUALS)
+
+'Verify Available balance after transaction in destination account'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance')), dest_availableBalanceAfter, Operator.EQUALS)
 
 
 
+
+TestObject transactionsTable = findTestObject('Account/AccountDashboardPage/TransactionTab/table_Transactions')
+
+'Scroll to the transactions table'
+WebElement element = WebUiCommonHelper.findWebElement(transactionsTable, 30)
+Point p = element.getLocation()
+WebUI.scrollToPosition(p.x-200, p.y-200)
+
+'Verify Case Type in Transactions table Tab'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(transactionsTable, LATEST_ROW, ColumnPosition.TXN_CODE,
+	"Funds Transfer", Operator.EQUALS_IGNORE_CASE)
+
+'Verify Credit Amount'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(transactionsTable, LATEST_ROW, ColumnPosition.TXN_CREDIT_AMOUNT,
+	custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT), Operator.EQUALS_IGNORE_CASE)
+
+
+
+'Verify Order Created Date in Open cases Tab'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(transactionsTable, LATEST_ROW, ColumnPosition.TXN_CREATED_DATE,
+	custOrderData.get(Fields.ORDER_CREATED_DATE).substring(SUBSTRING_DATE_START, SUBSTRING_DATE_END), Operator.EQUALS_IGNORE_CASE)
 

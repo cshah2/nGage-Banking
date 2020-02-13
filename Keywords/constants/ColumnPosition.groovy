@@ -71,6 +71,7 @@ public class ColumnPosition {
 
 	//Transaction Table
 	public static int TXN_CODE = 5
+	public static int TXN_CREATED_DATE = 2
 	public static int TXN_DEBIT_AMOUNT = 6
 	public static int TXN_CREDIT_AMOUNT = 7
 	public static int TXN_BALANCE = 8
