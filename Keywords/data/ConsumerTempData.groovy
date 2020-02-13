@@ -156,7 +156,7 @@ public class ConsumerTempData {
 
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP,"Banking")
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_TYPE,"Demand deposit account")
-		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_TRANSFER_AMOUNT,"16.00")
+		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_TRANSFER_AMOUNT,"22.00")
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_CREATED_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 

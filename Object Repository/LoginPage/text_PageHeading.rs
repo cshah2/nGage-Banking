@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//span[@id='WebPatterns_wt22_block_wtLogo_wtLogoTextString']</value>
+         <value>//span[contains(@id,'LogoTextString')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
