@@ -23,6 +23,7 @@ import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
 import utils.MapUtil
+import utils.WebUtil
 
 public class CreateConsumerPage {
 
@@ -213,7 +214,10 @@ public class CreateConsumerPage {
 		//Wait for Customer ID and Group field to load
 		WebActions.waitForElementVisible(e_ConsumerId, GlobalVariable.Timeout)
 
-		WebActions.setText(e_ConsumerId, custData, Fields.CUST_ID)
+		if(!WebActions.isReadonly(e_ConsumerId)) {
+			WebActions.setText(e_ConsumerId, custData, Fields.CUST_ID)
+		}
+
 		WebActions.selectOptionByLabel(e_ConsumerGroup, custData, Fields.CUST_GROUP)
 	}
 

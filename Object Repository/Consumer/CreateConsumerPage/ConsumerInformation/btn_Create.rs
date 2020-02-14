@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wt110']</value>
+         <value>//div[contains(@id,'_wtsubmit_CN')]//input[@value='Create']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

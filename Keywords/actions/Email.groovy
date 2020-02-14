@@ -29,22 +29,22 @@ public class Email {
 
 	@Keyword
 	static def verifyMailCount(String email, int expCount, Operator operator) {
-		
+
 		String username = email.split('@')[0]
 		OneSecEmail mailbox = new OneSecEmail()
 		mailbox.getMessages(username)
-		
+
 		int actCount = mailbox.getMessageCount()
 		WebActions.verifyNumbericMatch(actCount, expCount, operator)
 	}
-	
+
 	@Keyword
 	static def verifyMailSubject(String email, int messageNo, String expSubject, Operator operator) {
 
 		String username = email.split('@')[0]
 		OneSecEmail mailbox = new OneSecEmail()
 		mailbox.getMessages(username)
-		
+
 		String actSubject = mailbox.getSubject(messageNo)
 		WebActions.verifyMatch(actSubject, expSubject, operator)
 	}
@@ -56,21 +56,21 @@ public class Email {
 		String username = email.split('@')[0]
 		OneSecEmail mailbox = new OneSecEmail()
 		mailbox.getMessages(username)
-		
+
 		int messageId = mailbox.getMessageId(messageNo)
 		println "Message ID = "+messageId
 		mailbox.readMessage(username, messageId)
 		return mailbox.getValueFromMessageBody(searchText, 5)
 	}
-	
+
 	@Keyword
 	static def getTemporaryPassword(String email, int messageNo) {
-		
+
 		String searchText = 'Your new password is:\n'
 		String username = email.split('@')[0]
 		OneSecEmail mailbox = new OneSecEmail()
 		mailbox.getMessages(username)
-		
+
 		int messageId = mailbox.getMessageId(messageNo)
 		println "Message ID = "+messageId
 		mailbox.readMessage(username, messageId)

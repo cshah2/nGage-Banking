@@ -105,7 +105,7 @@ public class ConsumerData {
 
 		//Education and Occupation details
 		CUST_A.put(Fields.CUST_EMPLOYMENT_STATUS, 'Part-time')
-		CUST_A.put(Fields.CUST_OCCUPATION, 'Computer and Mathmatical')
+		CUST_A.put(Fields.CUST_OCCUPATION, 'Legal')
 		CUST_A.put(Fields.CUST_MONTHLY_GROSS_INCOME, '30000')
 		CUST_A.put(Fields.CUST_MILITARY_STATUS, 'Inactive')
 		CUST_A.put(Fields.CUST_EDUCATION, 'High school or GED')

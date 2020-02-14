@@ -41,9 +41,18 @@ String pageUrl = WebUI.getUrl()
 'Verify user is on Customer dashboard page'
 CustomKeywords.'actions.WebActions.verifyMatch'(pageUrl, 'CustomerMainFlow.CustomerDetail.aspx', Operator.CONTAINS_IGNORE_CASE)
 
+'Extract Customer ID from URL'
+//println "URL = "+pageUrl
+int startIndex = pageUrl.lastIndexOf('customerId') + 11
+int endIndex = startIndex+6
+//println "Start Index = "+startIndex+" End Index = "+endIndex
+String customerId = pageUrl[startIndex..endIndex]
+//println "Customer Id = "+customerId
+
 'Verify Consumer data on header section'
 CustomKeywords.'pages.consumer.ConsumerDashboardPage.verifyConsumerDataOnHeaderSection'(custData)
 
 'Set flags for future tests'
+custData.put(Fields.CUST_ID, customerId)
 custData.put(Fields.URL, WebUI.getUrl())
 custData.put(Fields.IS_CREATED, 'true')
