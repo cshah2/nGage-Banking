@@ -39,11 +39,13 @@ public class ColumnPosition {
 	public static final int OPEN_CASE_LATEST_ROW = 1
 	public static final int CASE_TYPE = 3
 	public static final int CASE_NUMBER  = 2
+	public static final int CASE_STATUS  = 7
 
 
 	//Account  Open cases
 	public static final int ACCOUNT_NUMBER = 4
 	public static final int ORDER_CREATED_DATE = 5
+	public static final int OPEN_CASES_ORDER_STATUS = 7
 
 
 	//Address table

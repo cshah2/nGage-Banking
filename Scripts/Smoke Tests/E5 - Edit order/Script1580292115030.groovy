@@ -39,6 +39,8 @@ String CASE_TYPE = 'Funds Transfer Internal'
 
 String ORDER_STATUS = 'Entered'
 
+String taskName = "Add Order"
+
 Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 
 Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
@@ -53,10 +55,91 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 'Navigate To customer dashboard'
 WebUI.navigateToUrl(custOrderData.get(Fields.URL))
 
+
 'Get Current transaction records count'
 int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(scheduledTransactionsTable)
 
 println('The rows count: ' + recordCount)
+
+
+
+'Open task drawer'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
+
+'Select Task'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
+
+
+
+
+'Click on Order Type DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'))
+
+
+'Select Order type from OrderType DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_TYPE)]))
+
+
+'Click on Origin Source DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OriginSource'))
+
+
+'Select Origin Source from OriginSource DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_ORIGIN_SOURCE)]))
+
+
+'Click on order Source DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'))
+
+
+'Select order Source from OriginSource DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect' ,[('value'):custOrderData.get(Fields.ORDER_SOURCE)]))
+
+'Click on Operational area  DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'))
+
+
+'Select Operational area from OperationalArea DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect' ,[('value'):custOrderData.get(Fields.ORDER_OPERATIONL_AREA)]))
+
+'Type Order Info'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo'), custOrderData.get(Fields.ORDER_INFO))
+
+'Type AccountTitle'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTitle'), custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_TITLE))
+
+
+'Click on Account Group DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'))
+
+
+'Select Account Group from Account Group DropDown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP)]))
+
+'Type Account Number'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
+
+'Click on Send now Checkbox'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
+
+'Type transfer amount'
+CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderAmt'), custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT))
+
+
+'Click on Submit Button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Submit'))
+
+
+
+//verify the order details
+
+CustomKeywords.'pages.account.tabs.AccountOrderConfirmation.verifyOrderConfirmationDetails'(custOrderData)
+
+
+'Click on Confirm Button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Confirm'))
+
+
 
 
 WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Account/AccountTaskDrawer/AddOrder/div_ScheduleTransactions'), 30)

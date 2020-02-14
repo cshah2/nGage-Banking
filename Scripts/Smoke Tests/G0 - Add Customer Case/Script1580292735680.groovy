@@ -1,4 +1,5 @@
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
@@ -13,5 +14,117 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+
+import constants.ColumnPosition
+import constants.Fields
+import constants.Operator
 import internal.GlobalVariable as GlobalVariable
+import data.ConsumerData as ConsumerData
+
+int LATEST_ROW = 1
+String taskName = "Add Customer Service Case"
+String caseType = "Name Update"
+Map<Fields, String> customerData = ConsumerData.CUST_B
+
+//TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate To customer dashboard'
+WebUI.navigateToUrl(customerData.get(Fields.URL))
+
+
+'Open task drawer'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
+
+'Select Task'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
+
+'Click on Case Type dropdown'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/select_CaseType'))
+
+
+'Click on Case Type Option'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/options_CaseType',[('caseType'):caseType]))
+
+
+'Click on Submit Button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/btn_Submit'))
+
+
+'Switch to tab'
+WebUI.switchToWindowIndex(1)
+
+'Switch to Parent frame'
+WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)
+
+'Wait for workflow actions tab'
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'),GlobalVariable.Timeout)
+
+'Get Case number  from WMI UI'
+String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'))
+
+
+'Get Case Tyep   from WMI UI'
+String caseTypeInWMI = WebUI.getText(findTestObject('BasePage/WorkFlow/text_CaseType'))
+
+String[]  spanText= generalInfo.split("\n")
+println "Case number in WMI : "  + spanText[0]
+'Verify Routing Reason'
+CustomKeywords.'actions.WebActions.verifyMatch'(caseTypeInWMI, caseType, Operator.EQUALS)
+
+'Verify User profile name'
+CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo, GlobalVariable.UserProfileName, Operator.CONTAINS_IGNORE_CASE)
+
+'Verify Case status'
+CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo,"Case Status: New", Operator.CONTAINS_IGNORE_CASE)
+
+
+'Switch to Default frame'
+WebUI.switchToDefaultContent()
+
+'click on First Close Window'
+CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
+
+'Switch to default window'
+WebUI.switchToWindowIndex(0)
+
+
+'Click on Cases Tab'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountDashboardPage/TabSection/tab_Cases'))
+
+TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
+
+
+'Verify Case Type in Open cases Tab'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_TYPE,
+	caseType, Operator.EQUALS_IGNORE_CASE)
+
+'Verify case status in Open cases Tab'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_STATUS,
+	"New", Operator.EQUALS_IGNORE_CASE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

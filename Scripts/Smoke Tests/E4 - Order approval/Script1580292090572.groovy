@@ -21,12 +21,18 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil as MapUtil
+import utils.WebUtil
 import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
 import data.ConsumerData
-import data.ConsumerData as ConsumerData
+import data.ConsumerTempData as ConsumerData
+
+
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A2 - Create Multi-Position account'), null)
 
 
 
@@ -46,11 +52,11 @@ String CASE_TYPE = 'Funds Transfer Internal'
 
 String ORDER_STATUS = 'Entered'
 
-Map<Fields, String> customerData = ConsumerData.CUST_B
+Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 
-Map<Fields, String> custOrderData = ConsumerData.ACC_B1
+Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
 
-Map<Fields, String> toAccOrderData= ConsumerData.ACC_B1_TXNA
+Map<Fields, String> toAccOrderData= ConsumerData.TO_ACCOUNT_BOOKTRANSFER_ORDER
 String amountView = String.format("%,.2f", Double.parseDouble(custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT)))
 String dest_LedgerBalanceAmountBefore
 String dest_LedgerBalanceAmountAfter

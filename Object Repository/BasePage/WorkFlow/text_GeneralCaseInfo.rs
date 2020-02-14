@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_CancelOrder</name>
+   <name>text_GeneralCaseInfo</name>
    <tag></tag>
-   <elementGuidId>dffa488d-0ee2-4572-b796-621347ee6b7a</elementGuidId>
+   <elementGuidId>b591eff2-4df8-40fd-99ac-1ee75992c228</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//span[@id='eform_mcb67676_phBO_3_BO_BOstatic_3_BOstatic_2_BOstatic_1_BOstatic_0']</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//a[text()='Cancel Order']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

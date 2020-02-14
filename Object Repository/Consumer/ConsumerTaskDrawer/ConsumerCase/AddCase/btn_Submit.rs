@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_CancelOrder</name>
+   <name>btn_Submit</name>
    <tag></tag>
-   <elementGuidId>dffa488d-0ee2-4572-b796-621347ee6b7a</elementGuidId>
+   <elementGuidId>e4fbdd44-7fc7-4cf8-b771-c68420720904</elementGuidId>
    <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@value='Submit']</value>
+      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
-      </entry>
-      <entry>
-         <key>XPATH</key>
-         <value>//a[text()='Cancel Order']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

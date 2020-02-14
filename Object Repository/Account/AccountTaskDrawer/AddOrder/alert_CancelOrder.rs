@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_CancelOrder</name>
+   <name>alert_CancelOrder</name>
    <tag></tag>
-   <elementGuidId>dffa488d-0ee2-4572-b796-621347ee6b7a</elementGuidId>
+   <elementGuidId>e6a02ade-2ef3-4e12-937e-a8f1fc8e60cc</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[text()='Cancel Order']</value>
+         <value>//span[contains(text(),'Order canceled')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

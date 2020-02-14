@@ -20,9 +20,11 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import actions.WebActions
+import constants.Common
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
+import utils.DateUtil
 
 public class AccountOrderConfirmation {
 	
@@ -35,17 +37,26 @@ public class AccountOrderConfirmation {
 		
 		String orderAmt = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_OrderAmount'))
 		WebActions.verifyMatch(orderAmt,orderDetails.get(Fields.ORDER_TRANSFER_AMOUNT), Operator.EQUALS_IGNORE_CASE)
-		
+	
 		String orderSource = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_OrderSource'))
 		WebActions.verifyMatch(orderSource,orderDetails.get(Fields.ORDER_SOURCE), Operator.EQUALS_IGNORE_CASE)
 		
 		String orderOriginSource = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_OriginSource'))
 		WebActions.verifyMatch(orderOriginSource,orderDetails.get(Fields.ORDER_ORIGIN_SOURCE), Operator.EQUALS_IGNORE_CASE)
 		
-		String transferDate = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_TransferDate'))
-		WebActions.verifyMatch(transferDate,"Immediate", Operator.EQUALS_IGNORE_CASE)
-
 		
+		if(orderDetails.get(Fields.ORDER_DATE) != null && orderDetails.get(Fields.ORDER_DATE).equalsIgnoreCase(DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))){
+			String transferDate = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_TransferDate'))
+			WebActions.verifyMatch(transferDate,"Immediate", Operator.EQUALS_IGNORE_CASE)
+			
+		}
+		if(orderDetails.get(Fields.ORDER_DATE_FUTURE) != null && orderDetails.get(Fields.ORDER_DATE_FUTURE).equalsIgnoreCase(DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))){
+			String transferDate = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_TransferDate'))
+			WebActions.verifyMatch(transferDate,orderDetails.get(Fields.ORDER_DATE_FUTURE), Operator.CONTAINS_IGNORE_CASE)
+			
+		}
+		
+				
 		String recurringOrder = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_Recurring'))
 		WebActions.verifyMatch(recurringOrder,"No", Operator.EQUALS_IGNORE_CASE)
 

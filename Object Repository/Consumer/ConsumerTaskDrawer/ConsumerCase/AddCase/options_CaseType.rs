@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_CancelOrder</name>
+   <name>options_CaseType</name>
    <tag></tag>
-   <elementGuidId>dffa488d-0ee2-4572-b796-621347ee6b7a</elementGuidId>
+   <elementGuidId>feaa0052-87f9-47ae-9ff2-5f670b246ae0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -11,7 +11,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[text()='Cancel Order']</value>
+         <value>//option[text()='${caseType}']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
