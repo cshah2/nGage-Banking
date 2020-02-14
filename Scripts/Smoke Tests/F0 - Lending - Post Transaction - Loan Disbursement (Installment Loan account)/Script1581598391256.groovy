@@ -25,7 +25,7 @@ WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal 
 WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A2 - Create Multi-Position account'), null)
 
 Map<Fields, String> custData = ConsumerData.CUST_B
-Map<Fields, String> sourceAccData = ConsumerData.ACC_B2_POS4
+Map<Fields, String> sourceAccData = ConsumerData.ACC_B2_POS5
 Map<Fields, String> destAccData = ConsumerData.ACC_B1
 Map<Fields, String> txnData = ConsumerData.ACC_B2_POS5_TXNA
 
