@@ -1,22 +1,39 @@
 package utils
 
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
+
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import java.awt.Image
+import java.awt.Rectangle
+import java.awt.Toolkit
+import java.awt.image.BufferedImage
+import java.awt.image.PixelGrabber
 import java.util.Map
+
+import javax.imageio.ImageIO
+
+import org.apache.commons.io.FileUtils
+import org.openqa.selenium.Point
+import org.openqa.selenium.TakesScreenshot
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.seleniumhq.jetty9.server.Response.OutputType
 
 import org.apache.commons.lang3.StringUtils
 import org.openqa.selenium.By
 import org.openqa.selenium.ElementClickInterceptedException
 import org.openqa.selenium.ElementNotInteractableException
+import org.openqa.selenium.Point
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.exception.StepFailedException
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -36,8 +53,11 @@ import constants.Fields
 import constants.Operator
 import constants.Urls
 import internal.GlobalVariable
+import net.sourceforge.tess4j.ITesseract
+import net.sourceforge.tess4j.Tesseract
 
 public class WebUtil {
+	public static final String actualFileUploadedPath =  "C:/ActualDocument1.png"
 
 	static def shouldFailTest(Map<Fields, String> data) {
 		if(!(data.containsKey(Fields.IS_CREATED) && data.get(Fields.IS_CREATED).equalsIgnoreCase("true"))) {
@@ -91,4 +111,75 @@ public class WebUtil {
 	static def setZoomLevel() {
 		WebUI.executeJavaScript("document.body.style.zoom='90%'", null)
 	}
+
+
+	public static void takeWebelementScreenshot(WebElement element,WebDriver driver){
+
+		File screenShot = ((TakesScreenshot) driver).getScreenshotAs(org.openqa.selenium.OutputType.FILE);
+
+
+		Point p = element.getLocation();
+		int width = element.getSize().getWidth();
+		int height = element.getSize().getHeight();
+
+		Rectangle rect = new Rectangle(width, height);
+
+		BufferedImage img = null;
+		img = ImageIO.read(screenShot);
+
+
+
+		BufferedImage dest = img.getSubimage(p.getX(), p.getY(), rect.width.intValue(), rect.height.intValue());
+
+		ImageIO.write(dest, "png", screenShot);
+
+		FileUtils.copyFile(screenShot,
+				new File(actualFileUploadedPath));
+	}
+
+
+
+	public static String getTextFromImage(String filePath){
+		String imageText
+		//String filePath = "C:/NGage-Banking-Automation/nGage-Banking/Data Files/Upload File/Document1.png";
+		File imageFile = new File(filePath)
+		Tesseract instance = new Tesseract()
+		try {
+
+			String dataPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\Tessdata\\'
+			instance.setDatapath(dataPath)
+			instance.setLanguage("eng")
+			imageText  = instance.doOCR(imageFile)
+			imageText.replaceAll("\n", "")
+			println "The text from Actual image : "  + imageText
+		} catch(Exception e){
+			e.printStackTrace()
+		}
+		return imageText.trim();
+	}
+
+
+	public static void verifyDownloadedFile(String fileName){
+
+		try{
+
+			String dataPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\DownloadedFile\\'
+
+			File dir = new File(dataPath);
+			File[] dir_contents = dir.listFiles();
+			String temp = fileName + ".PNG";
+			boolean check = new File(temp).exists();
+			for(int i = 0; i<dir_contents.length;i++) {
+				if(dir_contents[i].getName() == (fileName + ".PNG"))
+					println "File has been downloaded and file exists in the Directory "
+			}
+		}catch(Exception e){
+			e.printStackTrace()
+
+		}
+
+
+	}
+
+
 }
