@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtSignedDocsList_ctl02_wtTermsAndConditionsVersion']</value>
+         <value>//span[contains(@id,'_wtSignedDocsList') and @class='ListRecords']/span[2]//input[contains(@id,'_wtTermsAndConditionsVersion')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@title='Add'][contains(@id,'_wtAddAccount')]</value>
+         <value>//a[contains(@id,'_wtAddAccount')]/*[name()='svg']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

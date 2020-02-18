@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@id='nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wt188_wtListRecords1_ctl02_wt1']</value>
+         <value>//span[contains(@id,'_wtsinglePositionIf')]//div[contains(text(),'Vertical')]//select</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

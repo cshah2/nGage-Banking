@@ -19,7 +19,10 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-Map<Fields, String> custData = ConsumerData.CUST_A
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
+
+Map<Fields, String> custData = ConsumerData.CUST_B
 Map<Fields, String> accData = ConsumerData.ACC_A
 
 WebUtil.shouldFailTest(custData)

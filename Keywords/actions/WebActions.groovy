@@ -159,7 +159,7 @@ public class WebActions {
 
 	@Keyword
 	static def check(TestObject to, Map<Fields, String> map, Fields field, String isScrollType = "nearest") {
-		if(MapUtil.isValidData(map, field)) {
+		if(MapUtil.isValidData(map, field) && map.get(field).equalsIgnoreCase('true')) {
 			scrollToElement(to, GlobalVariable.Timeout, isScrollType)
 			WebUI.check(to)
 		}
@@ -167,7 +167,7 @@ public class WebActions {
 
 	@Keyword
 	static def uncheck(TestObject to, Map<Fields, String> map, Fields field, String isScrollType = "nearest") {
-		if(MapUtil.isValidData(map, field)) {
+		if(!MapUtil.isValidData(map, field) || (MapUtil.isValidData(map, field) && map.get(field).equalsIgnoreCase('false'))) {
 			scrollToElement(to, GlobalVariable.Timeout, isScrollType)
 			WebUI.uncheck(to)
 		}

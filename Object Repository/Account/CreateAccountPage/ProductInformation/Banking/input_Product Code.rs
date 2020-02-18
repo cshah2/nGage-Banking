@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtProductName3']</value>
+         <value>//span[contains(@id,'_wtsinglePositionIf')]//input[contains(@id,'_wtProductName')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
