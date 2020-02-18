@@ -24,9 +24,7 @@ import data.ConsumerData as ConsumerData
 int LATEST_ROW = 1
 String taskName = "Add Customer Service Case"
 String caseType = "Name Update"
-Map<Fields, String> customerData = ConsumerData.CUST_B
-
-//TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
+Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -34,36 +32,25 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 'Navigate To customer dashboard'
 WebUI.navigateToUrl(customerData.get(Fields.URL))
 
-
 'Open task drawer'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
 
 'Select Task'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 
-'Click on Case Type dropdown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/select_CaseType'))
-
-
-'Click on Case Type Option'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/options_CaseType',[('caseType'):caseType]))
-
+'Select CaseType'
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/CaseSection/select_CaseType'), caseType, true)
 
 'Click on Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/btn_Submit'))
 
-
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
-'Switch to Parent frame'
-WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)
-
-'Wait for workflow actions tab'
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'),GlobalVariable.Timeout)
-
 'Get Case number  from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'))
+String[] genralInfoArray = generalInfo.split("\n")
+String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
 
 
 'Get Case Tyep   from WMI UI'
@@ -81,6 +68,20 @@ CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo, GlobalVariable.User
 CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo,"Case Status: New", Operator.CONTAINS_IGNORE_CASE)
 
 
+
+//verify customer_Info
+'Extract Customer Info from WMI'
+String customerInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_ConsumerInfo'))
+
+'Verify Consumer ID in Customer Info'
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_ID), Operator.CONTAINS_IGNORE_CASE)
+
+
+'Verify Consumer mailid  in Customer Info'
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_MAILID), Operator.CONTAINS_IGNORE_CASE)
+
+
+
 'Switch to Default frame'
 WebUI.switchToDefaultContent()
 
@@ -94,6 +95,7 @@ WebUI.switchToWindowIndex(0)
 'Click on Cases Tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountDashboardPage/TabSection/tab_Cases'))
 
+'Open cases table'
 TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
 
 
@@ -105,7 +107,9 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_STATUS,
 	"New", Operator.EQUALS_IGNORE_CASE)
 
-
+'Verify case number in Open cases Tab'
+CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_NUMBER,
+	caseNumberFromGeneralInfo.trim(), Operator.EQUALS_IGNORE_CASE)
 
 
 

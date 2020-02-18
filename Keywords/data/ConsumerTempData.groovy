@@ -80,7 +80,9 @@ public class ConsumerTempData {
 
 	static{
 		ACCOUNT_HOLD = new HashMap<Fields, String>()
-		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "160120202304")
+		ACCOUNT_HOLD.put(Fields.CUST_ID, "7")
+		ACCOUNT_HOLD.put(Fields.CUST_MAILID, "ravi.balasundaram@aurionpro.com")
+		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "000000002550")
 		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "Reserve")
 		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		//ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
@@ -158,7 +160,7 @@ public class ConsumerTempData {
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_TYPE,"Demand deposit account")
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_TRANSFER_AMOUNT,"17.00")
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_CREATED_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
-		//ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.ORDER_DATE_FUTURE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4TeSCPmgC7M__V---V9F-Bg-&acctGroup=1&acctNumber=000000002550&selectedPositionId=4TeSG8FHC2N2Q----V9F-Co-&customerGroup=2&customerId=7&isOrg=False")
 	}
@@ -171,7 +173,6 @@ public class ConsumerTempData {
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_ORIGIN_SOURCE,"Prearranged")
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_SOURCE,"Bank operations")
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_OPERATIONL_AREA,"Back Office")
-		ACCOUNT_PAYEMENT_ORDER
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER,"160120202304")
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER,"000000002550")
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_COUNTERPARTY_ACCOUNT_TITLE,"Savings Account")
@@ -182,7 +183,6 @@ public class ConsumerTempData {
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_TRANSFER_AMOUNT,"16.00")
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_CREATED_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.ORDER_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
-		ACCOUNT_PAYEMENT_ORDER
 		ACCOUNT_PAYEMENT_ORDER.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4TeSCPmgC7M__V---V9F-Bg-&acctGroup=1&acctNumber=000000002550&selectedPositionId=4TeSG8FHC2N2Q----V9F-Co-&customerGroup=2&customerId=7&isOrg=False")
 	}
 
@@ -197,13 +197,11 @@ public class ConsumerTempData {
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER,"77788899911102")
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_COUNTERPARTY_ACCOUNT_TITLE,"Savings Account")
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_ROUTING_NUMBER,"043000096")
-		ACCOUNT_COLLECTION_ORDER
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP,"Banking")
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_TYPE,"Demand deposit account")
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_TRANSFER_AMOUNT,"25.00")
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_CREATED_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_COLLECTION_ORDER.put(Fields.ORDER_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
-		ACCOUNT_COLLECTION_ORDER
 		ACCOUNT_COLLECTION_ORDER.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=963852741123&selectedPositionId=4TzNJ2oW04cUZF---V9F-E7-&customerGroup=2&customerId=1&isOrg=False")
 	}
 

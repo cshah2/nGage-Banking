@@ -42,12 +42,17 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Click on Add Hold Tasks'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/task_AddHold'))
 
+
+'Select Account Hold Type'
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_HoldType'), custHoldData.get(Fields.HOLD_TYPE), true)
+
+/*
 'Click on the Hold Type Drop Down'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_HoldType'))
 
 'Select  Account Hold Type'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/option_HoldType',[('holdType'):custHoldData.get(Fields.HOLD_TYPE)]))
-
+*/
 'Set value on start date'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_StartDate'))
 
@@ -58,12 +63,17 @@ CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTas
 
 
 
-'Click on the Hold Type Drop Down'
+
+'Select Account Hold Type'
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_Duration'), custHoldData.get(Fields.HOLD_DURATION), true)
+
+
+/*'Click on the Hold Type Drop Down'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_Duration'))
 
 'Select  Account Hold Type'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/option_Duration',[('duration'):custHoldData.get(Fields.HOLD_DURATION)]))
-
+*/
 'Type Hold Amount'
 CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'), custHoldData.get(Fields.HOLD_AMOUNT))
 

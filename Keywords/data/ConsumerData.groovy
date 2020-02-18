@@ -123,7 +123,7 @@ public class ConsumerData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_NAME_VIEW, "Ravi Bala")
 		CUSTOMERDATA_MAP.put(Fields.CUST_FIRST_NAME, "Ravi")
 		CUSTOMERDATA_MAP.put(Fields.CUST_LAST_NAME, "Bala")
-		CUSTOMERDATA_MAP.put(Fields.CUST_MAILID, "ravii.balasundaram@aurionpro.com")
+		CUSTOMERDATA_MAP.put(Fields.CUST_MAILID, "bala08ravi@gmail.com")
 		CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL, "ravi.balasundaram@aurionpro.com")
 		CUSTOMERDATA_MAP.put(Fields.CUST_MAILIDTYPE, "Personal")
 		CUSTOMERDATA_MAP.put(Fields.CUST_DOB, "09/05/1994")

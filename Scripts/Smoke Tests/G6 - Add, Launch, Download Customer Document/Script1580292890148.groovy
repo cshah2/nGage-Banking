@@ -131,13 +131,10 @@ WebUI.navigateToUrl(path)
 WebElement downloadedImgelement = WebUiCommonHelper.findWebElement(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/downloaded_Image',[('url') : WebUI.getUrl()]), 30)
 
 
-
 "Take screenshot the uploaded image"
 WebUtil.takeWebelementScreenshot(downloadedImgelement, driver)
 
 println "Screenshot sucess"
-
-//String actualFilePath = WebUtil.actualFileUploadedPath
 String atualTextFromDownloadedImage = WebUtil.getTextFromImage(path)
 println "Actual text : " + atualTextFromDownloadedImage
 println "Expected text : " + expectedTextFromImage

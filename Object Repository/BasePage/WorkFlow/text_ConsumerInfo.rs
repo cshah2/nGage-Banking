@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>text_CaseType</name>
+   <name>text_ConsumerInfo</name>
    <tag></tag>
-   <elementGuidId>28df9c06-8b38-439d-a27a-80910142ba0e</elementGuidId>
+   <elementGuidId>6e1454da-6c1c-4700-9396-91d5d9f4bb38</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//span[text()='Case Type']/following-sibling::span</value>
+         <value>//span[@id='eform_mcb67676_phBO_3_BO_BOstatic_2_BOstatic_1_BOstatic_0']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
