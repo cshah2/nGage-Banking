@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wt658_block_wtText_wtcustomerGroupInput']</value>
+         <value>//select[contains(@id,'_wtcustomerGroup')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

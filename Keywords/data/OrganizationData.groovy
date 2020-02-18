@@ -114,7 +114,7 @@ public class OrganizationData {
 		ORG_A.put(Fields.ORG_AMOUNT_MOBILE_DEPOSITS, 'More than $1,000,000.00')
 		ORG_A.put(Fields.ORG_NUMBER_REMOTE_DEPOSITS, 'More than 10000 Remote Deposits')
 		ORG_A.put(Fields.ORG_AMOUNT_REMOTE_DEPOSITS, 'Other')
-		ORG_A.put(Fields.ORG_INTERMEDIATORY_SERVICES, 'Accounting')
+		//ORG_A.put(Fields.ORG_INTERMEDIATORY_SERVICES, 'Accounting')
 		ORG_A.put(Fields.ORG_PERCENT_REVENUE_CASH, '26 to 50 Percent')
 		ORG_A.put(Fields.ORG_CHK_NON_CASH_SERVICE, 'true')
 		ORG_A.put(Fields.ORG_CHK_CHARITY, 'true')
@@ -146,7 +146,7 @@ public class OrganizationData {
 		ORGANIZATIONMAP.put(Fields.ORG_ESTABLISHED_DATE, "02/03/2020")
 		ORGANIZATIONMAP.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4TdNhO2f267Osk---V1F-BR-&customerId=2&customerGroup=2&isOrg=True")
 	}
-	
+
 	public static final Map<Fields,String> NA_ORGANIZATIONMAP;
 	static{
 		NA_ORGANIZATIONMAP = new HashMap<Fields, String>()
@@ -167,17 +167,19 @@ public class OrganizationData {
 		//Basic Information
 		ACC_A = new HashMap<Fields, String>()
 		ACC_A.put(Fields.ACC_TITLE, ORG_A.get(Fields.ORG_NAME))
-		ACC_A.put(Fields.ACC_OWNERSHIP, 'Primary')
+		ACC_A.put(Fields.ACC_OWNERSHIP, 'Single')
+		ACC_A.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
 		ACC_A.put(Fields.ACC_DESCRIPTION, 'Savings Account')
 		ACC_A.put(Fields.ACC_GROUP, 'Banking')
 		ACC_A.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezoneUTC)+RandomUtil.getRandomNumeric(4))
 		ACC_A.put(Fields.ACC_BROKERED, 'false')
 		ACC_A.put(Fields.ACC_TIMEZONE, 'UTC')
 		ACC_A.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
+		ACC_A.put(Fields.ACC_REFERENCE_ID, 'Reference')
 
 		//Product Information
-		ACC_A.put(Fields.ACC_PRODUCT_TYPE, 'Personal Savings')
-		ACC_A.put(Fields.ACC_POSITION_NAME, 'Personal Savings')
+		ACC_A.put(Fields.ACC_PRODUCT_TYPE, 'Interest Checking (C2001 - DDA) ')
+		ACC_A.put(Fields.ACC_POSITION_NAME, 'Interest Checking')
 		ACC_A.put(Fields.ACC_CURRENCY_CODE, 'US Dollar')
 		ACC_A.put(Fields.ACC_CURRENCY_CODE_VIEW, 'USD')
 		ACC_A.put(Fields.ACC_VERTICAL, 'Vertical 01')
@@ -187,11 +189,12 @@ public class OrganizationData {
 
 		//T&C Document Information
 		ACC_A.put(Fields.TC_DOC_TYPE1, 'Terms and conditions')
+		ACC_A.put(Fields.TC_DOC_AGREEMENT_CODE1, 'A0001')
 		ACC_A.put(Fields.TC_DOC_SIGNED_BY1, 'Chintan Shah')
 		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 	}
-	
+
 	public static final Map<Fields, String> ORG_B;
 	static {
 		ORG_B = new HashMap<Fields, String>()

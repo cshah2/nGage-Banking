@@ -39,7 +39,7 @@ public class CreateOrganizationPage {
 
 		WebActions.setText(e_OrgName, orgData, Fields.ORG_NAME)
 		WebActions.setText(e_DbaName, orgData, Fields.ORG_DBA_NAME)
-		WebActions.setText(e_EstablishedDate, orgData, Fields.ORG_ESTABLISHED_DATE)
+		WebActions.setText(e_EstablishedDate, orgData, Fields.ORG_ESTABLISHED_DATE, true)
 		WebActions.setText(e_TaxID, orgData, Fields.ORG_TAX_ID)
 		WebActions.selectOptionByLabel(e_TaxIDType, orgData, Fields.ORG_TAX_ID_TYPE)
 	}
@@ -250,7 +250,10 @@ public class CreateOrganizationPage {
 		//Wait for Customer ID and Group field to load
 		WebActions.waitForElementVisible(e_OrganizationId, GlobalVariable.Timeout)
 
-		WebActions.setText(e_OrganizationId, custData, Fields.ORG_ID)
+		if(!WebActions.isReadonly(e_OrganizationId)) {
+			WebActions.setText(e_OrganizationId, custData, Fields.ORG_ID)
+		}
+
 		WebActions.selectOptionByLabel(e_OrganizationGroup, custData, Fields.ORG_GROUP)
 	}
 

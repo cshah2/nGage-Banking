@@ -39,9 +39,15 @@ String pageUrl = WebUI.getUrl()
 'Verify user is on Customer dashboard page'
 CustomKeywords.'actions.WebActions.verifyMatch'(pageUrl, 'CustomerMainFlow.CustomerDetail.aspx', Operator.CONTAINS_IGNORE_CASE)
 
+'Extract Customer ID from URL'
+int startIndex = pageUrl.lastIndexOf('customerId') + 11
+int endIndex = startIndex+6
+String orgId = pageUrl[startIndex..endIndex]
+
 'Verify Organization data on header section'
 CustomKeywords.'pages.organization.OrganizationDashboardPage.verifyOrganizationDataOnHeaderSection'(orgData)
 
 'Set flags for future tests'
+orgData.put(Fields.ORG_ID, orgId)
 orgData.put(Fields.URL, WebUI.getUrl())
 orgData.put(Fields.IS_CREATED, 'true')

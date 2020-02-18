@@ -19,7 +19,9 @@ import data.OrganizationData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-Map<Fields, String> orgData = OrganizationData.ORG_A
+//WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A3 - Create Organization'), null)
+
+Map<Fields, String> orgData = OrganizationData.ORG_B
 Map<Fields, String> accData = OrganizationData.ACC_A
 
 WebUtil.shouldFailTest(orgData)
@@ -35,3 +37,11 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Cons
 
 'Create account'
 CustomKeywords.'pages.account.CreateAccountPage.createBankingAccount'(accData)
+
+'Select Accounts tab'
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.clickAccountsTab'()
+
+'Verify Banking account infomrtion'
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyBankingAccountInformation'(accData, 1)
+
+accData.put(Fields.IS_CREATED, "true");
