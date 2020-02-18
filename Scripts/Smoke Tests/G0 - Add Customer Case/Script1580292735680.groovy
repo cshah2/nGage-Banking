@@ -19,7 +19,7 @@ import constants.ColumnPosition
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable as GlobalVariable
-import data.ConsumerData as ConsumerData
+import data.ConsumerTempData as ConsumerData
 
 int LATEST_ROW = 1
 String taskName = "Add Customer Service Case"

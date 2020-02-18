@@ -120,33 +120,20 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 'Click on Add Order Task '
 //CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/taskList', [('taskName') : ADD_ORDER_TASK]))
 
-'Click on Order Type DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'))
-
-'Select Order type from OrderType DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect', [('value') : custOrderData.get(
-	Fields.ORDER_TYPE)]))
-
-'Click on Origin Source DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OriginSource'))
+'Select OrderType'
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'), custOrderData.get(Fields.ORDER_TYPE), true)
 
 'Select Origin Source from OriginSource DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect', [('value') : custOrderData.get(
-	Fields.ORDER_ORIGIN_SOURCE)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OriginSource'), custOrderData.get(Fields.ORDER_ORIGIN_SOURCE), true)
 
-'Click on order Source DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'))
 
 'Select order Source from OriginSource DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect', [('value') : custOrderData.get(
-	Fields.ORDER_SOURCE)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'), custOrderData.get(Fields.ORDER_SOURCE), true)
 
-'Click on Operational area  DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'))
 
 'Select Operational area from OperationalArea DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect', [('value') : custOrderData.get(
-	Fields.ORDER_OPERATIONL_AREA)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'), custOrderData.get(Fields.ORDER_OPERATIONL_AREA), true)
+
 
 'Type Order Info'
 CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo'), custOrderData.get(

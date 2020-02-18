@@ -6,6 +6,8 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import java.util.Map
+
 import com.github.javafaker.Faker
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
@@ -75,6 +77,26 @@ public class ConsumerTempData {
 
 
 
+	
+	
+	public static final Map<Fields,String> ORGANIZATIONMAP;
+	static{
+		ORGANIZATIONMAP = new HashMap<Fields, String>()
+		ORGANIZATIONMAP.put(Fields.ORG_NAME, "Beginners")
+		ORGANIZATIONMAP.put(Fields.ORG_ID, "2")
+		ORGANIZATIONMAP.put(Fields.ORG_DBA_NAME, "Umesh Thorat")
+		ORGANIZATIONMAP.put(Fields.ORG_TAX_ID, "1")
+		ORGANIZATIONMAP.put(Fields.ORG_PHONENUMBER,"+919865325421")
+		ORGANIZATIONMAP.put(Fields.ORG_EMAILID,"ravi.balasundaram@aurionpro.com")
+		ORGANIZATIONMAP.put(Fields.ORG_DUN_BRADSTEET_NO,"87651214")
+//		/ORGANIZATIONMAP.put(Fields.ORG_ID,"897462564")
+		ORGANIZATIONMAP.put(Fields.ORG_GROUP, "Banking Customer")
+		ORGANIZATIONMAP.put(Fields.ADDR_VIEW, " 50 Valley Stream Parkway, Malvern, PA 19355")
+		ORGANIZATIONMAP.put(Fields.ORG_TAX_ID_MASKED, "******5123")
+		ORGANIZATIONMAP.put(Fields.ORG_ESTABLISHED_DATE, "02/03/2020")
+		ORGANIZATIONMAP.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4TdNhO2f267Osk---V1F-BR-&customerId=2&customerGroup=2&isOrg=True")
+	}
+	
 
 	public static final Map<Fields, String> ACCOUNT_HOLD;
 
@@ -228,6 +250,24 @@ public class ConsumerTempData {
 		TO_ACCOUNT_BOOKTRANSFER_ORDER
 		TO_ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?&acctGroup=1&acctNumber=200120201234&selectedPositionId=4Ti3Irc6ja3NK----V5F-Co-")
 	}
+	
+	
+	public static final Map<Fields, String> CUST_COMPLAINT;
+	static {
+	
+		CUST_COMPLAINT = new HashMap<Fields, String>()
+		CUST_COMPLAINT.put(Fields.URL, "https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False")
+		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_SOURCE, "DOJ")
+		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_ORIGIN, "Back Office")
+		CUST_COMPLAINT.put(Fields.CUST_PROD_TYPE, "Auto debt")
+		CUST_COMPLAINT.put(Fields.CUST_ISSUE_TYPE, "Account opening, closing or management")
+		CUST_COMPLAINT.put(Fields.CUST_PROD_LINE, "Bank account or service")
+		CUST_COMPLAINT.put(Fields.CUST_COMPANY, "Demo Company")
+		CUST_COMPLAINT.put(Fields.ACC_NUMBER, "789654123654")
+		
+		
+	}
+	
 
 }
 
