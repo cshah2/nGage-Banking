@@ -21,15 +21,13 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil
 
-
-Map<Fields, String> customerData = ConsumerData.CUST_A
-MapUtil.printMap(customerData)
+Map<Fields, String> accData = ConsumerData.ACC_B2_POS1
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Open Consumer dashboard page'
-WebUI.navigateToUrl(customerData.get(Fields.AccountURL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 'Verify the Account Overview tab to load'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/OverviewTab/AccountsBlock/Heading Holds'), GlobalVariable.Timeout)
@@ -81,11 +79,3 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Cons
 
 'Verify the Cases tab to load'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Cases tab/Cases table'), GlobalVariable.Timeout)
-
-
-
-
-
-
-
-

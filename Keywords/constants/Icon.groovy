@@ -25,5 +25,6 @@ public enum Icon {
 	DOUBLE_ARROW,
 	ELLIPSIS,
 	EDIT,
+	EYE,
 	DEFAULT
 }

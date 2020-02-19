@@ -23,7 +23,7 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 MapUtil.printMap(customerData)
 
 'Login into portal'
@@ -33,7 +33,7 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 WebUI.navigateToUrl(customerData.get(Fields.URL))
 
 'Verify the Customer-Overview page with User Email address'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Consumer/ConsumerDashboardPage/OverviewTab/Customer Information block/Email address')), customerData.get(Fields.CUST_MAILID),Operator.STARTS_WITH_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Consumer/ConsumerDashboardPage/OverviewTab/Customer Information block/Email address')), customerData.get(Fields.CONTACT_EMAIL),Operator.STARTS_WITH_IGNORE_CASE)
 
 'Click on Accounts tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts'))
@@ -51,15 +51,12 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Contact Details'))
 
 'Wait for contact details tab to load'
-
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/ContactDetailsTab/AddressBlock/table_Address'), GlobalVariable.Timeout)	
-
 
 'Click on Notes tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Notes'))
 	
 'Wait for Notes tab to load'
-
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Notes Tab/Notes table'), GlobalVariable.Timeout)
 
 'Click on Document tab'
@@ -79,5 +76,3 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Cons
 
 'verify the Notification tab to load'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Notification Tab/Notification Table'), GlobalVariable.Timeout)
-
-

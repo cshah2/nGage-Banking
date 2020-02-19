@@ -23,8 +23,6 @@ import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil as MapUtil
 import utils.WebUtil
 
-WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A0 - Create Consumer"), null)
-
 Map<Fields, String> customerData =  ConsumerData.CUST_B
 WebUtil.shouldFailTest(customerData)
 

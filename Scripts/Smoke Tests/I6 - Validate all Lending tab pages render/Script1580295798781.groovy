@@ -21,15 +21,13 @@ import constants.Urls as Urls
 import data.ConsumerData as ConsumerData
 import utils.MapUtil as MapUtil
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-
-MapUtil.printMap(customerData)
+Map<Fields, String> accData = ConsumerData.ACC_B2_POS5
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Open Consumer dashboard page'
-WebUI.navigateToUrl(customerData.get(Fields.LoanAccURL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 'Verify the Account Overview tab to load'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/OverviewTab/AccountsBlock/Balance summary'), 
@@ -81,19 +79,16 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Notes'))
 
 'Verify the Notes tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Notes Tab/Notes table'), 
-    GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Notes Tab/Notes table'), GlobalVariable.Timeout)
 
 'Click on Documents tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Documents'))
 
 'Verify the Documents tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Documents Tab/Documents table'), 
-    GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Documents Tab/Documents table'), GlobalVariable.Timeout)
 
 'Click on Cases tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Cases'))
 
 'Verify the Cases tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Cases tab/Cases table'), 
-    GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Cases tab/Cases table'), GlobalVariable.Timeout)

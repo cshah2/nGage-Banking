@@ -25,7 +25,6 @@ Map<Fields, String> orgData = OrganizationData.NA_ORGANIZATIONMAP
 
 MapUtil.printMap(orgData)
 
-
 /*-----------Search Orrganization with Invalid Organization Name--------------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -65,7 +64,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 
 'Search a Customer in SearchConstumer Page with Phonenumber'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
-        Fields.ORG_PHONENUMBER))
+        Fields.CONTACT_PHONE_NUMBER))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -85,7 +84,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Emailid'
-WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.ORG_EMAILID))
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.CONTACT_EMAIL))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))

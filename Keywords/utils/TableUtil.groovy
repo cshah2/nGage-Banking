@@ -139,6 +139,9 @@ public class TableUtil {
 			case Icon.ELLIPSIS:
 				locator = By.xpath(".//span[contains(@class,fa-ellipsis-v)]")
 				break
+			case Icon.EYE:
+				locator = By.xpath("//span[contains(@class,fa-eye)")
+				break
 			Default:
 				locator = By.xpath(".//a")
 				break
@@ -209,6 +212,24 @@ public class TableUtil {
 		}
 	}
 	
+	public void mouseOverCell(TestObject to, int rowNo, int colNo, Icon icon) {
+		
+		WebElement table = getTable(to)
+		WebElement el;
+		Actions a = new Actions(DriverFactory.getWebDriver())
+		
+		try {
+			el = table.findElement(singleRow(rowNo)).findElement(singleCell(colNo)).findElement(cellIcon(icon))
+			WebActions.scrollToElement(el, GlobalVariable.Timeout)
+
+		}
+		catch(Exception e) {
+			WebUI.takeScreenshot()
+			KeywordUtil.markFailedAndStop('Unable to click on link inside table '+e.toString())
+		}
+
+	}
+
 	//Keywords
 
 	//	@Keyword

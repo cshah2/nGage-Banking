@@ -21,7 +21,7 @@ import constants.Urls as Urls
 import data.OrganizationData as OrganizationData
 import utils.MapUtil as MapUtil
 
-Map<Fields, String> orgData = OrganizationData.ORGANIZATIONMAP
+Map<Fields, String> orgData = OrganizationData.ORG_B
 
 TestObject tableSearchResults = findTestObject('SearchPage/SearchOrganization/SearchOrganizationResults/table_OrgResults')
 
@@ -70,7 +70,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 
 'Search a Customer in SearchConstumer Page with Phonenumber'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
-        Fields.ORG_PHONENUMBER))
+        Fields.CONTACT_PHONE_NUMBER))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -80,7 +80,7 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, Gl
 
 'Verify organization name in the results grid'
 CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.ORGANIZATION_PHONENO, 
-    orgData.get(Fields.ORG_PHONENUMBER), Operator.EQUALS_IGNORE_CASE)
+    orgData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS_IGNORE_CASE)
 
 //------------------Search with Tax ID------------------
 'Login into portal'
@@ -119,7 +119,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Emailid'
-WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.ORG_EMAILID))
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.CONTACT_EMAIL))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -138,7 +138,7 @@ String atualMailid = WebUI.getAttribute(findTestObject('Organization/Organizatio
     'href')
 
 'Verify Emailid'
-CustomKeywords.'actions.WebActions.verifyMatch'(atualMailid, orgData.get(Fields.ORG_EMAILID), Operator.CONTAINS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(atualMailid, orgData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
 
 /*-----------Search Orrganization with Organization DBA Name--------------*/
 'Login into portal'

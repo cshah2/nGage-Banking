@@ -272,6 +272,13 @@
       "testObjectId": "Object Repository/Account/CreateAccountPage/btn_Submit",
       "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtOkButton\u0027]",
       "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//a[contains(text(),\u0027Account\u0027)]",
+      "testObjectId": "Object Repository/SearchPage/HeaderSection/link_Account",
+      "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_WebPatterns_wt192_block_wtMenuLink4_wt306\u0027]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/HeaderSection/link_Account_link.png"
     }
   ]
 }
