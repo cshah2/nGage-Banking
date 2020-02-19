@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>icon_AddRelatedParty</name>
+   <name>input_OrganizationName</name>
    <tag></tag>
-   <elementGuidId>6e310245-e37b-42db-a7b9-839acadaba53</elementGuidId>
+   <elementGuidId>2ed02b20-24e0-42d6-aee7-489d899bfa96</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@displayblockname='PARTYRELATIONSHIPS']//a[@title='Add']/*[name()='svg']</value>
+         <value>//input[@placeholder='Organization Name']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
