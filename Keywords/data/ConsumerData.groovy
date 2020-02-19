@@ -123,7 +123,7 @@ public class ConsumerData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_NAME_VIEW, "Ravi Bala")
 		CUSTOMERDATA_MAP.put(Fields.CUST_FIRST_NAME, "Ravi")
 		CUSTOMERDATA_MAP.put(Fields.CUST_LAST_NAME, "Bala")
-		CUSTOMERDATA_MAP.put(Fields.CUST_MAILID, "ravii.balasundaram@aurionpro.com")
+		CUSTOMERDATA_MAP.put(Fields.CUST_MAILID, "bala08ravi@gmail.com")
 		CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL, "ravi.balasundaram@aurionpro.com")
 		CUSTOMERDATA_MAP.put(Fields.CUST_MAILIDTYPE, "Personal")
 		CUSTOMERDATA_MAP.put(Fields.CUST_DOB, "09/05/1994")
@@ -170,14 +170,14 @@ public class ConsumerData {
 		ACC_A = new HashMap<Fields, String>()
 		ACC_A.put(Fields.ACC_TITLE, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
 		ACC_A.put(Fields.ACC_OWNERSHIP, 'Single')
-		ACC_A.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
+		//ACC_A.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
 		ACC_A.put(Fields.ACC_DESCRIPTION, 'Savings Account')
 		ACC_A.put(Fields.ACC_GROUP, 'Banking')
 		ACC_A.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezoneUTC)+RandomUtil.getRandomNumeric(4))
 		ACC_A.put(Fields.ACC_BROKERED, 'false')
 		ACC_A.put(Fields.ACC_TIMEZONE, 'UTC')
 		ACC_A.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
-		ACC_A.put(Fields.ACC_REFERENCE_ID, 'Reference')
+		//ACC_A.put(Fields.ACC_REFERENCE_ID, 'Reference')
 
 		//Product Information
 		ACC_A.put(Fields.ACC_PRODUCT_TYPE, 'Interest Checking (C2001 - DDA) ')
@@ -191,7 +191,7 @@ public class ConsumerData {
 
 		//T&C Document Information
 		ACC_A.put(Fields.TC_DOC_TYPE1, 'Terms and conditions')
-		ACC_A.put(Fields.TC_DOC_AGREEMENT_CODE1, 'A0001')
+		//ACC_A.put(Fields.TC_DOC_AGREEMENT_CODE1, 'A0001')
 		ACC_A.put(Fields.TC_DOC_SIGNED_BY1, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
 		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
