@@ -136,11 +136,11 @@ WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/sel
 
 
 'Type Order Info'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo'), custOrderData.get(
+WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo'), custOrderData.get(
 		Fields.ORDER_INFO))
 
 'Type AccountTitle'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTitle'), custOrderData.get(
+WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTitle'), custOrderData.get(
 		Fields.ORDER_COUNTERPARTY_ACCOUNT_TITLE))
 
 'Click on Account Group DropDown'
@@ -151,14 +151,14 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 	Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP)]))
 
 'Type Account Number'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(
+WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(
 		Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
 
 'Click on Send now Checkbox'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
 
 'Type transfer amount'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderAmt'), custOrderData.get(
+WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderAmt'), custOrderData.get(
 		Fields.ORDER_TRANSFER_AMOUNT))
 
 'Click on Submit Button'
@@ -186,9 +186,9 @@ WebUI.delay(WAIT_FOR_FIVE_SECONDS)
 CustomKeywords.'actions.WebActions.logout'()
 
 'Login with Approver 1'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('LoginPage/input_UserName'), 'cctestuser@savee.sit')
+WebUI.setText(findTestObject('LoginPage/input_UserName'), 'cctestuser@savee.sit')
 
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('LoginPage/input_Password'), 'Password1#')
+WebUI.setText(findTestObject('LoginPage/input_Password'), 'Password1#')
 
 CustomKeywords.'actions.WebActions.click'(findTestObject('LoginPage/btn_Login'))
 
@@ -207,7 +207,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/acti
 CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon_Filters'))
 
 'Type case number'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
+WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
 
 
 WebUI.sendKeys(findTestObject('BasePage/WorkFlow/btn_Search'), Keys.chord(Keys.ENTER))
@@ -276,10 +276,10 @@ WebUI.switchToWindowIndex(0)
 CustomKeywords.'actions.WebActions.logout'()
 
 'Login with Approver 2'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('LoginPage/input_UserName'), 'cclevel2@savee.sit')
+WebUI.setText(findTestObject('LoginPage/input_UserName'), 'cclevel2@savee.sit')
 
 'Enter aprrover 2 username'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('LoginPage/input_Password'), 'Password1#')
+WebUI.setText(findTestObject('LoginPage/input_Password'), 'Password1#')
 
 'Enter aprrover 2 password'
 CustomKeywords.'actions.WebActions.click'(findTestObject('LoginPage/btn_Login'))
@@ -300,7 +300,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/acti
 CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon_Filters'))
 
 'Type case number'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
+WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
 
 'Press Enter after entering case number'
 WebUI.sendKeys(findTestObject('BasePage/WorkFlow/btn_Search'), Keys.chord(Keys.ENTER))
@@ -363,9 +363,9 @@ WebUI.switchToWindowIndex(0)
 CustomKeywords.'actions.WebActions.logout'()
 
 //CustomKeywords.'pages.LoginPage.loginIntoPortal'()
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('LoginPage/input_UserName'), 'cshah@savee.sit')
+WebUI.setText(findTestObject('LoginPage/input_UserName'), 'cshah@savee.sit')
 
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('LoginPage/input_Password'), 'Savana1#')
+WebUI.setText(findTestObject('LoginPage/input_Password'), 'Savana1#')
 
 CustomKeywords.'actions.WebActions.click'(findTestObject('LoginPage/btn_Login'))
 

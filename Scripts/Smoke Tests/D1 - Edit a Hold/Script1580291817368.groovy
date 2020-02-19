@@ -54,7 +54,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashb
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'))
 
 'Edit hold amount'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'), 
     custHoldData.get(Fields.HOLD_AMOUNT))
 
 'Click on Submit Button'

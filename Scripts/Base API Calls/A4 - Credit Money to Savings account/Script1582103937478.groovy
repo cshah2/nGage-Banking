@@ -13,9 +13,38 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
+import com.kms.katalon.core.testobject.RequestObject
+import com.kms.katalon.core.testobject.ResponseObject
 
-WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A0 - Create Consumer"), null)
-WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A1 - Create Personal Savings Account"), null)
-WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A2 - Create Multi-Position account"), null)
-WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A3 - Create Organization"), null)
+import constants.Fields
+import data.ConsumerData
+import internal.GlobalVariable as GlobalVariable
+import utils.WebUtil
+
+Map<Fields, String> custData =  ConsumerData.CUST_B
+Map<Fields, String> accData = ConsumerData.ACC_B1
+
+WebUtil.shouldFailTest(custData)
+WebUtil.shouldFailTest(accData)
+
+
+RequestObject request = findTestObject('Object Repository/API/postTransaction',
+	[
+		('acctGroup'):1,
+		('acctNbr'):accData.get(Fields.ACC_NUMBER),
+		('comment'):'Credit 50k to account',
+		('isDr0'):false,
+		('isDr1'):true,
+		('posnAcctNbr'):accData.get(Fields.ACC_NUMBER),
+		('posnId'):accData.get(Fields.ACC_POSITION_ID),
+		('trnAmt'):50000,
+		('trnCode'):138,
+	]
+)
+
+println "... Request JSON = "+request.getHttpBody()
+ResponseObject response = WS.sendRequest(request)
+println "... Response JSON = "+response.getResponseBodyContent()
+WS.verifyResponseStatusCode(response, 200)
+
+

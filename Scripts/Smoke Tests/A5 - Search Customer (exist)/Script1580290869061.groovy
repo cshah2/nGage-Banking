@@ -21,14 +21,14 @@ import constants.Urls as Urls
 import data.ConsumerData as ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil as MapUtil
+import utils.WebUtil
 
+WebUI.callTestCase(findTestCase("Test Cases/Base API Calls/A0 - Create Consumer"), null)
 
 Map<Fields, String> customerData =  ConsumerData.CUST_B
+WebUtil.shouldFailTest(customerData)
+
 TestObject tableSearchResults = findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/table_SearchResults')
-
-MapUtil.printMap(customerData)
-
-'Customer data : ' + customerData
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -37,12 +37,10 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
 
 'Verify usname is displayed on page header section'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), 
-    GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
 
 'Search a Customer in SearchConstumer Page with lastName'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_LastName'), customerData.get(
-        Fields.CUST_LAST_NAME))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_LastName'), customerData.get(Fields.CUST_LAST_NAME))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -51,23 +49,20 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'Verify Last name value matches in result grid'
-CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_LASTNAME_INDEX, 
-    customerData.get(Fields.CUST_LAST_NAME), Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_LASTNAME, customerData.get(Fields.CUST_LAST_NAME), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with Firstname--------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with firstName'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_FirstName'), customerData.get(
-        Fields.CUST_FIRST_NAME))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_FirstName'), customerData.get(Fields.CUST_FIRST_NAME))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
 
 'Verify Firstname is present in all rows of searchResults table'
-CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_FIRSTNAME_INDEX, 
-    customerData.get(Fields.CUST_FIRST_NAME), Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_FIRSTNAME, customerData.get(Fields.CUST_FIRST_NAME), Operator.EQUALS_IGNORE_CASE)
 
 'Wait for search result grid to be displayed'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
@@ -77,7 +72,7 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, Gl
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with EmailID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_Email'), customerData.get(Fields.CUST_MAILID))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_Email'), customerData.get(Fields.CONTACT_EMAIL))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -86,16 +81,14 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'Verify Firstname is present in all rows of searchResults table'
-CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_EMAILID_INDEX, 
-    customerData.get(Fields.CUST_MAILID), Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_EMAILID, customerData.get(Fields.CONTACT_EMAIL), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with DOB--------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Type date of birth and search '
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_DateofBirth'), customerData.get(
-        Fields.CUST_DOB))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_DateofBirth'), customerData.get(Fields.CUST_DOB))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -104,16 +97,14 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'verify Birthdate colum'
-CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/icon_DOBEye'), findTestObject(
-        'SearchConsumerResults/toolTipObject'), customerData.get(Fields.CUST_DOB), Operator.EQUALS)
+CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/icon_DOBEye'), findTestObject('SearchConsumerResults/toolTipObject'), customerData.get(Fields.CUST_DOB), Operator.EQUALS)
 
 /*----------Search consumer with PhoneNumber--------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Type date of birth and search '
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_PhoneNumber'), customerData.get(
-        Fields.CONTACT_PHONE_NUMBER))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_PhoneNumber'), customerData.get(Fields.CONTACT_PHONE_NUMBER))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -122,15 +113,14 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'Verify Phone Numbers for all results in the SearchResults Grid'
-CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_PHONENUMBER_INDEX, 
-    customerData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSTUMER_PHONENUMBER, customerData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with TaxID--------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with TAXID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_TaxID'), customerData.get(Fields.CUST_TAX_ID))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_TaxID'), customerData.get(Fields.CUST_TAX_ID))
 
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
 
@@ -144,16 +134,14 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Profile'))
 
 'verify TaxID of the consumer'
-CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/icon_TaxIDEye'), findTestObject(
-        'SearchConsumerResults/toolTipObject'), customerData.get(Fields.CUST_TAX_ID), Operator.EQUALS)
+CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/icon_TaxIDEye'), findTestObject('SearchConsumerResults/toolTipObject'), customerData.get(Fields.CUST_TAX_ID), Operator.EQUALS)
 
 /*----------Search consumer with CustomerID--------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with Customer ID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), customerData.get(
-        Fields.CUST_ID))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), customerData.get(Fields.CUST_ID))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))

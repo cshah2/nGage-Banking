@@ -60,10 +60,10 @@ CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTas
 WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/select_Duration'), custHoldData.get(Fields.HOLD_DURATION), true)
 
 'Type Hold Amount'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'), custHoldData.get(Fields.HOLD_AMOUNT))
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'), custHoldData.get(Fields.HOLD_AMOUNT))
 
 'Type the hold reason'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_Reason'), custHoldData.get(Fields.HOLD_REASON))
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_Reason'), custHoldData.get(Fields.HOLD_REASON))
 
 
 'Click on Submit Button'

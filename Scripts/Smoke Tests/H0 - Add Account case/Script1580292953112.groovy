@@ -83,7 +83,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fi
 
 
 'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_MAILID), Operator.CONTAINS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
 
 'Verify Consumer Account Number  in Customer Info'
 CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.ACC_NUMBER), Operator.CONTAINS_IGNORE_CASE)

@@ -76,10 +76,8 @@ String customerInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_Consu
 'Verify Consumer ID in Customer Info'
 CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_ID), Operator.CONTAINS_IGNORE_CASE)
 
-
 'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_MAILID), Operator.CONTAINS_IGNORE_CASE)
-
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
 
 
 'Switch to Default frame'

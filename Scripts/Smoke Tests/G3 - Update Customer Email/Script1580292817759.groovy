@@ -44,14 +44,13 @@ CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Consumer/Consumer
 WebUI.clearText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/input_Email'))
 
 'Type the emailaddress to update'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/input_Email'),customerData.get(Fields.CONTACT_EMAIL))
+WebUI.setText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/input_Email'),customerData.get(Fields.CONTACT_EMAIL))
 
 'Click On Select EmailType'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/select_EmailType'))
 
 'Select EmailType'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/option_EmailType',[('emailType'): customerData.get(Fields.CUST_MAILIDTYPE)]))
-
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/option_EmailType',[('emailType'): customerData.get(Fields.CONTACT_EMAIL_TYPE)]))
 
 'Click on Valid From Date'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/link_SetValidToAndFromDates'))
@@ -75,20 +74,3 @@ WebUI.verifyElementNotVisible(findTestObject('Consumer/ConsumerDashboardPage/Con
 
 'Verify the EmailAddress updated in Emailaddress Table'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(emailTable,CLOSED_CASES_LATEST_ROW, ColumnPosition.EMAIL_ADDRESS, customerData.get(Fields.CONTACT_EMAIL), Operator.EQUALS)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

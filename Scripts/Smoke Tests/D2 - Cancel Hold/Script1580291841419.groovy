@@ -45,7 +45,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashb
 
 
 'Type the hold Notes'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea_Notes'), custHoldData.get(Fields.HOLD_NOTE))
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea_Notes'), custHoldData.get(Fields.HOLD_NOTE))
 
 
 'Click on Submit Button'

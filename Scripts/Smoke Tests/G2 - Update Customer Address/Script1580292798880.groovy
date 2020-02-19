@@ -53,35 +53,35 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashb
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine1'))
 
 'Type Address Line1'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine1'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine1'), 
     customerAddress.get(Fields.ADDR_LINE1))
 
 'Clear Address Line 2'
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine2'))
 
 'Type Address Line2'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine2'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine2'), 
     customerAddress.get(Fields.ADDR_LINE2))
 
 'Clear Address Line 3'
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine3'))
 
 'Type Address Line3'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine3'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine3'), 
     customerAddress.get(Fields.ADDR_LINE3))
 
 'Clear Address Line 4'
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine4'))
 
 'Type Address Line4'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine4'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_AddressLine4'), 
     customerAddress.get(Fields.ADDR_LINE4))
 
 'Clear Address City'
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_City'))
 
 'Type Address City'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_City'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_City'), 
     customerAddress.get(Fields.ADDR_CITY))
 
 'Click on Dropdown region'
@@ -95,7 +95,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ZipCode'))
 
 'Type Zip code'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ZipCode'), 
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ZipCode'), 
     customerAddress.get(Fields.ADDR_ZIPCODE))
 
 'Click on Valid From Date'

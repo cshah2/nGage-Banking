@@ -45,7 +45,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/task_AddNotes'))
 
 'Type Notes'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/input_Notes'),notes)
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/input_Notes'),notes)
 
 'Click On Submit'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/btn_Submit'))

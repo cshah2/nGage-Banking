@@ -29,12 +29,10 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
 
 'Verify usname is displayed on page header section'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), 
-    GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
 
 'Search a Customer in SearchConstumer Page with lastName'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_LastName'), customerData.get(
-        Fields.CUST_LAST_NAME))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_LastName'), customerData.get(Fields.CUST_LAST_NAME))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -47,8 +45,7 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsu
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with firstName'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_FirstName'), customerData.get(
-        Fields.CUST_FIRST_NAME))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_FirstName'), customerData.get(Fields.CUST_FIRST_NAME))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -61,7 +58,7 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsu
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with EmailID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_Email'), customerData.get(Fields.CUST_MAILID))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_Email'), customerData.get(Fields.CONTACT_EMAIL))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -74,8 +71,7 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsu
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Type date of birth and search '
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_DateofBirth'), customerData.get(
-        Fields.CUST_DOB))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_DateofBirth'), customerData.get(Fields.CUST_DOB))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -88,8 +84,7 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsu
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Type date of birth and search '
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_PhoneNumber'), customerData.get(
-        Fields.CONTACT_PHONE_NUMBER))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_PhoneNumber'), customerData.get(Fields.CONTACT_PHONE_NUMBER))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -102,7 +97,7 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsu
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Search a Customer in SearchConstumer Page with TAXID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_TaxID'), customerData.get(Fields.CUST_TAX_ID))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_TaxID'), customerData.get(Fields.CUST_TAX_ID))
 
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
 
@@ -117,12 +112,10 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/select_CustomerGroup'))
 
 'Select Consumer Group'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/options_ConsumerGroups', [('group') : customerData.get(
-                Fields.CUST_GROUP)]))
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/options_ConsumerGroups', [('group') : customerData.get(Fields.CUST_GROUP)]))
 
 'Search a Customer in SearchConstumer Page with Customer ID'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), customerData.get(
-        Fields.CUST_ID))
+WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), customerData.get(Fields.CUST_ID))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))

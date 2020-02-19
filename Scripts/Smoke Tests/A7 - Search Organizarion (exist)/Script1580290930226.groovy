@@ -45,7 +45,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 
 /*-----------Search Orrganization with Organization Name--------------*/
 'Search a Customer in SearchConstumer Page with lastName'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_OrganizationName'), orgData.get(
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_OrganizationName'), orgData.get(
         Fields.ORG_NAME))
 
 'Click on Search button'
@@ -69,7 +69,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Phonenumber'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
         Fields.ORG_PHONENUMBER))
 
 'Click on Search button'
@@ -93,7 +93,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with DBA Name'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_TaxID'), orgData.get(Fields.ORG_TAX_ID))
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_TaxID'), orgData.get(Fields.ORG_TAX_ID))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -119,7 +119,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Emailid'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.ORG_EMAILID))
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.ORG_EMAILID))
 
 'Click on Search button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
@@ -151,7 +151,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with DBA Name'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_DBAName'), orgData.get(
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_DBAName'), orgData.get(
         Fields.ORG_DBA_NAME))
 
 'Click on Search button'
@@ -184,7 +184,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Dun and Badstreet Name'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_DunBradstreetID'), orgData.get(
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_DunBradstreetID'), orgData.get(
         Fields.ORG_DUN_BRADSTEET_NO))
 
 'Click on Search button'
@@ -215,7 +215,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
                 Fields.ORG_GROUP)]))
 
 'Search a Customer in SearchConstumer Page with Dun and Badstreet Name'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('SearchPage/SearchOrganization/input_CustomerID'), orgData.get(
+WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_CustomerID'), orgData.get(
         Fields.ORG_ID))
 
 'Click on Search button'

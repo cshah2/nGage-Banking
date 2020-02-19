@@ -78,7 +78,7 @@ WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerCo
 
 
 'Type Complaint Summary'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/input_ComplaintSource'), "This is a demo complaint")
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/input_ComplaintSource'), "This is a demo complaint")
 
 'Click on Launch case'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/checkbox_LaunchCase'))

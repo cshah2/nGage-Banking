@@ -87,8 +87,8 @@ accDataPos3.put(Fields.URL, urlPosition3)
 accDataPos4.put(Fields.URL, urlPosition4)
 accDataPos5.put(Fields.URL, urlPosition5)
 
-println "Position1 = "+urlPosition1
-println "Position2 = "+urlPosition2
-println "Position3 = "+urlPosition3
-println "Position4 = "+urlPosition4
-println "Position5 = "+urlPosition5
+accDataPos1.put(Fields.ACC_POSITION_ID, positionId1)
+accDataPos2.put(Fields.ACC_POSITION_ID, positionId2)
+accDataPos3.put(Fields.ACC_POSITION_ID, positionId3)
+accDataPos4.put(Fields.ACC_POSITION_ID, positionId4)
+accDataPos5.put(Fields.ACC_POSITION_ID, positionId5)

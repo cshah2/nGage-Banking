@@ -28,8 +28,6 @@ String name = 'Savana automation'
 String expectedMailSubject = 'Enterprise Servicing Change Password Request'
 String passwordUpdateMessage = 'Password Successfully Updated.'
 
-//WebUI.callTestCase(findTestCase('Test Cases/Smoke Tests/A2 - Reset Password'), null)
-
 Faker faker = new Faker(Locale.US)
 String newPassword = faker.internet().password(12, 16, true, true)
 

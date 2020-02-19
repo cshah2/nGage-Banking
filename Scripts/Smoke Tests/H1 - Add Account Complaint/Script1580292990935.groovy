@@ -78,7 +78,7 @@ WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerCo
 
 
 'Type Complaint Summary'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/input_ComplaintSource'), "This is a demo complaint")
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/input_ComplaintSource'), "This is a demo complaint")
 
 'Click on Launch case'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/checkbox_LaunchCase'))
@@ -136,7 +136,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fi
 
 
 'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_MAILID), Operator.CONTAINS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
 
 
 'Verify Consumer mailid  in Customer Info'
@@ -175,18 +175,3 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 'Verify Account number in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.ACCOUNT_NUMBER,
 	custComplaintData.get(Fields.ACC_NUMBER), Operator.EQUALS_IGNORE_CASE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

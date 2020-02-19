@@ -132,7 +132,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/acti
 CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon_Filters'))
 
 'Type case number'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumberGenerated)
+WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumberGenerated)
 
 
 WebUI.sendKeys(findTestObject('BasePage/WorkFlow/btn_Search'), Keys.chord(Keys.ENTER))

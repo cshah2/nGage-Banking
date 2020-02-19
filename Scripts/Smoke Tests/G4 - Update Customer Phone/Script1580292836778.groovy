@@ -46,7 +46,7 @@ WebUI.clearText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab
 
 
 'Type Phone Number'
-CustomKeywords.'actions.WebActions.typeText'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/PhoneNumberBlock/input_PhoneNumber'), customerData.get(
+WebUI.setText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/PhoneNumberBlock/input_PhoneNumber'), customerData.get(
 		Fields.CONTACT_PHONE_NUMBER))
 
 
