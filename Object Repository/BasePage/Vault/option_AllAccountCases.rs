@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_AccountServicing</name>
+   <name>option_AllAccountCases</name>
    <tag></tag>
-   <elementGuidId>c1b8f0b4-f7d2-4163-864d-946eff951c78</elementGuidId>
+   <elementGuidId>f7a66d5d-e215-42b3-8fae-15e1f8101b8c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='select2-drop']/descendant::div[text()='Document Management']</value>
+         <value>//ul[@id='select2-results-16']/descendant::div[text()='All Account Servicing Cases']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

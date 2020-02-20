@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_AccountServicing</name>
+   <name>input_CustomerId</name>
    <tag></tag>
-   <elementGuidId>c1b8f0b4-f7d2-4163-864d-946eff951c78</elementGuidId>
+   <elementGuidId>1f4bebc3-a7a8-4591-8390-282a8e14e9a5</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='select2-drop']/descendant::div[text()='Document Management']</value>
+         <value>//label[text()='Customer Id ']/following-sibling::input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

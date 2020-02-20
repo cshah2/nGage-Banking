@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_AccountServicing</name>
+   <name>input_CaseNumber</name>
    <tag></tag>
-   <elementGuidId>c1b8f0b4-f7d2-4163-864d-946eff951c78</elementGuidId>
+   <elementGuidId>3068cad2-8030-4afc-a1ab-3f72f18f6d1f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='select2-drop']/descendant::div[text()='Document Management']</value>
+         <value>//label[text()='Case Number ']/following-sibling::input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

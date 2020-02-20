@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_AccountServicing</name>
+   <name>select_searchRepo</name>
    <tag></tag>
-   <elementGuidId>c1b8f0b4-f7d2-4163-864d-946eff951c78</elementGuidId>
+   <elementGuidId>5cb602ef-e6d9-46f9-971b-b7cec281b1c0</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='select2-drop']/descendant::div[text()='Document Management']</value>
+         <value>//span[text()='Select Repository...']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

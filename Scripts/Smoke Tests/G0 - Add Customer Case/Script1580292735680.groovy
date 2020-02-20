@@ -108,25 +108,3 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 'Verify case number in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_NUMBER,
 	caseNumberFromGeneralInfo.trim(), Operator.EQUALS_IGNORE_CASE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

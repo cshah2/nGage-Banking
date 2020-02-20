@@ -149,26 +149,3 @@ String caseNum= WebUI.getText(findTestObject('BasePage/WorkFlow/text_CaseNumber'
 CustomKeywords.'actions.WebActions.verifyMatch'(caseNum,caseNumberGenerated.replaceAll("\\s+", ""), Operator.EQUALS_IGNORE_CASE)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>option_AccountServicing</name>
+   <name>btn_Search</name>
    <tag></tag>
-   <elementGuidId>c1b8f0b4-f7d2-4163-864d-946eff951c78</elementGuidId>
+   <elementGuidId>21ad8ed8-4e3e-4f03-a5e0-cd0652321a5f</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='select2-drop']/descendant::div[text()='Document Management']</value>
+         <value>//input[@value='Search']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
