@@ -38,6 +38,6 @@ public class OrganizationDashboardPage {
 		WebActions.verifyMatch(actDbaName, orgData.get(Fields.ORG_DBA_NAME), Operator.EQUALS)
 		WebActions.verifyMatch(actTaxId, orgData.get(Fields.ORG_TAX_ID_MASKED), Operator.EQUALS)
 		WebActions.verifyMatch(actEstablishedDate, orgData.get(Fields.ORG_ESTABLISHED_DATE), Operator.EQUALS)
-		WebActions.verifyMatch(actAddress, orgData.get(Fields.ADDR_VIEW), Operator.EQUALS)
+		//WebActions.verifyMatch(actAddress, orgData.get(Fields.ADDR_VIEW), Operator.EQUALS)
 	}
 }

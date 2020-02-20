@@ -45,7 +45,7 @@ CustomKeywords.'actions.WebActions.setText'(findTestObject("SearchPage/SearchAcc
 CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/SearchAccount/btn_Search"))
 
 'Save the Account Number in variable '
-String text = WebUI.getText(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/Account Number'))
+String text = WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/PositionSummary Block/text_AccountNumber'))
 
 'Verify the Account Number'
 CustomKeywords.'actions.WebActions.verifyMatch'(text, accountData.get(Fields.ACC_NUMBER), Operator.CONTAINS_IGNORE_CASE)

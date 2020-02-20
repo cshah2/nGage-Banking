@@ -11,21 +11,33 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>64ad0999-5cd3-4ff8-8bdf-760e1ac9695e</testSuiteGuid>
    <testCaseLink>
-      <guid>4b9283e2-b3a7-4c65-8e6d-c8bcb99057c0</guid>
+      <guid>5a9fb5d8-ae5f-4bc7-81f5-b0819fc631e5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/I4 - Validate all Customer tab pages render</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/A4 - Search Customer (Does not exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0db51c0e-f57d-4333-85c4-d6aa658fedd4</guid>
+      <guid>f125c691-1b61-40eb-a73b-c07a945d3843</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/I5 - Validate all Account tab pages render</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/A5 - Search Customer (exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0f3da733-9ff9-420b-886e-196dd5588f46</guid>
+      <guid>1918684f-fa7e-4578-a76b-0a4894270fac</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/I6 - Validate all Lending tab pages render</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/A6 - Search Organization (Does not exist)</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>5b26b6f6-bd20-4d17-ac2f-4af69e73460d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A7 - Search Organizarion (exist)</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>7cc622ce-1a12-41b0-87cc-dc856fd73212</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A9 - Search Account (exist)</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

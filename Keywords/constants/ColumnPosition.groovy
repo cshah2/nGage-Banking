@@ -22,10 +22,11 @@ import internal.GlobalVariable
 
 public class ColumnPosition {
 
-	public static final int CONSTUMER_LASTNAME = 1
-	public static final int CONSTUMER_FIRSTNAME = 2
-	public static final int CONSTUMER_EMAILID = 5
-	public static final int CONSTUMER_PHONENUMBER = 9
+	public static final int CUST_LAST_NAME = 1
+	public static final int CUST_FIRST_NAME = 2
+	public static final int CUST_EMAIL = 5
+	public static final int CUST_DOB = 6
+	public static final int CUST_PHONE_NUMBER = 9
 
 
 	//ORGANIZATION

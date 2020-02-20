@@ -206,15 +206,17 @@ public class OrganizationData {
 		String tradeName = orgName+" LLP"
 		String websiteUrl = c.url()
 		String email = faker.name().username()+"@exmaple.com"
+		String dandbNo = faker.number().numberBetween(100000000, 999999999)
 
 		ORG_B.put(Fields.ORG_NAME, orgName)
 		ORG_B.put(Fields.ORG_DBA_NAME, dbaName)
 		ORG_B.put(Fields.ORG_TAX_ID, '9'+RandomUtil.getRandomNumeric(8))
 		ORG_B.put(Fields.ORG_TAX_ID_MASKED, '******'+ORG_B.get(Fields.ORG_TAX_ID).substring(5))
+		ORG_B.put(Fields.ORG_ESTABLISHED_DATE, '02/05/2020')
 
 		//Organization Details
 		ORG_B.put(Fields.ORG_DESCRIPTION, 'Organization 01 - Description')
-		ORG_B.put(Fields.ORG_DUN_BRADSTEET_NO, RandomUtil.getRandomNumeric(9))
+		ORG_B.put(Fields.ORG_DUN_BRADSTEET_NO, dandbNo)
 		ORG_B.put(Fields.ORG_TRADE_NAME, tradeName)
 		ORG_B.put(Fields.ORG_WEBSITE_URL, websiteUrl)
 

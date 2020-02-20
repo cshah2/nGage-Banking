@@ -39,6 +39,6 @@ public class ConsumerDashboardPage {
 		WebActions.verifyMatch(actTaxId, custData.get(Fields.CUST_TAX_ID_MASKED), Operator.EQUALS)
 		WebActions.verifyMatch(actDOB, custData.get(Fields.CUST_DOB_MASKED), Operator.EQUALS)
 		WebActions.verifyMatch(actEmail, custData.get(Fields.CONTACT_EMAIL), Operator.EQUALS)
-		WebActions.verifyMatch(actAddress, custData.get(Fields.ADDR_VIEW), Operator.EQUALS)
+		//WebActions.verifyMatch(actAddress, custData.get(Fields.ADDR_VIEW), Operator.EQUALS)
 	}
 }

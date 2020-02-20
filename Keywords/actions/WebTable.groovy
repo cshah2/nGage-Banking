@@ -119,22 +119,28 @@ public class WebTable {
 
 	@Keyword
 	static def clickIconInTable(TestObject to,  int rowNo, int colNo, Icon icon, TableType type = TableType.DEFAULT) {
-		
+
 		TableUtil table = new TableUtil(type)
 		table.clickCell(to, rowNo, colNo, icon)
 	}
 	
-//	@Keyword
-//	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
-//
-//		TableUtil table = new TableUtil(type)
-//		table.clickCell(to, rowNo, colNo, Icon.DOUBLE_ARROW)
-//	}
-//	
-//	@Keyword
-//	static def clickEllipsisIcon(TestObject to, int rowNo, int colNo, TableType type = TableType.DEFAULT) {
-//
-//		TableUtil table = new TableUtil(type)
-//		table.clickCell(to, rowNo, colNo, Icon.ELLIPSIS)
-//	}
+	@Keyword
+	static def mouseOverIconInTable(TestObject to,  int rowNo, int colNo, Icon icon, TableType type = TableType.DEFAULT) {
+		TableUtil table = new TableUtil(type)
+		table.mouseOverCell(to, rowNo, colNo, icon)
+	}
+
+	//	@Keyword
+	//	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+	//
+	//		TableUtil table = new TableUtil(type)
+	//		table.clickCell(to, rowNo, colNo, Icon.DOUBLE_ARROW)
+	//	}
+	//
+	//	@Keyword
+	//	static def clickEllipsisIcon(TestObject to, int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+	//
+	//		TableUtil table = new TableUtil(type)
+	//		table.clickCell(to, rowNo, colNo, Icon.ELLIPSIS)
+	//	}
 }

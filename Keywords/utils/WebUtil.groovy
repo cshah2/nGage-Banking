@@ -30,18 +30,18 @@ public class WebUtil {
 	}
 
 
-//	static def setText(TestObject uiObject,String text){
-//		try{
-//			if(uiObject == null){
-//				KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
-//			}
-//			if(uiObject != null && text != null){
-//				WebUI.sendKeys(uiObject, text)
-//			}
-//		}catch(Exception e){
-//			e.printStackTrace()
-//		}
-//	}
+	//	static def setText(TestObject uiObject,String text){
+	//		try{
+	//			if(uiObject == null){
+	//				KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
+	//			}
+	//			if(uiObject != null && text != null){
+	//				WebUI.sendKeys(uiObject, text)
+	//			}
+	//		}catch(Exception e){
+	//			e.printStackTrace()
+	//		}
+	//	}
 
 	static def generateCustomerUrl(String partyId, String customerGroup, String customerId, String isOrg) {
 

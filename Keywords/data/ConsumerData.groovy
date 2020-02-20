@@ -281,7 +281,7 @@ public class ConsumerData {
 		String email = firstName+'.'+lastName+'@example.com'
 		String addressLine1 = faker.address().buildingNumber() + faker.address().streetName()
 		String addressLine2 = faker.address().streetAddress()
-		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormatISO)
+		String dob = DateUtil.convert(faker.dateAndTime.birthday(18, 65), Common.dateFormat)
 		String city = faker.address().cityName()
 
 		//Basic Information

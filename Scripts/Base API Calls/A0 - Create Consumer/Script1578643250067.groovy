@@ -16,13 +16,17 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import constants.Common
 import constants.Fields
 import data.ConsumerData
 import groovy.json.JsonSlurper
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 import utils.WebUtil
 
 Map<Fields, String> custData =  ConsumerData.CUST_B
+
+String dobIso = DateUtil.convert(new Date(custData.get(Fields.CUST_DOB)), Common.dateFormatISO)
 
 RequestObject request = findTestObject('API/createConsumer',
 		[
@@ -54,7 +58,7 @@ RequestObject request = findTestObject('API/createConsumer',
 			('phoneValidFrom'):custData.get(Fields.CONTACT_PHONE_VALID_FROM),
 			('phoneValidUntil'):custData.get(Fields.CONTACT_PHONE_VALID_UNTIL),
 			('phoneVerifiedDate'):custData.get(Fields.CONTACT_PHONE_VERIFIED_DATE),
-			('dob'):custData.get(Fields.CUST_DOB),
+			('dob'):dobIso,
 		]
 	)
 
