@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_WebPatterns_wt192_block_wtMenuLink4_wt306']</value>
+         <value>//a[contains(@id,'_wtMenuLink') and text() = 'Account']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
