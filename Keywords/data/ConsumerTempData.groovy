@@ -37,7 +37,7 @@ public class ConsumerTempData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_NAME_VIEW, "Ravi Bala")
 		CUSTOMERDATA_MAP.put(Fields.CUST_FIRST_NAME, "Ravi")
 		CUSTOMERDATA_MAP.put(Fields.CUST_LAST_NAME, "Bala")
-		CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL, "ravi.balasundaram@aurionpro.com")
+		CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL, "ravii.balasundaram@aurionpro.com")
 		CUSTOMERDATA_MAP.put(Fields.CONTACT_EMAIL_TYPE, "Personal")
 		CUSTOMERDATA_MAP.put(Fields.CUST_DOB, "09/05/1994")
 		CUSTOMERDATA_MAP.put(Fields.CUST_DOB_MASKED, "**/**/1994")
@@ -50,8 +50,11 @@ public class ConsumerTempData {
 		CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
 		CUSTOMERDATA_MAP.put(Fields.CUST_NOTES, "I have added this note through automation by Ravi")
 		CUSTOMERDATA_MAP.put(Fields.CUST_GROUP, "Banking Customer")
-		CUSTOMERDATA_MAP.put(Fields.URL, 'https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4TdHL8h5dIa9f----V5F-Bg-&customergroup=2&customerId=4&isOrg=False')
-		CUSTOMERDATA_MAP.put(Fields.ACC_NUMBER, "200120202134")
+		CUSTOMERDATA_MAP.put(Fields.URL, 'https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False')
+		CUSTOMERDATA_MAP.put(Fields.ACC_NUMBER, "789654123654")
+		CUSTOMERDATA_MAP.put("URL", "https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False")
+		
+		
 	}
 
 	public static final Map<Fields, String> NA_CUSTOMERDATA_MAP;
@@ -87,7 +90,6 @@ public class ConsumerTempData {
 		ORGANIZATIONMAP.put(Fields.CONTACT_PHONE_NUMBER,"+919865325421")
 		ORGANIZATIONMAP.put(Fields.CONTACT_EMAIL,"ravi.balasundaram@aurionpro.com")
 		ORGANIZATIONMAP.put(Fields.ORG_DUN_BRADSTEET_NO,"87651214")
-//		/ORGANIZATIONMAP.put(Fields.ORG_ID,"897462564")
 		ORGANIZATIONMAP.put(Fields.ORG_GROUP, "Banking Customer")
 		ORGANIZATIONMAP.put(Fields.ADDR_VIEW, " 50 Valley Stream Parkway, Malvern, PA 19355")
 		ORGANIZATIONMAP.put(Fields.ORG_TAX_ID_MASKED, "******5123")
@@ -254,16 +256,33 @@ public class ConsumerTempData {
 	
 		CUST_COMPLAINT = new HashMap<Fields, String>()
 		CUST_COMPLAINT.put(Fields.URL, "https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False")
-		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_SOURCE, "DOJ")
+/*		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_SOURCE, "DOJ")
 		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_ORIGIN, "Back Office")
 		CUST_COMPLAINT.put(Fields.CUST_PROD_TYPE, "Auto debt")
 		CUST_COMPLAINT.put(Fields.CUST_ISSUE_TYPE, "Account opening, closing or management")
 		CUST_COMPLAINT.put(Fields.CUST_PROD_LINE, "Bank account or service")
-		CUST_COMPLAINT.put(Fields.CUST_COMPANY, "Demo Company")
+		CUST_COMPLAINT.put(Fields.CUST_COMPANY, "Demo Company")*/
 		CUST_COMPLAINT.put(Fields.ACC_NUMBER, "789654123654")
 		
 		
 	}
+	
+	public static final Map<Fields, String> ACCOUNT_INTEREST_CHK
+	static {
+
+		ACCOUNT_INTEREST_CHK = new HashMap<Fields, String>()
+		ACCOUNT_INTEREST_CHK.put(Fields.ACC_PRODUCT_TYPE, 'Interest Checking')
+		ACCOUNT_INTEREST_CHK.put(Fields.ACC_PRODUCT_CODE, 'C2001')
+		ACCOUNT_INTEREST_CHK.put(Fields.ACC_POSITION_NAME, 'Interest Checking')
+		ACCOUNT_INTEREST_CHK.put(Fields.ACC_NUMBER, '123456789321')
+		ACCOUNT_INTEREST_CHK.put(Fields.URL, "https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=123456789321&selectedPositionId=4TzIX3nqpM1ljV---V9F-Co-&customerGroup=2&customerId=1&isOrg=False")
+		ACCOUNT_INTEREST_CHK.put(Fields.TXN_CODE, 'Savings Miscellaneous Credit')
+		ACCOUNT_INTEREST_CHK.put(Fields.TXN_AMOUNT, '50000')
+		ACCOUNT_INTEREST_CHK.put(Fields.TXN_TYPE, 'Credit')
+		ACCOUNT_INTEREST_CHK.put(Fields.TXN_COMMENT, 'Credit transaction for savings account')
+		ACCOUNT_INTEREST_CHK.put(Fields.ORDER_CREATED_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+		
+		}
 	
 
 }

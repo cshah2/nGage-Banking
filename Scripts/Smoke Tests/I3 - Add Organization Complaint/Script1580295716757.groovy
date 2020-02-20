@@ -33,6 +33,13 @@ String taskName = 'Add Customer Complaint'
 
 String caseType = 'CMS Complaint'
 
+String CUST_COMPLAINT_SOURCE =  "DOJ"
+String CUST_COMPLAINT_ORIGIN = "Back Office"
+String CUST_PROD_TYPE =  "Auto debt"
+String CUST_ISSUE_TYPE =  "Account opening, closing or management"
+String CUST_PROD_LINE =  "Bank account or service"
+String CUST_COMPANY =  "Demo Company"
+
 Map<Fields, String> orgData = ConsumerData.ORGANIZATIONMAP
 
 Map<Fields, String> custComplaintData = ConsumerData.CUST_COMPLAINT
@@ -50,31 +57,31 @@ CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
 CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 
 'Select Complaint Source'
-WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_ComplaintSource'), custComplaintData.get(
-        Fields.CUST_COMPLAINT_SOURCE), true)
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_ComplaintSource'), 
+       CUST_COMPLAINT_SOURCE, true)
 
 'Select Complaint Origin'
-WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_Origin'), custComplaintData.get(
-        Fields.CUST_COMPLAINT_ORIGIN), true)
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_Origin'), 
+        CUST_COMPLAINT_ORIGIN, true)
 
 'Select Product Line'
-WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_ProductLine'), custComplaintData.get(
-        Fields.CUST_PROD_LINE), true)
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_ProductLine'), 
+      CUST_PROD_LINE, true)
 
 
 'Select Product Type'
-WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_ProductType'), custComplaintData.get(
-		Fields.CUST_PROD_TYPE), true)
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_ProductType'), 
+		CUST_PROD_TYPE, true)
 
 
 'Select Issue Type'
-WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_IssueType'), custComplaintData.get(
-		Fields.CUST_ISSUE_TYPE), true)
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_IssueType'), 
+CUST_ISSUE_TYPE, true)
 
 
 'Select Company '
-WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_Company'), custComplaintData.get(
-		Fields.CUST_COMPANY), true)
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/select_Company'), 
+ CUST_COMPANY, true)
 
 
 'Type Complaint Summary'
@@ -102,22 +109,22 @@ println "Case number in WMI : "  + spanText[0]
 
 'Verify Product Line in WMI'
 TestObject selectProductLine = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_ProductLineWMI')
-WebUI.verifyOptionSelectedByLabel(selectProductLine, custComplaintData.get(Fields.CUST_PROD_LINE), false, GlobalVariable.Timeout)
+WebUI.verifyOptionSelectedByLabel(selectProductLine,CUST_PROD_LINE, false, GlobalVariable.Timeout)
 
 
 'Verify Product Type in WMI'
 TestObject selectedProductedType = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_ProdType')
-WebUI.verifyOptionSelectedByLabel(selectedProductedType, custComplaintData.get(Fields.CUST_PROD_TYPE), false, GlobalVariable.Timeout)
+WebUI.verifyOptionSelectedByLabel(selectedProductedType, CUST_PROD_TYPE, false, GlobalVariable.Timeout)
 
 
 'Verify Issue Type in WMI'
 TestObject selectedIssueType = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_IssueType')
-WebUI.verifyOptionSelectedByLabel(selectedIssueType, custComplaintData.get(Fields.CUST_ISSUE_TYPE), false, GlobalVariable.Timeout)
+WebUI.verifyOptionSelectedByLabel(selectedIssueType, CUST_ISSUE_TYPE, false, GlobalVariable.Timeout)
 
 
 'Verify Origin Type in WMI'
 TestObject selectedOrigin = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_Origin')
-WebUI.verifyOptionSelectedByLabel(selectedOrigin, custComplaintData.get(Fields.CUST_COMPLAINT_ORIGIN), false, GlobalVariable.Timeout)
+WebUI.verifyOptionSelectedByLabel(selectedOrigin, CUST_COMPLAINT_ORIGIN, false, GlobalVariable.Timeout)
 
 
 'Verify User profile name'
@@ -137,7 +144,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,orgData.get(Fields.
 
 
 'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,orgData.get(Fields.ORG_EMAILID), Operator.CONTAINS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,orgData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
 
 
 'Switch to Default frame'
@@ -167,19 +174,3 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 'Verify case number in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_NUMBER,
 	caseNumberFromGeneralInfo.trim(), Operator.EQUALS_IGNORE_CASE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
