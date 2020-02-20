@@ -33,30 +33,26 @@ public class AccountOverviewTab {
 		String holdAmount
 		if(holdType.equalsIgnoreCase("Admin")){
 			holdAmount = WebUI.getText(findTestObject("Account/AccountDashboardPage/OverviewTab/text_Hold_Admin"))
-			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT), Operator.EQUALS)
+			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT_VIEW), Operator.EQUALS)
 		}
 		else if(holdType.equalsIgnoreCase("PreAuth")){
 			holdAmount = WebUI.getText(findTestObject("Account/AccountDashboardPage/OverviewTab/text_Hold_PreAuth"))
-			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT), Operator.EQUALS)
+			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT_VIEW), Operator.EQUALS)
 		}
 		else if(holdType.equalsIgnoreCase("Reg-CC")){
 			holdAmount = WebUI.getText(findTestObject("Account/AccountDashboardPage/OverviewTab/text_Hold_RegCC"))
-			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT), Operator.EQUALS)
+			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT_VIEW), Operator.EQUALS)
 		}
 		else if(holdType.equalsIgnoreCase("Clearing")){
 			holdAmount = WebUI.getText(findTestObject("Account/AccountDashboardPage/OverviewTab/text_Hold_Clearing"))
-			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT), Operator.EQUALS)
+			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT_VIEW), Operator.EQUALS)
 		}
 		else if(holdType.equalsIgnoreCase("Reserve")){
 			holdAmount = WebUI.getText(findTestObject("Account/AccountDashboardPage/OverviewTab/text_Hold_Reserve"))
-			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT), Operator.EQUALS)
+			WebActions.verifyMatch(holdAmount, holdsMap.get(Fields.HOLD_AMOUNT_VIEW), Operator.EQUALS)
 		}
 		else {
 			KeywordUtil.markFailedAndStop('Incorrect hold type value provided in input'+holdType)
 		}
-
-		//need to add balance verification in UI
-
-
 	}
 }

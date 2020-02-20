@@ -53,8 +53,6 @@ public class ConsumerTempData {
 		CUSTOMERDATA_MAP.put(Fields.URL, 'https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False')
 		CUSTOMERDATA_MAP.put(Fields.ACC_NUMBER, "789654123654")
 		CUSTOMERDATA_MAP.put("URL", "https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False")
-		
-		
 	}
 
 	public static final Map<Fields, String> NA_CUSTOMERDATA_MAP;
@@ -78,8 +76,8 @@ public class ConsumerTempData {
 
 
 
-	
-	
+
+
 	public static final Map<Fields,String> ORGANIZATIONMAP;
 	static{
 		ORGANIZATIONMAP = new HashMap<Fields, String>()
@@ -96,26 +94,36 @@ public class ConsumerTempData {
 		ORGANIZATIONMAP.put(Fields.ORG_ESTABLISHED_DATE, "02/03/2020")
 		ORGANIZATIONMAP.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?partyId=4TdNhO2f267Osk---V1F-BR-&customerId=2&customerGroup=2&isOrg=True")
 	}
-	
+
 
 	public static final Map<Fields, String> ACCOUNT_HOLD;
 
 	static{
 		ACCOUNT_HOLD = new HashMap<Fields, String>()
-		ACCOUNT_HOLD.put(Fields.CUST_ID, "7")
-		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "000000002550")
 		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "Reserve")
 		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
-		//ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
-		ACCOUNT_HOLD.put(Fields.HOLD_END_DATE, DateUtil.getCurrentDateTimeMinusDays(-2,Common.dateTimeFormat, Common.timezoneUTC))
+		ACCOUNT_HOLD.put(Fields.HOLD_END_DATE, DateUtil.getCurrentDateTimeMinusDays(-365,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_HOLD.put(Fields.HOLD_DURATION, "Twelve Months")
-		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT, "15.00")
+		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT, "1000")
+		ACCOUNT_HOLD.put(Fields.HOLD_AMOUNT_VIEW, "1,000.00")
 		ACCOUNT_HOLD.put(Fields.HOLD_REASON, "First hold for the Customer Clearance")
 		ACCOUNT_HOLD.put(Fields.HOLD_NOTE, "First hold cancelled  the Customer Clearance")
-		ACCOUNT_HOLD.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4TeSCPmgC7M__V---V9F-Bg-&acctGroup=1&acctNumber=000000002550&selectedPositionId=4TeSG8FHC2N2Q----V9F-Co-&customerGroup=2&customerId=7&isOrg=False")
-
-
 	}
+	
+	public static final Map<Fields, String> ACCOUNT_HOLD_UPD;
+	
+		static{
+			ACCOUNT_HOLD_UPD = new HashMap<Fields, String>()
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_TYPE, "Reserve")
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+//			ACCOUNT_HOLD_UPD.put(Fields.HOLD_END_DATE, DateUtil.getCurrentDateTimeMinusDays(-2,Common.dateTimeFormat, Common.timezoneUTC))
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_DURATION, "Twelve Months")
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_AMOUNT, "2000")
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_AMOUNT_VIEW, "2,000.00")
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_REASON, "First hold for the Customer Clearance")
+			ACCOUNT_HOLD_UPD.put(Fields.HOLD_NOTE, "Updated Hold amount")
+		}
+	
 
 	public static final Map<Fields, String> ADDR_A;
 	static {
@@ -249,24 +257,24 @@ public class ConsumerTempData {
 		TO_ACCOUNT_BOOKTRANSFER_ORDER
 		TO_ACCOUNT_BOOKTRANSFER_ORDER.put(Fields.URL,"https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?&acctGroup=1&acctNumber=200120201234&selectedPositionId=4Ti3Irc6ja3NK----V5F-Co-")
 	}
-	
-	
+
+
 	public static final Map<Fields, String> CUST_COMPLAINT;
 	static {
-	
+
 		CUST_COMPLAINT = new HashMap<Fields, String>()
 		CUST_COMPLAINT.put(Fields.URL, "https://savossit.savanainc.com/nGageBanking_Account/AccountMainFlow.AccountDetail.aspx?partyId=4Ti3Be3ZHL7Ef----V5F-Bg-&acctGroup=1&acctNumber=789654123654&selectedPositionId=4TiCQu8HWBDLpF---VDF-Co-&customerGroup=2&customerId=1&isOrg=False")
-/*		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_SOURCE, "DOJ")
-		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_ORIGIN, "Back Office")
-		CUST_COMPLAINT.put(Fields.CUST_PROD_TYPE, "Auto debt")
-		CUST_COMPLAINT.put(Fields.CUST_ISSUE_TYPE, "Account opening, closing or management")
-		CUST_COMPLAINT.put(Fields.CUST_PROD_LINE, "Bank account or service")
-		CUST_COMPLAINT.put(Fields.CUST_COMPANY, "Demo Company")*/
+		/*		CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_SOURCE, "DOJ")
+		 CUST_COMPLAINT.put(Fields.CUST_COMPLAINT_ORIGIN, "Back Office")
+		 CUST_COMPLAINT.put(Fields.CUST_PROD_TYPE, "Auto debt")
+		 CUST_COMPLAINT.put(Fields.CUST_ISSUE_TYPE, "Account opening, closing or management")
+		 CUST_COMPLAINT.put(Fields.CUST_PROD_LINE, "Bank account or service")
+		 CUST_COMPLAINT.put(Fields.CUST_COMPANY, "Demo Company")*/
 		CUST_COMPLAINT.put(Fields.ACC_NUMBER, "789654123654")
-		
-		
+
+
 	}
-	
+
 	public static final Map<Fields, String> ACCOUNT_INTEREST_CHK
 	static {
 
@@ -281,9 +289,9 @@ public class ConsumerTempData {
 		ACCOUNT_INTEREST_CHK.put(Fields.TXN_TYPE, 'Credit')
 		ACCOUNT_INTEREST_CHK.put(Fields.TXN_COMMENT, 'Credit transaction for savings account')
 		ACCOUNT_INTEREST_CHK.put(Fields.ORDER_CREATED_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
-		
-		}
-	
+
+	}
+
 
 }
 

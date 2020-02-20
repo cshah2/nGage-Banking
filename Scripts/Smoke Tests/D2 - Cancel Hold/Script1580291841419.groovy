@@ -17,36 +17,66 @@ import internal.GlobalVariable as GlobalVariable
 import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
+import constants.Icon
 import constants.Operator as Operator
 import data.ConsumerData as ConsumerData
+import data.ConsumerTempData
 
 int LATEST_ROW = 1
-
 int WAIT_FOR_FIVE_SECONDS = 5
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-Map<Fields, String> custHoldData = ConsumerData.ACCOUNT_HOLD
+
+Map<Fields, String> accData = ConsumerData.ACC_B1
+Map<Fields, String> custHoldData = ConsumerTempData.ACCOUNT_HOLD_UPD
 TestObject holdsTable = findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/table_Holds')
+
+String taskName = 'Add Hold'
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custHoldData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
-
-'Click on Accounts Tab'
+'Click on Holds Tab'
 WebUI.click(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Holds'))
-//steps to goto accounts tab and click a account
+
+'Wait for Holds tab to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(holdsTable, GlobalVariable.Timeout)
+
+'Verify Holds table has entry'
+CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(holdsTable, 1, Operator.EQUALS)
+
 'Click on Edit Icon'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/icon_editAddedHold'))
+CustomKeywords.'actions.WebTable.clickIconInTable'(holdsTable, LATEST_ROW, 8, Icon.ELLIPSIS)
+
+'Wait for Context menu to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'), GlobalVariable.Timeout)
 
 'Click on Cancel Hold Option'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'))
 
-
 'Type the hold Notes'
-WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea_Notes'), custHoldData.get(Fields.HOLD_NOTE))
-
+WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea_Notes'), 'Cancel Hold operation')
 
 'Click on Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/btn_Submit'))
+
+'Verify Hold Cancel Alert Message'
+WebUI.verifyElementVisible(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/ConsumerHolds/message_HoldCancel'))
+
+'Wait for Task drawer to close'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.waitForTaskDrawerToClose'()
+
+WebUI.delay(WAIT_FOR_FIVE_SECONDS)
+
+'Verify Holds table has no entry'
+CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(holdsTable, 0, Operator.EQUALS)
+
+'Click on Overview tab'
+WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSection/tab_Overview'))
+
+'Wait for Overview tab to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance'), GlobalVariable.Timeout)
+
+'Verify total holds amount'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_TotalHoldsBalance')), '0.00', Operator.EQUALS)

@@ -279,6 +279,27 @@
       "testObjectId": "Object Repository/SearchPage/HeaderSection/link_Account",
       "brokenXPath": "//a[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_WebPatterns_wt192_block_wtMenuLink4_wt306\u0027]",
       "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/HeaderSection/link_Account_link.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Settings\u0027])[1]/following::div[17]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name",
+      "brokenXPath": "//div[contains(@id,\u0027_wtDescription_wtData\u0027)]",
+      "pathToScreenshot": "C:/nGageAutomation/Projects/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Consumer Name_neighbor_0.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Phone Number\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Phone Number",
+      "brokenXPath": "//label[normalize-space(text())\u003d\u0027Phone Number\u0027]/../span",
+      "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Tax ID\u0027])[1]/following::span[1]",
+      "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Tax ID",
+      "brokenXPath": "//label[normalize-space(text())\u003d\u0027Tax ID\u0027]/../span",
+      "pathToScreenshot": ""
     }
   ]
 }
