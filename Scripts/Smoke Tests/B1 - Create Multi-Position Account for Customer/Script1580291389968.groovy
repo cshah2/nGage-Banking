@@ -13,5 +13,37 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
-import internal.GlobalVariable as GlobalVariable
 
+import constants.Fields
+import data.ConsumerData
+import internal.GlobalVariable as GlobalVariable
+import utils.WebUtil
+
+WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
+//WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
+
+Map<Fields, String> custData = ConsumerData.CUST_B
+Map<Fields, String> accData = ConsumerData.ACC_MULTIPOSO_1
+
+WebUtil.shouldFailTest(custData)
+
+'Login into portal'
+CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Navigate to customer dashboard page'
+WebUI.navigateToUrl(custData.get(Fields.URL))
+
+'Click on Add account button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/OverviewTab/AccountsBlock/icon_AddAccount'))
+
+'Create account'
+
+CustomKeywords.'pages.account.CreateMultipositionAccountPage.createMutipositionAccount'(accData)
+
+'Select Accounts tab'
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.clickAccountsTab'()
+
+'Verify Banking account infomrtion'
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyBankingAccountInformation'(accData, 1)
+
+accData.put(Fields.IS_CREATED, "true");
