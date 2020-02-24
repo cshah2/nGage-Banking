@@ -11,21 +11,9 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>64ad0999-5cd3-4ff8-8bdf-760e1ac9695e</testSuiteGuid>
    <testCaseLink>
-      <guid>b9865dde-25c3-49d8-96a3-efdedad8d2f1</guid>
+      <guid>d712efef-2049-4f71-a309-62f621a8e727</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/D0 - Add a Hold</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>edf4ca45-0586-4d8f-a845-9d132a8ba718</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/D1 - Edit a Hold</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>9b39ba7c-c990-4841-a58b-d6ca4db3a041</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/D2 - Cancel Hold</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/E0 - Add Order (Book Transfer)</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

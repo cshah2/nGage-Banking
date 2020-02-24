@@ -65,6 +65,13 @@ String positionId3 = slurper.parseText(response.getResponseBodyContent()).create
 String positionId4 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[0].posn_ln._Id
 String positionId5 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[1].posn_ln._Id
 
+String positionNo1 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[0].posn_dep.posnAcctNbr
+String positionNo2 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[1].posn_dep.posnAcctNbr
+String positionNo3 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[2].posn_dep.posnAcctNbr
+String positionNo4 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[0].posn_ln.posnAcctNbr
+String positionNo5 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[1].posn_ln.posnAcctNbr
+
+
 String customerId = custData.get(Fields.CUST_ID)
 String partyId = custData.get(Fields.CUST_PARTY_ID)
 String accNumber = accDataPos1.get(Fields.ACC_NUMBER)
@@ -92,3 +99,10 @@ accDataPos2.put(Fields.ACC_POSITION_ID, positionId2)
 accDataPos3.put(Fields.ACC_POSITION_ID, positionId3)
 accDataPos4.put(Fields.ACC_POSITION_ID, positionId4)
 accDataPos5.put(Fields.ACC_POSITION_ID, positionId5)
+
+accDataPos1.put(Fields.ACC_POSITION_NUMBER, positionNo1)
+accDataPos2.put(Fields.ACC_POSITION_NUMBER, positionNo2)
+accDataPos3.put(Fields.ACC_POSITION_NUMBER, positionNo3)
+accDataPos4.put(Fields.ACC_POSITION_NUMBER, positionNo4)
+accDataPos5.put(Fields.ACC_POSITION_NUMBER, positionNo5)
+
