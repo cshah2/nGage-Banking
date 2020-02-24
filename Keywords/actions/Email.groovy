@@ -62,6 +62,26 @@ public class Email {
 		mailbox.readMessage(username, messageId)
 		return mailbox.getValueFromMessageBody(searchText, 5)
 	}
+	
+	
+	@Keyword
+	static def getVerificationCodeForOak(String email, int messageNo) {
+
+		String searchText = 'Your temporary code is '
+		String username = email.split('@')[0]
+		OneSecEmail mailbox = new OneSecEmail()
+		mailbox.getMessages(username)
+
+		int messageId = mailbox.getMessageId(messageNo)
+		println "Message ID = "+messageId
+		mailbox.readMessage(username, messageId)
+		println "Th eOTP : " + mailbox.getValueFromMessageBody(searchText, 5)
+		return mailbox.getValueFromMessageBody(searchText, 5)
+		
+	}
+	
+	
+	
 
 	@Keyword
 	static def getTemporaryPassword(String email, int messageNo) {
@@ -76,4 +96,14 @@ public class Email {
 		mailbox.readMessage(username, messageId)
 		return mailbox.getValueFromMessageBody(searchText, 7)
 	}
+	
+	@Keyword
+	public static void typeOTP(String otp){		
+		for (int i=0 ; i < 6; i++){
+		 WebUI.setText(findTestObject('Object Repository/Onboarding/input_Otp',[('index'): String.valueOf(i)]), String.valueOf(otp.charAt(i)))
+		}
+	}
+	
+	
+	
 }

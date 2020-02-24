@@ -6,6 +6,8 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import org.apache.commons.lang3.StringUtils
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -37,7 +39,7 @@ public class OneSecEmail {
 		WS.verifyResponseStatusCode(response, 200)
 		JsonSlurper jsonSlurper = new JsonSlurper()
 		messages = jsonSlurper.parseText(response.getResponseBodyContent())
-		
+
 		println "Response = "+response.getResponseBodyContent()
 	}
 
@@ -67,10 +69,16 @@ public class OneSecEmail {
 		WS.verifyResponseStatusCode(response, 200)
 		JsonSlurper jsonSlurper = new JsonSlurper()
 		message = jsonSlurper.parseText(response.getResponseBodyContent())
+		println "The Message : "+ message
 	}
 
 	def getMessageBody(){
-		return message.textBody.toString()
+		String messageBody = message.textBody.toString()
+		if(StringUtils.isBlank(messageBody)) {
+			messageBody = message.htmlBody.toString() 
+		} 
+		
+		return messageBody 
 	}
 
 	def getValueFromMessageBody(String searchText, int textLength) {

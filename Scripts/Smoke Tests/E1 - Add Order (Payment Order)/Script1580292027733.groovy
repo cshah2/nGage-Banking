@@ -27,9 +27,11 @@ int SUBSTRING_DATE_START = 0
 int SUBSTRING_DATE_END = 10
 String PAYMENT_ORDER_CASE_TYPE = "Outbound Funds Transfer ACH"
 String ORDER_STATUS = "Entered"
+String taskName = "Add Order"
 Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_PAYEMENT_ORDER
 
+TestObject orderTable = findTestObject('Object Repository/Account/AccountDashboardPage/OrdersTab/table_Orders')
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
 TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
 
@@ -45,6 +47,17 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 
 'Click on Add Order Tasks'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_AddOrder'))
+
+'Wait for tab to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(orderTable, GlobalVariable.Timeout)
+
+
+'Select Add Order Task'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
+
+'Wait for Task to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/select_OrderType'), GlobalVariable.Timeout)
+
 
 'Select OrderType'
 WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'), custOrderData.get(Fields.ORDER_TYPE), true)
@@ -73,7 +86,7 @@ WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTi
 
 'Select Account Group from Account Group DropDown'
 WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'), custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP), true)
-
+WebUI.delay(2)
 
 'Click on Account Group DropDown'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'))
@@ -86,7 +99,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
 
 'Click on Send now Checkbox'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
+WebUI.check(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
 
 'Type transfer amount'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderAmt'), custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT))
@@ -180,16 +193,3 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 'Verify Order Created Date in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.ORDER_CREATED_DATE,
 	custOrderData.get(Fields.ORDER_CREATED_DATE).substring(SUBSTRING_DATE_START, SUBSTRING_DATE_END), Operator.EQUALS_IGNORE_CASE)
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -22,11 +22,10 @@ import internal.GlobalVariable
 
 public class ColumnPosition {
 
-	public static final int CUST_LAST_NAME = 1
-	public static final int CUST_FIRST_NAME = 2
-	public static final int CUST_EMAIL = 5
-	public static final int CUST_DOB = 6
-	public static final int CUST_PHONE_NUMBER = 9
+	public static final int CONSTUMER_LASTNAME = 1
+	public static final int CONSTUMER_FIRSTNAME = 2
+	public static final int CONSTUMER_EMAILID = 5
+	public static final int CONSTUMER_PHONENUMBER = 9
 
 
 	//ORGANIZATION
@@ -100,5 +99,15 @@ public class ColumnPosition {
 	public static final int ORDER_AMOUNT = 8
 	public static final int ORDER_CREATED_DATE_IN_TRANSACTIONS = 3
 	public static final int ORDER_STATUS = 10
+	
+	//Vault search results table
+	public static final int VAULT_CASE_TYPE = 4
+	public static final int VAULT_CUST_ID = 7
+	public static final int VAULT_CASE_STATUS = 9
+	public static final int VAULT_CURRENT_QUEUE = 12
+
+	
+	
+	
 
 }

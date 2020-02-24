@@ -27,9 +27,11 @@ int SUBSTRING_DATE_START = 0
 int SUBSTRING_DATE_END = 10
 String PAYMENT_ORDER_CASE_TYPE = "Inbound ACH Collection Order"
 String ORDER_STATUS = "Entered"
+String taskName = "Add Order"
 Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_COLLECTION_ORDER
 
+TestObject orderTable = findTestObject('Object Repository/Account/AccountDashboardPage/OrdersTab/table_Orders')
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
 TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
 
@@ -40,11 +42,21 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 WebUI.navigateToUrl(custOrderData.get(Fields.URL))
 
 
-'Click on Account Task Drawer'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_Drawer'))
 
-'Click on Add Order Tasks'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_AddOrder'))
+'Click on Orders tab'
+WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSection/tab_Orders'))
+
+'Wait for tab to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(orderTable, GlobalVariable.Timeout)
+
+'Get Current order records count'
+int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(orderTable)
+
+'Open Task Drawer'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
+
+'Select Add Order Task'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 
 'Select OrderType'
 WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'), custOrderData.get(Fields.ORDER_TYPE), true)
@@ -80,7 +92,7 @@ WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/sel
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER))
 
 'Click on Send now Checkbox'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
+WebUI.check(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
 
 'Type transfer amount'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderAmt'), custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT))
@@ -93,11 +105,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 CustomKeywords.'pages.account.tabs.AccountOrderConfirmation.verifyOrderConfirmationDetails'(custOrderData)
 
 
-
 'Click on Confirm Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Confirm'))
-
-
 
 
 String alertMessage = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/alert_MoneyMovement'))

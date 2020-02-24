@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>upload_Doc2</name>
+   <tag></tag>
+   <elementGuidId>1a190618-b0ee-4930-b4d8-d34eb3148a0f</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>div[id*='upload-personal-1']</value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>div[id*='upload-personal-1']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>CSS</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>

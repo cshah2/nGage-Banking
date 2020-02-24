@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>div_LodiBank</name>
+   <tag></tag>
+   <elementGuidId>59e56652-a8f3-43ef-b705-501943eae22b</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>BASIC</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//div[@id='https://api.savana-qa.apiture.com/accountVerifications/institutions/961ffc1e-e1f1-11e8-8366-274c0a4e671e']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <useRalativeImagePath>false</useRalativeImagePath>
+</WebElementEntity>
