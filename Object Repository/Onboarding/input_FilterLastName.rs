@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_Accounts</name>
+   <name>input_FilterLastName</name>
    <tag></tag>
-   <elementGuidId>9911e0cd-39ff-4e30-8985-0c7c9c7194e4</elementGuidId>
+   <elementGuidId>d4f0f2b4-5c43-4b10-aa37-c0464f0bfb2b</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>//table[contains(@id,'MP_Accounts')]</value>
-      </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//label[text()='Last Name ']/following-sibling::input</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
