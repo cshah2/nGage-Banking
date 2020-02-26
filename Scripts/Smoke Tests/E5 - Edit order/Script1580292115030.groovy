@@ -38,6 +38,8 @@ int SUBSTRING_DATE_START = 0
 
 int SUBSTRING_DATE_END = 10
 
+int ELLIPSIS_COLNUM = 11
+
 String CASE_TYPE = 'Funds Transfer Internal'
 
 String ORDER_STATUS = 'Entered'
@@ -63,8 +65,6 @@ WebUI.navigateToUrl(custOrderData.get(Fields.URL))
 int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(scheduledTransactionsTable)
 
 println('The rows count: ' + recordCount)
-
-
 
 'Open task drawer'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
@@ -130,7 +130,8 @@ WebUI.scrollToPosition(p.x-200, p.y-200)
 
 
 'click on edit ellipsis of first row'
-CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Account/AccountTaskDrawer/ScheduledTransactions/icon_OrderOptions'))
+'click on edit ellipsis of first row'
+CustomKeywords.'actions.WebTable.clickIconInTable'(scheduledTransactionsTable, LATEST_ROW, ELLIPSIS_COLNUM, Icon.ELLIPSIS)
 
 'click on edit Order Option of first row'
 CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Account/AccountTaskDrawer/ScheduledTransactions/option_EditOrder'))

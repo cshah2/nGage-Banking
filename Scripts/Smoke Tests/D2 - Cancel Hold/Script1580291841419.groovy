@@ -26,7 +26,7 @@ int LATEST_ROW = 1
 int WAIT_FOR_FIVE_SECONDS = 5
 
 Map<Fields, String> accData = ConsumerData.ACC_B1
-Map<Fields, String> custHoldData = ConsumerTempData.ACCOUNT_HOLD_UPD
+Map<Fields, String> custHoldData = ConsumerTempData.ACCOUNT_HOLD
 TestObject holdsTable = findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/table_Holds')
 
 String taskName = 'Add Hold'

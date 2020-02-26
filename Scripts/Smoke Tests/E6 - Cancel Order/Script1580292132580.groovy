@@ -24,6 +24,7 @@ import utils.WebUtil as WebUtil
 import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
+import constants.Icon
 import constants.Operator as Operator
 import data.ConsumerTempData as ConsumerData
 
@@ -35,9 +36,13 @@ int SUBSTRING_DATE_START = 0
 
 int SUBSTRING_DATE_END = 10
 
+int ELLIPSIS_COLNUM = 11
+
 String CASE_TYPE = 'Funds Transfer Internal'
 
 String ORDER_STATUS = 'Entered'
+
+String taskName = "Add Order"
 
 Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
 
@@ -59,6 +64,14 @@ int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(scheduledTransa
 println('The rows count: ' + recordCount)
 
 
+'Open task drawer'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
+
+'Select Task'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
+
+'Wait for Task to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/select_OrderType'), GlobalVariable.Timeout)
 
 'Click on Account Task Drawer'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_Drawer'))
@@ -66,35 +79,18 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 'Click on Add Order Tasks'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_AddOrder'))
 
-'Click on Order Type DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'))
-
-
-'Select Order type from OrderType DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_TYPE)]))
-
-
-'Click on Origin Source DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OriginSource'))
-
+'Select OrderType'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/select_OrderType'), custOrderData.get(Fields.ORDER_TYPE), true)
 
 'Select Origin Source from OriginSource DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_ORIGIN_SOURCE)]))
-
-
-'Click on order Source DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'))
-
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/select_OriginSource'), custOrderData.get(Fields.ORDER_ORIGIN_SOURCE), true)
 
 'Select order Source from OriginSource DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect' ,[('value'):custOrderData.get(Fields.ORDER_SOURCE)]))
-
-'Click on Operational area  DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'))
-
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'), custOrderData.get(Fields.ORDER_SOURCE), true)
 
 'Select Operational area from OperationalArea DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect' ,[('value'):custOrderData.get(Fields.ORDER_OPERATIONL_AREA)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'), custOrderData.get(Fields.ORDER_OPERATIONL_AREA), true)
+
 
 'Type Order Info'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo'), custOrderData.get(Fields.ORDER_INFO))
@@ -135,7 +131,7 @@ CustomKeywords.'pages.account.tabs.AccountOrderConfirmation.verifyOrderConfirmat
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Confirm'))
 
 'Wait for 30 seconds'
-WebUI.delay(30)
+WebUI.delay(20)
 
 'Scroll to Tchedule transactions table'
 WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Account/AccountTaskDrawer/AddOrder/div_ScheduleTransactions'), 30)
@@ -144,9 +140,9 @@ Point p = element.getLocation()
 WebUI.scrollToPosition(p.x-200, p.y-200)
 
 'click on edit ellipsis of first row'
-CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Account/AccountTaskDrawer/ScheduledTransactions/icon_OrderOptions'))
+CustomKeywords.'actions.WebTable.clickIconInTable'(scheduledTransactionsTable, LATEST_ROW, ELLIPSIS_COLNUM, Icon.ELLIPSIS)
 
-'click on edit Order Option of first row'
+'click on Cancel Order Option of first row'
 CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Account/AccountTaskDrawer/ScheduledTransactions/option_CancelOrder'))
 
 'click on edit Order Option of first row'
