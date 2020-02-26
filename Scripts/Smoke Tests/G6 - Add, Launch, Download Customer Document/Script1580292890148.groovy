@@ -41,7 +41,7 @@ import utils.WebUtil
 
 //WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
 
-Map<Fields, String> custData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> custData = ConsumerData.CUST_B
 
 'Task Name'
 String taskName = "Add Customer Document"

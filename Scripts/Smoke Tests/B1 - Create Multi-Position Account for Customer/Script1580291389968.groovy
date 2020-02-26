@@ -37,13 +37,11 @@ WebUI.navigateToUrl(custData.get(Fields.URL))
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/OverviewTab/AccountsBlock/icon_AddAccount'))
 
 'Create account'
-
 CustomKeywords.'pages.account.CreateMultipositionAccountPage.createMutipositionAccount'(accData)
 
-'Select Accounts tab'
-CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.clickAccountsTab'()
 
 'Verify Banking account infomrtion'
-CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyBankingAccountInformation'(accData, 1)
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyMPAccountInformation'(accData, 1)
 
+'Multi=position account created'
 accData.put(Fields.IS_CREATED, "true");

@@ -22,12 +22,12 @@ import constants.ColumnPosition
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable as GlobalVariable
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData as ConsumerData
 
 int LATEST_ROW = 1
 String taskName = "Add Account Service Case"
 String caseType = "Beneficial Owner"
-Map<Fields, String> customerData = ConsumerData.ACCOUNT_HOLD
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
 
 'Login into portal'

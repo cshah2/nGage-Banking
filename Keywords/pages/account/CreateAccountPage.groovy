@@ -134,14 +134,17 @@ public class CreateMultipositionAccountPage {
 		TestObject e_ReferenceId = findTestObject('Object Repository/Account/CreateAccountPage/BasicInformation/input_ReferenceId')
 		TestObject e_PaperStatement = findTestObject('Object Repository/Account/CreateAccountPage/BasicInformation/checkbox_Paper Statement')
 
-		TestObject e_ProductType = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/select_Product Type 1')
-		TestObject e_PositionName = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/input_Position Name1')
-		TestObject e_ProductCode = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/input_Product Code1')
-		TestObject e_Currency = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/select_Currency1')
-		TestObject e_CreditLimit = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/input_Credit Limit1')
-		TestObject e_DepartmentId = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/select_Department Id1')
-		TestObject e_Vertical = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Banking/select_Vertical1')
-
+		TestObject e_ProductType = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/select_Product Type 1')
+		TestObject e_PositionName = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/input_Position Name')
+		TestObject e_ProductCode = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/input_Product Code1')
+		TestObject e_Currency = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/select_Currency 1')
+		//TestObject e_CreditLimit = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/input_Credit Limit1')
+		TestObject e_DepartmentId = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/select_Department Id 1')
+		TestObject e_Vertical = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/select_Vertical 1')
+		TestObject e_RelationshipType = findTestObject('Object Repository/Account/CreateAccountPage/ProductInformation/Multi-Position/select_RelationShipType')
+		
+		
+		
 		TestObject e_TC_DocumentType1 = findTestObject('Object Repository/Account/CreateAccountPage/DocumentInformation/select_Document Type 1')
 		TestObject e_TC_AgreementCode1 = findTestObject('Object Repository/Account/CreateAccountPage/DocumentInformation/input_AgreementCode1')
 		TestObject e_TC_DocumentSignedBy1 = findTestObject('Object Repository/Account/CreateAccountPage/DocumentInformation/input_Signed By 1')
@@ -159,7 +162,7 @@ public class CreateMultipositionAccountPage {
 		WebActions.waitForElementVisible(e_AccountTitle, GlobalVariable.Timeout)
 		WebActions.setText(e_AccountTitle, accData, Fields.ACC_TITLE)
 		WebActions.selectOptionByLabel(e_Ownership, accData, Fields.ACC_OWNERSHIP)
-		WebActions.selectOptionByLabel(e_RelationShipType, accData, Fields.ACC_RELATIONSHIP_TYPE)
+		WebActions.selectOptionByLabel(e_RelationshipType, accData, Fields.ACC_RELATIONSHIP_TYPE)
 		WebActions.setText(e_AccountDescription, accData, Fields.ACC_DESCRIPTION)
 		WebActions.selectOptionByLabel(e_AccountGroup, accData, Fields.ACC_GROUP)
 		WebActions.waitForElementVisible(e_ProductType, GlobalVariable.Timeout)
@@ -173,7 +176,7 @@ public class CreateMultipositionAccountPage {
 		WebActions.selectOptionByLabel(e_ProductType, accData, Fields.ACC_PRODUCT_TYPE)
 		WebActions.setText(e_PositionName, accData, Fields.ACC_POSITION_NAME)
 		WebActions.selectOptionByLabel(e_Currency, accData, Fields.ACC_CURRENCY_CODE)
-		WebActions.setText(e_CreditLimit, accData, Fields.ACC_CREDIT_LIMIT)
+		//WebActions.setText(e_CreditLimit, accData, Fields.ACC_CREDIT_LIMIT)
 		WebActions.selectOptionByLabel(e_DepartmentId, accData, Fields.ACC_DEPT_ID)
 		WebActions.selectOptionByLabel(e_Vertical, accData, Fields.ACC_VERTICAL)
 

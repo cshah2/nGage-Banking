@@ -25,7 +25,7 @@ import data.ConsumerData as ConsumerData
 
 String addressUpdateCase = 'Address Update'
  int CLOSED_CASE_LATEST_ROW = 1
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
 Map<Fields, String> customerAddress = ConsumerData.ADDRESS_A
 

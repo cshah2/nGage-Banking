@@ -23,6 +23,7 @@ import actions.WebTable
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
+import utils.MapUtil
 
 public class ConsumerAccountsTab {
 
@@ -42,4 +43,23 @@ public class ConsumerAccountsTab {
 		WebTable.verifyCellValueMatches(table, rowNo, 4, accData.get(Fields.ACC_OWNERSHIP), Operator.EQUALS)
 		WebTable.verifyCellValueMatches(table, rowNo, 5, accData.get(Fields.ACC_RELATIONSHIP_TYPE), Operator.EQUALS)
 	}
+	
+	
+	
+	@Keyword
+	def verifyMPAccountInformation(Map<Fields, String> accData, int rowNo) {
+		MapUtil.printMap(accData)
+		
+		
+		println "The account number : " + accData.get(Fields.ACC_NUMBER)
+		WebActions.click(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Accounts'))
+		WebActions.waitForElementVisible(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_MPAccounts'), GlobalVariable.Timeout)
+		TestObject table = findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_MPAccounts')
+		WebTable.verifyCellValueMatches(table, rowNo, 2, accData.get(Fields.ACC_NUMBER), Operator.EQUALS)
+		WebTable.verifyCellValueMatches(table, rowNo, 3, accData.get(Fields.ACC_DESCRIPTION), Operator.EQUALS)
+		WebTable.verifyCellValueMatches(table, rowNo, 6, accData.get(Fields.ACC_OWNERSHIP), Operator.EQUALS)
+		WebTable.verifyCellValueMatches(table, rowNo, 7, accData.get(Fields.ACC_RELATIONSHIP_TYPE), Operator.EQUALS)
+	}
+	
+	
 }

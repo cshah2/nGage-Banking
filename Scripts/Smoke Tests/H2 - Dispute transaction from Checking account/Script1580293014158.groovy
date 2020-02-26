@@ -21,7 +21,8 @@ import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData as ConsumerData
+import data.ConsumerTempData as ConsumerTempData
 
 int LATEST_ROW = 1
 
@@ -34,8 +35,8 @@ String ORDER_STATUS = "Entered"
 
 String disputeTransactionType = "ACH"
 String disputeReason = "Not Processed"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-Map<Fields, String> accData = ConsumerData.ACCOUNT_INTEREST_CHK
+Map<Fields, String> customerData = ConsumerData.CUST_B
+Map<Fields, String> accData = ConsumerTempData.ACCOUNT_INTEREST_CHK
 String taskName = "Post a Transaction"
 TestObject transactionsTable = findTestObject('Account/AccountDashboardPage/TransactionTab/table_Transactions')
 

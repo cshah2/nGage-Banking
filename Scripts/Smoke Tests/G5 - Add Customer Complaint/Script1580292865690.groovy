@@ -25,7 +25,7 @@ import internal.GlobalVariable as GlobalVariable
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData as ConsumerData
 
 int LATEST_ROW = 1
 
@@ -39,7 +39,7 @@ String CUST_PROD_TYPE =  "Auto debt"
 String CUST_ISSUE_TYPE =  "Account opening, closing or management"
 String CUST_PROD_LINE =  "Bank account or service"
 String CUST_COMPANY =  "Demo Company"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
 //Map<Fields, String> custComplaintData = ConsumerData.CUST_COMPLAINT
 

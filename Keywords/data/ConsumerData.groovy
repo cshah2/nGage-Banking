@@ -414,6 +414,48 @@ public class ConsumerData {
 		ACC_B2_POS1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
 	}
 
+
+
+
+
+	public static final Map<Fields, String> ACC_MULTIPOSO_1;
+	static {
+
+		//Basic Information
+		ACC_MULTIPOSO_1 = new HashMap<Fields, String>()
+		ACC_MULTIPOSO_1.put(Fields.ACC_TITLE, CUST_B.get(Fields.CUST_FIRST_NAME)+' '+CUST_B.get(Fields.CUST_LAST_NAME))
+		ACC_MULTIPOSO_1.put(Fields.ACC_OWNERSHIP, 'Single')
+		ACC_MULTIPOSO_1.put(Fields.ACC_DESCRIPTION, 'Savings Account')
+		ACC_MULTIPOSO_1.put(Fields.ACC_GROUP, 'Multi-Position')
+		ACC_MULTIPOSO_1.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezone)+RandomUtil.getRandomNumeric(4))
+		ACC_MULTIPOSO_1.put(Fields.ACC_BROKERED, 'false')
+		ACC_MULTIPOSO_1.put(Fields.ACC_TIMEZONE, 'America/New_York')
+		ACC_MULTIPOSO_1.put(Fields.ACC_STATEMENT_FREQUENCY, 'Daily')
+		ACC_MULTIPOSO_1.put(Fields.ACC_PRODUCT_TYPE, 'Business Savings (B2001 - SDA) ')
+		ACC_MULTIPOSO_1.put(Fields.ACC_PRODUCT_CODE, 'B2001')
+		ACC_MULTIPOSO_1.put(Fields.ACC_POSITION_NAME, 'Business Savings')
+		ACC_MULTIPOSO_1.put(Fields.ACC_CURRENCY_CODE, 'US Dollar')
+		ACC_MULTIPOSO_1.put(Fields.ACC_CURRENCY_CODE_VIEW, 'USD')
+		ACC_MULTIPOSO_1.put(Fields.ACC_VERTICAL, 'Vertical 01')
+		ACC_MULTIPOSO_1.put(Fields.ACC_DEPT_ID, 'Department 350')
+		ACC_MULTIPOSO_1.put(Fields.ACC_DEPT_ID_VIEW, '350')
+		ACC_MULTIPOSO_1.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
+		
+		ACC_MULTIPOSO_1.put(Fields.TC_DOC_AGREEMENT_CODE1,, 'Primary')
+		ACC_MULTIPOSO_1.put(Fields.TC_DOC_VERSION1, '1.0')
+		ACC_MULTIPOSO_1.put(Fields.TC_DOC_SIGNED_BY1, 'Amol')
+		ACC_MULTIPOSO_1.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
+		
+		
+		ACC_MULTIPOSO_1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
+	}
+
+
+
+
+
+
+
 	public static final Map<Fields, String> ACC_B2_POS2;
 	static {
 

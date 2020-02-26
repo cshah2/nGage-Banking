@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@id='nGageBanking_Theme_wt20_block_wtHeadingContent_nGageBanking_Account_Tasks_wt7_block_WebPatterns_wt160_block_wtPanelContent_wtPositionList_ctl00_wtCurrency2']</value>
+         <value>//select[contains(@id,'Currency1')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

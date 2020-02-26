@@ -19,12 +19,13 @@ import constants.ColumnPosition
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable as GlobalVariable
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData as ConsumerData
+import data.OrganizationData
 
 int LATEST_ROW = 1
 String taskName = "Add Customer Service Case"
 String caseType = "Name Update"
-Map<Fields, String> organizationData = ConsumerData.ORGANIZATIONMAP
+Map<Fields, String> organizationData = OrganizationData.ORG_B
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()

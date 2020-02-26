@@ -26,6 +26,7 @@ import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
 import data.ConsumerTempData as ConsumerData
+import data.OrganizationData
 
 int LATEST_ROW = 1
 
@@ -40,9 +41,7 @@ String CUST_ISSUE_TYPE =  "Account opening, closing or management"
 String CUST_PROD_LINE =  "Bank account or service"
 String CUST_COMPANY =  "Demo Company"
 
-Map<Fields, String> orgData = ConsumerData.ORGANIZATIONMAP
-
-Map<Fields, String> custComplaintData = ConsumerData.CUST_COMPLAINT
+Map<Fields, String> orgData = OrganizationData.ORG_B
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()

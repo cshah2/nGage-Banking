@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>table_BankingAccounts</name>
+   <name>select_RelationShipType</name>
    <tag></tag>
-   <elementGuidId>9faf4682-2e38-4405-a8d1-b4e903843324</elementGuidId>
+   <elementGuidId>300aa264-af5c-4980-9062-61a3ea4726f5</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@id,'_wtActiveAccountsTable_CN')]/table[contains(@id,'_wtActiveAccounts_WB_wtActiveAccountsTable')]</value>
+         <value>//select[contains(@id,'wtRelationshipDropdown')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
