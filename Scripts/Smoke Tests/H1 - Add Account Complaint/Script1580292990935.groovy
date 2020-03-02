@@ -43,12 +43,14 @@ String CUST_COMPANY =  "Demo Company"
 
 Map<Fields, String> customerData = ConsumerData.CUST_B
 
+Map<Fields, String> accData = ConsumerData.ACC_B1
+
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Navigate To customer dashboard'
-WebUI.navigateToUrl(customerData.get(Fields.URL))
+'Navigate To Account dashboard'
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 'Open task drawer'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
@@ -136,8 +138,8 @@ String customerInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/
 CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_ID), Operator.CONTAINS_IGNORE_CASE)
 
 
-'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
+'Verify Consumer first name  in Customer Info'
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_FIRST_NAME), Operator.CONTAINS_IGNORE_CASE)
 
 
 
@@ -172,4 +174,4 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 
 'Verify Account number in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.ACCOUNT_NUMBER,
-	customerData.get(Fields.ACC_NUMBER), Operator.EQUALS_IGNORE_CASE)
+	accData.get(Fields.ACC_NUMBER), Operator.EQUALS_IGNORE_CASE)

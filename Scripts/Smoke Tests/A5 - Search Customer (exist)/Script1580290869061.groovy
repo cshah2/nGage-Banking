@@ -22,6 +22,7 @@ import constants.Urls as Urls
 import data.ConsumerData as ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil as MapUtil
+import utils.TableUtil
 import utils.WebUtil as WebUtil
 
 Map<Fields, String> customerData = ConsumerData.CUST_B
@@ -29,6 +30,8 @@ Map<Fields, String> customerData = ConsumerData.CUST_B
 WebUtil.shouldFailTest(customerData)
 
 TestObject tableSearchResults = findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/table_SearchResults')
+
+
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -84,7 +87,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'Verify Firstname is present in all rows of searchResults table'
-CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSUMER_FIRSTNAME, 
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSUMER_EMAILID, 
     customerData.get(Fields.CONTACT_EMAIL), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with DOB--------*/
@@ -100,8 +103,14 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 'Wait for search result grid to be displayed'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
+'Get Current transaction records count'
+int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(tableSearchResults)
+
+
+for(int i=0 ; i <=recordCount ; i++){
 'Mouse over eye icon next to DOB field'
-CustomKeywords.'actions.WebTable.mouseOverIconInTable'(tableSearchResults, 1, ColumnPosition.CUST_DOB, Icon.EYE)
+CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('Object Repository/SearchPage/SearchConsumer/SearchConsumerResults/icon_DOBEye'), findTestObject('Object Repository/SearchPage/SearchConsumer/SearchConsumerResults/text_ToolTip'), customerData.get(Fields.CUST_DOB), Operator.EQUALS_IGNORE_CASE)
+}
 
 'Wait for tooltip to be visible'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/SearchPage/SearchConsumer/SearchConsumerResults/text_ToolTip'), 
@@ -125,7 +134,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'Verify Phone Numbers for all results in the SearchResults Grid'
-CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CUST_PHONE_NUMBER, customerData.get(
+CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSUMER_PHONENUMBER, customerData.get(
         Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with TaxID--------*/
@@ -141,7 +150,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 'Click on the customer Row'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/table_SearchResult_FirstRow'))
+CustomKeywords.'actions.WebTable.clickCell'(tableSearchResults, 1, 5)
+//CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/table_SearchResult_FirstRow'))
 
 'Goto Profile Tab of a Customer'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Profile'))

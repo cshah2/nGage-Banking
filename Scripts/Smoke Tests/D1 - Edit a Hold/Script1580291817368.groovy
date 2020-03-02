@@ -28,7 +28,7 @@ int SUBSTRING_DATE_START = 0
 int SUBSTRING_DATE_END = 10
 
 Map<Fields, String> accData = ConsumerData.ACC_B1
-Map<Fields, String> custHoldData = ConsumerTempData.ACCOUNT_HOLD_UPD
+Map<Fields, String> custHoldData = ConsumerTempData.ACCOUNT_HOLD
 TestObject holdsTable = findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/table_Holds')
 
 String taskName = 'Add Hold'

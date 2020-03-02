@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[contains(@id,'CaseType_CN')]/descendant::select</value>
+         <value>//div[@taskblockname='Create Case']/descendant::select</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

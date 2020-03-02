@@ -335,8 +335,8 @@ public class ConsumerData {
 		CUST_B.put(Fields.CONTACT_EMAIL, email)
 		CUST_B.put(Fields.CONTACT_EMAIL_TYPE, 'Personal')
 		CUST_B.put(Fields.CONTACT_EMAIL_VERIFIED_DATE, DateUtil.getCurrentDateTimeMinusDays(2, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
-		CUST_B.put(Fields.CONTACT_EMAIL_VALID_FROM, DateUtil.getCurrentDateTimeMinusDays(9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
-		CUST_B.put(Fields.CONTACT_EMAIL_VALID_UNTIL, DateUtil.getCurrentDateTimeMinusDays(-9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_EMAIL_VALID_FROM, DateUtil.getCurrentDateTime(Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
+		CUST_B.put(Fields.CONTACT_EMAIL_VALID_UNTIL, DateUtil.getCurrentDateTimePlusDays(9, Common.dateFormatISO, Common.timezoneUTC)+'T00:00:00Z')
 		CUST_B.put(Fields.CONTACT_PREFERRED_CONTACT_METHOD, 'Email')
 
 		//Customer Due diligence

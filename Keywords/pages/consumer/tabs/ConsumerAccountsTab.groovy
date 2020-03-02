@@ -39,7 +39,6 @@ public class ConsumerAccountsTab {
 
 		TestObject table = findTestObject('Object Repository/Consumer/ConsumerDashboardPage/AccountsTab/table_BankingAccounts')
 		WebTable.verifyCellValueMatches(table, rowNo, 1, accData.get(Fields.ACC_NUMBER), Operator.EQUALS)
-		WebTable.verifyCellValueMatches(table, rowNo, 2, accData.get(Fields.ACC_POSITION_NAME), Operator.EQUALS)
 		WebTable.verifyCellValueMatches(table, rowNo, 4, accData.get(Fields.ACC_OWNERSHIP), Operator.EQUALS)
 		WebTable.verifyCellValueMatches(table, rowNo, 5, accData.get(Fields.ACC_RELATIONSHIP_TYPE), Operator.EQUALS)
 	}

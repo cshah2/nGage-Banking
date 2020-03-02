@@ -46,31 +46,30 @@ WebUI.clearText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab
 'Type the emailaddress to update'
 WebUI.setText(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/input_Email'),customerData.get(Fields.CONTACT_EMAIL))
 
-'Click On Select EmailType'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/select_EmailType'))
 
-'Select EmailType'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/option_EmailType',[('emailType'): customerData.get(Fields.CONTACT_EMAIL_TYPE)]))
-
-'Click on Valid From Date'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/link_SetValidToAndFromDates'))
+'Select Email Type'
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/select_EmailType'), customerData.get(Fields.CONTACT_EMAIL_TYPE), false)
 
 
+
+'Click on Link Valid From Date'
+CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/link_SetValidToAndFromDates'))
+ 
 'Set Valid From Text'
-CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), customerData, Fields.ADDR_VALID_FROM, true)
+CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), customerData, Fields.ADDR_VALID_FROM, false)
 
 'Set Valid Till Text'
-CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), customerData, Fields.ADDR_VALID_UNTIL, true)
+CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidUntilDate'), customerData, Fields.ADDR_VALID_UNTIL, false)
 
-'Scroll to Submit'
+/*'Scroll to Submit'
 WebUI.scrollToElement(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/btn_Submit'), GlobalVariable.Timeout)
-
+*/
 'Click On Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Email/btn_Submit'))
 
 
 'Verify Updated Alert Message'
-WebUI.verifyElementNotVisible(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/message_EmailUpdated'))
+WebUI.verifyElementVisible(findTestObject('Consumer/ConsumerDashboardPage/ContactDetailsTab/EmailAddress/message_EmailUpdated'))
 
 'Verify the EmailAddress updated in Emailaddress Table'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(emailTable,CLOSED_CASES_LATEST_ROW, ColumnPosition.EMAIL_ADDRESS, customerData.get(Fields.CONTACT_EMAIL), Operator.EQUALS)

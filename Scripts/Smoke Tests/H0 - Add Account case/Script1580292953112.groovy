@@ -27,6 +27,8 @@ import data.ConsumerData as ConsumerData
 int LATEST_ROW = 1
 String taskName = "Add Account Service Case"
 String caseType = "Beneficial Owner"
+Map<Fields, String> accData = ConsumerData.ACC_B1
+
 Map<Fields, String> customerData = ConsumerData.CUST_B
 
 
@@ -34,7 +36,7 @@ Map<Fields, String> customerData = ConsumerData.CUST_B
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(customerData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
 'Open task drawer'
@@ -82,11 +84,11 @@ String customerInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_Consu
 CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_ID), Operator.CONTAINS_IGNORE_CASE)
 
 
-'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
+'Verify Consumer first name  in Customer Info'
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_FIRST_NAME), Operator.CONTAINS_IGNORE_CASE)
 
 'Verify Consumer Account Number  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.ACC_NUMBER), Operator.CONTAINS_IGNORE_CASE)
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,accData.get(Fields.ACC_NUMBER), Operator.CONTAINS_IGNORE_CASE)
 
 
 

@@ -23,13 +23,13 @@ import constants.ColumnPosition
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable as GlobalVariable
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData as ConsumerData
 
 int LATEST_ROW = 1
 String taskName = "Add Customer Service Case"
 String caseType = "Name Update"
 String NEW_CASE_STATUS = "New"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
 //TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
 
@@ -46,12 +46,10 @@ CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
 'Select Task'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 
-'Click on Case Type dropdown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/select_CaseType'))
 
 
-'Click on Case Type Option'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/options_CaseType',[('caseType'):caseType]))
+'Select Case Type'
+WebUI.selectOptionByLabel(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/select_CaseType'), caseType, false)
 
 
 'Click on Submit Button'
@@ -60,9 +58,6 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
-
-'Switch to Parent frame'
-WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)
 
 'Wait for workflow actions tab'
 WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'),GlobalVariable.Timeout)
@@ -134,8 +129,12 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon
 'Type case number'
 WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumberGenerated)
 
+'Wait for 2 seconds'
+WebUI.delay(2)
 
-WebUI.sendKeys(findTestObject('BasePage/WorkFlow/btn_Search'), Keys.chord(Keys.ENTER))
+
+
+WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
 
 'Click on Search Button'
 //CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Search'))
@@ -147,5 +146,4 @@ String caseNum= WebUI.getText(findTestObject('BasePage/WorkFlow/text_CaseNumber'
 
 'Verify Routing Reason'
 CustomKeywords.'actions.WebActions.verifyMatch'(caseNum,caseNumberGenerated.replaceAll("\\s+", ""), Operator.EQUALS_IGNORE_CASE)
-
 

@@ -19,7 +19,8 @@ import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData
+import data.ConsumerTempData as ConsumerTempData
 int LATEST_ROW = 1
 
 int WAIT_FOR_FIVE_SECONDS = 5
@@ -28,8 +29,8 @@ int SUBSTRING_DATE_END = 10
 String PAYMENT_ORDER_CASE_TYPE = "Outbound Funds Transfer ACH"
 String ORDER_STATUS = "Entered"
 String taskName = "Add Order"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_PAYEMENT_ORDER
+Map<Fields, String> accData = ConsumerData.ACC_B1
+Map<Fields, String> custOrderData = ConsumerTempData.ACCOUNT_PAYEMENT_ORDER
 
 TestObject orderTable = findTestObject('Object Repository/Account/AccountDashboardPage/OrdersTab/table_Orders')
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
@@ -39,7 +40,7 @@ TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
 'Click on Account Task Drawer'
@@ -88,15 +89,18 @@ WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTi
 WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'), custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP), true)
 WebUI.delay(2)
 
-'Click on Account Group DropDown'
+/*'Click on Account Group DropDown'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'))
 
 
 'Select Account Group from Account Group DropDown'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP)]))
-
+*/
 'Type Account Number'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
+
+'Type Position Account Number'
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/input_ToAccount_PositionNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_POSITION_NUMBER))
 
 'Click on Send now Checkbox'
 WebUI.check(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))

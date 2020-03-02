@@ -6,12 +6,11 @@
    <elementGuidId>c930802d-c8dc-4613-a610-7bb8c2ddfa94</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[contains(@id,'_wtContent1_wtdata')]</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@id,'wtdata')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

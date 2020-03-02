@@ -98,16 +98,16 @@ WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/inp
 WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ZipCode'), 
     customerAddress.get(Fields.ADDR_ZIPCODE))
 
-'Click on Valid From Date'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/link_SetValidToAndFromDates'))
+'Click on Link Valid From Date'
+//CustomKeywords.'actions.WebActions.clickEvent'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/link_SetValidToAndFromDates'))
 
 'Set Valid From Text'
 CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), 
-    customerData, Fields.ADDR_VALID_FROM, true)
+    customerData, Fields.ADDR_VALID_FROM, false)
 
 'Set Valid Till Text'
-CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidFromDate'), 
-    customerData, Fields.ADDR_VALID_UNTIL, true)
+CustomKeywords.'actions.WebActions.setText'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/input_ValidUntilDate'), 
+    customerData, Fields.ADDR_VALID_UNTIL, false)
 
 'Click on Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Address/btn_Submit'))
@@ -159,5 +159,3 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(addressTable, CLOSED_CA
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(addressTable,CLOSED_CASE_LATEST_ROW, ColumnPosition.ADDRESS_COUNTRY, 
     customerAddress.get(Fields.ADDR_COUNTY), Operator.CONTAINS_IGNORE_CASE)
 
-'Logout of nGage Bank'
-CustomKeywords.'actions.WebActions.logout'()

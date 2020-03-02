@@ -25,6 +25,7 @@ import constants.Fields
 import constants.Operator
 import internal.GlobalVariable
 import utils.DateUtil
+import utils.MapUtil
 
 public class AccountOrderConfirmation {
 	
@@ -45,25 +46,15 @@ public class AccountOrderConfirmation {
 		WebActions.verifyMatch(orderOriginSource,orderDetails.get(Fields.ORDER_ORIGIN_SOURCE), Operator.EQUALS_IGNORE_CASE)
 		
 		
-		if(orderDetails.get(Fields.ORDER_DATE) != null && orderDetails.get(Fields.ORDER_DATE).equalsIgnoreCase(DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))){
-			String transferDate = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_TransferDate'))
-			WebActions.verifyMatch(transferDate,"Immediate", Operator.EQUALS_IGNORE_CASE)
-			
-		}
-		if(orderDetails.get(Fields.ORDER_DATE_FUTURE) != null && orderDetails.get(Fields.ORDER_DATE_FUTURE).equalsIgnoreCase(DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))){
-			String transferDate = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_TransferDate'))
-			WebActions.verifyMatch(transferDate,orderDetails.get(Fields.ORDER_DATE_FUTURE), Operator.CONTAINS_IGNORE_CASE)
-			
-		}
 		
-				
+		String transferDate = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_TransferDate'))
+		
 		String recurringOrder = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_Recurring'))
 		WebActions.verifyMatch(recurringOrder,"No", Operator.EQUALS_IGNORE_CASE)
 
 
 		
 		if(!orderDetails.get(Fields.ORDER_TYPE).equalsIgnoreCase("Collection order")){
-		
 			String orderCounterPartyAccNum = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_ToCounterPartyAccNo'))
 			WebActions.verifyMatch(orderCounterPartyAccNum,orderDetails.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER), Operator.EQUALS_IGNORE_CASE)
 		
@@ -88,9 +79,9 @@ public class AccountOrderConfirmation {
 
 		
 		String accType = WebUI.getText(findTestObject('Account/AccountTaskDrawer/AddOrder/text_AccType'))
-		WebActions.verifyMatch(accType,orderDetails.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_TYPE), Operator.EQUALS_IGNORE_CASE)
-
-		
+		if(MapUtil.isValidData(orderDetails, Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_TYPE)) {
+			WebActions.verifyMatch(accType,orderDetails.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_TYPE), Operator.EQUALS_IGNORE_CASE)
+		}
 
 		} else if(orderDetails.get(Fields.ORDER_TYPE).equalsIgnoreCase("Collection order")){
 			verifyCollectionOrderConfirmationDetails(orderDetails)

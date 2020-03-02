@@ -26,6 +26,7 @@ public class ColumnPosition {
 	public static final int CONSUMER_FIRSTNAME = 2
 	public static final int CONSUMER_EMAILID = 5
 	public static final int CONSUMER_PHONENUMBER = 9
+	public static final int CONSUMER_DOB = 6
 
 
 	//ORGANIZATION

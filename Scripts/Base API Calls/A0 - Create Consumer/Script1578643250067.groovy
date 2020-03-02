@@ -25,8 +25,9 @@ import utils.DateUtil
 import utils.WebUtil
 
 Map<Fields, String> custData =  ConsumerData.CUST_B
-
 String dobIso = DateUtil.convert(new Date(custData.get(Fields.CUST_DOB)), Common.dateFormatISO)
+
+
 
 RequestObject request = findTestObject('API/createConsumer',
 		[

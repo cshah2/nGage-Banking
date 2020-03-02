@@ -9,10 +9,14 @@
          <key>BASIC</key>
       </entry>
       <entry>
+         <key>XPATH</key>
+         <value>//span[text()='Set Valid to/from dates']</value>
+      </entry>
+      <entry>
          <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] span[id*='_wtValidDateValue']</value>
+         <value></value>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

@@ -19,7 +19,6 @@ import data.OrganizationData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-//WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A3 - Create Organization'), null)
 
 Map<Fields, String> orgData = OrganizationData.ORG_B
 Map<Fields, String> accData = OrganizationData.ACC_A

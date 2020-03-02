@@ -10,7 +10,7 @@
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//div[@id='select2-drop']/descendant::div[text()='Document Management']</value>
+         <value>//div[@id='select2-drop']/descendant::div[text()='Account Servicing']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

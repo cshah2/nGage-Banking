@@ -27,12 +27,7 @@ import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
 import data.ConsumerData
-import data.ConsumerTempData as ConsumerData
-
-
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A2 - Create Multi-Position account'), null)
+import data.ConsumerTempData as ConsumerTempData
 
 
 
@@ -52,11 +47,13 @@ String CASE_TYPE = 'Funds Transfer Internal'
 
 String ORDER_STATUS = 'Entered'
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
+Map<Fields, String> accData = ConsumerData.ACC_B1
 
-Map<Fields, String> toAccOrderData= ConsumerData.TO_ACCOUNT_BOOKTRANSFER_ORDER
+Map<Fields, String> custOrderData = ConsumerTempData.ACCOUNT_BOOKTRANSFER_ORDER
+
+Map<Fields, String> toAccOrderData= ConsumerTempData.TO_ACCOUNT_BOOKTRANSFER_ORDER
 String amountView = String.format("%,.2f", Double.parseDouble(custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT)))
 String dest_LedgerBalanceAmountBefore
 String dest_LedgerBalanceAmountAfter
@@ -93,7 +90,7 @@ TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
 
@@ -143,16 +140,21 @@ WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTitle'), custOrderData.get(
 		Fields.ORDER_COUNTERPARTY_ACCOUNT_TITLE))
 
-'Click on Account Group DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'))
-
 'Select Account Group from Account Group DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect', [('value') : custOrderData.get(
-	Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'), custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP), true)
+WebUI.delay(2)
 
 'Type Account Number'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(
 		Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
+
+
+'Type Position Account Number'
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/input_ToAccount_PositionNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_POSITION_NUMBER))
+
+
+
+
 
 'Click on Send now Checkbox'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
@@ -209,8 +211,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon
 'Type case number'
 WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
 
-
-WebUI.sendKeys(findTestObject('BasePage/WorkFlow/btn_Search'), Keys.chord(Keys.ENTER))
+WebUI.delay(2)
+WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
 
 'Click on Search Button'
 //CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Search'))
@@ -243,8 +245,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/Workflow/case
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
-'Switch to Parent frame'
-WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)
+/*'Switch to Parent frame'
+WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)*/
 
 'Wait for workflow actions tab'
 WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'),GlobalVariable.Timeout)
@@ -261,7 +263,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(spanText[0], caseNumber, Operato
 WebUI.mouseOver(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'))
 
 'click on First approver complete'
-CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/option_FirstApproverComplete'))
+WebUI.click(findTestObject('BasePage/WorkFlow/option_FirstApproverComplete'))
 
 'Switch to Default frame'
 WebUI.switchToDefaultContent()
@@ -302,8 +304,10 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon
 'Type case number'
 WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
 
+
+WebUI.delay(2)
 'Press Enter after entering case number'
-WebUI.sendKeys(findTestObject('BasePage/WorkFlow/btn_Search'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
 
 'Click on Search Button'
 //CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Search'))
@@ -334,8 +338,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/Workflow/case
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
-'Switch to Parent Iframe in WMI'
-WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)
+/*'Switch to Parent Iframe in WMI'
+WebUI.switchToFrame(findTestObject('BasePage/WorkFlow/iframe_Container'), GlobalVariable.Timeout)*/
 
 'Wait for Workflow actions to be visible'
 WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'),GlobalVariable.Timeout)
@@ -346,7 +350,7 @@ WebUI.mouseOver(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'))
 
 
 'click on First approver complete'
-CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/option_SecondApproverComplete'))
+WebUI.click(findTestObject('BasePage/WorkFlow/option_SecondApproverComplete'))
 
 'Switch to default Content from IFrame'
 WebUI.switchToDefaultContent()
@@ -370,7 +374,7 @@ WebUI.setText(findTestObject('LoginPage/input_Password'), 'Savana1#')
 CustomKeywords.'actions.WebActions.click'(findTestObject('LoginPage/btn_Login'))
 
 'Navigaet to Account Overview'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
 

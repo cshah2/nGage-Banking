@@ -6,13 +6,17 @@
    <elementGuidId>bd60876f-0b94-48c8-83f5-39db8f103f84</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>CSS</key>
-         <value>div[taskblockname=&quot;Address&quot;] input[id*='_wtValidFromDate']</value>
-      </entry>
-      <entry>
          <key>BASIC</key>
       </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[contains(@id,'ValidFromDateInput')]</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value>//input[contains(@id,'ValidFromDateInput')]</value>
+      </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

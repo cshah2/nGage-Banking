@@ -3,6 +3,7 @@
    <description></description>
    <name>E5 - Edit order</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Type Order Info
+click on edit ellipsis of first row</comment>
    <testCaseGuid>4190eaae-6082-4d0d-a717-38e6114d9428</testCaseGuid>
 </TestCaseEntity>

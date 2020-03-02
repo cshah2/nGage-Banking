@@ -35,6 +35,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import constants.Fields
 import constants.Operator
+import constants.TableType
 import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
@@ -85,7 +86,10 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashb
 
 
 'click on First Document'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/div_Documents'))
+//CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/div_Documents'))
+
+'Click on first row'
+CustomKeywords.'actions.WebTable.clickCell'(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/Documents table'), 1, 3,TableType.DOCUMENT)
 
 'Switch to Child window tab :1'
 WebUI.switchToWindowIndex(1)
@@ -119,7 +123,9 @@ String docTitle = WebUI.getText(findTestObject('Consumer/ConsumerDashboardPage/D
 println "DocTitle :" + docTitle.replaceAll("/","")
 
 'Path for the downloaded document'
-String path = "C:\\NGage-Banking-Automation\\nGage-Banking\\Data Files\\DownloadedFile\\"+docTitle.replaceAll("/","")+".PNG"
+//String path = "C:\\NGage-Banking-Automation\\nGage-Banking\\Data Files\\DownloadedFile\\"+docTitle.replaceAll("/","")+".PNG"
+
+String path = "C:\\Users\\apatil\\Downloads\\"+docTitle.replaceAll("/","")+".PNG"
 
 'Switch to Child Window(1)'
 WebUI.switchToWindowIndex(1)
@@ -146,10 +152,16 @@ CustomKeywords.'actions.WebActions.verifyMatch'(atualTextFromDownloadedImage, ex
 WebUtil.verifyDownloadedFile(docTitle.replaceAll("/",""))
 
 'Initiliazxe the Directory path to be cleaned'
-String dataCleanPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\DownloadedFile\\'
-
+//String dataCleanPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\DownloadedFile\\'
+String dataCleanPath = 'C:\\Users\\apatil\\Downloads\\'
 'Clean Directory'
 FileUtils.cleanDirectory(new File(dataCleanPath))
+
+'Close current window'
+WebUI.closeWindowIndex(1)
+
+'Switch to Child Window(0)'
+WebUI.switchToWindowIndex(0)
 
 
 

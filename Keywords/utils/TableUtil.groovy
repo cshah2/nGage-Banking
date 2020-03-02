@@ -228,14 +228,13 @@ public class TableUtil {
 	}
 
 
-	public void mouseOverCell(TestObject to, int rowNo, int colNo, Icon icon) {
+/*	public void mouseOverCell(TestObject to, int rowNo, int colNo, Icon icon) {
 
 		WebElement table = getTable(to)
 		WebElement el;
 		Actions a = new Actions(DriverFactory.getWebDriver())
 
 		try {
-			el = table.findElement(singleRow(rowNo)).findElement(singleCell(colNo)).findElement(cellIcon(icon))
 			WebActions.scrollToElement(el, GlobalVariable.Timeout)
 
 		}
@@ -244,6 +243,34 @@ public class TableUtil {
 			KeywordUtil.markFailedAndStop('Unable to click on link inside table '+e.toString())
 		}
 
+	}
+	*/
+	
+	public void mouseOverCell(TestObject to, int rowNo, int colNo, Icon icon) {
+		
+				String javaScript = "var evObj = document.createEvent('MouseEvents');" +
+				"evObj.initMouseEvent(\"mouseover\",true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);" +
+				"arguments[0].dispatchEvent(evObj);";
+		
+				WebElement table = getTable(to)
+				WebElement el;
+				Actions a = new Actions(DriverFactory.getWebDriver())
+		
+				List<WebElement> arg = new ArrayList<WebElement>()
+				//Actions asDriver
+				try {
+					el = table.findElement(singleRow(rowNo)).findElement(singleCell(colNo)).findElement(cellIcon(icon))
+					WebActions.scrollToElement(el, GlobalVariable.Timeout)
+		
+					arg.add(el)
+					WebUI.executeJavaScript(javaScript, arg)
+					WebUI.delay(2)
+					//asDriver = new Actions(DriverFactory.getWebDriver())
+					//asDriver.moveToElement(el).build().perform()
+				}
+				catch(Exception e) {
+					WebUI.takeScreenshot()
+				}
 	}
 
 	//Keywords

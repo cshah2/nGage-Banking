@@ -117,32 +117,40 @@ public class WebTable {
 		//values.stream().forEach{actText -> WebActions.verifyMatch(actText, expText, o)}
 	}
 
-	
+
 	@Keyword
 	static def clickCell(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
-		
+
 		TableUtil table = new TableUtil(type)
 		table.clickCell(to, rowNo, colNo)
 	}
-	
+
 	@Keyword
 	static def clickIconInTable(TestObject to,  int rowNo, int colNo, Icon icon, TableType type = TableType.DEFAULT) {
-		
+
 		TableUtil table = new TableUtil(type)
 		table.clickCell(to, rowNo, colNo, icon)
 	}
 	
-//	@Keyword
-//	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
-//
-//		TableUtil table = new TableUtil(type)
-//		table.clickCell(to, rowNo, colNo, Icon.DOUBLE_ARROW)
-//	}
-//	
-//	@Keyword
-//	static def clickEllipsisIcon(TestObject to, int rowNo, int colNo, TableType type = TableType.DEFAULT) {
-//
-//		TableUtil table = new TableUtil(type)
-//		table.clickCell(to, rowNo, colNo, Icon.ELLIPSIS)
-//	}
+	@Keyword
+	static def mouseOverIconInTable(TestObject to,  int rowNo, int colNo, Icon icon, TableType type = TableType.DEFAULT) {
+		TableUtil table = new TableUtil(type)
+		table.mouseOverCell(findTestObject('Object Repository/SearchPage/SearchConsumer/SearchConsumerResults/icon_DOBEye'), rowNo, colNo, icon)
+	}
+
+
+
+	//	@Keyword
+	//	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+	//
+	//		TableUtil table = new TableUtil(type)
+	//		table.clickCell(to, rowNo, colNo, Icon.DOUBLE_ARROW)
+	//	}
+	//
+	//	@Keyword
+	//	static def clickEllipsisIcon(TestObject to, int rowNo, int colNo, TableType type = TableType.DEFAULT) {
+	//
+	//		TableUtil table = new TableUtil(type)
+	//		table.clickCell(to, rowNo, colNo, Icon.ELLIPSIS)
+	//	}
 }

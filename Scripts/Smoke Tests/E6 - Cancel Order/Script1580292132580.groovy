@@ -19,14 +19,17 @@ import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 import utils.MapUtil as MapUtil
 import utils.WebUtil as WebUtil
 import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
+import constants.Common
 import constants.Fields as Fields
 import constants.Icon
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData
+import data.ConsumerTempData as ConsumerTempData
 
 int LATEST_ROW = 1
 
@@ -44,9 +47,13 @@ String ORDER_STATUS = 'Entered'
 
 String taskName = "Add Order"
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
+Map<Fields, String> accData = ConsumerData.ACC_B1
 
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
+Map<Fields, String> custOrderData = ConsumerTempData.ACCOUNT_BOOKTRANSFER_ORDER
+
+
+custOrderData.put(Fields.ORDER_DATE_FUTURE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
 
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
 
@@ -56,7 +63,7 @@ TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 'Get Current transaction records count'
 int recordCount = CustomKeywords.'actions.WebTable.getRowsCount'(scheduledTransactionsTable)
@@ -73,11 +80,7 @@ CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 'Wait for Task to load'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/select_OrderType'), GlobalVariable.Timeout)
 
-'Click on Account Task Drawer'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_Drawer'))
 
-'Click on Add Order Tasks'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_AddOrder'))
 
 'Select OrderType'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/select_OrderType'), custOrderData.get(Fields.ORDER_TYPE), true)
@@ -109,6 +112,9 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDra
 'Type Account Number'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
 
+'Type Position Account Number'
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/input_ToAccount_PositionNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_POSITION_NUMBER))
+
 
 'Set Start date'
 CustomKeywords.'actions.WebActions.setText'(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderStartDate'),
@@ -131,7 +137,7 @@ CustomKeywords.'pages.account.tabs.AccountOrderConfirmation.verifyOrderConfirmat
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Confirm'))
 
 'Wait for 30 seconds'
-WebUI.delay(20)
+WebUI.delay(60)
 
 'Scroll to Tchedule transactions table'
 WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Account/AccountTaskDrawer/AddOrder/div_ScheduleTransactions'), 30)

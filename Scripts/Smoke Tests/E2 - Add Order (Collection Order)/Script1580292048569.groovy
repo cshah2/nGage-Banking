@@ -19,7 +19,8 @@ import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerTempData as ConsumerTempData
+import data.ConsumerData
 int LATEST_ROW = 1
 
 int WAIT_FOR_FIVE_SECONDS = 5
@@ -28,8 +29,8 @@ int SUBSTRING_DATE_END = 10
 String PAYMENT_ORDER_CASE_TYPE = "Inbound ACH Collection Order"
 String ORDER_STATUS = "Entered"
 String taskName = "Add Order"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_COLLECTION_ORDER
+Map<Fields, String> accData = ConsumerData.ACC_B1
+Map<Fields, String> custOrderData = ConsumerTempData.ACCOUNT_COLLECTION_ORDER
 
 TestObject orderTable = findTestObject('Object Repository/Account/AccountDashboardPage/OrdersTab/table_Orders')
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
@@ -39,7 +40,7 @@ TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
 
@@ -90,6 +91,12 @@ WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/sel
 
 'Type Account Number'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER))
+
+
+'Type Position Account Number'
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/input_ToAccount_PositionNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_POSITION_NUMBER))
+
+
 
 'Click on Send now Checkbox'
 WebUI.check(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
@@ -143,13 +150,9 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(scheduledTransactionsTa
 
 
 'Verify Transactions(Scheduled) Table with the updated Order Book Transfer(From Account)'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(scheduledTransactionsTable, LATEST_ROW, ColumnPosition.FROM_ACCOUNT,
-	custOrderData.get(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER), Operator.EQUALS_IGNORE_CASE)
-
-
-'Verify Transactions(Scheduled) Table with the updated Order Book Transfer(To Account)'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(scheduledTransactionsTable, LATEST_ROW, ColumnPosition.TO_ACCOUNT,
 	custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER), Operator.EQUALS_IGNORE_CASE)
+
 
 
 'Verify Transactions(Scheduled) Table with the updated Order Book Transfer(Order Amount)'
@@ -182,16 +185,4 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 'Verify Order Created Date in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.ORDER_CREATED_DATE,
 	custOrderData.get(Fields.ORDER_CREATED_DATE).substring(SUBSTRING_DATE_START, SUBSTRING_DATE_END), Operator.EQUALS_IGNORE_CASE)
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -6,13 +6,17 @@
    <elementGuidId>e519c810-7a48-44d5-b134-f05e7860a94a</elementGuidId>
    <selectorCollection>
       <entry>
+         <key>BASIC</key>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[contains(@id,'tValidUntilDateInput')]</value>
+      </entry>
+      <entry>
          <key>CSS</key>
          <value>div[taskblockname=&quot;Address&quot;] input[id*='_wtValidUntilDate']</value>
       </entry>
-      <entry>
-         <key>BASIC</key>
-      </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

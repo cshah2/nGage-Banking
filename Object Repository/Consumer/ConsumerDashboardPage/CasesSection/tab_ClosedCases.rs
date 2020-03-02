@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//a[text()='Closed Cases']</value>
+         <value>//div[text()='Closed Cases']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

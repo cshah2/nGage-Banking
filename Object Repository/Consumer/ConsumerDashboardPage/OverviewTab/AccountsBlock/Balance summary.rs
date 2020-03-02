@@ -6,12 +6,11 @@
    <elementGuidId>b00f823c-773b-4511-8f75-fff0bcf9e3e2</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//div[text()='Balance Summary']</value>
+         <key>BASIC</key>
       </entry>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//div[contains(@id,'AcctSummary')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

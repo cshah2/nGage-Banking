@@ -27,7 +27,8 @@ import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData
+import data.ConsumerTempData as ConsumerTempData
 import constants.Icon
 
 int LATEST_ROW = 1
@@ -46,9 +47,10 @@ String ORDER_STATUS = 'Entered'
 
 String taskName = "Add Order"
 
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
+Map<Fields, String> accData = ConsumerData.ACC_B1
 
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_BOOKTRANSFER_ORDER
+Map<Fields, String> custOrderData = ConsumerTempData.ACCOUNT_BOOKTRANSFER_ORDER
 
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
 
@@ -58,7 +60,7 @@ TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
 'Get Current transaction records count'
@@ -102,6 +104,10 @@ WebUI.delay(2)
 'Type Account Number'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_ACCOUNT_NUMBER))
 
+'Type Position Account Number'
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/input_ToAccount_PositionNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_POSITION_NUMBER))
+
+
 'Click on Send now Checkbox'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
 
@@ -128,6 +134,8 @@ WebUI.scrollToPosition(p.x-200, p.y-200)
 
 //CustomKeywords.'actions.WebTable.clickIconInTable'(scheduledTransactionsTable, LATEST_ROW, WAIT_FOR_FIVE_SECONDS, Icon.ELLIPSIS)
 
+'Wait fro a minute'
+WebUI.delay(GlobalVariable.Timeout)
 
 'click on edit ellipsis of first row'
 'click on edit ellipsis of first row'

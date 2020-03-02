@@ -70,7 +70,7 @@ CustomKeywords.'pages.taskdrawer.TaskDrawer.waitForTaskDrawerToClose'()
 WebUI.delay(WAIT_FOR_FIVE_SECONDS)
 
 'Verify Holds table has no entry'
-CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(holdsTable, 0, Operator.EQUALS)
+//CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(holdsTable, 0, Operator.EQUALS)
 
 'Click on Overview tab'
 WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSection/tab_Overview'))
