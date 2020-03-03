@@ -11,9 +11,9 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>64ad0999-5cd3-4ff8-8bdf-760e1ac9695e</testSuiteGuid>
    <testCaseLink>
-      <guid>d712efef-2049-4f71-a309-62f621a8e727</guid>
+      <guid>2ac4ce3d-3a8d-446b-ab6e-5913eb2f2b3c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/E0 - Add Order (Book Transfer)</testCaseId>
+      <testCaseId>Test Cases/Smoke Tests/G1 - Check Customer case is in workflow</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

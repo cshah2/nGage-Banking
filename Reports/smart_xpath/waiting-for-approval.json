@@ -300,6 +300,90 @@
       "testObjectId": "Object Repository/Consumer/ConsumerDashboardPage/HeaderSection/text_Tax ID",
       "brokenXPath": "//label[normalize-space(text())\u003d\u0027Tax ID\u0027]/../span",
       "pathToScreenshot": ""
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//a[contains(text(),\u0027Forgot Password?\u0027)]",
+      "testObjectId": "Object Repository/LoginPage/link_ForgotPassword",
+      "brokenXPath": "//a[@id\u003d\u0027WebPatterns_wt22_block_wtAction_wt40\u0027]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/LoginPage/link_ForgotPassword_link.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027nGage Enterprise Servicing\u0027])[1]/following::div[14]",
+      "testObjectId": "Object Repository/BasePage/HeaderSection/text_LoggedInUserName",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeader_nGageBanking_wt4_block_wt12_WebPatterns_wt16_block_wtText\u0027]/div",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/BasePage/HeaderSection/text_LoggedInUserName_neighbor_0.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[2]/div/input",
+      "testObjectId": "Object Repository/SearchPage/SearchConsumer/input_FirstName",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_nGage_Patterns_wtAdvancedSearchModal_block_wtContent_wtFirstName2\u0027]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchConsumer/input_FirstName_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027nGage Enterprise Servicing\u0027])[1]/following::div[14]",
+      "testObjectId": "Object Repository/BasePage/HeaderSection/text_LoggedInUserName",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeader_nGageBanking_wt4_block_wt12_WebPatterns_wt16_block_wtText\u0027]/div",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/BasePage/HeaderSection/text_LoggedInUserName_neighbor_7.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[4]/div/div/div/input",
+      "testObjectId": "Object Repository/SearchPage/SearchConsumer/input_LastName",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_nGage_Patterns_wtAdvancedSearchModal_block_wtContent_wtLastName2\u0027]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchConsumer/input_LastName_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[4]/div/input",
+      "testObjectId": "Object Repository/SearchPage/SearchConsumer/input_PhoneNumber",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_nGage_Patterns_wtAdvancedSearchModal_block_wtContent_wtPhone2\u0027]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchConsumer/input_PhoneNumber_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[4]/div/div[3]/div/input",
+      "testObjectId": "Object Repository/SearchPage/SearchConsumer/input_TaxID",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_nGage_Patterns_wtAdvancedSearchModal_block_wtContent_wtTaxID2\u0027]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchConsumer/input_TaxID_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027nGage Enterprise Servicing\u0027])[1]/following::div[14]",
+      "testObjectId": "Object Repository/BasePage/HeaderSection/text_LoggedInUserName",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeader_nGageBanking_wt4_block_wt12_WebPatterns_wt16_block_wtText\u0027]/div",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/BasePage/HeaderSection/text_LoggedInUserName_neighbor_13.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027nGage Enterprise Servicing\u0027])[1]/following::div[14]",
+      "testObjectId": "Object Repository/BasePage/HeaderSection/text_LoggedInUserName",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeader_nGageBanking_wt4_block_wt12_WebPatterns_wt16_block_wtText\u0027]/div",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/BasePage/HeaderSection/text_LoggedInUserName_neighbor_18.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027nGage Enterprise Servicing\u0027])[1]/following::div[14]",
+      "testObjectId": "Object Repository/BasePage/HeaderSection/text_LoggedInUserName",
+      "brokenXPath": "//div[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeader_nGageBanking_wt4_block_wt12_WebPatterns_wt16_block_wtText\u0027]/div",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/BasePage/HeaderSection/text_LoggedInUserName_neighbor_20.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//span/input",
+      "testObjectId": "Object Repository/SearchPage/SearchAccount/input_AccountNumber",
+      "brokenXPath": "//input[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Blocks_wt14_block_nGage_Patterns_wtAdvancedSearchModal_block_wtContent_wtaccountNumberInput2\u0027]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchAccount/input_AccountNumber_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[4]/div/input",
+      "testObjectId": "Object Repository/SearchPage/SearchConsumer/input_PhoneNumber",
+      "brokenXPath": "//input[@contains(@id,\u0027wtPhone2\u0027)]",
+      "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchConsumer/input_PhoneNumber_position.png"
     }
   ]
 }

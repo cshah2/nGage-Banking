@@ -152,7 +152,7 @@ public class ConsumerData {
 		NA_CUSTOMERDATA_MAP.put(Fields.CUST_GROUP, "Banking Customer")
 
 		NA_CUSTOMERDATA_MAP.put(Fields.CONTACT_PHONE_NUMBER, "+91 0000000000")
-		NA_CUSTOMERDATA_MAP.put(Fields.CUST_ID, "100")
+		NA_CUSTOMERDATA_MAP.put(Fields.CUST_ID, "000000")
 		NA_CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID, "00000")
 		NA_CUSTOMERDATA_MAP.put(Fields.ADDR_VIEW, "Danis Street Room no 222, Los Angels, AL 989898")
 		NA_CUSTOMERDATA_MAP.put(Fields.CUST_TAX_ID_MASKED, '*********2')
@@ -168,7 +168,7 @@ public class ConsumerData {
 		ACC_A = new HashMap<Fields, String>()
 		ACC_A.put(Fields.ACC_TITLE, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
 		ACC_A.put(Fields.ACC_OWNERSHIP, 'Single')
-		//ACC_A.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
+		ACC_A.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
 		ACC_A.put(Fields.ACC_DESCRIPTION, 'Savings Account')
 		ACC_A.put(Fields.ACC_GROUP, 'Banking')
 		ACC_A.put(Fields.ACC_NUMBER, DateUtil.getCurrentDateTimeMinusDays(0, "MMddyyyy", Common.timezoneUTC)+RandomUtil.getRandomNumeric(4))
@@ -193,6 +193,7 @@ public class ConsumerData {
 		ACC_A.put(Fields.TC_DOC_SIGNED_BY1, CUST_A.get(Fields.CUST_FIRST_NAME)+' '+CUST_A.get(Fields.CUST_LAST_NAME))
 		ACC_A.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
+		ACC_A.put(Fields.TC_DOC_AGREEMENT_CODE1, '01')
 	}
 
 	public static final Map<Fields, String> ACCOUNT_HOLD;

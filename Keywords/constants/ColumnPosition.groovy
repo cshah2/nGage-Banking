@@ -64,7 +64,7 @@ public class ColumnPosition {
 
 	//Notes table
 	public static final int NOTES = 1
-	public static final int NOTES_CREATED_BY = 2
+	public static final int NOTES_CREATED_BY = 5
 
 	//Holds Table
 	public static int HOLD_TYPE = 2
@@ -111,6 +111,7 @@ public class ColumnPosition {
 	public static final int PRODUCT_TYPE = 6
 	public static final int ACCOUNT_LEDGER_BALANCE = 12
 	
-	
+	//Cases in Workflow
+	public static final int CASE_NUMBER_WORKFLOW = 7
 
 }

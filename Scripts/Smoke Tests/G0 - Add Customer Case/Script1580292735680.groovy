@@ -19,12 +19,12 @@ import constants.ColumnPosition
 import constants.Fields
 import constants.Operator
 import internal.GlobalVariable as GlobalVariable
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData as ConsumerData
 
 int LATEST_ROW = 1
 String taskName = "Add Customer Service Case"
 String caseType = "Name Update"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
+Map<Fields, String> customerData = ConsumerData.CUST_B
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -39,7 +39,7 @@ CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
 CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 
 'Select CaseType'
-WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/CaseSection/select_CaseType'), caseType, true)
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/CaseSection/select_OrgCaseType'), caseType, true)
 
 'Click on Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerCase/AddCase/btn_Submit'))
@@ -76,8 +76,13 @@ String customerInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_Consu
 'Verify Consumer ID in Customer Info'
 CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_ID), Operator.CONTAINS_IGNORE_CASE)
 
-'Verify Consumer mailid  in Customer Info'
-CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
+'Verify Consumer first name  in Customer Info'
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_FIRST_NAME), Operator.CONTAINS_IGNORE_CASE)
+
+'Verify Consumer secind name  in Customer Info'
+CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_LAST_NAME), Operator.CONTAINS_IGNORE_CASE)
+
+
 
 
 'Switch to Default frame'

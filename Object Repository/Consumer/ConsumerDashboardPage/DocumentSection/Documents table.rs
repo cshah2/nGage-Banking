@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>select_RelationshipType</name>
+   <name>Documents table</name>
    <tag></tag>
-   <elementGuidId>d5678fe9-be90-42b4-ab46-3b7507ce8c80</elementGuidId>
+   <elementGuidId>90e30a06-f2af-4544-897a-233eb574f578</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//label[text()='Party']/following-sibling::select</value>
+         <value>//div[contains(@id,'wtdata')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

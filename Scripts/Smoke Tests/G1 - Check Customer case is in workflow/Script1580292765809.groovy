@@ -22,6 +22,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import constants.ColumnPosition
 import constants.Fields
 import constants.Operator
+import constants.TableType
 import internal.GlobalVariable as GlobalVariable
 import data.ConsumerData as ConsumerData
 
@@ -133,17 +134,21 @@ WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumberGe
 WebUI.delay(2)
 
 
-
+'Click on Search Button'
 WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
 
-'Click on Search Button'
-//CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Search'))
-
-WebUI.waitForElementVisible(findTestObject('BasePage/Workflow/caseNumber', [('caseNumber') : caseNumberGenerated]), 30)
 
 
+//WebUI.waitForElementVisible(findTestObject('BasePage/Workflow/caseNumber', [('caseNumber') : caseNumberGenerated]), 30)
+
+WebUI.delay(2)
 String caseNum= WebUI.getText(findTestObject('BasePage/WorkFlow/text_CaseNumber'))
+println " The Actual case Num : " + caseNum
+println " The case Num expected : " + caseNumberGenerated.replaceAll("\\s+", "")
+
+//TestObject tableCases = findTestObject('BasePage/WorkFlow/table_SearchCases')
 
 'Verify Routing Reason'
 CustomKeywords.'actions.WebActions.verifyMatch'(caseNum,caseNumberGenerated.replaceAll("\\s+", ""), Operator.EQUALS_IGNORE_CASE)
+
 

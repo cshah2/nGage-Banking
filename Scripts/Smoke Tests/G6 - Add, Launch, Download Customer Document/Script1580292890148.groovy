@@ -85,14 +85,21 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Documents'))
 
 
-'click on First Document'
-//CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/div_Documents'))
+TestObject  docTable = findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/Documents table')
+
+'Wait for table to load'
+WebUI.waitForElementVisible(docTable, GlobalVariable.Timeout)
 
 'Click on first row'
 CustomKeywords.'actions.WebTable.clickCell'(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/Documents table'), 1, 3,TableType.DOCUMENT)
 
 'Switch to Child window tab :1'
 WebUI.switchToWindowIndex(1)
+
+
+
+'Wait for Image to load'
+WebUI.waitForElementVisible(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/img_UploadedDoc'), GlobalVariable.Timeout)
 
 'Take webelemnet screenshot'
 WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Consumer/ConsumerDashboardPage/DocumentSection/img_UploadedDoc'), 30)

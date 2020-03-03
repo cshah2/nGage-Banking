@@ -22,10 +22,6 @@ import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil
 import utils.WebUtil
 
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A3 - Create Organization'), null)
-
 Map<Fields, String> custData = ConsumerData.CUST_B
 Map<Fields, String> accData = ConsumerData.ACC_B1
 Map<Fields, String> orgData = OrganizationData.ORG_B
@@ -63,12 +59,6 @@ CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 'Click on Add Related party link'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Account/AccountDashboardPage/DetailsTab/icon_AddRelatedParty'))
 
-'Wait for task drawer to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/select_RelationshipType'), GlobalVariable.Timeout)
-
-'Select RelationShipType'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/select_RelationshipType'), relationshipType, false)
-
 'Select Radio option organization'
 WebUI.check(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/radio_Organization'))
 
@@ -83,11 +73,11 @@ WebUI.delay(3)
 'Select party in drop down'
 WebUI.selectOptionByIndex(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/select_Party'), 1)
 
-'Enter description'
+/*'Enter description'
 WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/input_Description'), description)
 
 'Enter Priority'
-WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/input_Priority'), priority)
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/input_Priority'), priority)*/
 
 'Click on Submit button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Account/AccountTaskDrawer/AddRelatedParty/btn_Submit'))
@@ -109,6 +99,3 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(table, rowNo, 1, orgNam
 
 'Verify relaionsip type value in table'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(table, rowNo, 2, relationshipType, Operator.EQUALS_IGNORE_CASE)
-
-'Verify description value in table'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(table, rowNo, 3, description, Operator.EQUALS)

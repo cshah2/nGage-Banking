@@ -22,14 +22,13 @@ import utils.MapUtil as MapUtil
 
 Map<Fields, String> customerData = ConsumerData.NA_CUSTOMERDATA_MAP
 
+String expectedErrorMessage1 = "No results found"
+
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Verify user is redirected to consumer search page'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
-
-'Verify usname is displayed on page header section'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/BasePage/HeaderSection/text_LoggedInUserName')), GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
 
 'Search a Customer in SearchConstumer Page with lastName'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_LastName'), customerData.get(Fields.CUST_LAST_NAME))
@@ -92,6 +91,12 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 'Verify Error Message is Displayed'
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
+
+/*'Get error message'
+String errorMessage3 = WebUI.getText(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoConsumerFound'))
+
+CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage3, expectedErrorMessage1, Operator.CONTAINS_IGNORE_CASE)*/
+
 /*----------Search consumer with Invalid TaxID--------*/
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -103,6 +108,13 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 
 'Verify Error Message is Displayed'
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
+
+
+/*'Get error message'
+String errorMessage2 = WebUI.getText(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoConsumerFound'))
+
+CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage2, expectedErrorMessage1, Operator.CONTAINS_IGNORE_CASE)
+*/
 
 /*----------Search consumer with Invalid CustomerID--------*/
 'Login into portal'
@@ -121,4 +133,18 @@ WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_CustomerID'), cust
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/btn_Search'))
 
 'Verify Error Message is Displayed'
-WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoConsumerFound'), FailureHandling.STOP_ON_FAILURE)
+//WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoConsumerFound'), FailureHandling.STOP_ON_FAILURE)
+
+'Get error message'
+String errorMessage = WebUI.getText(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoConsumerFound'))
+
+String expectedErrorMessage2 = "No matching customer or account record found"
+
+CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage, expectedErrorMessage2, Operator.CONTAINS_IGNORE_CASE)
+
+
+
+
+
+
+

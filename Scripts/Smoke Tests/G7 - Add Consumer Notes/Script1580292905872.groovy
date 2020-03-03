@@ -60,6 +60,9 @@ WebUI.delay(WAIT_FOR_TEN_SECONDS)
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Notes'))
 
 
+'Wait for NOtes table'
+WebUI.waitForElementVisible(notesTable, GlobalVariable.Timeout)
+
 'Verify the notes is added to the notes table'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(notesTable,CLOSED_CASES_LATEST_ROW, ColumnPosition.NOTES, notes, Operator.EQUALS)
 

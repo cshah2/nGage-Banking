@@ -21,10 +21,10 @@ import data.ConsumerData
 import internal.GlobalVariable as GlobalVariable
 import utils.WebUtil
 
-WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
+/*WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
 WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A2 - Create Multi-Position account'), null)
 WebUI.callTestCase(findTestCase('Test Cases/Smoke Tests/C3 - Post a transaction for Multi-position Account (Credit)'), null)
-
+*/
 Map<Fields, String> custData = ConsumerData.CUST_B
 Map<Fields, String> accData = ConsumerData.ACC_B2_POS1
 Map<Fields, String> txnData1 = ConsumerData.ACC_B2_POS1_TXNA

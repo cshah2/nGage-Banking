@@ -20,7 +20,8 @@ import constants.Urls as Urls
 import constants.ColumnPosition as ColumnPosition
 import constants.Fields as Fields
 import constants.Operator as Operator
-import data.ConsumerTempData as ConsumerData
+import data.ConsumerData
+import data.ConsumerTempData as ConsumerTempData
 int LATEST_ROW = 1
 
 int WAIT_FOR_FIVE_SECONDS = 5
@@ -29,10 +30,9 @@ int SUBSTRING_DATE_END = 10
 String COLLECTION_ORDER_CASE_TYPE = "Inbound ACH Collection Order"
 String COLLECTION_ORDER_ORDER_STATUS = "New"
 String TRANSACATION_STATUS = "Entered"
-Map<Fields, String> customerData = ConsumerData.CUSTOMERDATA_MAP
-Map<Fields, String> custOrderData = ConsumerData.ACCOUNT_COLLECTION_ORDER
-
-
+String taskName = "Add Order"
+Map<Fields, String> accData = ConsumerData.ACC_B1
+Map<Fields, String> custOrderData = ConsumerTempData.ACCOUNT_COLLECTION_ORDER
 
 TestObject scheduledTransactionsTable = findTestObject('Account/AccountTaskDrawer/AddOrder/table_Orders')
 TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection/table_OpenCases')
@@ -41,44 +41,31 @@ TestObject openCases = findTestObject('Account/AccountDashboardPage/CasesSection
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
 'Navigate To customer dashboard'
-WebUI.navigateToUrl(custOrderData.get(Fields.URL))
+WebUI.navigateToUrl(accData.get(Fields.URL))
 
 
-'Click on Account Task Drawer'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_Drawer'))
+'Open Task Drawer'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.openTaskDrawer'()
 
-'Click on Add Order Tasks'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/task_AddOrder'))
+'Select Add Order Task'
+CustomKeywords.'pages.taskdrawer.TaskDrawer.selectTaskInDrawer'(taskName)
 
-'Click on Order Type DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'))
+'Wait for Order type dropdown'
+WebUI.waitForElementVisible(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'), GlobalVariable.Timeout)
 
-
-'Select Order type from OrderType DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_TYPE)]))
-
-
-'Click on Origin Source DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OriginSource'))
-
+'Select OrderType'
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderType'), custOrderData.get(Fields.ORDER_TYPE), true)
 
 'Select Origin Source from OriginSource DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_ORIGIN_SOURCE)]))
-
-
-'Click on order Source DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OriginSource'), custOrderData.get(Fields.ORDER_ORIGIN_SOURCE), true)
 
 
 'Select order Source from OriginSource DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect' ,[('value'):custOrderData.get(Fields.ORDER_SOURCE)]))
-
-'Click on Operational area  DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OrderSource'), custOrderData.get(Fields.ORDER_SOURCE), true)
 
 
 'Select Operational area from OperationalArea DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect' ,[('value'):custOrderData.get(Fields.ORDER_OPERATIONL_AREA)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_OperationalArea'), custOrderData.get(Fields.ORDER_OPERATIONL_AREA), true)
 
 'Type Order Info'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderInfo'), custOrderData.get(Fields.ORDER_INFO))
@@ -92,21 +79,25 @@ WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_RoutingNu
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountTitle'), custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_TITLE))
 
 
-'Click on Account Group DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'))
-
-
 'Select Account Group from Account Group DropDown'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/options_InSelect',[('value'):custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP)]))
+WebUI.selectOptionByLabel(findTestObject('Account/AccountTaskDrawer/AddOrder/select_AccountGroup'), custOrderData.get(Fields.ORDER_COUNTERPARTY_ACCOUNT_GROUP), true)
 
 'Type Account Number'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_AccountNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_FROM_ACCOUNT_NUMBER))
+
+
+'Type Position Account Number'
+WebUI.setText(findTestObject('Object Repository/Account/AccountTaskDrawer/AddOrder/input_ToAccount_PositionNum'), custOrderData.get(Fields.ORDER_COUNTERPARTY_TO_POSITION_NUMBER))
+
+
 
 'Click on Send now Checkbox'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/checkbox_SendNow'))
 
 'Type transfer amount'
 WebUI.setText(findTestObject('Account/AccountTaskDrawer/AddOrder/input_OrderAmt'), custOrderData.get(Fields.ORDER_TRANSFER_AMOUNT))
+
+
 
 
 'Click on Submit Button'
@@ -197,15 +188,4 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 'Verify Order Status  in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.OPEN_CASES_ORDER_STATUS,
 	COLLECTION_ORDER_ORDER_STATUS, Operator.EQUALS_IGNORE_CASE)
-
-
-
-
-
-
-
-
-
-
-
 
