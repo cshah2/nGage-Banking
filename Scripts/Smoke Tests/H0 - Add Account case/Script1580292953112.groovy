@@ -57,7 +57,11 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
+'Wait for 2 seconds'
+WebUI.delay(2)
 
+
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'),GlobalVariable.Timeout)
 'Extract General case information block from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'))
 
