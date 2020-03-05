@@ -77,10 +77,11 @@ WebUI.setText(findTestObject('Object Repository/Onboarding/input_Password'), cus
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Continue'))
 
 'Wait for 5 Seconds for email operation to complete'
-WebUI.delay(10)
+WebUI.delay(20)
 
 String emailId = custData.get(Fields.CUST_FIRST_NAME).toLowerCase()+  '.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com'
 
+println "The username : " + emailId.split('@')[0]
 'Verify user receives email'
 CustomKeywords.'actions.Email.verifyMailCount'(emailId, 1, Operator.GREATER_THAN_OR_EQUALS)
 
@@ -287,7 +288,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon
 WebUI.setText(findTestObject('Object Repository/Onboarding/input_FilterLastName'), custData.get(Fields.CUST_LAST_NAME))
 
 'Press Enter Key'
-WebUI.sendKeys(findTestObject('Object Repository/Onboarding/btn_Search'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('Object Repository/Onboarding/input_FilterLastName'), Keys.chord(Keys.ENTER))
 
 'Click on First row results'
 CustomKeywords.'actions.WebTable.clickCell'(findTestObject('Object Repository/Onboarding/table_SearchResultsInWorkflow'), 1, 10, TableType.DOCUMENT)
