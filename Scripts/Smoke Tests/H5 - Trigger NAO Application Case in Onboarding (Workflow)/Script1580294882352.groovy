@@ -43,7 +43,8 @@ String amountView = String.format("%,.2f", Double.parseDouble(accBalance))
 WebUI.openBrowser(apiture_QA_URL)
 
 'Maximize Window'
-WebUI.maximizeWindow()
+WebUI.maximizeWindow()   
+
 
 'Click on Open account Link'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/link_OpenAccount'))
