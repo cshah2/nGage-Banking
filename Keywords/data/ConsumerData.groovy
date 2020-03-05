@@ -441,13 +441,13 @@ public class ConsumerData {
 		ACC_MULTIPOSO_1.put(Fields.ACC_DEPT_ID, 'Department 350')
 		ACC_MULTIPOSO_1.put(Fields.ACC_DEPT_ID_VIEW, '350')
 		ACC_MULTIPOSO_1.put(Fields.ACC_RELATIONSHIP_TYPE, 'Primary')
-		
+
 		ACC_MULTIPOSO_1.put(Fields.TC_DOC_AGREEMENT_CODE1,, 'Primary')
 		ACC_MULTIPOSO_1.put(Fields.TC_DOC_VERSION1, '1.0')
 		ACC_MULTIPOSO_1.put(Fields.TC_DOC_SIGNED_BY1, 'Amol')
 		ACC_MULTIPOSO_1.put(Fields.TC_DOC_SIGNED_DATE1, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
-		
-		
+
+
 		ACC_MULTIPOSO_1.put(Fields.ACC_OPEN_DATE, DateUtil.getCurrentDateTime(Common.dateFormat, Common.timezoneUTC))
 	}
 
