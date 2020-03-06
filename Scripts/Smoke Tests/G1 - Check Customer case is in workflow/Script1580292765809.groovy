@@ -94,6 +94,8 @@ WebUI.switchToDefaultContent()
 'click on First Close Window'
 CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
 
+
+
 'Switch to default window'
 WebUI.switchToWindowIndex(0)
 
