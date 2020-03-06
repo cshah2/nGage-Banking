@@ -265,14 +265,14 @@ WebUI.mouseOver(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'))
 'click on First approver complete'
 WebUI.click(findTestObject('BasePage/WorkFlow/option_FirstApproverComplete'))
 
-'Switch to Default frame'
-WebUI.switchToDefaultContent()
+/*'Switch to Default frame'
+WebUI.switchToDefaultContent()*/
 
 'click on First Close Window'
-CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
+WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
 
 'Switch to default window'
-/*WebUI.switchToWindowIndex(0)*/
+WebUI.switchToWindowIndex(0)
 
 'Logout'
 CustomKeywords.'actions.WebActions.logout'()
@@ -352,16 +352,16 @@ WebUI.mouseOver(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'))
 'click on First approver complete'
 WebUI.click(findTestObject('BasePage/WorkFlow/option_SecondApproverComplete'))
 
-'Switch to default Content from IFrame'
-WebUI.switchToDefaultContent()
+/*'Switch to default Content from IFrame'
+WebUI.switchToDefaultContent()*/
 
 'Click on Close Window tab'
-CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
+WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
 
 'Login to nGage'
 
 'Switch to parent window'
-/*WebUI.switchToWindowIndex(0)*/
+WebUI.switchToWindowIndex(0)
 
 'Logout of the portal'
 CustomKeywords.'actions.WebActions.logout'()
