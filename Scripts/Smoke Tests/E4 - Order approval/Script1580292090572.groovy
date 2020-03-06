@@ -268,6 +268,9 @@ WebUI.click(findTestObject('BasePage/WorkFlow/option_FirstApproverComplete'))
 'Switch to Default frame'
 WebUI.switchToDefaultContent()
 
+
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
+
 'click on First Close Window'
 WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
 
@@ -354,6 +357,9 @@ WebUI.click(findTestObject('BasePage/WorkFlow/option_SecondApproverComplete'))
 
 'Switch to default Content from IFrame'
 WebUI.switchToDefaultContent()
+
+
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
 
 'Click on Close Window tab'
 WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
