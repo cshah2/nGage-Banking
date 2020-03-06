@@ -268,9 +268,8 @@ WebUI.click(findTestObject('BasePage/WorkFlow/option_FirstApproverComplete'))
 'Switch to Default frame'
 WebUI.switchToDefaultContent()
 
-/*WebUI.scrollToElement(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
 
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
+/*WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
 
 'click on First Close Window'
 WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))*/
@@ -360,10 +359,10 @@ WebUI.click(findTestObject('BasePage/WorkFlow/option_SecondApproverComplete'))
 WebUI.switchToDefaultContent()
 
 
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
+/*WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/btn_Closewindow'), GlobalVariable.Timeout)
 
 'Click on Close Window tab'
-WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
+WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))*/
 
 'Login to nGage'
 
