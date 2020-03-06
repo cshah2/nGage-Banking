@@ -242,21 +242,21 @@ public class WebActions {
 		return result;
 	}
 
-//	@Keyword
-//	public static  void typeText(TestObject uiObject,String text){
-//		if(uiObject == null ){
-//			KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
-//		}
-//		if(text != null){
-//			try{
-//				WebUtil.setText(uiObject,text)
-//			}
-//			catch(Exception e){
-//				WebUI.takeScreenshot()
-//				e.printStackTrace()
-//			}
-//		}
-//	}
+	//	@Keyword
+	//	public static  void typeText(TestObject uiObject,String text){
+	//		if(uiObject == null ){
+	//			KeywordUtil.markFailed('Invalid Testobject'+uiObject+'provided.')
+	//		}
+	//		if(text != null){
+	//			try{
+	//				WebUtil.setText(uiObject,text)
+	//			}
+	//			catch(Exception e){
+	//				WebUI.takeScreenshot()
+	//				e.printStackTrace()
+	//			}
+	//		}
+	//	}
 
 	@Keyword
 	public static verifyMouseOverText(TestObject objectForMouseOver,TestObject toolTip,String expected,Operator o){
