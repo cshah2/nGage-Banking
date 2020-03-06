@@ -265,8 +265,8 @@ WebUI.mouseOver(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'))
 'click on First approver complete'
 WebUI.click(findTestObject('BasePage/WorkFlow/option_FirstApproverComplete'))
 
-/*'Switch to Default frame'
-WebUI.switchToDefaultContent()*/
+'Switch to Default frame'
+WebUI.switchToDefaultContent()
 
 'click on First Close Window'
 WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
@@ -352,8 +352,8 @@ WebUI.mouseOver(findTestObject('BasePage/WorkFlow/tab_WorkflowActions'))
 'click on First approver complete'
 WebUI.click(findTestObject('BasePage/WorkFlow/option_SecondApproverComplete'))
 
-/*'Switch to default Content from IFrame'
-WebUI.switchToDefaultContent()*/
+'Switch to default Content from IFrame'
+WebUI.switchToDefaultContent()
 
 'Click on Close Window tab'
 WebUI.click(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
