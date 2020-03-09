@@ -101,7 +101,7 @@ WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseIn
 'Get Case number  from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralCaseInfo'))
 String[] genralInfoArray = generalInfo.split("\n")
-String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
+/*String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]*/
 
 
 String[]  spanText= generalInfo.split("\n")
@@ -171,10 +171,10 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_STATUS,
 	"New", Operator.EQUALS_IGNORE_CASE)
 
-'Verify case number in Open cases Tab'
+/*'Verify case number in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_NUMBER,
 	caseNumberFromGeneralInfo.trim(), Operator.EQUALS_IGNORE_CASE)
-
+*/
 
 'Verify Account number in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.ACCOUNT_NUMBER,

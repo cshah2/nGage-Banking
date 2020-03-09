@@ -57,18 +57,16 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
-'Wait for 2 seconds'
-WebUI.delay(5)
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'), GlobalVariable.Timeout)
 
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'),GlobalVariable.Timeout)
+WebUI.waitForElementPresent(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'), GlobalVariable.Timeout)
+
 'Extract General case information block from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'))
 println "Case info :" + generalInfo
 
 
-String[] genralInfoArray = generalInfo.split("\n")
-String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
+/*String[] genralInfoArray = generalInfo.split("\n")
+String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]*/
 
 'Verify Case type value in WMI'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('BasePage/WorkFlow/text_CaseType')), caseType, Operator.EQUALS)
@@ -125,8 +123,8 @@ CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, 
 	"New", Operator.EQUALS_IGNORE_CASE)
 
 
-'Verify case status in Open cases Tab'
+/*'Verify case status in Open cases Tab'
 CustomKeywords.'actions.WebTable.verifyCellValueMatches'(openCases, LATEST_ROW, ColumnPosition.CASE_NUMBER,
 	caseNumberFromGeneralInfo.trim(), Operator.EQUALS_IGNORE_CASE)
-
+*/
 
