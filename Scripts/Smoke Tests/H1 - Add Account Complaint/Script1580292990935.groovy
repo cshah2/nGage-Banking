@@ -94,18 +94,17 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
-'Wait for 2 seconds'
-WebUI.delay(5)
+/*'Wait for 2 seconds'
 WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'),GlobalVariable.Timeout)
 
 'Get Case number  from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralCaseInfo'))
 String[] genralInfoArray = generalInfo.split("\n")
-/*String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]*/
+String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
 
 
 String[]  spanText= generalInfo.split("\n")
-println "Case number in WMI : "  + spanText[0]
+println "Case number in WMI : "  + spanText[0]*/
 
 'Verify Product Line in WMI'
 TestObject selectProductLine = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_ProductLineWMI')
@@ -126,13 +125,13 @@ WebUI.verifyOptionSelectedByLabel(selectedIssueType, CUST_ISSUE_TYPE, false, Glo
 TestObject selectedOrigin = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_Origin')
 WebUI.verifyOptionSelectedByLabel(selectedOrigin, CUST_COMPLAINT_ORIGIN, false, GlobalVariable.Timeout)
 
-
+/*
 'Verify User profile name'
 CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo, GlobalVariable.UserProfileName, Operator.CONTAINS_IGNORE_CASE)
 
 'Verify Case status'
 CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo,"Case Status: New", Operator.CONTAINS_IGNORE_CASE)
-
+*/
 
 //verify customer_Info
 'Extract Customer Info from WMI'

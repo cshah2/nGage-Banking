@@ -54,7 +54,6 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 WebUI.switchToWindowIndex(1)
 
 'Wait for 2 seconds'
-WebUI.delay(5)
 
 WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'),GlobalVariable.Timeout)
 
