@@ -94,6 +94,7 @@ WebUI.switchToWindowIndex(1)
 'Get Case number  from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralCaseInfo'))
 String[] genralInfoArray = generalInfo.split("\n")
+
 String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
 
 
