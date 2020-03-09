@@ -91,6 +91,9 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
+
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'), GlobalVariable.Timeout)
+
 'Get Case number  from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralCaseInfo'))
 String[] genralInfoArray = generalInfo.split("\n")

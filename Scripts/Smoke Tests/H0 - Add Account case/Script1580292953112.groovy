@@ -59,6 +59,7 @@ WebUI.switchToWindowIndex(1)
 
 'Wait for 2 seconds'
 WebUI.delay(5)
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'), GlobalVariable.Timeout)
 
 WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'),GlobalVariable.Timeout)
 'Extract General case information block from WMI UI'

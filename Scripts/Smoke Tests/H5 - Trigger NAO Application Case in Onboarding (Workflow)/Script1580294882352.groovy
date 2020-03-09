@@ -49,6 +49,8 @@ WebUI.maximizeWindow()
 'Click on Open account Link'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/link_OpenAccount'))
 
+WebUI.waitForElementVisible(findTestObject('Object Repository/Onboarding/input_firstname'), GlobalVariable.Timeout)
+
 'Type First Name'
 WebUI.setText(findTestObject('Object Repository/Onboarding/input_firstname'), custData.get(Fields.CUST_FIRST_NAME))
 
