@@ -59,11 +59,13 @@ WebUI.switchToWindowIndex(1)
 
 'Wait for 2 seconds'
 WebUI.delay(5)
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'), GlobalVariable.Timeout)
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'), GlobalVariable.Timeout)
 
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'),GlobalVariable.Timeout)
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'),GlobalVariable.Timeout)
 'Extract General case information block from WMI UI'
-String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'))
+String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'))
+println "Case info :" + generalInfo
+
 
 String[] genralInfoArray = generalInfo.split("\n")
 String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]

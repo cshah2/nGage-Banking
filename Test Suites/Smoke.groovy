@@ -43,14 +43,14 @@ def setUp() {
 	
     WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A0 - Create Consumer'), null)
 	WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A1 - Create Personal Savings Account'), null)
-    WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A2 - Create Multi-Position account'), null)
-	WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A3 - Create Organization'), null)
-    WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A4 - Credit Money to Savings account'), null)
+    //WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A2 - Create Multi-Position account'), null)
+	//WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A3 - Create Organization'), null)
+    //WebUI.callTestCase(findTestCase('Test Cases/Base API Calls/A4 - Credit Money to Savings account'), null)
 }
 
 @TearDown(skipped = false)
 def tearDown() {
-	WebUI.closeBrowser()
+	//WebUI.closeBrowser()
 }
 
 @SetupTestCase(skipped = true)

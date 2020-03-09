@@ -92,10 +92,10 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 WebUI.switchToWindowIndex(1)
 
 
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'), GlobalVariable.Timeout)
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralInfoforComplaint'), GlobalVariable.Timeout)
 
 'Get Case number  from WMI UI'
-String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralCaseInfo'))
+String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralInfoforComplaint'))
 String[] genralInfoArray = generalInfo.split("\n")
 
 String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
