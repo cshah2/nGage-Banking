@@ -94,17 +94,21 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
-/*'Wait for 2 seconds'
-WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralCaseInfo'),GlobalVariable.Timeout)
+WebUI.waitForPageLoad(60)
+
+'Wait for 2 seconds'
+WebUI.waitForElementVisible(findTestObject('BasePage/WorkFlow/text_GeneralInfoforComplaint'),GlobalVariable.Timeout)
 
 'Get Case number  from WMI UI'
-String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralCaseInfo'))
+String generalInfo = WebUI.getText(findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/text_GeneralInfoforComplaint'))
 String[] genralInfoArray = generalInfo.split("\n")
 String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
 
 
 String[]  spanText= generalInfo.split("\n")
-println "Case number in WMI : "  + spanText[0]*/
+println "Case number in WMI : "  + spanText[0]
+
+
 
 'Verify Product Line in WMI'
 TestObject selectProductLine = findTestObject('Consumer/ConsumerTaskDrawer/CustomerComplaint/selected_ProductLineWMI')

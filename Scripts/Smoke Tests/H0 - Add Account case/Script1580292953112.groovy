@@ -57,18 +57,19 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskD
 'Switch to tab'
 WebUI.switchToWindowIndex(1)
 
+WebUI.waitForPageLoad(60)
 
-/*WebUI.waitForElementPresent(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'), GlobalVariable.Timeout)
+WebUI.waitForElementPresent(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'), GlobalVariable.Timeout)
 
 'Extract General case information block from WMI UI'
 String generalInfo = WebUI.getText(findTestObject('BasePage/WorkFlow/text_GeneralInfoforCase'))
 println "Case info :" + generalInfo
-*/
 
-/*String[] genralInfoArray = generalInfo.split("\n")
-String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]*/
 
-/*'Verify Case type value in WMI'
+String[] genralInfoArray = generalInfo.split("\n")
+String caseNumberFromGeneralInfo = genralInfoArray[0].split(":")[1]
+
+'Verify Case type value in WMI'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('BasePage/WorkFlow/text_CaseType')), caseType, Operator.EQUALS)
 
 'Verify User profile name in General case information block'
@@ -76,7 +77,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo, GlobalVariable.User
 
 'Verify Case status in General case information block'
 CustomKeywords.'actions.WebActions.verifyMatch'(generalInfo,"Case Status: New", Operator.CONTAINS_IGNORE_CASE)
-*/
+
 
 
 //verify customer info
