@@ -11,325 +11,325 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>64ad0999-5cd3-4ff8-8bdf-760e1ac9695e</testSuiteGuid>
    <testCaseLink>
-      <guid>ef1a7562-0ba7-4528-ac3a-fd9be50ed930</guid>
+      <guid>76be8783-ccec-488c-8aee-31986161d255</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A0 - Login</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b2421cb7-6fe6-4f8e-9918-01d8d6374c6c</guid>
+      <guid>5f927f5c-4e0e-480d-a79c-e3a1d725e86d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A1 - Check Version</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d8d6aec9-d276-49de-a9a6-b97831fae3ab</guid>
+      <guid>d94faf3f-7e4d-4d31-82bb-b301253a7357</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A2 - Reset Password</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>43db127d-2e7a-4379-b141-1347b9280ff8</guid>
+      <guid>2bb1e40e-c634-44da-a738-188a6c4167bd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A3 - Update Temporary password</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>bb5bf809-0ff7-4e70-9555-ff5408656b51</guid>
+      <guid>8b3df743-8923-40da-b03e-427608671fc4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A4 - Search Customer (Does not exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>be99c7fc-413e-4477-96af-25eec46abe8e</guid>
+      <guid>a223834d-3681-4f11-b9c0-5b9a26c93201</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A5 - Search Customer (exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>66beb0a7-4bdc-4426-91a8-da4fc69ae3ec</guid>
+      <guid>b445caca-4fc1-451d-9251-9f4d3c8bbbca</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A6 - Search Organization (Does not exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>db8d16b6-af4a-430b-8358-5fbf25af8e9d</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A7 - Search Organizarion (exist)</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>f3ccd26b-2940-4ae7-ac22-bd07338c476a</guid>
+      <guid>f0f6be94-9f91-482c-b36e-fa1d315730bd</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A8 - Search Account (Does not exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>da3638e6-ab4f-467b-906c-9fabfb023790</guid>
+      <guid>3b544fcf-8723-472a-8e79-051341724c43</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/A9 - Search Account (exist)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ad65a3a9-8f61-4d72-921a-87e1b2b125ed</guid>
+      <guid>0d568824-5225-4c2d-8c93-96a0f26bd7d2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/B0 - Create Customer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0ebcc797-f807-47dc-9c71-83a85838ec2a</guid>
+      <guid>6fb1e2c9-e6f2-48c1-a7b1-7b26316e2d7d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/B1 - Create Multi-Position Account for Customer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>753c2216-1799-48c6-ac76-be71c583b7ae</guid>
+      <guid>9d2e953f-7160-447a-9dfd-bf00803ff8b6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/B2 - Create Banking Account for Customer</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d43c2f40-a507-408e-ae9a-ef9e922fad90</guid>
+      <guid>74f291d5-c857-4b24-b908-4a59148aca96</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C0 - Add Related party to a Banking Account</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0f261b8a-0711-4d6e-b05c-6df3e20c3033</guid>
+      <guid>0fb7198b-6839-43dc-be45-ca2a6ee9dbe8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C1 - Post a transaction for Banking Account (Credit)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>6597db5e-ed8a-4ca3-872f-d6cdc46a1d60</guid>
+      <guid>c9c1351e-eeb3-476d-88c0-fac871300d23</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C2 - Post a transaction for Banking Account (Debit)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e1562e68-db4f-489e-b0ed-49b37c7958e3</guid>
+      <guid>70731f29-7fc5-48cf-9ea7-90a16c4aa8b1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C3 - Post a transaction for Multi-position Account (Credit)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4a0e766b-9a1b-4c3b-878e-26fc79943280</guid>
+      <guid>de80b12f-1a3b-4826-a737-14c8a01d812c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C4 - Post a transaction for Multi-position Account (Debit)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>eb1738de-a15a-47e2-bbd5-c254677ed0d9</guid>
+      <guid>af9af343-5835-4bfe-bef3-af3efb41bef8</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C5 - Verify T-Account under Transaction grid</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e7e769e5-3be2-4fb0-ba71-0cee0d87a8bd</guid>
+      <guid>dfa546c1-6916-433c-81f0-3170d1202a73</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/C6 - Reverse a transaction</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ecb36276-4f29-421b-b113-f774d4e098b7</guid>
+      <guid>d929d6af-f81a-4cd1-87a0-891bdd5e28ac</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/D0 - Add a Hold</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c5564470-88b5-4d43-b80a-be01f740c0d6</guid>
+      <guid>fe924d07-0bb2-4d90-84d3-d22f9690c239</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/D1 - Edit a Hold</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>bfef7e26-2196-42ac-9807-e1eb8e8e61dd</guid>
+      <guid>1957e414-32e4-473f-b29a-f502ca0a886d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/D2 - Cancel Hold</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c4dcfcc5-1cd0-4097-a029-c662931548dd</guid>
+      <guid>97353bd5-afd3-4b09-aacc-1597d9379252</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E0 - Add Order (Book Transfer)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>3878df9b-3585-4001-9b4b-57b07522ced4</guid>
+      <guid>1b1db72b-76ce-4458-8b4b-8d5c3f75a7c2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E1 - Add Order (Payment Order)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>71d537e9-ac0b-489e-932c-bf368209e951</guid>
+      <guid>ad0eb355-4545-4a75-b40e-8a617e7b5c86</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E2 - Add Order (Collection Order)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>54118b70-a554-47fb-b288-08975aa5ab10</guid>
+      <guid>a92db363-c482-4f00-93e9-95b973c4bc0c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A7 - Search Organizarion (exist)</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>9f6d01c5-ab73-4af5-a510-faa089ca9a2f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E3 - Add future dated order</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>fdccaa1d-8dd5-4ab6-81ab-022337391b30</guid>
+      <guid>28df569a-b3c7-4f35-af27-a8d36a7d993e</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E4 - Order approval</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>69bf1c52-ad6b-484d-b522-e19c46e0b477</guid>
+      <guid>33f3c378-d5ab-42a2-8fcb-7f1ddb60325d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E5 - Edit order</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>81034aac-bc2e-4f5a-a4c3-16c01c167ded</guid>
+      <guid>632c6317-925c-4446-9ca6-1017282a1c64</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/E6 - Cancel Order</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>9b4585d8-35a7-45b3-8353-38b5f4901e49</guid>
+      <guid>44aea574-b0e8-4581-a85b-1154f833459d</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/F0 - Lending - Post Transaction - Loan Disbursement (Installment Loan account)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f8026856-d414-490a-9726-b5d294a245df</guid>
+      <guid>0b7db0f3-fa22-4cf4-ad41-46f3d862a2a2</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/F1 - Lending - Add Order - Collection order from Lending to Checking Account</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c1e2a89f-c416-4c46-8a2d-ccc0f17203ee</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/G0 - Add Customer Case</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>c19a060d-6a6a-4360-9673-44482fad80a3</guid>
+      <guid>ccb80885-6ebd-4180-8853-516a03fcf8a4</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G1 - Check Customer case is in workflow</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>310d9dc2-9082-4b27-9dff-f6eac2e0484a</guid>
+      <guid>caa296dc-7db1-44d5-8e48-0fb51b3b5fc5</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G2 - Update Customer Address</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>f672484b-66ba-4b87-8330-cbd9a875e9a6</guid>
+      <guid>9eee63a2-1ce0-4177-8ffb-86e85d921b72</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G3 - Update Customer Email</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>981a5512-b395-47f8-804e-0eba61b18baf</guid>
+      <guid>124448fb-0853-4e21-89fe-b1f8f3b73387</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G4 - Update Customer Phone</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c6823bb4-d8e2-4538-aebd-fe02f9bc3132</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/G5 - Add Customer Complaint</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>f0af30b6-0a12-4c7b-b283-205b4e3fcb04</guid>
+      <guid>85d12c43-1ceb-4d46-b98a-a07bdcbb755b</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G6 - Add, Launch, Download Customer Document</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>0c11fa3a-cb2f-4138-ad70-356fecfb9a4c</guid>
+      <guid>365196fa-72b0-4e5c-aaa4-3130551dd8d6</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G7 - Add Consumer Notes</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>ace02284-7b43-4cff-ab03-1eec01845d08</guid>
+      <guid>711ebf27-ba34-4497-89e6-fafb64a2eff9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/G8 - Add Organization Notes</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>58226eb0-88d2-47e0-823d-952ced0e5877</guid>
+      <guid>53f8d1da-326d-4269-b403-c76f32d29892</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H2 - Dispute transaction from Checking account</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e3199451-a8e2-4573-a687-cee79bae68ba</guid>
+      <guid>226d7ae9-3926-4089-b2a0-8da5409a4dfa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H3 - Search for document in Vault</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>8719c213-0289-49d6-b96f-4d90a9adc8d5</guid>
+      <guid>cd8300df-fab6-47c0-93ad-484f2217befa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H4 - Opt In to receive text and e-mail notifications</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>05b171c0-f77f-4803-9c50-8462ecf0e834</guid>
+      <guid>1fdf0190-a873-49dd-a4ea-fdf563304e5a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H5 - Trigger NAO Application Case in Onboarding (Workflow)</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>46e467b8-e764-4758-85ae-c8ccb2c0e9f7</guid>
+      <guid>520f1555-9967-47e5-bcbc-cd3c1aa04257</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I0 - Create Organization</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>554ce12f-bd95-4c9e-afd8-644ed47ecd69</guid>
+      <guid>8b2387fc-6029-4472-9698-e3a9d29cab93</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I1 - Create Banking Account for Organization</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>b91d836b-4346-45fb-a4d6-724d19ee0d0a</guid>
+      <guid>ac23ed18-d9e5-4650-9c5c-d089babcbb29</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I2 - Add Organization Case</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c5ca090a-af40-48c7-b3ce-aa2cf271ff1e</guid>
+      <guid>e31fcee5-1e3e-4843-97c2-c06c62880ac9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I3 - Add Organization Complaint</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>c9c04a8e-3070-47e5-8ef7-26a5a11dbedc</guid>
+      <guid>9e2d3c47-8808-40d6-8f67-80b0d95561d3</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I4 - Validate all Customer tab pages render</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>d69abca1-25c7-4d6a-ab31-654de494fcbd</guid>
+      <guid>ef9ec73a-0136-4dd5-b3ae-d5c84edc383c</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I5 - Validate all Account tab pages render</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>e888711c-ca13-4c45-ae90-83867c5779a5</guid>
+      <guid>5bfc7470-671a-4bca-97bc-d3bab68dbb4a</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I6 - Validate all Lending tab pages render</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>5ce64ff0-d8ca-4bc8-9ff0-1e01c7f13021</guid>
+      <guid>9469f84e-a2af-4a0b-8240-71449d9d9830</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/G0 - Add Customer Case</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>140b7f09-6686-4830-bc0d-a996dcf9e9f3</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/G5 - Add Customer Complaint</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>decdb66b-d7bd-4ebe-8d1c-b3fa0e1ac375</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H0 - Add Account case</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4953d04d-530e-459e-b453-81dac4b0c025</guid>
+      <guid>189bfba7-01d6-4c7c-9409-64f4d00c791f</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H1 - Add Account Complaint</testCaseId>
