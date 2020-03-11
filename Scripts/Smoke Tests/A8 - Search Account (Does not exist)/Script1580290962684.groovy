@@ -57,7 +57,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/HeaderSection/link_Account"))
 
 'Enter the Account Number'
-CustomKeywords.'actions.WebActions.setText'(findTestObject("SearchPage/SearchAccount/input_AccountNumber"), invalidAccountNum)
+WebUI.setText(findTestObject('SearchPage/SearchAccount/input_AccountNumber'), invalidAccountNum)
 
 'Click On Search'
 CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/SearchAccount/btn_Search"))

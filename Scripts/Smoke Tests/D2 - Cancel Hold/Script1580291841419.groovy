@@ -52,6 +52,9 @@ CustomKeywords.'actions.WebTable.clickIconInTable'(holdsTable, LATEST_ROW, 8, Ic
 'Wait for Context menu to load'
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'), GlobalVariable.Timeout)
 
+
+WebUI.delay(GlobalVariable.Timeout)
+
 'Click on Cancel Hold Option'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'))
 

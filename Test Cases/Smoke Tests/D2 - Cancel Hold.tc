@@ -3,6 +3,6 @@
    <description></description>
    <name>D2 - Cancel Hold</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify Holds table has no entry</comment>
    <testCaseGuid>2d482f9b-5684-4ca3-b849-a8f35b763a9c</testCaseGuid>
 </TestCaseEntity>

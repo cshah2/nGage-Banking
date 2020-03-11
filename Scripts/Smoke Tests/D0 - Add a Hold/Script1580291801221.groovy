@@ -67,10 +67,10 @@ WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_Ho
 WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_Reason'), custHoldData.get(Fields.HOLD_REASON))
 
 'Click on Submit Button'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/btn_Submit'))
+WebUI.click(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/btn_Submit'))
 
 'Verify Hold Created Alert Message'
-WebUI.verifyElementVisible(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/message_HoldCreated'))
+//WebUI.verifyElementVisible(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/message_HoldCreated'))
 
 'Wait for Task drawer to close'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.waitForTaskDrawerToClose'()

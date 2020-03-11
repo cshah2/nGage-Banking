@@ -105,7 +105,7 @@ public class ConsumerTempData {
 		ACCOUNT_HOLD.put(Fields.CUST_ID, "7")
 		ACCOUNT_HOLD.put(Fields.ACC_NUMBER, "000000002550")
 		ACCOUNT_HOLD.put(Fields.HOLD_TYPE, "Reserve")
-		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTime(Common.dateTimeFormat, Common.timezoneUTC))
+		ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
 		//ACCOUNT_HOLD.put(Fields.HOLD_START_DATE, DateUtil.getCurrentDateTimePlusDays(2,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_HOLD.put(Fields.HOLD_END_DATE, DateUtil.getCurrentDateTimeMinusDays(-2,Common.dateTimeFormat, Common.timezoneUTC))
 		ACCOUNT_HOLD.put(Fields.HOLD_DURATION, "Twelve Months")

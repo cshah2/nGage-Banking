@@ -131,7 +131,7 @@ public class WebTable {
 		TableUtil table = new TableUtil(type)
 		table.clickCell(to, rowNo, colNo, icon)
 	}
-	
+
 	@Keyword
 	static def mouseOverIconInTable(TestObject to,  int rowNo, int colNo, Icon icon, TableType type = TableType.DEFAULT) {
 		TableUtil table = new TableUtil(type)
