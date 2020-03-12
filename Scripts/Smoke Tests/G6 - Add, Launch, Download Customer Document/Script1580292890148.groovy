@@ -132,7 +132,7 @@ println "DocTitle :" + docTitle.replaceAll("/","")
 'Path for the downloaded document'
 //String path = "C:\\NGage-Banking-Automation\\nGage-Banking\\Data Files\\DownloadedFile\\"+docTitle.replaceAll("/","")+".PNG"
 
-String path = "C:\\Users\\apatil\\Downloads\\"+docTitle.replaceAll("/","")+".PNG"
+String path = "C:\\Users\\rbalasundaram\\Downloads\\"+docTitle.replaceAll("/","")+".PNG"
 
 'Switch to Child Window(1)'
 WebUI.switchToWindowIndex(1)
@@ -158,9 +158,9 @@ CustomKeywords.'actions.WebActions.verifyMatch'(atualTextFromDownloadedImage, ex
 'verify Downloaded Document'
 WebUtil.verifyDownloadedFile(docTitle.replaceAll("/",""))
 
-'Initiliazxe the Directory path to be cleaned'
-//String dataCleanPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\DownloadedFile\\'
-String dataCleanPath = 'C:\\Users\\apatil\\Downloads\\'
+/*'Initiliazxe the Directory path to be cleaned'
+String dataCleanPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\DownloadedFile\\'
+//String dataCleanPath = 'C:\\Users\\apatil\\Downloads\\'
 'Clean Directory'
 FileUtils.cleanDirectory(new File(dataCleanPath))
 
@@ -168,7 +168,7 @@ FileUtils.cleanDirectory(new File(dataCleanPath))
 WebUI.closeWindowIndex(1)
 
 'Switch to Child Window(0)'
-WebUI.switchToWindowIndex(0)
+WebUI.switchToWindowIndex(0)*/
 
 
 

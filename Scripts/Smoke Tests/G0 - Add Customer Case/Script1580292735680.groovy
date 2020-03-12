@@ -85,14 +85,12 @@ CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fi
 CustomKeywords.'actions.WebActions.verifyMatch'(customerInfo,customerData.get(Fields.CUST_LAST_NAME), Operator.CONTAINS_IGNORE_CASE)
 
 
-
-
 'Switch to Default frame'
 WebUI.switchToDefaultContent()
 
-/*'click on First Close Window'
+'click on First Close Window'
 CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Closewindow'))
-*/
+
 'Switch to default window'
 WebUI.switchToWindowIndex(0)
 

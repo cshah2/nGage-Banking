@@ -95,7 +95,10 @@ int rowNo = 2
 CustomKeywords.'actions.WebActions.scrollToElement'(table, GlobalVariable.Timeout)
 
 'Verify party name in table'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(table, rowNo, 1, orgName, Operator.EQUALS)
+CustomKeywords.'actions.WebTable.verifyCellValueContains'(table, rowNo, 2, orgName, Operator.CONTAINS_IGNORE_CASE)
+
+
+
 
 'Verify relaionsip type value in table'
-CustomKeywords.'actions.WebTable.verifyCellValueMatches'(table, rowNo, 2, relationshipType, Operator.EQUALS_IGNORE_CASE)
+CustomKeywords.'actions.WebTable.verifyCellValueContains'(table, rowNo, 3, relationshipType, Operator.CONTAINS_IGNORE_CASE)

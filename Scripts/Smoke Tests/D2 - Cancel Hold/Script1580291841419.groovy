@@ -64,9 +64,9 @@ WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea
 'Click on Submit Button'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/btn_Submit'))
 
-'Verify Hold Cancel Alert Message'
+/*'Verify Hold Cancel Alert Message'
 WebUI.verifyElementVisible(findTestObject('Object Repository/Consumer/ConsumerTaskDrawer/ConsumerHolds/message_HoldCancel'))
-
+*/
 'Wait for Task drawer to close'
 CustomKeywords.'pages.taskdrawer.TaskDrawer.waitForTaskDrawerToClose'()
 

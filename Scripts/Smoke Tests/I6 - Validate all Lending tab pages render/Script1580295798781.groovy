@@ -64,16 +64,6 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 'Click on Receivables tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Recievables'))
 
-'Verify the Recievable tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Receivable tab/Heading_Billing Details'), 
-    GlobalVariable.Timeout)
-
-'Click on Delinquency tab'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Delinquency'))
-
-'Verify the Delinquecy tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Delinquency tab/Heading_Delinquency Details'), 
-    GlobalVariable.Timeout)
 
 'Click on Notes tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Notes'))

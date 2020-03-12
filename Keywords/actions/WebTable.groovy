@@ -94,6 +94,24 @@ public class WebTable {
 		String actText = table.getCellText(to, rowNo, colNo)
 		WebActions.verifyMatch(actText, expText, operator)
 	}
+	
+	
+	@Keyword
+	public static void  verifyCellValueContains(TestObject to, int rowNo, int colNo, String expText, Operator operator, TableType type = TableType.DEFAULT) {
+		TableUtil table = new TableUtil(type)
+		
+	   int rows =  table.getRowsCount(to)
+	   for (int i = 1 ;i < rows ; i ++) {
+		   String actText = table.getCellText(to, i, colNo)
+		   println ("Actualsd: "+ actText)
+		   println ("Exptedc : "+ expText)
+		   WebActions.verifyMatch(actText, expText, operator)
+	   }
+		
+		/*String actText = table.getCellText(to, rowNo, colNo)
+		WebActions.verifyMatch(actText, expText, operator)*/
+	}
+	
 
 	@Keyword
 	static def getRowsCount(TestObject to, TableType type = TableType.DEFAULT) {
