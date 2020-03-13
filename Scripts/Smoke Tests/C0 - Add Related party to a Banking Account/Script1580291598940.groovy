@@ -32,7 +32,7 @@ WebUtil.shouldFailTest(accData)
 
 TestObject table = findTestObject('Object Repository/Account/AccountDashboardPage/DetailsTab/table_RelatedParty')
 String taskName = 'Add Related Party'
-String relationshipType = 'Power of Attorney'
+String relationshipType = 'Power of attorney'
 String orgName = orgData.get(Fields.ORG_NAME)
 String description = 'Attach related party to an account'
 String priority = '1'
@@ -95,10 +95,8 @@ int rowNo = 2
 CustomKeywords.'actions.WebActions.scrollToElement'(table, GlobalVariable.Timeout)
 
 'Verify party name in table'
-CustomKeywords.'actions.WebTable.verifyCellValueContains'(table, rowNo, 2, orgName, Operator.CONTAINS_IGNORE_CASE)
-
-
+CustomKeywords.'actions.WebTable.verifyCellValueContains'(table, 2, orgName, Operator.CONTAINS_IGNORE_CASE)
 
 
 'Verify relaionsip type value in table'
-CustomKeywords.'actions.WebTable.verifyCellValueContains'(table, rowNo, 3, relationshipType, Operator.CONTAINS_IGNORE_CASE)
+CustomKeywords.'actions.WebTable.verifyCellValueContains'(table, 3, relationshipType, Operator.CONTAINS_IGNORE_CASE)

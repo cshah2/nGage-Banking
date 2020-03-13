@@ -8,6 +8,9 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
 import java.util.concurrent.TimeUnit
 
+import org.openqa.selenium.By
+import org.openqa.selenium.WebElement
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
@@ -18,6 +21,7 @@ import com.kms.katalon.core.testdata.TestData
 import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
@@ -97,19 +101,25 @@ public class WebTable {
 	
 	
 	@Keyword
-	public static void  verifyCellValueContains(TestObject to, int rowNo, int colNo, String expText, Operator operator, TableType type = TableType.DEFAULT) {
-		TableUtil table = new TableUtil(type)
+	public static void  verifyCellValueContains(TestObject to, int colNo, String expText, Operator operator, TableType type = TableType.DEFAULT) {
+		List<String> columnData = new  ArrayList<String>()
+		WebElement element  = WebUiCommonHelper.findWebElement(to, 30)
 		
-	   int rows =  table.getRowsCount(to)
-	   for (int i = 1 ;i < rows ; i ++) {
-		   String actText = table.getCellText(to, i, colNo)
-		   println ("Actualsd: "+ actText)
-		   println ("Exptedc : "+ expText)
-		   WebActions.verifyMatch(actText, expText, operator)
+	 List<WebElement> rows = element.findElements(By.tagName("tr"))
+	 println "The row size  " +  rows.size()
+	   for (int i = 1 ;i < rows.size() ; i ++) {
+		   List<WebElement> columns = rows.get(i).findElements(By.tagName("td"))
+		   println "The columns size  " +  columns.size()
+		   for (int j = 0 ; j < columns.size() ; j++){
+		        columnData.add(columns.get(j).getText())
+		   }
+		   
 	   }
-		
-		/*String actText = table.getCellText(to, rowNo, colNo)
-		WebActions.verifyMatch(actText, expText, operator)*/
+
+		   if(!columnData.contains(expText)){
+			   KeywordUtil.markFailedAndStop("Expected text " +expText + " is not present in the column")
+		   }	   
+
 	}
 	
 

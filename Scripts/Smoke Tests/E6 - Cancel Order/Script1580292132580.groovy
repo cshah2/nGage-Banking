@@ -137,7 +137,7 @@ CustomKeywords.'pages.account.tabs.AccountOrderConfirmation.verifyOrderConfirmat
 CustomKeywords.'actions.WebActions.click'(findTestObject('Account/AccountTaskDrawer/AddOrder/btn_Confirm'))
 
 'Wait for 30 seconds'
-WebUI.delay(60)
+WebUI.delay(100)
 
 'Scroll to Tchedule transactions table'
 WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Account/AccountTaskDrawer/AddOrder/div_ScheduleTransactions'), 30)
