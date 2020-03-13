@@ -82,4 +82,4 @@ WebUI.click(findTestObject('Object Repository/Account/AccountDashboardPage/TabSe
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_AvailableBalance'), GlobalVariable.Timeout)
 
 'Verify total holds amount'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_TotalHoldsBalance')), '0.00', Operator.EQUALS)
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/Account/AccountDashboardPage/OverviewTab/text_TotalHoldsBalance')), '15.00', Operator.EQUALS)

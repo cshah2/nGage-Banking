@@ -158,7 +158,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(atualTextFromDownloadedImage, ex
 'verify Downloaded Document'
 WebUtil.verifyDownloadedFile(docTitle.replaceAll("/",""))
 
-/*'Initiliazxe the Directory path to be cleaned'
+'Initiliazxe the Directory path to be cleaned'
 String dataCleanPath = RunConfiguration.getProjectDir().replace('/', '\\')+'\\Data Files\\DownloadedFile\\'
 //String dataCleanPath = 'C:\\Users\\apatil\\Downloads\\'
 'Clean Directory'
@@ -168,7 +168,7 @@ FileUtils.cleanDirectory(new File(dataCleanPath))
 WebUI.closeWindowIndex(1)
 
 'Switch to Child Window(0)'
-WebUI.switchToWindowIndex(0)*/
+WebUI.switchToWindowIndex(0)
 
 
 
