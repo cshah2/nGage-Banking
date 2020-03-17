@@ -64,7 +64,7 @@ public class ColumnPosition {
 
 	//Notes table
 	public static final int NOTES = 1
-	public static final int NOTES_CREATED_BY = 5
+	public static final int NOTES_CREATED_BY = 7
 
 	//Holds Table
 	public static int HOLD_TYPE = 2
