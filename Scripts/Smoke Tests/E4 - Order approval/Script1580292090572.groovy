@@ -211,11 +211,13 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/icon
 'Type case number'
 WebUI.setText(findTestObject('BasePage/WorkFlow/input_CaseNumber'), caseNumber)
 
-WebUI.delay(2)
+WebUI.delay(10)
+WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
+WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
 WebUI.sendKeys(findTestObject('BasePage/WorkFlow/input_CaseNumber'), Keys.chord(Keys.ENTER))
 
-'Click on Search Button'
-//CustomKeywords.'actions.WebActions.click'(findTestObject('BasePage/WorkFlow/btn_Search'))
+
 
 WebUI.waitForElementVisible(findTestObject('BasePage/Workflow/caseNumber', [('caseNumber') : caseNumber]), 30)
 
