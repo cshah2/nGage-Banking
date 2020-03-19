@@ -282,6 +282,8 @@ WebUI.switchToWindowIndex(0)
 'Logout'
 CustomKeywords.'actions.WebActions.logout'()
 
+WebUI.delay(3)
+
 'Login with Approver 2'
 WebUI.setText(findTestObject('LoginPage/input_UserName'), 'cclevel2@savee.sit')
 

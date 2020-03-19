@@ -51,10 +51,10 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE,Operator.EQUALS_IGNORE_CASE)
 
 'Click on the Search type dropdown'
-CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/HeaderSection/icon_SearchTypeDropDown"))
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
 
 'click on the Account link'
-CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/HeaderSection/link_Account"))
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Account'))
 
 'Enter the Account Number'
 WebUI.setText(findTestObject('SearchPage/SearchAccount/input_AccountNumber'), invalidAccountNum)

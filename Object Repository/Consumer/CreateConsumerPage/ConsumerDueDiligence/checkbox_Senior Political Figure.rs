@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDueDiligence_block_wtText_wtSrtPoliticalFigure']</value>
+         <value>//input[contains(@id,'SrtPoliticalFigure')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

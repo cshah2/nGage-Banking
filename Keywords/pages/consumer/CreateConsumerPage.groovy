@@ -172,7 +172,11 @@ public class CreateConsumerPage {
 		TestObject e_SeniorPoliticalFigure = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/checkbox_Senior Political Figure')
 		TestObject e_Country = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Country')
 		TestObject e_AssociateSrPoliticalFigure = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Associated Sr Political Figure')
-
+		TestObject e_AssociateSrPoliticalFigureCountry = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Associated Sr Political Figure Country')
+		
+		
+		//select[contains(@id,'SrPoliticalFigureCountryDD2')]
+		
 		//Wait for page elements to load
 		WebActions.waitForElementVisible(e_SeniorPoliticalFigure, GlobalVariable.Timeout)
 
@@ -182,6 +186,7 @@ public class CreateConsumerPage {
 		}
 		WebActions.selectOptionByLabel(e_Country, custData, Fields.CUST_SENIOR_POLITICAL_FIGURE_COUNTRY)
 		WebActions.selectOptionByLabel(e_AssociateSrPoliticalFigure, custData, Fields.CUST_ASSOCIATE_SR_POLITICAL_FIGURE)
+		WebActions.selectOptionByLabel(e_AssociateSrPoliticalFigureCountry, custData, Fields.CUST_SENIOR_POLITICAL_FIGURE_COUNTRY)
 	}
 
 	private static void enterEducationAndOccupationDetails(Map<Fields, String> custData) {

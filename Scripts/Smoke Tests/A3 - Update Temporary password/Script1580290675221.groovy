@@ -86,7 +86,7 @@ WebUI.sendKeys(findTestObject('Object Repository/UserprofilePage/input_ConfirmNe
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/UserprofilePage/btn_Save'))
 
 'Wait for popup dialog to be visible'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/UserprofilePage/block_PopupDialog'), GlobalVariable.Timeout)
+WebUI.waitForElementVisible(findTestObject('Object Repository/UserprofilePage/block_PopupDialog'), GlobalVariable.Timeout)
 
 'Verify message on popup dialog'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/UserprofilePage/text_PopupMessage')), passwordUpdateMessage, Operator.EQUALS)
