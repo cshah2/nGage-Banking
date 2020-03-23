@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id='task-next-button']</value>
+         <value>//button[@id='nextButton']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

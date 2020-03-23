@@ -6,18 +6,17 @@
    <elementGuidId>1a190618-b0ee-4930-b4d8-d34eb3148a0f</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
-      </entry>
-      <entry>
          <key>CSS</key>
-         <value>div[id*='upload-personal-1']</value>
+         <value>//label[@for='upload-personal-1']</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>div[id*='upload-personal-1']</value>
+         <value>//label[@for='upload-personal-1']</value>
+      </entry>
+      <entry>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
-   <selectorMethod>CSS</selectorMethod>
+   <selectorMethod>XPATH</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>

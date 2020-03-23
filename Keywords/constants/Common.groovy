@@ -28,4 +28,5 @@ public class Common {
 	public static String timezoneUTC = 'UTC'
 	public static String dateTimeFormatISO = "yyyy-MM-dd'T'HH:mm'Z'"
 	public static String dateFormatISO = "yyyy-MM-dd"
+
 }

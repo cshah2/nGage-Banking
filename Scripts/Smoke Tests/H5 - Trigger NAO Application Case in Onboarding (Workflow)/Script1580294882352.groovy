@@ -4,7 +4,14 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import java.awt.Toolkit
+import java.awt.datatransfer.Clipboard
+import java.awt.datatransfer.StringSelection
+
 import org.openqa.selenium.Keys
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.interactions.Actions
 
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.configuration.RunConfiguration
@@ -15,6 +22,8 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
@@ -43,11 +52,33 @@ String amountView = String.format("%,.2f", Double.parseDouble(accBalance))
 WebUI.openBrowser(apiture_QA_URL)
 
 'Maximize Window'
-WebUI.maximizeWindow()   
+WebUI.maximizeWindow()
 
 
 'Click on Open account Link'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/link_OpenAccount'))
+
+
+'Click on continue button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/div_SavingDetails'))
+
+'Click on Open premium account  button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_PremiumAccount'))
+
+
+'Click on Open premium account  button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_OpenAPremiumAccount'))
+
+'Click on Open premium account  button'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_OK'))
+
+
+
+
+
+
+
+
 
 WebUI.waitForElementVisible(findTestObject('Object Repository/Onboarding/input_firstname'), GlobalVariable.Timeout)
 
@@ -57,79 +88,66 @@ WebUI.setText(findTestObject('Object Repository/Onboarding/input_firstname'), cu
 'Type Last Name'
 WebUI.setText(findTestObject('Object Repository/Onboarding/input_lastName'), custData.get(Fields.CUST_LAST_NAME))
 
-'Type Username'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_UserName'), custData.get(Fields.CUST_FIRST_NAME).toLowerCase())
-
-'Type Taxid  number'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_TaxNumber'), '1' + custData.get(Fields.CUST_TAX_ID))
-
-'Type Mobile Number'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_PhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
-
-'Type Confirm Mobile Number'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_ConfirmPhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
-
-'Type Email adddresss'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_EmailAddress'), ((custData.get(Fields.CUST_FIRST_NAME).toLowerCase() + 
-    '.') + custData.get(Fields.CUST_LAST_NAME).toLowerCase()) + '@1secmail.com')
-
-'Type Password'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_Password'), custData.get(Fields.CUST_FIRST_NAME) + '@00001')
-
-'Click on continue button'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Continue'))
-
-'Wait for 5 Seconds for email operation to complete'
-WebUI.delay(20)
-
-String emailId = custData.get(Fields.CUST_FIRST_NAME).toLowerCase()+  '.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com'
-
-println "The username : " + emailId.split('@')[0]
-'Verify user receives email'
-CustomKeywords.'actions.Email.verifyMailCount'(emailId, 1, Operator.GREATER_THAN_OR_EQUALS)
-
-String OTP = CustomKeywords.'actions.Email.getVerificationCodeForOak'(custData.get(Fields.CUST_FIRST_NAME) +'.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com', 1)
-
-println('The OTP from Mail : ' + OTP)
-
-'Type OTP'
-CustomKeywords.'actions.Email.typeOTP'(OTP)
-
-'Confirm Button'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_ConfirmRegistration'))
-
-'Wait for the Account selection options'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Onboarding/div_Personal'), GlobalVariable.Timeout)
-
-'Select Personal account'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/div_Personal'))
-
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-'Select Account Type'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/div_SDA'))
-
-'Select Premiere Savings'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/heading_PremiereSavings'))
+/*
+ 'Type Username'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_UserName'), custData.get(Fields.CUST_FIRST_NAME).toLowerCase())
+ 'Type Taxid  number'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_TaxNumber'), '1' + custData.get(Fields.CUST_TAX_ID))
+ 'Type Mobile Number'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_PhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
+ 'Type Confirm Mobile Number'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_ConfirmPhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
+ 'Type Email adddresss'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_EmailAddress'), ((custData.get(Fields.CUST_FIRST_NAME).toLowerCase() + 
+ '.') + custData.get(Fields.CUST_LAST_NAME).toLowerCase()) + '@1secmail.com')
+ 'Type Password'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_Password'), custData.get(Fields.CUST_FIRST_NAME) + '@00001')
+ 'Click on continue button'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Continue'))
+ 'Wait for 5 Seconds for email operation to complete'
+ WebUI.delay(20)
+ String emailId = custData.get(Fields.CUST_FIRST_NAME).toLowerCase()+  '.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com'
+ println "The username : " + emailId.split('@')[0]
+ 'Verify user receives email'
+ CustomKeywords.'actions.Email.verifyMailCount'(emailId, 1, Operator.GREATER_THAN_OR_EQUALS)
+ String OTP = CustomKeywords.'actions.Email.getVerificationCodeForOak'(custData.get(Fields.CUST_FIRST_NAME) +'.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com', 1)
+ println('The OTP from Mail : ' + OTP)
+ 'Type OTP'
+ CustomKeywords.'actions.Email.typeOTP'(OTP)
+ 'Confirm Button'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_ConfirmRegistration'))
+ 'Wait for the Account selection options'
+ WebUI.waitForElementVisible(findTestObject('Object Repository/Onboarding/div_Personal'), GlobalVariable.Timeout)
+ 'Select Personal account'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/div_Personal'))
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+ 'Select Account Type'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/div_SDA'))
+ 'Select Premiere Savings'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/heading_PremiereSavings'))
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+ 'Set Date of Birth'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_DateOfBirth'), custData.get(Fields.CUST_DOB))
+ 'Click Citzen true'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkbox_CitizenTrue'))
+ 'Click Agreed checkbox'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkbox_Agreed'))
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+ */
 
 
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-'Set Date of Birth'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_DateOfBirth'), custData.get(Fields.CUST_DOB))
-
-
-'Click Citzen true'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkbox_CitizenTrue'))
-
-
-'Click Agreed checkbox'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkbox_Agreed'))
-
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+/*'Type Mobile Number'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_PhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
+ 'Type Confirm Mobile Number'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_ConfirmPhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
+ */
+/*'Type Email adddresss'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_EmailAddress'), ((custData.get(Fields.CUST_FIRST_NAME).toLowerCase() +
+ '.') + custData.get(Fields.CUST_LAST_NAME).toLowerCase()) + '@1secmail.com')
+ */
 
 'Set Address Line 1'
 WebUI.setText(findTestObject('Object Repository/Onboarding/input_Address1'), custData.get(Fields.ADDR_LINE1))
@@ -154,25 +172,108 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Onboarding/select_Ye
 'Check no on another email address'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_OtherMailFalse'))
 
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-'Click No Radio Button'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_TaxHoldingsFalse'))
-
-'Select Employeement Status'
-WebUI.selectOptionByLabel(findTestObject('Object Repository/Onboarding/select_EmployeeStatus'), "Other", false)
 
 
-'Click false Figure Political Figure'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_PolicticalFigFalse'))
 
-'Click false Figure Political Figure'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_SeniorPoliticalFigFalse'))
+'Type Taxid  number'
+WebUI.setText(findTestObject('Object Repository/Onboarding/input_TaxNumber'), '1' + custData.get(Fields.CUST_TAX_ID))
 
 
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+'Set Date of Birth'
+
+String dob = custData.get(Fields.CUST_DOB).replace("/", "")
+
+println  "The DOB : "+ dob
+
+StringSelection selection = new StringSelection(dob)
+Clipboard board = Toolkit.getDefaultToolkit().getSystemClipboard()
+board.setContents(selection, selection)
+
+
+WebUI.delay(5)
+
+/*WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Onboarding/input_DateOfBirth'),30)
+ WebUI.executeJavaScript("arguments[0].value='"+custData.get(Fields.CUST_DOB)+"'", Arrays.asList(element))
+ */
+
+
+/*01041988*/
+
+WebDriver driver = DriverFactory.getWebDriver()
+ WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Object Repository/Onboarding/input_DateOfBirth'),30)
+ 
+ 
+element.click()
+/* Actions actions = new Actions(driver)
+ actions.moveToElement(element).sendKeys(Keys.chord(Keys.LEFT_CONTROL, "v")).build().perform();
+ */
+ 
+ WebUI.sendKeys(findTestObject('Object Repository/Onboarding/input_DateOfBirth'), Keys.chord(Keys.LEFT_CONTROL, "v"))
+ 
+// element.sendKeys(Keys.chord(custData.get(Fields.CUST_DOB)))
+
+
+	
+//WebUI.setText(findTestObject('Object Repository/Onboarding/input_DateOfBirth'), dob)
+//WebUI.sendKeys(findTestObject('Object Repository/Onboarding/input_DateOfBirth'), Keys.chord(Keys.TAB))
+
+
+'Select Citizen'
+WebUI.selectOptionByLabel(findTestObject('Object Repository/Onboarding/select_Citizen'), "US Citizen", false)
+
+'Click on Checkbox on With Holdings'
+WebUI.click(findTestObject('Object Repository/Onboarding/checkbox_WithHoldings'))
+
+
+
+
+
+
+WebUI.setText(findTestObject('Object Repository/Onboarding/input_PhoneNum'), custData.get(Fields.CONTACT_PHONE_NUMBER))
+
+
+
+
+
+'Type Email adddresss'
+WebUI.setText(findTestObject('Object Repository/Onboarding/input_EmailAddress'), ((custData.get(Fields.CUST_FIRST_NAME).toLowerCase() +
+		'.') + custData.get(Fields.CUST_LAST_NAME).toLowerCase()) + '@1secmail.com')
+
+
+
+
+ 'Select Employeement Status'
+ WebUI.selectOptionByLabel(findTestObject('Object Repository/Onboarding/select_EmployeeStatus'), "Other", false)
+ 'Click false Figure Political Figure'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_PolicticalFigFalse'))
+ 'Click false Figure Political Figure'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_SeniorPoliticalFigFalse'))
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkbox_Certify'))
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+ 'Type Username'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_UserName'), custData.get(Fields.CUST_FIRST_NAME).toLowerCase())
+ 'Type Password'
+ WebUI.setText(findTestObject('Object Repository/Onboarding/input_Password'), custData.get(Fields.CUST_FIRST_NAME) + '@00001')
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+ String emailId = custData.get(Fields.CUST_FIRST_NAME).toLowerCase()+  '.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com'
+ println "The username : " + emailId.split('@')[0]
+ WebUI.delay(10)
+ 'Verify user receives email'
+ CustomKeywords.'actions.Email.verifyMailCount'(emailId, 1, Operator.GREATER_THAN_OR_EQUALS)
+ String OTP = CustomKeywords.'actions.Email.getVerificationCodeForOak'(custData.get(Fields.CUST_FIRST_NAME) +'.' + custData.get(Fields.CUST_LAST_NAME).toLowerCase() + '@1secmail.com', 1)
+ println('The OTP from Mail : ' + OTP)
+ 'Type OTP'
+ CustomKeywords.'actions.Email.typeOTP'(OTP)
+ 
+ 'Click Next'
+ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_BroNext'))
+
+
+
+
 
 
 String filePath = RunConfiguration.getProjectDir()+"\\Data Files\\Upload File\\Document1.png"
@@ -202,7 +303,7 @@ CustomKeywords.'actions.WebActions.uploadFile'(document3, filePath)
 
 
 'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_TextNext'))
 
 'Click Agree checkbox 0'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checbox0_Agree'))
@@ -210,48 +311,12 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onbo
 'Click Agree checkbox 0'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkboxOne_Agree'))
 
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-'Set Bank Name'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_BankName'),"DAG #1")
-
-
-'Click Lodi Bank'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/div_LodiBank'))
+'Click Agree checkbox 0'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkboxOne_Agree2'))
 
 'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_OpenMyAccount'))
 
-'Set Bank Name'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_AccountUsername'),"apiture1.site16441.1")
-
-'Set Bank Name'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_AccountPassword'),"site16441.1")
-
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-
-'Click Platinum Checking Account'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_PlatinumCheck'))
-
-
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-
-'Wait for next ppage'
-WebUI.waitForElementVisible(findTestObject('Object Repository/Onboarding/message_SuccessAccountLinked'), GlobalVariable.Timeout)
-
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
-
-'Set Bank Name'
-WebUI.setText(findTestObject('Object Repository/Onboarding/input_FundingAmount'),amountView)
-
-'Click Next'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_Next'))
 
 
 'Navigate to Banking URL '
@@ -293,6 +358,8 @@ WebUI.setText(findTestObject('Object Repository/Onboarding/input_FilterLastName'
 'Press Enter Key'
 WebUI.sendKeys(findTestObject('Object Repository/Onboarding/input_FilterLastName'), Keys.chord(Keys.ENTER))
 
+
+WebUI.delay(5)
 'Click on First row results'
 CustomKeywords.'actions.WebTable.clickCell'(findTestObject('Object Repository/Onboarding/table_SearchResultsInWorkflow'), 1, 10, TableType.DOCUMENT)
 
@@ -364,7 +431,7 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 WebUI.click(findTestObject('Object Repository/Onboarding/OnboardingCases/btn_Yes'))
 
 
-'Click on Account Verification   View'
+/*'Click on Account Verification   View'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/OnboardingCases/view_AccountVerification'))
 
 'Click on Approve Button'
@@ -375,7 +442,7 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 
 
 'Click on Yes Button'
-WebUI.click(findTestObject('Object Repository/Onboarding/OnboardingCases/btn_Yes'))
+WebUI.click(findTestObject('Object Repository/Onboarding/OnboardingCases/btn_Yes'))*/
 
 
 'Click on Task Drawer'
@@ -392,8 +459,8 @@ WebUI.selectOptionByLabel(findTestObject('Object Repository/Onboarding/Onboardin
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/OnboardingCases/btn_Submit'))
 
 
-'Click on Submit'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/OnboardingCases/btn_Submit'))
+/*'Click on Submit'
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/OnboardingCases/btn_Submit'))*/
 
 'Switch to default window'
 WebUI.switchToWindowIndex(0)
@@ -425,11 +492,11 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, Gl
 
 'Verify Firstname is present in all rows of searchResults table'
 CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSUMER_FIRSTNAME,
-	custData.get(Fields.CUST_FIRST_NAME), Operator.EQUALS_IGNORE_CASE)
+		custData.get(Fields.CUST_FIRST_NAME), Operator.EQUALS_IGNORE_CASE)
 
 'Verify Lastname is present in all rows of searchResults table'
 CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResults, ColumnPosition.CONSUMER_LASTNAME,
-	custData.get(Fields.CUST_LAST_NAME), Operator.EQUALS_IGNORE_CASE)
+		custData.get(Fields.CUST_LAST_NAME), Operator.EQUALS_IGNORE_CASE)
 
 'Click on First Row'
 CustomKeywords.'actions.WebTable.clickCell'(tableSearchResults, 1, 1)

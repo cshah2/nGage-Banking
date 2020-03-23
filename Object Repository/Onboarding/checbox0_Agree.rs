@@ -6,12 +6,11 @@
    <elementGuidId>0e17527f-f85b-463c-80f1-62c2dd69336c</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
-         <value></value>
+         <key>XPATH</key>
+         <value>//input[@id='agreeCheckBox-0']</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//input[@id='agreeCheckBox0']</value>
+         <key>BASIC</key>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

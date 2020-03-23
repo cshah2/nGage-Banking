@@ -7,11 +7,10 @@
    <selectorCollection>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='confirmation-code-${index}']</value>
+         <value>//input[@id='mfa-code-${index}']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

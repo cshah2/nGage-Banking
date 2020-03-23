@@ -104,6 +104,7 @@ public class TableUtil {
 				break
 			case TableType.DOCUMENT:
 				locator = By.xpath(".//div[contains(@class,'cell OSInline')]["+colNo+"]")
+				println "The locator : " + locator
 				break
 			Default:
 				locator = By.xpath("./td["+colNo+"]")
