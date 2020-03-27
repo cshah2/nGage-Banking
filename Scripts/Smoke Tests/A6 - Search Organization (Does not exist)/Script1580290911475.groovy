@@ -49,14 +49,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
 /*-----------Search Orrganization with Invalid Organization PhoneNumber--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
-
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
 'Search a Customer in SearchConstumer Page with Phonenumber'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
@@ -70,14 +64,9 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchOrganization/SearchO
     FailureHandling.STOP_ON_FAILURE)
 
 /*-----------Search Orrganization with invalid Organization EmailID--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Emailid'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.CONTACT_EMAIL))
@@ -90,14 +79,9 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchOrganization/SearchO
     FailureHandling.STOP_ON_FAILURE)
 
 /*-----------Search Orrganization with invalid Organization TaxID--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with DBA Name'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_TaxID'), orgData.get(Fields.ORG_TAX_ID))
@@ -110,14 +94,9 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchOrganization/SearchO
     FailureHandling.STOP_ON_FAILURE)
 
 /*-----------Search Orrganization with Invalid Organization DBA Name--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with DBA Name'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_DBAName'), orgData.get(
@@ -131,14 +110,9 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchOrganization/SearchO
     FailureHandling.STOP_ON_FAILURE)
 
 /*-----------Search Orrganization with Invalid Organization Dun Badstreet ID Name--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Dun and Badstreet Name'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_DunBradstreetID'), orgData.get(
@@ -152,14 +126,9 @@ WebUI.verifyElementVisible(findTestObject('SearchPage/SearchOrganization/SearchO
     FailureHandling.STOP_ON_FAILURE)
 
 /*-----------Search Orrganization with Invalid Organization CustomerID--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Click Consumer Group'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/select_CustomerGroup'))

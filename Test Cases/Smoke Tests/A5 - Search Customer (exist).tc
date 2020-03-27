@@ -3,6 +3,6 @@
    <description></description>
    <name>A5 - Search Customer (exist)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Login into portal</comment>
    <testCaseGuid>00f70d13-b2c2-4246-b92e-768f62b96e41</testCaseGuid>
 </TestCaseEntity>

@@ -290,6 +290,29 @@ public class WebActions {
 		WebUI.waitForJQueryLoad(GlobalVariable.Timeout)
 		WebUI.switchToDefaultContent()
 	}
+	
+	
+	
+	@Keyword
+	public static void goToSearchConsumer(){
+		WebUI.click(findTestObject('Object Repository/SearchPage/select_SearchConsumers'))
+		
+		WebUI.click(findTestObject('Object Repository/SearchPage/link_Consumer'))
+		WebUI.click(findTestObject('Object Repository/SearchPage/btn_Reset'))
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/SearchPage/SearchConsumer/select_CustomerGroup'), 'Banking Customer',false)
+			
+		
+	}
+	
+	@Keyword
+	public static void goToSearchOrganization(){
+		WebUI.click(findTestObject('Object Repository/SearchPage/select_SearchOrg'))
+		
+		WebUI.click(findTestObject('Object Repository/SearchPage/link_Org'))
+		WebUI.click(findTestObject('Object Repository/SearchPage/btn_Reset'))
+		WebUI.selectOptionByLabel(findTestObject('Object Repository/SearchPage/SearchConsumer/select_CustomerGroup'), 'Banking Customer',false)
+	}
+	
 
 	@Keyword
 	static def uploadFile(TestObject el, String filePath, int offset_x = 0, int offset_y = 0) {

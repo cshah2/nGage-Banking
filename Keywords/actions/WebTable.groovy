@@ -98,30 +98,30 @@ public class WebTable {
 		String actText = table.getCellText(to, rowNo, colNo)
 		WebActions.verifyMatch(actText, expText, operator)
 	}
-	
-	
+
+
 	@Keyword
 	public static void  verifyCellValueContains(TestObject to, int colNo, String expText, Operator operator, TableType type = TableType.DEFAULT) {
 		List<String> columnData = new  ArrayList<String>()
 		WebElement element  = WebUiCommonHelper.findWebElement(to, 30)
-		
-	 List<WebElement> rows = element.findElements(By.tagName("tr"))
-	 println "The row size  " +  rows.size()
-	   for (int i = 1 ;i < rows.size() ; i ++) {
-		   List<WebElement> columns = rows.get(i).findElements(By.tagName("td"))
-		   println "The columns size  " +  columns.size()
-		   for (int j = 0 ; j < columns.size() ; j++){
-		        columnData.add(columns.get(j).getText())
-		   }
-		   
-	   }
 
-		   if(!columnData.contains(expText)){
-			   KeywordUtil.markFailedAndStop("Expected text " +expText + " is not present in the column")
-		   }	   
+		List<WebElement> rows = element.findElements(By.tagName("tr"))
+		println "The row size  " +  rows.size()
+		for (int i = 1 ;i < rows.size() ; i ++) {
+			List<WebElement> columns = rows.get(i).findElements(By.tagName("td"))
+			println "The columns size  " +  columns.size()
+			for (int j = 0 ; j < columns.size() ; j++){
+				columnData.add(columns.get(j).getText())
+			}
+
+		}
+
+		if(!columnData.contains(expText)){
+			KeywordUtil.markFailedAndStop("Expected text " +expText + " is not present in the column")
+		}
 
 	}
-	
+
 
 	@Keyword
 	static def getRowsCount(TestObject to, TableType type = TableType.DEFAULT) {
@@ -167,6 +167,10 @@ public class WebTable {
 	}
 
 
+	@Keyword
+	public static void goToSearchConsumer(){
+		WebUI.click(findTestObject('Object Repository/SearchPage/select_SearchConsumers'))
+	}
 
 	//	@Keyword
 	//	static def clickDetailsIcon(TestObject to,  int rowNo, int colNo, TableType type = TableType.DEFAULT) {

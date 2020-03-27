@@ -44,6 +44,9 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 /*-----------Search Orrganization with Organization Name--------------*/
+
+WebUI.selectOptionByLabel(findTestObject('Object Repository/SearchPage/SearchConsumer/select_CustomerGroup'), 'Banking Customer',false)
+
 'Search a Customer in SearchConstumer Page with lastName'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_OrganizationName'), orgData.get(
         Fields.ORG_NAME))
@@ -59,14 +62,9 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
         Fields.ORG_NAME), Operator.EQUALS_IGNORE_CASE)
 
 /*-----------Search Orrganization with Organization PhoneNumber--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with Phonenumber'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_PhoneNumber'), orgData.get(
@@ -83,14 +81,9 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
     orgData.get(Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS_IGNORE_CASE)
 
 //------------------Search with Tax ID------------------
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
 
 'Search a Customer in SearchConstumer Page with DBA Name'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_TaxID'), orgData.get(Fields.ORG_TAX_ID))
@@ -109,14 +102,11 @@ CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPa
     findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/text_ToolTip'), orgData.get(Fields.ORG_TAX_ID), Operator.EQUALS)
 
 /*-----------Search Orrganization with Organization EmailID--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+WebUI.navigateToUrl(Urls.SEARCH_PAGE)
 
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
 'Search a Customer in SearchConstumer Page with Emailid'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_Email'), orgData.get(Fields.CONTACT_EMAIL))
@@ -141,14 +131,10 @@ String atualMailid = WebUI.getAttribute(findTestObject('Organization/Organizatio
 CustomKeywords.'actions.WebActions.verifyMatch'(atualMailid, orgData.get(Fields.CONTACT_EMAIL), Operator.CONTAINS_IGNORE_CASE)
 
 /*-----------Search Orrganization with Organization DBA Name--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
-
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+WebUI.navigateToUrl(Urls.SEARCH_PAGE)
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
 'Search a Customer in SearchConstumer Page with DBA Name'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_DBAName'), orgData.get(
@@ -174,14 +160,11 @@ String actualDBAName = WebUI.getText(findTestObject('Organization/OrganizationDa
 CustomKeywords.'actions.WebActions.verifyMatch'(actualDBAName, orgData.get(Fields.ORG_DBA_NAME), Operator.CONTAINS_IGNORE_CASE)
 
 /*-----------Search Orrganization with Organization Dun Bradstreet ID Name--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+WebUI.navigateToUrl(Urls.SEARCH_PAGE)
 
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
 'Search a Customer in SearchConstumer Page with Dun and Badstreet Name'
 WebUI.setText(findTestObject('SearchPage/SearchOrganization/input_DunBradstreetID'), orgData.get(
@@ -198,14 +181,10 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
     orgData.get(Fields.ORG_DUN_BRADSTEET_NO), Operator.EQUALS_IGNORE_CASE)
 
 /*-----------Search Orrganization with Organization CustomerID--------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
-'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
 
-'Click on Search Organizations Link'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchOrganization'()
 
 'Click Consumer Group'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/select_CustomerGroup'))

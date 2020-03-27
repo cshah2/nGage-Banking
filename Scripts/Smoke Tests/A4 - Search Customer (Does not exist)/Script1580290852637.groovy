@@ -40,8 +40,9 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
 /*--------------Search with invalid First name-------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
+
 
 'Search a Customer in SearchConstumer Page with firstName'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_FirstName'), customerData.get(Fields.CUST_FIRST_NAME))
@@ -53,8 +54,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
 /*--------------Search with Invalid EmailID name-------------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Search a Customer in SearchConstumer Page with EmailID'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_Email'), customerData.get(Fields.CONTACT_EMAIL))
@@ -66,8 +67,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
 /*----------Search consumer with invalid DOB--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Type date of birth and search '
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_DateofBirth'), customerData.get(Fields.CUST_DOB))
@@ -79,8 +80,8 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
 /*----------Search consumer with Invalid  PhoneNumber--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Type date of birth and search '
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_PhoneNumber'), customerData.get(Fields.CONTACT_PHONE_NUMBER))
@@ -98,8 +99,8 @@ String errorMessage3 = WebUI.getText(findTestObject('SearchPage/SearchConsumer/S
 CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage3, expectedErrorMessage1, Operator.CONTAINS_IGNORE_CASE)*/
 
 /*----------Search consumer with Invalid TaxID--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Search a Customer in SearchConstumer Page with TAXID'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_TaxID'), customerData.get(Fields.CUST_TAX_ID))
@@ -117,8 +118,8 @@ CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage2, expectedErrorMess
 */
 
 /*----------Search consumer with Invalid CustomerID--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Click Consumer Group'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsumer/select_CustomerGroup'))
@@ -141,10 +142,4 @@ String errorMessage = WebUI.getText(findTestObject('SearchPage/SearchConsumer/Se
 String expectedErrorMessage2 = "No matching customer or account record found"
 
 CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage, expectedErrorMessage2, Operator.CONTAINS_IGNORE_CASE)
-
-
-
-
-
-
 

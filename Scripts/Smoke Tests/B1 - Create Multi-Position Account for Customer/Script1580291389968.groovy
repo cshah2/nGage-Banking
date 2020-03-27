@@ -39,7 +39,7 @@ CustomKeywords.'pages.account.CreateMultipositionAccountPage.createMutipositionA
 
 
 'Verify Banking account infomrtion'
-CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyMPAccountInformation'(accData, 1)
+CustomKeywords.'pages.consumer.tabs.ConsumerAccountsTab.verifyMPAccountInformation'(accData, 2)
 
 'Multi=position account created'
 accData.put(Fields.IS_CREATED, "true");

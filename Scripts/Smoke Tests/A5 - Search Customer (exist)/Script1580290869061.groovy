@@ -20,12 +20,17 @@ import constants.Icon as Icon
 import constants.Operator as Operator
 import constants.Urls as Urls
 import data.ConsumerData as ConsumerData
+
+
+import data.ConsumerTempData as ConsumerTempData
+
 import internal.GlobalVariable as GlobalVariable
 import utils.MapUtil as MapUtil
 import utils.TableUtil
 import utils.WebUtil as WebUtil
 
 Map<Fields, String> customerData = ConsumerData.CUST_B
+
 
 WebUtil.shouldFailTest(customerData)
 
@@ -58,7 +63,10 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
 
 /*----------Search consumer with Firstname--------*/
 'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+//CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Search a Customer in SearchConstumer Page with firstName'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_FirstName'), customerData.get(Fields.CUST_FIRST_NAME))
@@ -74,8 +82,8 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
 CustomKeywords.'actions.WebActions.waitForElementVisible'(tableSearchResults, GlobalVariable.Timeout)
 
 /*----------Search consumer with Emailid--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Search a Customer in SearchConstumer Page with EmailID'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_Email'), customerData.get(Fields.CONTACT_EMAIL))
@@ -91,8 +99,8 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
     customerData.get(Fields.CONTACT_EMAIL), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with DOB--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Type date of birth and search '
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_DateofBirth'), customerData.get(Fields.CUST_DOB))
@@ -121,8 +129,8 @@ CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Ob
     customerData.get(Fields.CUST_DOB), Operator.EQUALS)
 
 /*----------Search consumer with PhoneNumber--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Type date of birth and search '
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_PhoneNumber'), customerData.get(Fields.CONTACT_PHONE_NUMBER))
@@ -138,8 +146,8 @@ CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(tableSearchResu
         Fields.CONTACT_PHONE_NUMBER), Operator.EQUALS_IGNORE_CASE)
 
 /*----------Search consumer with TaxID--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Search a Customer in SearchConstumer Page with TAXID'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_TaxID'), customerData.get(Fields.CUST_TAX_ID))
@@ -162,8 +170,11 @@ CustomKeywords.'actions.WebActions.verifyMouseOverText'(findTestObject('SearchPa
     Operator.EQUALS)
 
 /*----------Search consumer with CustomerID--------*/
-'Login into portal'
-CustomKeywords.'pages.LoginPage.loginIntoPortal'()
+
+WebUI.navigateToUrl(Urls.SEARCH_PAGE)
+
+'Got to Search page and reset search page'
+CustomKeywords.'actions.WebActions.goToSearchConsumer'()
 
 'Select Customer Group'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/SearchPage/SearchConsumer/select_CustomerGroup'), customerData.get(

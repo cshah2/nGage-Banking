@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>Dev - Savana</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://savosdevhf.savanainc.com'</initValue>
+      <name>URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'uthorat@savhf.dev'</initValue>
+      <name>UserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Savana1#'</initValue>
+      <name>Password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>60</initValue>
+      <name>Timeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Umesh Thorat'</initValue>
+      <name>UserProfileName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://savana.develop.finxact.io'</initValue>
+      <name>FinxactURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'{&quot;Identity&quot;:{&quot;userRoles&quot;:[&quot;developer&quot;],&quot;userId&quot;:&quot;nmundada@intenv.dev&quot;}}'</initValue>
+      <name>FnxHeder</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'c6312da6a9801d2f113f3b3080907653e820cc4ecbb10157c5eed2f278d45e4c965ab1802215'</initValue>
+      <name>FnxClientId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'db4ab687e365143d9487e460'</initValue>
+      <name>FnxSecretKey</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'SavanaHF_DEV'</initValue>
+      <name>ConnectedTo</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>

@@ -3,6 +3,6 @@
    <description></description>
    <name>A4 - Search Customer (Does not exist)</name>
    <tag></tag>
-   <comment></comment>
+   <comment>Verify Error Message is Displayed</comment>
    <testCaseGuid>55a6dbfd-a28b-481f-add1-8698924f146c</testCaseGuid>
 </TestCaseEntity>
