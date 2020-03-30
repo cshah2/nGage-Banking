@@ -30,6 +30,14 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 'Verify user is redirected to consumer search page'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS_IGNORE_CASE)
 
+
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/SearchPage/options_SearchBar'))
+
+'Click on Search Organizations Link'
+CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Consumer'))
+
+
+
 'Search a Customer in SearchConstumer Page with lastName'
 WebUI.setText(findTestObject('SearchPage/SearchConsumer/input_LastName'), customerData.get(Fields.CUST_LAST_NAME))
 

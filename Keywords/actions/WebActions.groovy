@@ -295,7 +295,7 @@ public class WebActions {
 	
 	@Keyword
 	public static void goToSearchConsumer(){
-		WebUI.click(findTestObject('Object Repository/SearchPage/select_SearchConsumers'))
+		WebUI.click(findTestObject('Object Repository/SearchPage/options_SearchBar'))
 		
 		WebUI.click(findTestObject('Object Repository/SearchPage/link_Consumer'))
 		WebUI.click(findTestObject('Object Repository/SearchPage/btn_Reset'))
@@ -306,7 +306,7 @@ public class WebActions {
 	
 	@Keyword
 	public static void goToSearchOrganization(){
-		WebUI.click(findTestObject('Object Repository/SearchPage/select_SearchOrg'))
+		WebUI.click(findTestObject('Object Repository/SearchPage/options_SearchBar'))
 		
 		WebUI.click(findTestObject('Object Repository/SearchPage/link_Org'))
 		WebUI.click(findTestObject('Object Repository/SearchPage/btn_Reset'))

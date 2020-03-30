@@ -190,10 +190,11 @@ public class CreateMultipositionAccountPage {
 		}
 
 		WebActions.selectOptionByLabel(e_TC_DocumentType1, accData, Fields.TC_DOC_TYPE1)
-		WebActions.setText(e_TC_AgreementCode1, accData, Fields.TC_DOC_AGREEMENT_CODE1)
+		//WebActions.setText(e_TC_AgreementCode1, accData, Fields.TC_DOC_AGREEMENT_CODE1)
 		WebActions.setText(e_TC_DocumentSignedBy1, accData, Fields.TC_DOC_SIGNED_BY1)
 		WebActions.setText(e_TC_DocumentSignedDate1, accData, Fields.TC_DOC_SIGNED_DATE1, true)
-		WebActions.setText(e_TC_DocumentVersion1, accData, Fields.TC_DOC_VERSION1)
+		WebActions.setText(e_TC_DocumentSignedDate2, accData, Fields.TC_DOC_SIGNED_DATE2, true)
+//		/WebActions.setText(e_TC_DocumentVersion1, accData, Fields.TC_DOC_VERSION1)
 
 		if(MapUtil.isValidData(accData, Fields.TC_DOC_TYPE2)) {
 

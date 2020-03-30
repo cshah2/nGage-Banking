@@ -39,7 +39,7 @@ RequestObject request = findTestObject('Object Repository/API/createBankingAccou
 		]
 	)
 
-println "... Request JSON = "+request.getHttpBody()
+println "... Request JSON for account = "+request.getHttpBody()
 ResponseObject response = WS.sendRequest(request)
 println "... Response JSON = "+response.getResponseBodyContent()
 WS.verifyResponseStatusCode(response, 200)

@@ -61,9 +61,6 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Cons
 CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Orders Tab/table_Order'), 
     GlobalVariable.Timeout)
 
-'Click on Receivables tab'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Recievables'))
-
 
 'Click on Notes tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Notes'))

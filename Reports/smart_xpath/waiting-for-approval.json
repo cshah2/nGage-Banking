@@ -384,6 +384,34 @@
       "testObjectId": "Object Repository/SearchPage/SearchConsumer/input_PhoneNumber",
       "brokenXPath": "//input[@contains(@id,\u0027wtPhone2\u0027)]",
       "pathToScreenshot": "C:/Users/apatil/git/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/SearchConsumer/input_PhoneNumber_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//a[contains(text(),\u0027Forgot Password?\u0027)]",
+      "testObjectId": "Object Repository/LoginPage/link_ForgotPassword",
+      "brokenXPath": "//a[@id\u003d\u0027WebPatterns_wt22_block_wtAction_wt40\u0027]",
+      "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/LoginPage/link_ForgotPassword_link.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[3]/div/select",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/EductionAndOccupationDetails/select_Employment Status",
+      "brokenXPath": "//select[@id\u003d\u0027nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtEducationOccupation_block_wtText_wtEmploymentStatusInput\u0027]",
+      "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/EductionAndOccupationDetails/select_Employment Status_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[3]/div/select",
+      "testObjectId": "Object Repository/Consumer/CreateConsumerPage/EductionAndOccupationDetails/select_Employment Status",
+      "brokenXPath": "//select[contains(@id,\u0027EmploymentStatusInput\u0027)]",
+      "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/Consumer/CreateConsumerPage/EductionAndOccupationDetails/select_Employment Status_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//div[2]/div/div[2]/div/div/div/div[2]/span",
+      "testObjectId": "Object Repository/SearchPage/HeaderSection/icon_SearchTypeDropDown",
+      "brokenXPath": "//div[text()\u003d\u0027Search Consumers\u0027]",
+      "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/HeaderSection/icon_SearchTypeDropDown_position.png"
     }
   ]
 }

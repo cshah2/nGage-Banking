@@ -38,7 +38,7 @@ CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Ob
     GlobalVariable.UserProfileName, Operator.EQUALS_IGNORE_CASE)
 
 'Click on Search Dropdown options'
-CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/SearchPage/options_SearchBar'))
 
 'Click on Search Organizations Link'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Organization'))

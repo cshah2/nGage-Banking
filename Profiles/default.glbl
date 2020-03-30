@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'cshah@savee.sit'</initValue>
+      <initValue>'ravib@savee.sit'</initValue>
       <name>UserName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
@@ -26,7 +26,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Chintan Shah'</initValue>
+      <initValue>'Ravi Bala'</initValue>
       <name>UserProfileName</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>
