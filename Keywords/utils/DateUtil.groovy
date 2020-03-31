@@ -72,8 +72,7 @@ public class DateUtil {
 	}
 	
 	
-	public static String  getSystemDateTime(String currentSystemDateTime){
-		
+	public static String  getSystemDateTime(String currentSystemDateTime){		
 		DateFormat dateFormat = new SimpleDateFormat(currentSystemDateTime);
 		//DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
@@ -93,9 +92,9 @@ public class DateUtil {
 		
 		   //dispalying date on PST timezone
 		   df.setTimeZone(TimeZone.getTimeZone(timeZone));
-		   String UTC = df.format(today);
-		   System.out.println("Date in UTC Timezone : " + UTC);
-		   return UTC
+		   String dateTime = df.format(today);
+		   System.out.println("Date in  " +timeZone + " Timezone : " + dateTime);
+		   return dateTime
 		
 	}
 	

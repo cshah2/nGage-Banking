@@ -32,7 +32,7 @@ WebUI.deleteAllCookies()
 'Navigate to login page'
 WebUI.navigateToUrl(Urls.LOGIN_PAGE)
 
-println "The current date and time  in java : " + DateUtil.getCurrentDateTimeWithTimeZone(Common.dateTimeFormat, Common.timezoneUTC)
+println "The current date and time  in java : " + DateUtil.getCurrentDateTimeWithTimeZone(Common.dateTimeFormat, Common.timezone)
 
 'Enter username'
 WebUI.setText(findTestObject('Object Repository/LoginPage/input_UserName'), GlobalVariable.UserName)
