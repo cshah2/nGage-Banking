@@ -14,9 +14,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
+import constants.Common
 import constants.Operator
 import constants.Urls
 import internal.GlobalVariable as GlobalVariable
+import utils.DateUtil
 
 'Load browser'
 CustomKeywords.'actions.WebActions.openBrowser'()
@@ -29,6 +31,8 @@ WebUI.deleteAllCookies()
 
 'Navigate to login page'
 WebUI.navigateToUrl(Urls.LOGIN_PAGE)
+
+println "The current date and time  in java : " + DateUtil.getCurrentDateTimeWithTimeZone(Common.dateTimeFormat, Common.timezoneUTC)
 
 'Enter username'
 WebUI.setText(findTestObject('Object Repository/LoginPage/input_UserName'), GlobalVariable.UserName)

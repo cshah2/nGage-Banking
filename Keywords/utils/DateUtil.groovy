@@ -6,6 +6,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.ZoneId
 import java.time.ZonedDateTime
@@ -58,4 +59,48 @@ public class DateUtil {
 		println "Date is :"+dateString
 		return dateString
 	}
+	
+	
+	
+	public static String  getDate(){
+		
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		//DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date))
+		return dateFormat.format(date)
+	}
+	
+	
+	public static String  getSystemDateTime(String currentSystemDateTime){
+		
+		DateFormat dateFormat = new SimpleDateFormat(currentSystemDateTime);
+		//DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		Date date = new Date();
+		System.out.println(dateFormat.format(date))
+		return dateFormat.format(date)
+	}
+	
+	
+	public static String getCurrentDateTimeWithTimeZone(String format,String timeZone){
+			Date today = new Date();
+		
+		   //displaying this date on IST timezone
+		   DateFormat df = new SimpleDateFormat(format);
+		   df.setTimeZone(TimeZone.getTimeZone("Asia/Kolkata"));
+		   String IST = df.format(today);
+		   System.out.println("Date in Indian Timezone (IST) : " + IST);
+		
+		   //dispalying date on PST timezone
+		   df.setTimeZone(TimeZone.getTimeZone(timeZone));
+		   String UTC = df.format(today);
+		   System.out.println("Date in UTC Timezone : " + UTC);
+		   return UTC
+		
+	}
+	
+	
+	
+	
+	
 }

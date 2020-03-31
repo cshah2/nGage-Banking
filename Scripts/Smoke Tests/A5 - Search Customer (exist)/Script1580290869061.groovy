@@ -36,8 +36,6 @@ WebUtil.shouldFailTest(customerData)
 
 TestObject tableSearchResults = findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/table_SearchResults')
 
-
-
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
