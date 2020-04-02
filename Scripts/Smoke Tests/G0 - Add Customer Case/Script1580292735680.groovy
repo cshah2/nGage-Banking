@@ -29,6 +29,9 @@ Map<Fields, String> customerData = ConsumerData.CUST_B
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 
+
+println "The Customer URL  : " + customerData.get(Fields.URL)
+
 'Navigate To customer dashboard'
 WebUI.navigateToUrl(customerData.get(Fields.URL))
 

@@ -51,13 +51,13 @@ CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(holdsTable, 1, Operator
 //steps to goto accounts tab and click a account
 'Click on Edit Icon'
 CustomKeywords.'actions.WebTable.clickIconInTable'(holdsTable, LATEST_ROW, 8, Icon.ELLIPSIS)
-//CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/icon_editAddedHold'))
+//CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsTab/icon_editAddedHold'))
 
 'Wait for Context menu to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_EditHold'), GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsTab/link_EditHold'), GlobalVariable.Timeout)
 
 'Click on Edit Hold Option'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_EditHold'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsTab/link_EditHold'))
 
 'Clear hold amount'
 WebUI.clearText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/input_HoldAmount'))

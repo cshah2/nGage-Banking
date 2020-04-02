@@ -50,13 +50,13 @@ CustomKeywords.'actions.WebTable.verifyRowsCountMatches'(holdsTable, 1, Operator
 CustomKeywords.'actions.WebTable.clickIconInTable'(holdsTable, LATEST_ROW, 8, Icon.ELLIPSIS)
 
 'Wait for Context menu to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'), GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsTab/link_CancelHold'), GlobalVariable.Timeout)
 
 
 WebUI.delay(GlobalVariable.Timeout)
 
 'Click on Cancel Hold Option'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsSection/link_CancelHold'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/HoldsTab/link_CancelHold'))
 
 'Type the hold Notes'
 WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/ConsumerHolds/textarea_Notes'), 'Cancel Hold operation')

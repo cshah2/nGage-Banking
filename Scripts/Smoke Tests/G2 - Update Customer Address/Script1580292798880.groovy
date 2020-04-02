@@ -123,10 +123,10 @@ WebUI.delay(GlobalVariable.Timeout)
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/TabsSection/tab_Cases'))
 
 'Click on Cases Tab '
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/CasesSection/tab_ClosedCases'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/CasesTab/tab_ClosedCases'))
 
 'Click on Cases Tab '
-CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/CasesSection/tab_ClosedCases'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerDashboardPage/CasesTab/tab_ClosedCases'))
 
 
 /*'Verify Case type in Closed cases Table'

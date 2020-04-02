@@ -56,7 +56,7 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 'Click on Holds tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Holds'))
 'Verify the Holds tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Holds tab/Table_Holds'), GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/HoldsTab/Table_Holds'), GlobalVariable.Timeout)
 
 'Click on Orders tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/Tab_Order'))
@@ -67,15 +67,15 @@ CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Notes'))
 
 'Verify the Notes tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Notes Tab/Notes table'), GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/NotesTab/Notes table'), GlobalVariable.Timeout)
 'Click on Documents tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Documents'))
 
 'Verify the Documents tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Documents Tab/Documents table'), GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/DocumentSection/Documents table'), GlobalVariable.Timeout)
 
 'Click on Cases tab'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/TabsSection/tab_Cases'))
 
 'Verify the Cases tab to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/Consumer/ConsumerDashboardPage/Cases tab/Cases table'), GlobalVariable.Timeout)
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Consumer/ConsumerDashboardPage/CasesTab/table_Cases'), GlobalVariable.Timeout)

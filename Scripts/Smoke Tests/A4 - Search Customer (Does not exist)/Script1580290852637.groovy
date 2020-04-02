@@ -101,11 +101,6 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/SearchConsu
 WebUI.verifyElementVisible(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoResults'), FailureHandling.STOP_ON_FAILURE)
 
 
-/*'Get error message'
-String errorMessage3 = WebUI.getText(findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/message_NoConsumerFound'))
-
-CustomKeywords.'actions.WebActions.verifyMatch'(errorMessage3, expectedErrorMessage1, Operator.CONTAINS_IGNORE_CASE)*/
-
 /*----------Search consumer with Invalid TaxID--------*/
 'Got to Search page and reset search page'
 CustomKeywords.'actions.WebActions.goToSearchConsumer'()

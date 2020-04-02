@@ -4,6 +4,7 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
@@ -72,6 +73,11 @@ JsonSlurper slurper = new JsonSlurper()
 String partyId = slurper.parseText(response.getResponseBodyContent()).party_person._Id
 String customerId = custData.get(Fields.CUST_ID)
 String url = WebUtil.generateCustomerUrl(partyId, "2", customerId, "false")
+
+String profile = RunConfiguration.getExecutionProfile()
+println "The profile is : " + profile
+
+//String url = WebUtil.generateCustomerUrlApollo(partyId, "2", customerId, "NewCECustomerCreate")
 
 custData.put(Fields.IS_CREATED, 'true')
 custData.put(Fields.CUST_PARTY_ID, partyId)

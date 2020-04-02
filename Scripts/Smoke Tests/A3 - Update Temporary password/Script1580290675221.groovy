@@ -31,6 +31,8 @@ String passwordUpdateMessage = 'Password Successfully Updated.'
 Faker faker = new Faker(Locale.US)
 String newPassword = faker.internet().password(12, 16, true, true)
 
+WebUI.delay(10)
+
 'Verify user mailbox has atleast one email'
 CustomKeywords.'actions.Email.verifyMailCount'(email, 1, Operator.GREATER_THAN_OR_EQUALS)
 

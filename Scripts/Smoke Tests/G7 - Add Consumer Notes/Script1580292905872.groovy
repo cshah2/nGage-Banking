@@ -29,7 +29,7 @@ int WAIT_FOR_TEN_SECONDS =10
 String notes  = "Ravi has viewed Consumer Info"
 Map<Fields, String> customerData = ConsumerData.CUST_B
 
-TestObject notesTable = findTestObject('Consumer/ConsumerDashBoardPage/NotesSection/table_Notes')
+TestObject notesTable = findTestObject('Consumer/ConsumerDashBoardPage/NotesTab/table_Notes')
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -50,8 +50,6 @@ WebUI.setText(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/input_N
 'Click On Submit'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Consumer/ConsumerTaskDrawer/Customer Notes/btn_Submit'))
 
-'Verfiy the element popup is displayed as case created for address update'
-WebUI.verifyElementPresent(findTestObject('Consumer/ConsumerDashBoardPage/NotesSection/message_EmailUpdateAlert'),GlobalVariable.Timeout, FailureHandling.STOP_ON_FAILURE)
 
 WebUI.delay(WAIT_FOR_TEN_SECONDS)
 

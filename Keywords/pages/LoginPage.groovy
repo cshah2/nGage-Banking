@@ -31,7 +31,7 @@ public class LoginPage {
 		TestObject usernameField 	= findTestObject('Object Repository/LoginPage/input_UserName')
 		TestObject passwordField	= findTestObject('Object Repository/LoginPage/input_Password')
 		TestObject loginButton 		= findTestObject('Object Repository/LoginPage/btn_Login')
-		TestObject loginPageHeader 	= findTestObject('Object Repository/LoginPage/text_PageHeading')
+		//TestObject loginPageHeader 	= findTestObject('Object Repository/LoginPage/text_PageHeading')
 
 		int loginAttempt = 1
 		boolean isLoginSuccess = false
@@ -47,7 +47,7 @@ public class LoginPage {
 			if(currentUrl.toLowerCase().contains('Login.aspx'.toLowerCase()) || currentUrl.toLowerCase().contains('NoPermission.aspx'.toLowerCase())) {
 
 				WebUI.delay(2)
-				WebUI.verifyElementVisible(loginPageHeader)
+				//WebUI.verifyElementVisible(loginPageHeader)
 				WebUI.setText(usernameField, username)
 				WebUI.setText(passwordField, password)
 				WebUI.click(loginButton)

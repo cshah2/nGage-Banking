@@ -11,22 +11,28 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>64ad0999-5cd3-4ff8-8bdf-760e1ac9695e</testSuiteGuid>
    <testCaseLink>
+      <guid>688340aa-caa8-472a-8acf-acfc78df4861</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/G0 - Add Customer Case</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>6c196c5b-bfa1-4374-bd29-b28d897cadc9</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H0 - Add Account case</testCaseId>
    </testCaseLink>
    <testCaseLink>
+      <guid>dad99d9b-a2c9-47d2-ac18-0598c5660cde</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/G0 - Add Customer Case</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>d464631e-35ee-4c55-ae43-3bdbd9a989b1</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H1 - Add Account Complaint</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>688340aa-caa8-472a-8acf-acfc78df4861</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/G0 - Add Customer Case</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>7075f799-3a47-4cf0-9f92-33a754d5ed19</guid>
@@ -45,6 +51,12 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I3 - Add Organization Complaint</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a4dbb7e5-bbbb-41cd-97e6-1f8c729bba4c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/H3 - Search for document in Vault</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>1591110c-6f38-476b-b64b-fc63cd9c2fc3</guid>
@@ -287,12 +299,6 @@
       <testCaseId>Test Cases/Smoke Tests/H2 - Dispute transaction from Checking account</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>a4dbb7e5-bbbb-41cd-97e6-1f8c729bba4c</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/H3 - Search for document in Vault</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>a4896b58-4fa3-4c9f-95ed-a21d3e287917</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -327,11 +333,5 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I5 - Validate all Account tab pages render</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>dad99d9b-a2c9-47d2-ac18-0598c5660cde</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/I6 - Validate all Lending tab pages render</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

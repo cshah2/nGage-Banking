@@ -56,6 +56,21 @@ public class WebUtil {
 
 		return url.toString()
 	}
+	
+	
+	static def generateCustomerUrlApollo(String partyId, String customerGroup, String customerId, String source) {
+		
+				StringBuilder url = new StringBuilder()
+				url.append(GlobalVariable.URL)
+				url.append("/nGageBanking_Customer/CustomerMainFlow.CustomerDetail.aspx?")
+				url.append("partyId="+partyId)
+				url.append("&customerGroup="+customerGroup)
+				url.append("&customerId="+customerId)
+				url.append("&source="+source)
+		
+				return url.toString()
+			}
+	
 
 	static def generateAccountUrl(String partyId, String acctGroup, String accNumber, String positionId, String customerGroup, String customerId, String isOrg) {
 
