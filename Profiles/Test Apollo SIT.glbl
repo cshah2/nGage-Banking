@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>Test Apollo SIT</name>
+   <tag></tag>
+   <defaultProfile>false</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://savossit.savanainc.com'</initValue>
+      <name>URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'apatil@apollo.sit'</initValue>
+      <name>UserName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Savana1#'</initValue>
+      <name>Password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>60</initValue>
+      <name>Timeout</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Amol Patil'</initValue>
+      <name>UserProfileName</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://savana-int.develop.finxact.io'</initValue>
+      <name>FinxactURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'{&quot;Identity&quot;:{&quot;userRoles&quot;:[&quot;developer&quot;],&quot;userId&quot;:&quot;cshah@savee.sit&quot;}}'</initValue>
+      <name>FnxHeder</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'daea260b2272d7b8d32a71941043ae288ac84ddb5d7c65e1188d55331b1c7035fb83df6f3c'</initValue>
+      <name>FnxClientId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'b4965f009f94296d6e88c5f1'</initValue>
+      <name>FnxSecretKey</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Apollo_SIT'</initValue>
+      <name>ConnectedTo</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
