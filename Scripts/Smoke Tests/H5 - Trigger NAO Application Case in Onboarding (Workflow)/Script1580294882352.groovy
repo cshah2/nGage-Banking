@@ -511,7 +511,7 @@ TestObject accountsTable = findTestObject('Object Repository/Consumer/ConsumerDa
 CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(accountsTable, ColumnPosition.PRODUCT_TYPE, "Premier Savings", Operator.CONTAINS_IGNORE_CASE)
 
 
-'Verify Account Legdger Balance in Accounts Table table'
+/*'Verify Account Legdger Balance in Accounts Table table'
 CustomKeywords.'actions.WebTable.verifyAllValuesInColumnMatches'(accountsTable, ColumnPosition.ACCOUNT_LEDGER_BALANCE,amountView, Operator.CONTAINS_IGNORE_CASE)
 
-
+*/

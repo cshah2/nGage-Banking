@@ -42,6 +42,10 @@ CustomKeywords.'actions.Email.verifyMailSubject'(email, 1, expectedMailSubject, 
 'Get Temporay password from email'
 String password = CustomKeywords.'actions.Email.getTemporaryPassword'(email, 1)
 
+
+
+println "The password : " + password
+
 'Load browser'
 CustomKeywords.'actions.WebActions.openBrowser'()
 
@@ -96,11 +100,11 @@ CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Ob
 'Click on OK button'
 WebUI.click(findTestObject('Object Repository/UserprofilePage/btn_Popup_OK'))
 
-'Wait for search page to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/SearchPage/SearchConsumer/input_FirstName'), GlobalVariable.Timeout)
+/*'Wait for search page to load'
+CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/SearchPage/SearchConsumer/input_FirstName'), GlobalVariable.Timeout)*/
 
-'Verify user is redirected to the Search Page'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS)
+/*'Verify user is redirected to the Search Page'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS)*/
 
 'Clear browser cache'
 WebUI.deleteAllCookies()
@@ -117,8 +121,6 @@ WebUI.setText(findTestObject('Object Repository/LoginPage/input_Password'), newP
 'Click on Login button'
 WebUI.click(findTestObject('Object Repository/LoginPage/btn_Login'))
 
-'Wait for search page to load'
-CustomKeywords.'actions.WebActions.waitForElementVisible'(findTestObject('Object Repository/SearchPage/SearchConsumer/input_FirstName'), GlobalVariable.Timeout)
 
 'Verify user is redirected to the Search Page'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE, Operator.EQUALS)

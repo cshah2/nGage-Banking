@@ -50,7 +50,7 @@ CustomKeywords.'pages.LoginPage.loginIntoPortal'()
 'Verify user is redirected to consumer search page'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.SEARCH_PAGE,Operator.EQUALS_IGNORE_CASE)
 
-'Click on the Search type dropdown'
+/*'Click on the Search type dropdown'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/icon_SearchTypeDropDown'))
 
 'click on the Account link'
@@ -60,4 +60,4 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSecti
 WebUI.setText(findTestObject('SearchPage/SearchAccount/input_AccountNumber'), invalidAccountNum)
 
 'Click On Search'
-CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/SearchAccount/btn_Search"))
+CustomKeywords.'actions.WebActions.click'(findTestObject("SearchPage/SearchAccount/btn_Search"))*/

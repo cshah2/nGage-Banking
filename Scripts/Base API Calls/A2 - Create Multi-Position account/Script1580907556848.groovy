@@ -29,6 +29,8 @@ Map<Fields, String> accDataPos3 = ConsumerData.ACC_B2_POS3
 Map<Fields, String> accDataPos4 = ConsumerData.ACC_B2_POS4
 Map<Fields, String> accDataPos5 = ConsumerData.ACC_B2_POS5
 
+Map<Fields, String> accDataPos6 = ConsumerData.ACC_B2_POS6
+
 WebUtil.shouldFailTest(custData)
 
 RequestObject request = findTestObject('Object Repository/API/createMultiPositionAccount',
@@ -49,7 +51,10 @@ RequestObject request = findTestObject('Object Repository/API/createMultiPositio
 			('credLimit4'):accDataPos4.get(Fields.ACC_CREDIT_LIMIT),
 			('posnName5'):accDataPos5.get(Fields.ACC_POSITION_NAME),
 			('prodCode5'):accDataPos5.get(Fields.ACC_PRODUCT_CODE),
-			('credLimit5'):accDataPos5.get(Fields.ACC_CREDIT_LIMIT)
+			('credLimit5'):accDataPos5.get(Fields.ACC_CREDIT_LIMIT),
+			('posnName6'):accDataPos6.get(Fields.ACC_POSITION_NAME),
+			('prodCode6'):accDataPos6.get(Fields.ACC_PRODUCT_CODE),
+			('credLimit6'):accDataPos6.get(Fields.ACC_CREDIT_LIMIT)
 		]
 	)
 
@@ -64,12 +69,15 @@ String positionId2 = slurper.parseText(response.getResponseBodyContent()).create
 String positionId3 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[2].posn_dep._Id
 String positionId4 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[0].posn_ln._Id
 String positionId5 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[1].posn_ln._Id
+String positionId6 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[2].posn_ln._Id
+
 
 String positionNo1 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[0].posn_dep.posnAcctNbr
 String positionNo2 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[1].posn_dep.posnAcctNbr
 String positionNo3 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_depDtl[2].posn_dep.posnAcctNbr
 String positionNo4 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[0].posn_ln.posnAcctNbr
 String positionNo5 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[1].posn_ln.posnAcctNbr
+String positionNo6 = slurper.parseText(response.getResponseBodyContent()).createdAccounts[0].posn_lnDtl[2].posn_ln.posnAcctNbr
 
 
 String customerId = custData.get(Fields.CUST_ID)
@@ -81,28 +89,33 @@ String urlPosition2 = WebUtil.generateAccountUrl(partyId, "3", accNumber, positi
 String urlPosition3 = WebUtil.generateAccountUrl(partyId, "3", accNumber, positionId3, "2", customerId, "false")
 String urlPosition4 = WebUtil.generateAccountUrl(partyId, "3", accNumber, positionId4, "2", customerId, "false")
 String urlPosition5 = WebUtil.generateAccountUrl(partyId, "3", accNumber, positionId5, "2", customerId, "false")
+String urlPosition6 = WebUtil.generateAccountUrl(partyId, "3", accNumber, positionId6, "2", customerId, "false")
 
 accDataPos1.put(Fields.IS_CREATED, 'true')
 accDataPos2.put(Fields.IS_CREATED, 'true')
 accDataPos3.put(Fields.IS_CREATED, 'true')
 accDataPos4.put(Fields.IS_CREATED, 'true')
 accDataPos5.put(Fields.IS_CREATED, 'true')
+accDataPos6.put(Fields.IS_CREATED, 'true')
 
 accDataPos1.put(Fields.URL, urlPosition1)
 accDataPos2.put(Fields.URL, urlPosition2)
 accDataPos3.put(Fields.URL, urlPosition3)
 accDataPos4.put(Fields.URL, urlPosition4)
 accDataPos5.put(Fields.URL, urlPosition5)
+accDataPos6.put(Fields.URL, urlPosition6)
 
 accDataPos1.put(Fields.ACC_POSITION_ID, positionId1)
 accDataPos2.put(Fields.ACC_POSITION_ID, positionId2)
 accDataPos3.put(Fields.ACC_POSITION_ID, positionId3)
 accDataPos4.put(Fields.ACC_POSITION_ID, positionId4)
 accDataPos5.put(Fields.ACC_POSITION_ID, positionId5)
+accDataPos6.put(Fields.ACC_POSITION_ID, positionId6)
 
 accDataPos1.put(Fields.ACC_POSITION_NUMBER, positionNo1)
 accDataPos2.put(Fields.ACC_POSITION_NUMBER, positionNo2)
 accDataPos3.put(Fields.ACC_POSITION_NUMBER, positionNo3)
 accDataPos4.put(Fields.ACC_POSITION_NUMBER, positionNo4)
 accDataPos5.put(Fields.ACC_POSITION_NUMBER, positionNo5)
+accDataPos6.put(Fields.ACC_POSITION_NUMBER, positionNo6)
 

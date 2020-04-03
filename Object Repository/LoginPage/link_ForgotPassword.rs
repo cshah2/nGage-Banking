@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//a[@id='WebPatterns_wt22_block_wtAction_wt40']</value>
+         <value>//a[text()='Forgot Password?']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

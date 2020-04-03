@@ -81,9 +81,9 @@ public class AccountTransactionTab {
 			WebTable.verifyCellValueMatches(table, rowNo, ColumnPosition.TACC_TXN_TYPE, txnData.get(Fields.TXN_TYPE), Operator.EQUALS)
 		}
 
-		if(MapUtil.isValidData(txnData, Fields.GL_CLASS)) {
+		/*if(MapUtil.isValidData(txnData, Fields.GL_CLASS)) {
 			WebTable.verifyCellValueMatches(table, rowNo, ColumnPosition.TACC_CLASS, txnData.get(Fields.GL_CLASS), Operator.EQUALS)
-		}
+		}*/
 
 		if(MapUtil.isValidData(txnData, Fields.TXN_AMOUNT)) {
 			WebTable.verifyCellValueMatches(table, rowNo, ColumnPosition.TACC_AMOUNT, txnData.get(Fields.TXN_AMOUNT), Operator.EQUALS)

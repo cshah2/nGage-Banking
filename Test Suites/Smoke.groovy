@@ -50,7 +50,7 @@ def setUp() {
 
 @TearDown(skipped = false)
 def tearDown() {
-	WebUI.closeBrowser()
+	//WebUI.closeBrowser()
 }
 
 @SetupTestCase(skipped = true)

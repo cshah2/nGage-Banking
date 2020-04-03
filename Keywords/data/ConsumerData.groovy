@@ -195,6 +195,17 @@ public class ConsumerData {
 		ACC_A.put(Fields.TC_DOC_VERSION1, '01')
 		ACC_A.put(Fields.TC_DOC_AGREEMENT_CODE1, '01')
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	public static final Map<Fields, String> ACCOUNT_HOLD;
 
@@ -498,6 +509,18 @@ public class ConsumerData {
 		ACC_B2_POS5.put(Fields.ACC_PRODUCT_CODE, 'LN')
 		ACC_B2_POS5.put(Fields.ACC_POSITION_NAME, 'Installment Personal Loan')
 		ACC_B2_POS5.put(Fields.ACC_CREDIT_LIMIT, '100000')
+	}
+	
+	
+	public static final Map<Fields, String> ACC_B2_POS6;
+	static {
+
+		//Basic Information
+		ACC_B2_POS6 = new HashMap<Fields, String>()
+		ACC_B2_POS6.put(Fields.ACC_PRODUCT_TYPE, 'SBA 10 Year Loan')
+		ACC_B2_POS6.put(Fields.ACC_PRODUCT_CODE, 'LN')
+		ACC_B2_POS6.put(Fields.ACC_POSITION_NAME, 'SBA 10 Year Loan')
+		ACC_B2_POS6.put(Fields.ACC_CREDIT_LIMIT, '300000')
 	}
 
 	public static final Map<Fields, String> ACC_B1_TXNA;
