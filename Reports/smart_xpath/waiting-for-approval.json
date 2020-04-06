@@ -412,6 +412,20 @@
       "testObjectId": "Object Repository/SearchPage/HeaderSection/icon_SearchTypeDropDown",
       "brokenXPath": "//div[text()\u003d\u0027Search Consumers\u0027]",
       "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/SearchPage/HeaderSection/icon_SearchTypeDropDown_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "//span",
+      "testObjectId": "Object Repository/LoginPage/text_PageHeading",
+      "brokenXPath": "//span[contains(@id,\u0027LogoTextString\u0027)]",
+      "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/LoginPage/text_PageHeading_position.png"
+    },
+    {
+      "approved": false,
+      "proposedXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027Logout\u0027])[1]/preceding::*[name()\u003d\u0027svg\u0027][1]",
+      "testObjectId": "Object Repository/BasePage/HeaderSection/icon_SystemInformation",
+      "brokenXPath": "(.//*[normalize-space(text()) and normalize-space(.)\u003d\u0027nGage Enterprise Servicing\u0027])[1]/following::*[name()\u003d\u0027svg\u0027][2]",
+      "pathToScreenshot": "C:/nGage-Automation/nGage-Banking/Reports/smart_xpath/Object Repository/BasePage/HeaderSection/icon_SystemInformation_neighbor_0.png"
     }
   ]
 }
