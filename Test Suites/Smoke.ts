@@ -35,6 +35,12 @@
       <testCaseId>Test Cases/Smoke Tests/H1 - Add Account Complaint</testCaseId>
    </testCaseLink>
    <testCaseLink>
+      <guid>14e8ca82-d806-4b09-be07-a3f641c4f401</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/H3 - Search for document in Vault</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>f2752e20-ed3f-4f1c-9c06-f9b5fa99ca19</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -285,12 +291,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/H2 - Dispute transaction from Checking account</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>14e8ca82-d806-4b09-be07-a3f641c4f401</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/H3 - Search for document in Vault</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8d8913cd-093f-438d-b20a-770211f7aed4</guid>
