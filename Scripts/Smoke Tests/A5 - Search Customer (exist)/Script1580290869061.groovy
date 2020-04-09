@@ -35,6 +35,7 @@ Map<Fields, String> customerData = ConsumerData.CUST_B
 WebUtil.shouldFailTest(customerData)
 
 TestObject tableSearchResults = findTestObject('SearchPage/SearchConsumer/SearchConsumerResults/table_SearchResults')
+println "Search Customer started"
 
 'Login into portal'
 CustomKeywords.'pages.LoginPage.loginIntoPortal'()
@@ -51,8 +52,6 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Sear
 
 'Click on Search Organizations Link'
 CustomKeywords.'actions.WebActions.click'(findTestObject('SearchPage/HeaderSection/link_Consumer'))
-
-
 
 
 'Search a Customer in SearchConstumer Page with lastName'

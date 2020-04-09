@@ -47,6 +47,7 @@ String customerId = pageUrl.split("customerId=")[1].split("&")[0]
 'Verify Consumer data on header section'
 CustomKeywords.'pages.consumer.ConsumerDashboardPage.verifyConsumerDataOnHeaderSection'(custData)
 
+
 'Set flags for future tests'
 custData.put(Fields.CUST_ID, customerId)
 custData.put(Fields.URL, WebUI.getUrl())
