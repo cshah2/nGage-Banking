@@ -21,7 +21,7 @@ String username = 'sav_auto@savee.site'
 String email = 'sav.auto@1secmail.com'
 String forgotPasswordMessage = 'Click Submit below to send an automated password retrieval email message to the email address we have associated with your user account. Once you log on successfully, protect your account privacy by changing your password immediately.'
 String successMessage = 'Your request has been received successfully.\nYou will receive an email shortly.'
-String expectedMailSubject = 'Enterprise Servicing Change Password Request'
+String expectedMailSubject = 'nGage Enterprise Servicing Password Reset Request'
 
 'Load browser'
 CustomKeywords.'actions.WebActions.openBrowser'()

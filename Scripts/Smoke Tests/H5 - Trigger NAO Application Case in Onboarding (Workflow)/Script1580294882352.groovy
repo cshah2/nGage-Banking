@@ -169,9 +169,9 @@ WebUI.setText(findTestObject('Object Repository/Onboarding/input_PostalCode'), c
 'Select Years At Address'
 WebUI.selectOptionByLabel(findTestObject('Object Repository/Onboarding/select_YearsAtAddress'),"3", false)
 
-'Check no on another email address'
+/*'Check no on another email address'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_OtherMailFalse'))
-
+*/
 
 
 
@@ -312,7 +312,7 @@ CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onbo
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkboxOne_Agree'))
 
 'Click Agree checkbox 0'
-CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/checkboxOne_Agree2'))
+CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/radio_OptNO'))
 
 'Click Next'
 CustomKeywords.'actions.WebActions.click'(findTestObject('Object Repository/Onboarding/btn_OpenMyAccount'))

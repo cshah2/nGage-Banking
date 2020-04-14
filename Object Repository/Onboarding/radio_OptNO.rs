@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>link_OpenAccount</name>
+   <name>radio_OptNO</name>
    <tag></tag>
-   <elementGuidId>bda1f26c-a64a-4b31-acd8-1f080915a328</elementGuidId>
+   <elementGuidId>e3e4c48a-6a8f-4e20-928a-f6aa3a58db4c</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//button[@id='signup-link']</value>
+         <value>//input[@id='opt-in-no']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

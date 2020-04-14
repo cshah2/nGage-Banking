@@ -25,7 +25,7 @@ import internal.GlobalVariable as GlobalVariable
 String username = 'sav_auto@savee.site'
 String email = 'sav.auto@1secmail.com'
 String name = 'Savana automation'
-String expectedMailSubject = 'Enterprise Servicing Change Password Request'
+String expectedMailSubject = 'nGage Enterprise Servicing Password Reset Request'
 String passwordUpdateMessage = 'Password Successfully Updated.'
 
 Faker faker = new Faker(Locale.US)
@@ -67,8 +67,8 @@ WebUI.setText(findTestObject('Object Repository/LoginPage/input_Password'), pass
 'Click on Login button'
 WebUI.click(findTestObject('Object Repository/LoginPage/btn_Login'))
 
-'Verify user is redirected user profile page'
-CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.USER_PROFILE_PAGE, Operator.EQUALS_IGNORE_CASE)
+/*'Verify user is redirected user profile page'
+CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getUrl(), Urls.USER_PROFILE_PAGE, Operator.EQUALS_IGNORE_CASE)*/
 
 'Verify Name of the user matches'
 CustomKeywords.'actions.WebActions.verifyMatch'(WebUI.getText(findTestObject('Object Repository/UserprofilePage/text_Name')), name, Operator.EQUALS)
