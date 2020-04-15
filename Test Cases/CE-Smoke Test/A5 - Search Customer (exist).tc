@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>A5 - Search Customer (exist)</name>
+   <tag></tag>
+   <comment>Login into portal</comment>
+   <testCaseGuid>773acab5-32aa-4099-9a5d-88b8711d4a27</testCaseGuid>
+</TestCaseEntity>

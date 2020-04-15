@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>C4 - Post a transaction for Multi-position Account (Debit)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>1c4def07-96c5-4b0c-b6a1-09dfc6834031</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>A7 - Search Organizarion (exist)</name>
+   <tag></tag>
+   <comment>Goto Profile Tab of a Customer</comment>
+   <testCaseGuid>b311b78e-eb11-428a-8799-e1b533103145</testCaseGuid>
+</TestCaseEntity>

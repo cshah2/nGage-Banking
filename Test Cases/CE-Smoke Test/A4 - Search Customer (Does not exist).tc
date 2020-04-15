@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>A4 - Search Customer (Does not exist)</name>
+   <tag></tag>
+   <comment>Verify Error Message is Displayed</comment>
+   <testCaseGuid>fa473b71-daad-4ca5-9595-e7d8ecd02492</testCaseGuid>
+</TestCaseEntity>

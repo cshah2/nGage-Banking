@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>E1 - Add Order (Payment Order)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>339e9795-0a09-4b87-bbf6-a34f7a424a9b</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>C2 - Post a transaction for Banking Account (Debit)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>deb39b98-3497-422d-b743-606ccc33385f</testCaseGuid>
+</TestCaseEntity>

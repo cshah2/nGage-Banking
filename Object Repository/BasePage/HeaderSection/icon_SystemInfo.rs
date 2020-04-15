@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>iframe_PwdChangeConfirm</name>
+   <name>icon_SystemInfo</name>
    <tag></tag>
-   <elementGuidId>3db6aec4-9473-456d-be8b-60003cb8bc96</elementGuidId>
+   <elementGuidId>af636ac0-8122-4812-a5d0-2add82764cc5</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>BASIC</key>
+         <key>XPATH</key>
+         <value>//span[contains(@id,'SysInfoIcon_block')]</value>
       </entry>
       <entry>
-         <key>XPATH</key>
-         <value>//iframe[contains(@src,'PasswordChangeConfirmation.aspx')]</value>
+         <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>C3 - Post a transaction for Multi-position Account (Credit)</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>285103e8-5bf9-481d-a7ac-f3040e80d312</testCaseGuid>
+</TestCaseEntity>

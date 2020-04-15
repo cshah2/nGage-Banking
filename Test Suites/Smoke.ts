@@ -11,6 +11,30 @@
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <testSuiteGuid>64ad0999-5cd3-4ff8-8bdf-760e1ac9695e</testSuiteGuid>
    <testCaseLink>
+      <guid>10202459-c085-417e-8129-a1ea99dba393</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A0 - Login</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>6fd04a6d-a25c-4d74-930d-cb037f8308d1</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A1 - Check Version</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>736e7f17-a14c-4862-a4d2-60c2bd8e3401</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A2 - Reset Password</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>81dae392-c49c-413e-8c9b-2d76a02a1f3f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Smoke Tests/A3 - Update Temporary password</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
       <guid>f1cbca5b-7b7f-4b64-b71c-5e342e900b99</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
@@ -51,30 +75,6 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Smoke Tests/I3 - Add Organization Complaint</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>10202459-c085-417e-8129-a1ea99dba393</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A0 - Login</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>6fd04a6d-a25c-4d74-930d-cb037f8308d1</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A1 - Check Version</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>736e7f17-a14c-4862-a4d2-60c2bd8e3401</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A2 - Reset Password</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>81dae392-c49c-413e-8c9b-2d76a02a1f3f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Smoke Tests/A3 - Update Temporary password</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>57b9de58-196f-46aa-9cab-cad9783b2898</guid>
