@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//select[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtDetails_block_wtText_wtMaritalStatusInput']</value>
+         <value>//select[contains(@id,'_wtMaritalStatusInput')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

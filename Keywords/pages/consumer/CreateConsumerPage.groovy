@@ -173,10 +173,10 @@ public class CreateConsumerPage {
 		TestObject e_Country = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Country')
 		TestObject e_AssociateSrPoliticalFigure = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Associated Sr Political Figure')
 		TestObject e_AssociateSrPoliticalFigureCountry = findTestObject('Object Repository/Consumer/CreateConsumerPage/ConsumerDueDiligence/select_Associated Sr Political Figure Country')
-		
-		
+
+
 		//select[contains(@id,'SrPoliticalFigureCountryDD2')]
-		
+
 		//Wait for page elements to load
 		WebActions.waitForElementVisible(e_SeniorPoliticalFigure, GlobalVariable.Timeout)
 
@@ -237,22 +237,22 @@ public class CreateConsumerPage {
 		TestObject e_Dialog_No = findTestObject('Object Repository/Consumer/CreateConsumerPage/PopupDialog/link_No')
 
 		enterBasicInformation(custData)
-		WebActions.click(e_Next)
+		WebActions.clickEvent(e_Next)
 
 		enterCustomerDetails(custData)
-		WebActions.click(e_Next)
+		WebActions.clickEvent(e_Next)
 
 		enterLocationInformation(custData)
-		WebActions.click(e_Next)
+		WebActions.clickEvent(e_Next)
 
 		enterContactInfomration(custData)
-		WebActions.click(e_Next)
+		WebActions.clickEvent(e_Next)
 
 		enterCustomerDueDiligence(custData)
-		WebActions.click(e_Next)
+		WebActions.clickEvent(e_Next)
 
 		enterEducationAndOccupationDetails(custData)
-		WebActions.click(e_Next)
+		WebActions.clickEvent(e_Next)
 
 		enterCustomerInformation(custData)
 		WebActions.click(e_Create)

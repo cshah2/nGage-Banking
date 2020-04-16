@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='nGageBanking_Theme_wt2_block_wtHeadingContent_nGageBanking_Customer_Tasks_wt8_block_WebPatterns_wtBasicInformation_Panel_block_wtText_wtSuffix']</value>
+         <value>//input[contains(@id,'_wtSuffix')]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
